@@ -7,14 +7,15 @@ const keys = require('../../config/keys');
 // auth required technologies
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const passport = require('passport');
 
 // models
 const User = require('../../models/User');
-
-// validations
 const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
+
+const passport = require('passport');
+
+// validations
 
 // // ROUTES
 // GETS
@@ -36,11 +37,17 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 router.post('/register', (req, res) => {
     const{errors, isValid} = validateRegisterInput(req.body);
 
+    console.log(errors);
+
     if(!isValid) {
         return res.status(400).json(errors);
     }
 
-    User.findOne({handle: req.body.handle})
+    const handle = req.body.handle;
+    // const email = req.body.email;
+    // const password = req.body.password;
+
+    User.findOne({handle})
         .then(user => {
             if(user) {
                 errors.handle = "User already exists"
@@ -81,7 +88,7 @@ router.post('/register', (req, res) => {
 
 // login
 router.post('/login', (req, res) => {
-    const{errors, isValid} = validateRegisterInput(req.body);
+    const{errors, isValid} = validateLoginInput(req.body);
 
     if(!isValid) {
         return res.status(400).json(errors);

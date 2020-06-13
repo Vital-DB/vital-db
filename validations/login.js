@@ -7,6 +7,7 @@ module.exports = function validateLoginInput(data) {
     data.password = validText(data.password) ? data.password : '';
 
     if(!Validator.isEmail(data.email)) {
+        console.log(data.email)
         errors.email = 'Email is invalid';
     }
 
