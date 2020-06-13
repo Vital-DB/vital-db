@@ -1,14 +1,14 @@
 {
   "name": "vital-db",
   "version": "1.0.0",
-  "description": "vital-db consolidate health records and facilitate provider communication",
+  "description": "vital-db consolidates health records and facilitates provider communication",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
     "server:debug": "nodemon --inspect app.js"
   },
-  "author": "",
+  "author": "DANC",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
