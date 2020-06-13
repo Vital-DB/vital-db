@@ -1,3 +1,1 @@
 # Vital DB
-
-Test
