@@ -21,7 +21,9 @@ export const Login = () => {
     }
 
     return (
-        <div></div>
+        <div>
+            <h1>Everything is working</h1>
+        </div>
     )
     // const handleChange = (event) => {
 
