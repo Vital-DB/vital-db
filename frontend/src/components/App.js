@@ -7,6 +7,7 @@ import { Login} from './session/Login';
 const App = () => {
     return (
       <Switch>
+        <GuestRoute exact path="/" component={Login} />
         <GuestRoute exact path="/login" component={Login} />
       </Switch>
     );
