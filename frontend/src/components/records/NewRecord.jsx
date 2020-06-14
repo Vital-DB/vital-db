@@ -22,7 +22,7 @@ export class NewRecord extends Component {
     let fileName = fileParts[0];
     let fileType = fileParts[1];
     console.log("Preparing the upload");
-    axios.post("http://localhost:3000/records/sign_s3",{
+    axios.post("http://localhost:3000/api/records/sign_s3",{
       fileName : fileName,
       fileType : fileType
     })
