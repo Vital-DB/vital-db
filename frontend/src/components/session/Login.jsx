@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import {login} from '../../actions/session';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import e from 'express';
+// import e from 'express';
 
 export const Login = () => {
     const dispatch = useDispatch();
@@ -20,7 +20,12 @@ export const Login = () => {
         dispatch(login(user));
     }
 
-    const handleChange = (event) => {
-        
-    }
+    return (
+        <div></div>
+    )
+    // const handleChange = (event) => {
+
+    // }
+
+
 }
