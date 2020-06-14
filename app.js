@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 const db = require('./config/keys').mongoURI;
 // ROUTE IMPORTS
 const users = require("./routes/api/users");
+const records = require("./routes/api/records");
 
 // CONNECT TO MONGOOSE -> MONGO DB
 mongoose
@@ -28,6 +29,7 @@ app.use(bodyParser.json());
 // ROUTES
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
+app.use("/api/records", records);
 
 const port = process.env.PORT || 5000;
 

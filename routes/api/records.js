@@ -12,13 +12,13 @@ const jwt = require('jsonwebtoken');
 const Record = require('../../models/Record');
 
 // validations
-const validateRecordInput = require('../../validations/Record');
+const validateRecordInput = require('../../validations/records');
 
 // // ROUTES
 // GETS
 // test route, to be deleted
 router.get("/test", (req, res) => {
-    res.json({ msg: "This is the Records route" })
+    return res.json({ msg: "This is the Records route" })
 });
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
