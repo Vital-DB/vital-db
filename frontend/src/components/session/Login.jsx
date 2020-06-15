@@ -1,6 +1,7 @@
 import {login} from '../../actions/session';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {NavLink} from 'react-router-dom';
 
 export const Login = () => {
     const dispatch = useDispatch();
@@ -67,6 +68,8 @@ export const Login = () => {
                     Login
                 </button>
             </form>
+            <NavLink to="/register">Signup</NavLink>
+            <NavLink to="/">Home</NavLink>
             {renderErrors()}
         </div>
     )
