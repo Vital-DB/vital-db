@@ -5,6 +5,11 @@ import SideNavContainer from '../side_nav/side_nav_container';
 import NewPicture from '../pictures/NewPicture';
 
 class Main extends React.Component {
+
+    componentDidMount(){
+        this.props.fetchCurrentUser();
+    }
+
     render(){
         return(
             <div>
