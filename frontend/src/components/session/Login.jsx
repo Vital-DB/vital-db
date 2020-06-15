@@ -1,10 +1,11 @@
 import {login} from '../../actions/session';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {NavLink} from 'react-router-dom';
 
 export const Login = () => {
     const dispatch = useDispatch();
-    const errors = useSelector(state => state.errors.session);
+    const errors = useSelector(state => state.errors);
     const [handle, setHandle] = useState("");
     const [password, setPassword] = useState("");
 
@@ -33,10 +34,10 @@ export const Login = () => {
     }
 
     const renderErrors = () => {
-        if(errors){
+        if(errors) {
             return (
                 <>
-                    {errors.map((error, idx) => {
+                    {Object.values(errors).map((error, idx) => {
                         return (
                             <p key={idx} className="login__errors">{error}</p>
                         )
@@ -45,6 +46,7 @@ export const Login = () => {
             )
         }
     }
+
 
     return (
         <div className="login">
@@ -55,7 +57,7 @@ export const Login = () => {
                     onChange ={handleChange('handle')} className="login__input--handle universal__input" 
                     placeholder="User handle" />
                 <input 
-                    type="text" 
+                    type="password" 
                     value={password}
                     onChange ={handleChange('password')} className="login__input--password universal__input" 
                     placeholder="User password" />
@@ -66,6 +68,8 @@ export const Login = () => {
                     Login
                 </button>
             </form>
+            <NavLink to="/register">Signup</NavLink>
+            <NavLink to="/">Home</NavLink>
             {renderErrors()}
         </div>
     )

@@ -1,12 +1,14 @@
 import {register} from '../../actions/session';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {NavLink} from 'react-router-dom';
 
 import './register.css'
 
 export const Register = () => {
     const dispatch = useDispatch();
-    const errors = useSelector(state => state.errors.session);
+    const errors = useSelector(state => state.errors);
+    // debugger
     const [handle, setHandle] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -45,12 +47,12 @@ export const Register = () => {
     }
 
     const renderErrors = () => {
-        if(errors){
+        if(errors) {
             return (
                 <>
-                    {errors.map((error, idx) => {
+                    {Object.values(errors).map((error, idx) => {
                         return (
-                            <p key={idx} className="login__errors">{error}</p>
+                            <p key={idx} className="register__errors">{error}</p>
                         )
                     })}
                 </>
@@ -60,7 +62,7 @@ export const Register = () => {
 
     return (
         <div className="register">
-            <form onSubmit={handleSubmit} className="login__form">
+            <form onSubmit={handleSubmit} className="register__form">
                 <input 
                     type="text" 
                     value={handle} 
@@ -87,9 +89,11 @@ export const Register = () => {
                 <button 
                     type="submit"
                     className="universal__button login__button">
-                    Login
+                    Signup
                 </button>
             </form>
+            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/">Home</NavLink>
             {renderErrors()}
         </div>
     )

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Dashboard from './dashboard';
 
+
 const mapStateToProps = state => {
     return {
         loggedIn: state.session.isAuthenticated,
@@ -9,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+ 
     }
 }
 

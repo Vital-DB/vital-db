@@ -1,18 +1,30 @@
 import React from "react";
-import { Switch, Route } from 'react-router-dom';
-import { GuestRoute } from '../util/route';
-import DashboardContainer from './dashboard/dashboard_container';
+import { Switch, NavLink } from 'react-router-dom';
+import { GuestRoute, PrivateRoute } from '../util/route';
 
+import DashboardContainer from './dashboard/dashboard_container';
 import { Login} from './session/Login';
 import { Register } from './session/Register';
+
+function Splash() {
+  return (
+  <div>
+    the frontend is working. paths available: /login /dashboard /register
+    <NavLink to="/login">Login</NavLink>
+    <NavLink to="/register">Register</NavLink>
+  </div>)
+}
 
 const App = () => {
     return (
       <Switch>
+        <GuestRoute exact path="/" component={Splash} />
         <GuestRoute exact path="/login" component={Login} />
-        <Route path='/dashboard' component={DashboardContainer} /> 
-        {/* ^change this to PrivateRoute when login is setup */}
         <GuestRoute exact path="/register" component={Register} />
+        
+        <PrivateRoute exact path='/home' component={Splash} /> 
+        <PrivateRoute path='/dashboard' component={DashboardContainer} /> 
+        {/* ^change this to PrivateRoute when login is setup */}
 
       </Switch>
     );
