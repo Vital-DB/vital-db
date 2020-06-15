@@ -21,7 +21,7 @@ const passport = require('passport');
 // GETS
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    // debugger
+    debugger
     res.json({
         currentUser: req.user
     });
@@ -50,10 +50,12 @@ router.post('/register', (req, res) => {
                     password: req.body.password,
                     firstName: "",
                     lastName: "",
-                    birthday: undefined,
-                    bloodType: undefined,
+                    birthday: new Date(),
+                    bloodType: "",
                     height: 0,
-                    sex: null,
+                    weight: 0,
+                    profilePic: "https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png",
+                    sex: "",
                     organDonor: false
                 })
 
@@ -117,22 +119,22 @@ router.post('/login', (req, res) => {
 
 // PATCH
 // update a user
-router.patch('/:handle', passport.authenticate('jwt', {session: false}), (req, res) => {
-    User.update({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        birthday: req.body.birthday,
-        bloodType: req.body.bloodType,
-        height: req.body.height,
-        sex: req.body.sex,
-        organDonor: req.body.organDonor
-    },
-    { where: { handle: req.params.handle } }).then((result) => {
-        res.json(result);
-    }).catch((error) => {
-        console.log(error);
-    })
-})
+// router.patch('/:handle', passport.authenticate('jwt', {session: false}), (req, res) => {
+//     User.update({
+//         firstName: req.body.firstName,
+//         lastName: req.body.lastName,
+//         birthday: req.body.birthday,
+//         bloodType: req.body.bloodType,
+//         height: req.body.height,
+//         sex: req.body.sex,
+//         organDonor: req.body.organDonor
+//     },
+//     { where: { handle: req.params.handle } }).then((result) => {
+//         res.json(result);
+//     }).catch((error) => {
+//         console.log(error);
+//     })
+// })
 
 // router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
 //     // debugger

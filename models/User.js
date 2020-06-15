@@ -14,6 +14,9 @@ const UserSchema = new Schema({
       type: String,
       required: true
     },
+    profilePic: {
+      type: String
+    },
     firstName: {
       type: String
     },
@@ -27,6 +30,9 @@ const UserSchema = new Schema({
       type: String
     },
     height: {
+      type: Number
+    },
+    weight: {
       type: Number
     },
     sex: {
