@@ -15,7 +15,8 @@ class Splash extends React.Component {
         <div className="splash">
           <h1 id="title">VitalDB</h1>
           <div className="splash-content">
-            <section className="feature">Store your vitals in one place
+            <section className="feature">
+              <h1 id="heading">Store vitals in one place</h1>
                 <ul className="vital-list">                
                   <li className="vital">
                     <h3>Name: </h3>
@@ -39,14 +40,17 @@ class Splash extends React.Component {
                   </li>
                 </ul>
             </section>
-            <section className="feature">Connect with your doctor
-
+            <section className="feature">
+              <h1 id="heading">Connect with your doctor</h1>
+              <img src="/images/chatbox.png" id="chatbox"/>
+              <img src="/images/user-icon.png" id="user-icon"/>
+              <img src="/images/doctor-icon.png" id="doctor-icon"/>
             </section>
-            <section className="feature">Easy access to medical records
-
+            <section className="feature">
+              <h1 id="heading">Easy access to charts</h1>
             </section>
-            <section className="feature">Medication reminders
-
+            <section className="feature">
+              <h1 id="heading">Medication reminders</h1>
             </section>
             {/* <h1 id="heading">All your vitals stored in one secure space</h1> */}
           </div>
