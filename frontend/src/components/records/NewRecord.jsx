@@ -85,3 +85,4 @@ export class NewRecord extends Component {
   }
 }
 
+export default NewRecord
