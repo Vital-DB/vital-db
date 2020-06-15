@@ -46,14 +46,16 @@ export const login = (user) => (dispatch) => {
         const decoded = jwt_decode(token);
         return dispatch(receiveCurrentUser(decoded));
     }, (error) => {
-        return dispatch(receiveErrors(error.response.data));
+        return dispatch(receiveErrors(error.responseJSON));
     });
 };
 
 export const register = (user) => (dispatch) => {
+    // debugger
     return APIUtil.register(user).then((user) => {
         return dispatch(receiveCurrentUser(user));
     }, (error) => {
-        return dispatch(receiveErrors(error.response.data));
+        return dispatch(receiveErrors(error.responseJSON));
     });
 };
+

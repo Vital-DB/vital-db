@@ -32,6 +32,20 @@ export const Login = () => {
         });
     }
 
+    const renderErrors = () => {
+        if(errors){
+            return (
+                <>
+                    {errors.map((error, idx) => {
+                        return (
+                            <p key={idx} className="login__errors">{error}</p>
+                        )
+                    })}
+                </>
+            )
+        }
+    }
+
     return (
         <div className="login">
             <form onSubmit={handleSubmit} className="login__form">
@@ -42,7 +56,7 @@ export const Login = () => {
                     placeholder="User handle" />
                 <input 
                     type="text" 
-                    value={password} 
+                    value={password}
                     onChange ={handleChange('password')} className="login__input--password universal__input" 
                     placeholder="User password" />
 
@@ -52,6 +66,7 @@ export const Login = () => {
                     Login
                 </button>
             </form>
+            {renderErrors()}
         </div>
     )
 }

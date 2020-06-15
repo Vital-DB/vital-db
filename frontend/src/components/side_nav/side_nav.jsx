@@ -26,11 +26,11 @@ class SideNav extends React.Component {
         return (
             <div>
                 <div id='my-sidenav' className='sidenav'>
-                    <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
+                    <a className="closebtn" onClick={this.closeNav}>&times;</a>
                     <div className='sidenav-profile-image'>PROFILE IMAGE</div>
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Clients</a>
+                    <a>About</a>
+                    <a>Services</a>
+                    <a>Clients</a>
                 </div>
                 <span className='sidenav-open' onClick={this.openNav}>&#9776;</span>
             </div>
