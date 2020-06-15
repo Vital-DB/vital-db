@@ -6,7 +6,7 @@ export default (state = {}, action) => {
     Object.freeze(state)
     switch(action.type) {
         case RECEIVE_CURRENT_USER:
-            // debugger;
+//             debugger;
             return {
                 [action.currentUser.data.currentUser._id]: action.currentUser.data.currentUser,
             }
