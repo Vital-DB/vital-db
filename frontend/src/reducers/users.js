@@ -8,7 +8,7 @@ export default (state = {}, action) => {
         case RECEIVE_CURRENT_USER:
             // debugger;
             return {
-                [action.currentUser.data.currentUser._id]: action.currentUser.data.currentUser,
+                [action.currentUser._id]: action.currentUser,
             }
         default:
             return state;
