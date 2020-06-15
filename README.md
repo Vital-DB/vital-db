@@ -1,6 +1,6 @@
 # Vital DB
 
-# Technologies and Technical Challenges
+# Technologies
 - MongoDB
 - Express
 - React
@@ -9,6 +9,15 @@
 - Passport.js
 - Node
 - Redux
+
+# Technical Challenges
+- Security
+  - Securing our users' forms and medical information is our most critical priority.
+- AWS
+  - Allowing our users to upload PDFs and scans of their medical records requires us to use a cloud hosting technology like AWS.
+- Google Maps API
+  - A stretch feature of ours is to allow users to look for nearby doctors and medical providers right on the app.
+  
 
 # Group Members and Work Breakdown
 Alex Tong, Clifford Yan, Douglas Crawford, Nahuel Gorosito
