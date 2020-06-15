@@ -1,0 +1,7 @@
+.dashboard-stats {
+    height: 40vh;
+    width: 40vw;
+    border: 2px solid rgb(131, 216, 131);
+    margin-bottom: 3vh;
+    transition: 0.5s;
+}

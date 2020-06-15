@@ -19,10 +19,6 @@ const passport = require('passport');
 
 // // ROUTES
 // GETS
-// test route, to be deleted
-router.get("/test", (req, res) => {
-    res.json({ msg: "This is the users route" })
-});
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
     res.json({
@@ -37,17 +33,17 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 router.post('/register', (req, res) => {
     const{errors, isValid} = validateRegisterInput(req.body);
 
-    console.log(errors);
+    // console.log(errors);
 
     if(!isValid) {
         return res.status(400).json(errors);
     }
 
-    const handle = req.body.handle;
+    // const handle = req.body.handle;
     // const email = req.body.email;
     // const password = req.body.password;
 
-    User.findOne({handle})
+    User.findOne({handle: req.body.handle })
         .then(user => {
             if(user) {
                 errors.handle = "User already exists"
@@ -65,26 +61,14 @@ router.post('/register', (req, res) => {
                         newUser.password = hash;
                         newUser
                             .save()
-                            .then(user => {
-                                const payload = { id: user.id, handle: user.handle };
-                                jwt.sign(
-                                    payload, 
-                                    keys.secretOrKey, 
-                                    {expiresIn: 3600}, 
-                                    (err, token) => {
-                                        res.json({
-                                            success: true,
-                                            token: "Bearer " + token
-                                        })
-                                    }
-                                )
-                            })
+                            .then(user => res.json(user))
                             .catch(err => console.log(err));
                     })
                 })
             }
         })
 })
+
 
 // login
 router.post('/login', (req, res) => {
@@ -97,7 +81,7 @@ router.post('/login', (req, res) => {
     const handle = req.body.handle;
     // const email = req.body.email;
     const password = req.body.password;
-
+    // debugger
     User.findOne({handle})
         .then(user => {
             if(!user) {

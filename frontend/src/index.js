@@ -1,6 +1,9 @@
+import './index.css';
+import './reset.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import jwt_decode from 'jwt-decode';
+// import axios from 'axios';
 
 import Root from './components/Root'
 import configureStore from './store/store'
@@ -8,7 +11,11 @@ import configureStore from './store/store'
 import { setAuthToken } from './util/sessionApi';
 import { logout } from './actions/session';
 
+
 document.addEventListener('DOMContentLoaded', () => {
+  // axios.defaults.baseURL= "http://localhost:5000";
+  // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+  
   let store;
 
   if(localStorage.jwtToken) {

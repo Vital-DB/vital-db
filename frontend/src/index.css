@@ -1,0 +1,11 @@
+button {
+    background-color: green;
+    border: none;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+input {
+    padding: 1em;
+    font-size: 1em;
+}
