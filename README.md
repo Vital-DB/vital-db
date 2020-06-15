@@ -1,5 +1,14 @@
 # Vital DB
 
+## MVPs
+- [ ] Hosting on Heroku
+- [ ] User authorization: sign up, login and logout
+- [ ] Users can upload and view their own medical records
+- [ ] Providers can upload user medical records
+- [ ] Users have a summary dashboard of most current vitals
+- [ ] Users have medical reminders (prescription refills/checkups, etc.)
+- [ ] Production README
+
 ## Technologies
 - MongoDB
 - Express
