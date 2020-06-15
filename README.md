@@ -46,6 +46,39 @@ VIEW RECORDS:
 - Node
 - Redux
 
+# Group Members & Work Breakdown
+**Douglas Crawford, Alexander Tong, Nahuel Gorosito, Clifford Yan**
+
+### Day 1
+* Setup record component to upload through AWS - **Douglas**
+* Setup splash layout - **Nahuel**
+* Setup auth - **Alexander**
+* Setup dashboard layout - **Clifford**
+
+### Day 2
+* Allow users to download their upload records from AWS & setup record upload/view pages **Douglas**
+* Incorporate dashboard styling **Clifford**
+* Design splash page and include session links - **Nahuel**
+* Establish link between frontend/backend routes/controllers - **Alexander**
+
+### Day 3
+* Create record upload/view page - **Nahuel**
+* Implement dashboard functionality - **Clifford**
+* Setup reducer functionality and tie-in to react project - **Alexander**
+* Setup user view permissions for AWS files - **Douglas**
+
+### Day 4
+* Style record upload/view page - **Nahuel**
+* Incorporate Google map API into website - **Clifford**
+* Finalize AWS permissions - **Douglas**
+* Hookup backend to display records from AWS on page - **Alexander**
+
+### Day 5
+* Testing & Debugging - **All team members**
+* Pixel perfect CSS - **All**
+* Complete production README.md - **Douglas**
+
+
 ## Technical Challenges
 
 - Security
@@ -56,11 +89,4 @@ VIEW RECORDS:
   - A stretch feature of ours is to allow users to look for nearby doctors and medical providers right on the app.
   
 
-## Group Members and Work Breakdown
 
-Alex Tong, Clifford Yan, Douglas Crawford, Nahuel Gorosito
-
-- Backend: Alex Tong
-- Flex: Clifford Yan
-- Group leader and flex: Douglas Crawford
-- Frontend: Nahuel Gorosito
