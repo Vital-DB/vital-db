@@ -33,13 +33,16 @@ export class NewPicture extends Component {
       var url = returnData.url;
       this.setState({url: url})
       console.log("Recieved a signed request " + signedRequest);
-
+      // let signatureIdx = signedRequest.indexOf('Signature=');
+      // let signature = signedRequest.slice(signatureIdx+10);
+      // console.log(signature);
       var options = {
         headers: {
-          'Content-Type': fileType
+          'Content-Type': fileType,
+          // 'Authorization': signature,
         }
       };
-      axios.put(signedRequest,file,options)
+      axios.put(signedRequest,file)
       .then(result => {
         console.log("Response from s3")
         this.setState({success: true});

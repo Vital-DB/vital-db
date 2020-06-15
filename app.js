@@ -11,7 +11,12 @@ const bodyParser = require('body-parser');
 const db = require('./config/keys').mongoURI;
 // ROUTE IMPORTS
 const users = require("./routes/api/users");
-const records = require("./routes/api/records");
+const pictures = require("./routes/api/pictures");
+const cholesterol = require("./routes/api/cholesterol");
+const bloodPressure = require("./routes/api/bloodPressure");
+const weight = require("./routes/api/weight");
+const vitaminD = require("./routes/api/vitaminD");
+const restingHeartRate = require("./routes/api/restingHeartRate");
 
 // CONNECT TO MONGOOSE -> MONGO DB
 mongoose
@@ -29,7 +34,12 @@ app.use(bodyParser.json());
 // ROUTES
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
-app.use("/api/records", records);
+app.use("/api/pictures", pictures);
+app.use("/api/cholesterol", cholesterol);
+app.use("/api/bloodPressure", bloodPressure);
+app.use("/api/weight", weight);
+app.use("/api/vitaminD", vitaminD);
+app.use("/api/restingHeartRate", restingHeartRate);
 
 const port = process.env.PORT || 5000;
 

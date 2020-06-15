@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Picture = new Schema({
+const RecordSchema = new Schema({
     weight: {
       type: Number,
       required: true
@@ -12,4 +12,4 @@ const Picture = new Schema({
     }
 })
 
-module.exports = Record = mongoose.model('Record', Picture);
+module.exports = Record = mongoose.model('Record', RecordSchema);
