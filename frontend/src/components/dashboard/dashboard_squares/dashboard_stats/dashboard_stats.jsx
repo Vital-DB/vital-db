@@ -1,10 +1,11 @@
 import React from 'react';
+import './dashboard_stats.css';
 
 class DashboardStats extends React.Component {
     render(){
         return(
-            <div className='dashboard-stats'>
-
+            <div id='my-dashboard-stats' className='dashboard-stats'>
+                DASHBOARD STATS
             </div>
         )
     }
