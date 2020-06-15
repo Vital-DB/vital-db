@@ -15,7 +15,6 @@ class DashboardStats extends React.Component {
 
     render(){
         const dummyStats = [{weight: 220, restingHR: 75, date: '6/01/2020'}, {weight: 218, restingHR: 80, date: '6/12/2020'}, {weight: 210, restingHR: 78, date: '6/15/2020'}, {weight: 214, restingHR: 85, date: '6/16/2020'}]
-        
         const renderLineChart = (
             <ResponsiveContainer>
                 <LineChart data={dummyStats}>

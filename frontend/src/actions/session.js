@@ -61,3 +61,5 @@ export const register = (user) => (dispatch) => {
     });
 };
 
+export const fetchCurrentUser = () => dispatch => APIUtil.fetchCurrentUser()
+    .then(user => dispatch(receiveCurrentUser(user)));

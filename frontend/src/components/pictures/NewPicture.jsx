@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export class NewRecord extends Component {
+export class NewPicture extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ export class NewRecord extends Component {
     let fileName = fileParts[0];
     let fileType = fileParts[1];
     console.log("Preparing the upload");
-    axios.post("http://localhost:3000/api/records/sign_s3",{
+    axios.post("http://localhost:3000/api/pictures/sign_s3",{
       fileName : fileName,
       fileType : fileType
     })
@@ -33,13 +33,16 @@ export class NewRecord extends Component {
       var url = returnData.url;
       this.setState({url: url})
       console.log("Recieved a signed request " + signedRequest);
-
+      // let signatureIdx = signedRequest.indexOf('Signature=');
+      // let signature = signedRequest.slice(signatureIdx+10);
+      // console.log(signature);
       var options = {
         headers: {
-          'Content-Type': fileType
+          'Content-Type': fileType,
+          // 'Authorization': signature,
         }
       };
-      axios.put(signedRequest,file,options)
+      axios.put(signedRequest,file)
       .then(result => {
         console.log("Response from s3")
         this.setState({success: true});
@@ -85,4 +88,4 @@ export class NewRecord extends Component {
   }
 }
 
-export default NewRecord
+export default NewPicture
