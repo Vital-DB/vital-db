@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom'
 import { GuestRoute, PrivateRoute } from '../util/route';
 import NewPicture from './pictures/NewPicture'
 import DashboardContainer from './dashboard/dashboard_container';
+import MainContainer from './main/main_container'
 import { Login} from './session/Login';
 import { Register } from './session/Register';
 
@@ -25,9 +26,7 @@ const App = () => {
         
         <Route exact path="/pictures/new" component={NewPicture} />
         <PrivateRoute exact path='/home' component={Splash} /> 
-        <PrivateRoute path='/dashboard' component={DashboardContainer} /> 
-        {/* ^change this to PrivateRoute when login is setup */}
-
+        <PrivateRoute path='/main' component={MainContainer} /> 
       </Switch>
     );
 }

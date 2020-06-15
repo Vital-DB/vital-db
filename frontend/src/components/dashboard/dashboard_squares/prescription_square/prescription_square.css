@@ -2,6 +2,7 @@
     border: 2px solid rgb(115, 115, 219);
     height: 24vh;
     width: 19vw;
+    padding: 1vh;
     margin-right: 2vw;
     transition: 0.5s;
 }

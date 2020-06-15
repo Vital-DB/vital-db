@@ -2,6 +2,7 @@ import {login} from '../../actions/session';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
+import './login.css'
 
 export const Login = () => {
     const dispatch = useDispatch();
