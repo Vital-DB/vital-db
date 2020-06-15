@@ -6,15 +6,16 @@ export class NewRecord extends Component {
     super(props);
     this.state = {
       success : false,
-      url : ""
+      url : "",
+      error: false,
+      errorMessage : ""
     }
   }
-  
+
   handleChange = (ev) => {
     this.setState({success: false, url : ""});
-    
+
   }
-  // Perform the upload
   handleUpload = (ev) => {
     let file = this.uploadInput.files[0];
     // Split the filename to get the name and type
@@ -32,8 +33,7 @@ export class NewRecord extends Component {
       var url = returnData.url;
       this.setState({url: url})
       console.log("Recieved a signed request " + signedRequest);
-      
-     // Put the fileType in the headers for the upload
+
       var options = {
         headers: {
           'Content-Type': fileType
@@ -52,13 +52,21 @@ export class NewRecord extends Component {
       alert(JSON.stringify(error));
     })
   }
-  
-  
+
+
   render() {
-    const Success_message = () => (
+    const SuccessMessage = () => (
       <div style={{padding:50}}>
         <h3 style={{color: 'green'}}>SUCCESSFUL UPLOAD</h3>
         <a href={this.state.url}>Access the file here</a>
+        <br/>
+      </div>
+    )
+    const ErrorMessage = () => (
+      <div style={{padding:50}}>
+        <h3 style={{color: 'red'}}>FAILED UPLOAD</h3>
+        <span style={{color: 'red', backgroundColor: 'black'}}>ERROR: </span>
+        <span>{this.state.errorMessage}</span>
         <br/>
       </div>
     )
@@ -66,7 +74,8 @@ export class NewRecord extends Component {
       <div className="App">
         <center>
           <h1>UPLOAD A FILE</h1>
-          {this.state.success ? <Success_message/> : null}
+          {this.state.success ? <SuccessMessage/> : null}
+          {this.state.error ? <ErrorMessage/> : null}
           <input onChange={this.handleChange} ref={(ref) => { this.uploadInput = ref; }} type="file"/>
           <br/>
           <button onClick={this.handleUpload}>UPLOAD</button>
@@ -75,3 +84,4 @@ export class NewRecord extends Component {
     );
   }
 }
+
