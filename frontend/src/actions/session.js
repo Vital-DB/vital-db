@@ -5,6 +5,7 @@ export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
+export const RECEIVE_CURRENT_USER_INFO = 'RECEIVE_CURRENT_USER_INFO';
 
 export const receiveErrors = (errors) => {
     return {
@@ -26,6 +27,13 @@ export const receiveCurrentUser = (currentUser) => {
         currentUser,
     }
 };
+
+const receiveCurrentUserInfo = (currentUser) => {
+    return {
+        type: RECEIVE_CURRENT_USER_INFO,
+        currentUser,
+    }
+}
 
 export const logoutCurrentUser = () => {
     return {
@@ -62,4 +70,4 @@ export const register = (user) => (dispatch) => {
 };
 
 export const fetchCurrentUser = () => dispatch => APIUtil.fetchCurrentUser()
-    .then(user => dispatch(receiveCurrentUser(user)));
+    .then(user => dispatch(receiveCurrentUserInfo(user)));
