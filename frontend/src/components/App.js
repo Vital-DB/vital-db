@@ -22,6 +22,7 @@ const App = () => {
         <GuestRoute exact path="/login" component={Login} />
         <GuestRoute exact path="/register" component={Register} />
         
+        <PrivateRoute exact path="/records/new" component={NewRecord} />
         <PrivateRoute exact path='/home' component={Splash} /> 
         <PrivateRoute path='/main' component={MainContainer} /> 
       </Switch>
