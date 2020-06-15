@@ -20,6 +20,7 @@ const App = () => {
       <Switch>
         <GuestRoute exact path="/" component={Splash} />
         <GuestRoute exact path="/login" component={Login} />
+        <GuestRoute exact path="/records/new" component={NewRecord} />
         <GuestRoute exact path="/register" component={Register} />
         
         <PrivateRoute exact path='/home' component={Splash} /> 

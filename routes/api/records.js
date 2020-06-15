@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken');
 const Record = require('../../models/Record');
 
 // validations
-const validateRecordInput = require('../../validations/Record');
+const validateRecordInput = require('../../validations/records');
 
 // // ROUTES
 // GETS
@@ -29,5 +29,10 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     });
 })
 
+var sign_s3 = require('../../controllers/sign_s3');
+router.use('/sign_s3', sign_s3.sign_s3);
+
+var retrieve_s3 = require('../../controllers/retrieve_s3');
+router.use('/retrieve_s3', retrieve_s3.retrieve_s3);
 
 module.exports = router;
