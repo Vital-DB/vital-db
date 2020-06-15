@@ -10,7 +10,7 @@ const Guest = ({ component: Component, path, loggedIn, exact }) => {
         path={path}
         exact={exact}
         render={props =>
-            !loggedIn ? <Component {...props} /> : <Redirect to="/dashboard" />
+            !loggedIn ? <Component {...props} /> : <Redirect to="/main/dashboard" />
         }
     />);
 };
