@@ -1,4 +1,5 @@
 # Vital DB
+
 *The one stop shop for all things vital to your health.*
 
 ## Background
@@ -9,7 +10,23 @@ We are interested in giving people and health professions an easier access to he
 
 We will be using AWS, Google Maps API, and other technologies to let users have a easy access to all of their health information.  Will be able to upload images of their records and/or manually up to our site.  A dashboard with easy to read information readily available for users at all times.  Alerts for next checkup reminder, prescription info, prescription reminders, etc to make sure that the user knows when their health needs need to be met.
 
+## Proposal
+
+IMPORT RECORDS: 
+- Users can upload their own medical records
+- Providers can upload user medical records
+
+UPLOAD RECORDS:
+- Users can upload their own medical records
+- Providers can upload user medical records
+
+VIEW RECORDS: 
+- Users have a summary dashboard of most current vitals
+- Users can view detailed individual records
+- Users have medical reminders (prescription refills/checkups, etc.)
+
 ## Functionality & MVPs
+
 - [ ] Hosting on Heroku
 - [ ] User authorization: sign up, login and logout
 - [ ] Users can upload and view their own medical records
@@ -19,6 +36,7 @@ We will be using AWS, Google Maps API, and other technologies to let users have 
 - [ ] Production README
 
 ## Technologies
+
 - MongoDB
 - Express
 - React
@@ -29,6 +47,7 @@ We will be using AWS, Google Maps API, and other technologies to let users have 
 - Redux
 
 ## Technical Challenges
+
 - Security
   - Securing our users' forms and medical information is our most critical priority.
 - AWS
@@ -38,6 +57,7 @@ We will be using AWS, Google Maps API, and other technologies to let users have 
   
 
 ## Group Members and Work Breakdown
+
 Alex Tong, Clifford Yan, Douglas Crawford, Nahuel Gorosito
 
 - Backend: Alex Tong
