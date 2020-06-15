@@ -20,6 +20,7 @@ export const clearSessionErrors = () => {
 };
 
 export const receiveCurrentUser = (currentUser) => {
+    console.log(currentUser);
     return {
         type: RECEIVE_CURRENT_USER,
         currentUser,
