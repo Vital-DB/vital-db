@@ -4,7 +4,7 @@
 
 ## Background
 
-We are interested in giving people and health professions an easier access to health records.  Just an overall easier hub to have all of your medical information.  The health field has so many records so organization is extremely important.
+We are interested in giving people the ability to track their health vitals.  Just an overall easier hub to have all of your medical information.  The health field has so many records so organization is extremely important for an individual.
 
 ## Overview
 
@@ -12,17 +12,15 @@ We will be using AWS, Google Maps API, and other technologies to let users have 
 
 ## Proposal
 
-IMPORT RECORDS: 
-- Users can upload their own medical records
-- Providers can upload user medical records
+MANAGE VITALS:
+- Users can upload their own health vitals
+- Users can track their current vitals and view the average
+- Users can view definitions of the current vital
 
-UPLOAD RECORDS:
-- Users can upload their own medical records
-- Providers can upload user medical records
-
-VIEW RECORDS: 
+VIEW VITALS: 
 - Users have a summary dashboard of most current vitals
-- Users can view detailed individual records
+- Users can view detailed graphs of their vitals
+- Users have a show page for prescription history, checkup history & shot history.
 - Users have medical reminders (prescription refills/checkups, etc.)
 
 ## Functionality & MVPs
@@ -47,7 +45,7 @@ VIEW RECORDS:
 - Redux
 
 # Group Members & Work Breakdown
-**Douglas Crawford, Alexander Tong, Nahuel Gorosito, Clifford Yan**
+**Douglas Crawford (Team Lead), Alexander Tong (Backend Lead), Nahuel Gorosito (Frontend Lead), Clifford Yan (Flex Lead)**
 - (Backend) Alexander Tong
 - (Flex) Clifford Yan
 - (Group leader and flex) Douglas Crawford
