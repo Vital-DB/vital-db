@@ -1,18 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import axios from 'axios';
-import * as serviceWorker from './serviceWorker';
+import jwt_decode from 'jwt-decode';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import Root from './components/Root'
+import configureStore from './store/store'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import { setAuthToken } from './util/sessionApi';
+import { logout } from './actions/session';
+
+document.addEventListener('DOMContentLoaded', () => {
+  let store;
+
+  if(localStorage.jwtToken) {
+    setAuthToken(localStorage.jwtToken);
+
+    const decodedUser = jwt_decode(localStorage.jwtToken);
+
+    const preloadedState = { 
+      session: {isAuthenticated: true, user: decodedUser}
+    };
+
+    store = configureStore(preloadedState);
+
+    const currentTime = Date.now() / 1000;
+
+    if(decodedUser.exp < currentTime) {
+      store.dispatch(logout());
+      // redirects to login page when 1 hour has past
+      window.location.href = '/login';
+    }
+
+  } else {
+    store = configureStore();
+  }
+
+  const root = document.getElementById('root')
+  ReactDOM.render(<Root store={store} />, root);
+});
+
