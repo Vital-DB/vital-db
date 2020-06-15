@@ -97,7 +97,7 @@ router.post('/login', (req, res) => {
     const handle = req.body.handle;
     // const email = req.body.email;
     const password = req.body.password;
-
+    // debugger
     User.findOne({handle})
         .then(user => {
             if(!user) {
