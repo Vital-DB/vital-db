@@ -1,3 +1,5 @@
+import './index.css';
+import './reset.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import jwt_decode from 'jwt-decode';
@@ -7,6 +9,7 @@ import configureStore from './store/store'
 
 import { setAuthToken } from './util/sessionApi';
 import { logout } from './actions/session';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

@@ -50,8 +50,8 @@ export const login = (user) => (dispatch) => {
     });
 };
 
-export const signup = (user) => (dispatch) => {
-    return APIUtil.signup(user).then((user) => {
+export const register = (user) => (dispatch) => {
+    return APIUtil.register(user).then((user) => {
         return dispatch(receiveCurrentUser(user));
     }, (error) => {
         return dispatch(receiveErrors(error.response.data));

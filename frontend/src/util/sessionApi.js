@@ -15,9 +15,9 @@ export const login = (user) => (
     )
 );
 
-export const signup = (user) => {
+export const register = (user) => {
     axios.post(
-        '/api/users/signup',
+        '/api/users/register',
         user
     )
 };
