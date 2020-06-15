@@ -5,15 +5,16 @@ import NewRecord from './records/NewRecord'
 import DashboardContainer from './dashboard/dashboard_container';
 import { Login} from './session/Login';
 import { Register } from './session/Register';
+import Splash from './splash/splash';
 
-function Splash() {
-  return (
-  <div>
-    the frontend is working. paths available: /login /dashboard /register
-    <NavLink to="/login">Login</NavLink>
-    <NavLink to="/register">Register</NavLink>
-  </div>)
-}
+// function Splash() {
+//   return (
+//   <div>
+//     the frontend is working. paths available: /login /dashboard /register
+//     <NavLink to="/login">Login</NavLink>
+//     <NavLink to="/register">Register</NavLink>
+//   </div>)
+// }
 
 const App = () => {
     return (
@@ -23,7 +24,7 @@ const App = () => {
         <GuestRoute exact path="/records/new" component={NewRecord} />
         <GuestRoute exact path="/register" component={Register} />
         
-        <PrivateRoute exact path='/home' component={Splash} /> 
+        {/* <PrivateRoute exact path='/home' component={Splash} />  */}
         <PrivateRoute path='/dashboard' component={DashboardContainer} /> 
         {/* ^change this to PrivateRoute when login is setup */}
 
