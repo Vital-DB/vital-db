@@ -48,6 +48,10 @@ VIEW RECORDS:
 
 # Group Members & Work Breakdown
 **Douglas Crawford, Alexander Tong, Nahuel Gorosito, Clifford Yan**
+- (Backend) Alexander Tong
+- (Flex) Clifford Yan
+- (Group leader and flex) Douglas Crawford
+- (Frontend) Nahuel Gorosito
 
 ### Day 1
 * Setup record component to upload through AWS - **Douglas**
