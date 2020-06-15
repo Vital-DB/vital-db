@@ -6,3 +6,5 @@
 .DS_Store?
 
 /frontend/node_modules
+
+package-lock.json
