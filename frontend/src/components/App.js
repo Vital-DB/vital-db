@@ -1,7 +1,9 @@
 import React from "react";
 import { Switch, NavLink } from 'react-router-dom';
+import {Route} from 'react-router-dom'
 import { GuestRoute, PrivateRoute } from '../util/route';
-import NewRecord from './records/NewRecord'
+import NewPicture from './pictures/NewPicture'
+import DashboardContainer from './dashboard/dashboard_container';
 import MainContainer from './main/main_container'
 import { Login} from './session/Login';
 import { Register } from './session/Register';
@@ -22,7 +24,7 @@ const App = () => {
         <GuestRoute exact path="/login" component={Login} />
         <GuestRoute exact path="/register" component={Register} />
         
-        <PrivateRoute exact path="/records/new" component={NewRecord} />
+        <Route exact path="/pictures/new" component={NewPicture} />
         <PrivateRoute exact path='/home' component={Splash} /> 
         <PrivateRoute path='/main' component={MainContainer} /> 
       </Switch>

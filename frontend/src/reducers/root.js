@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import session from './session';
 import errors from './sessionErrors';
+import user from './user';
 
 const appReducer = combineReducers({
+    user,
     session,
     errors,
 })
