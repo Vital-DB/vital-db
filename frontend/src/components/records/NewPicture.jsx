@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export class NewRecord extends Component {
+export class NewPicture extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ export class NewRecord extends Component {
     let fileName = fileParts[0];
     let fileType = fileParts[1];
     console.log("Preparing the upload");
-    axios.post("http://localhost:3000/api/records/sign_s3",{
+    axios.post("http://localhost:3000/api/pictures/sign_s3",{
       fileName : fileName,
       fileType : fileType
     })
@@ -85,4 +85,4 @@ export class NewRecord extends Component {
   }
 }
 
-export default NewRecord
+export default NewPicture

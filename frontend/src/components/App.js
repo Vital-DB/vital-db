@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, NavLink } from 'react-router-dom';
 import { GuestRoute, PrivateRoute } from '../util/route';
-import NewRecord from './records/NewRecord'
+import NewPicture from './pictures/NewPicture'
 import DashboardContainer from './dashboard/dashboard_container';
 import { Login} from './session/Login';
 import { Register } from './session/Register';
