@@ -14,6 +14,14 @@ const validateBloodPressureInput = require('../../validations/bloodPressure');
 router.get("/test", (req, res) => {
     res.json({ msg: "This is the BloodPressure route" })
 });
+router.get('/user/:user_id', (req, res) => {
+  BloodPressure.find({user: req.params.user_id})
+      .then(bloodPressure => res.json(bloodPressure))
+      .catch(err =>
+          res.status(404).json({ vitalsError: 'No bloodPressure found from that user' }
+      )
+  );
+});
 
 // POSTS
 // signup

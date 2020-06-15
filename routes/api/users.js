@@ -21,7 +21,7 @@ const passport = require('passport');
 // GETS
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    debugger
+    // debugger
     res.json({
         currentUser: req.user
     });

@@ -47,57 +47,57 @@ const receiveVitalsErrors = (errors) => ({
     errors
 });
 
-export const fetchCholesterolLevels = () => dispatch => (
-    VitalsUtil.fetchCholesterolLevels()
+export const fetchCholesterolLevels = (userId) => dispatch => (
+    VitalsUtil.fetchCholesterolLevels(userId)
         .then(
             data => dispatch(receiveCholesterolLevels(data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
 );
-export const fetchAllergies = () => dispatch => (
-    VitalsUtil.fetchAllergies()
+export const fetchAllergies = (userId) => dispatch => (
+    VitalsUtil.fetchAllergies(userId)
         .then(
             data => dispatch(receiveAllergies(data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
 );
-export const fetchBloodPressureLevels = () => dispatch => (
-    VitalsUtil.fetchBloodPressureLevels()
+export const fetchBloodPressureLevels = (userId) => dispatch => (
+    VitalsUtil.fetchBloodPressureLevels(userId)
         .then(
             data => dispatch(receiveBloodPressureLevels(data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
 );
-export const fetchMedicalConditions = () => dispatch => (
-    VitalsUtil.fetchMedicalConditions()
+export const fetchMedicalConditions = (userId) => dispatch => (
+    VitalsUtil.fetchMedicalConditions(userId)
         .then(
             data => dispatch(receiveMedicalConditions(data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
 );
-export const fetchRestingHeartRates = () => dispatch => (
-    VitalsUtil.fetchRestingHeartRates()
+export const fetchRestingHeartRates = (userId) => dispatch => (
+    VitalsUtil.fetchRestingHeartRates(userId)
         .then(
             data => dispatch(receiveRestingHeartRates(data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
 );
-export const fetchTemperatures = () => dispatch => (
-    VitalsUtil.fetchTemperatures()
+export const fetchTemperatures = (userId) => dispatch => (
+    VitalsUtil.fetchTemperatures(userId)
         .then(
             data => dispatch(receiveTemperatures(data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
 );
-export const fetchVitaminDLevels = () => dispatch => (
-    VitalsUtil.fetchVitaminDLevels()
+export const fetchVitaminDLevels = (userId) => dispatch => (
+    VitalsUtil.fetchVitaminDLevels(userId)
         .then(
             data => dispatch(receiveVitaminDLevels(data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
 );
-export const fetchWeights = () => dispatch => (
-    VitalsUtil.fetchWeights()
+export const fetchWeights = (userId) => dispatch => (
+    VitalsUtil.fetchWeights(userId)
         .then(
             data => dispatch(receiveWeights(data)),
             errs => dispatch(receiveVitalsErrors(errs))
