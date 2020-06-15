@@ -23,15 +23,49 @@ VIEW VITALS:
 - Users have a show page for prescription history, checkup history & shot history.
 - Users have medical reminders (prescription refills/checkups, etc.)
 
-## Functionality & MVPs
+## Functionality and MVP
+The following is a breakdown of the minimum viable product [MVP] for this web application:
+### heroku hosting
+- [ ] host up master branch on heroku
 
-- [ ] Hosting on Heroku
-- [ ] User authorization: sign up, login and logout
-- [ ] Users can upload and view their own medical records
-- [ ] Providers can upload user medical records
-- [ ] Users have a summary dashboard of most current vitals
-- [ ] Users have medical reminders (prescription refills/checkups, etc.)
-- [ ] Production README
+### user account setup
+- [ ] signup `component` for new user
+- [ ] login `component` for existing user
+- [ ] demo login button
+- [ ] login/logout authorization components
+    - [ ] logged out users will only have access to the title & signup pages
+- [ ] fully CSS styled splash and session pages
+
+### vitals
+- [ ] upload vitals
+    - [ ] create will be a modal
+- [ ] show all vitals in visual charts on the dashboard page
+- [ ] delete a vital
+    - [ ] create will be a modal
+
+### reminders
+- [ ] users will see reminders on checkups
+- [ ] users can view current prescriptions and get reminders on when to refill
+- [ ] use a health API to show detailed information about prescriptions (side effects, what it's commonly used for, etc.)
+
+### averages & information
+- [ ] use a health API to find averages for each health vital and display on chart
+- [ ] dashboard component will show where user's currently selected vital sits in relation to people with similar statistics (exercise level, weight, height, etc.)
+
+### medical recommendations
+- [ ] use a health API to find tips on how to improve certain conditions and/or vitals
+- [ ] recommended suggestions based off of current user's vital in comparison to the averages pulled from the previous API
+
+### doctor lookup
+- [ ] users can lookup nearby doctors and their information
+- [ ] will utilize the Google maps API 
+
+### production readme
+- [ ] have detailed docs outlining the entire process of the project
+
+## future/stretch features
+### chat
+- [ ] chat with a doctor/provider right through the app
 
 ## Technologies
 
