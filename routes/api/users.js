@@ -21,10 +21,9 @@ const passport = require('passport');
 // GETS
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+    debugger
     res.json({
-        id: req.user.id,
-        handle: req.user.handle,
-        email: req.user.email
+        currentUser: req.user
     });
 })
 
@@ -33,15 +32,11 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 router.post('/register', (req, res) => {
     const{errors, isValid} = validateRegisterInput(req.body);
 
-    // console.log(errors);
+    console.log(errors);
 
     if(!isValid) {
         return res.status(400).json(errors);
     }
-
-    // const handle = req.body.handle;
-    // const email = req.body.email;
-    // const password = req.body.password;
 
     User.findOne({handle: req.body.handle })
         .then(user => {
@@ -52,7 +47,16 @@ router.post('/register', (req, res) => {
                 const newUser = new User({
                     handle: req.body.handle,
                     email: req.body.email,
-                    password: req.body.password
+                    password: req.body.password,
+                    firstName: "",
+                    lastName: "",
+                    birthday: new Date(),
+                    bloodType: "",
+                    height: 0,
+                    weight: 0,
+                    profilePic: "https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png",
+                    sex: "",
+                    organDonor: false
                 })
 
                 bcrypt.genSalt(10, (err, salt) => {
@@ -97,7 +101,7 @@ router.post('/login', (req, res) => {
                         jwt.sign(
                             payload,
                             keys.secretOrKey,
-                            {expiresIn: 3600}, // this is 1 hour
+                            // {expiresIn: 3600}, // this is 1 hour
                             (err, token) => {
                                 res.json({
                                     success: true, 
@@ -113,5 +117,30 @@ router.post('/login', (req, res) => {
         })
 })
 
+// PATCH
+// update a user
+// router.patch('/:handle', passport.authenticate('jwt', {session: false}), (req, res) => {
+//     User.update({
+//         firstName: req.body.firstName,
+//         lastName: req.body.lastName,
+//         birthday: req.body.birthday,
+//         bloodType: req.body.bloodType,
+//         height: req.body.height,
+//         sex: req.body.sex,
+//         organDonor: req.body.organDonor
+//     },
+//     { where: { handle: req.params.handle } }).then((result) => {
+//         res.json(result);
+//     }).catch((error) => {
+//         console.log(error);
+//     })
+// })
+
+// router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+//     // debugger
+//     res.json({
+//         currentUser: req.user
+//     });
+// })
 
 module.exports = router;

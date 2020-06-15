@@ -21,3 +21,9 @@ export const register = (user) => {
         user
     )
 };
+
+export const fetchCurrentUser = () => {
+    return axios.get(
+        '/api/users/current'
+    )
+}

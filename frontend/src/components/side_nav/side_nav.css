@@ -1,6 +1,6 @@
 .sidenav {
     height: 100%;
-    width: 0;
+    width: 250px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -12,7 +12,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}    
+}
+
+.sidenav-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidenav-info h1 {
+    margin-top: 15px;
+}
+
+.sidenav-info-last {
+    margin-bottom: 15px;
+}
 
 .sidenav a {
     padding: 8px 8px 8px 8px;
@@ -25,6 +39,7 @@
 
 .sidenav a:hover {
     color: #f1f1f1;
+    cursor: pointer;
 }
 
 .sidenav .closebtn {
@@ -33,6 +48,10 @@
     right: 0;
     font-size: 25px;
     margin-left: 50px;
+}
+
+.closebtn:hover {
+    cursor: pointer;
 }
 
 @media screen and (max-height: 450px){
