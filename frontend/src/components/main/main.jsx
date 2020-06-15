@@ -5,6 +5,11 @@ import SideNavContainer from '../side_nav/side_nav_container';
 import NewRecord from '../records/NewRecord';
 
 class Main extends React.Component {
+
+    componentDidMount(){
+        this.props.fetchCurrentUser();
+    }
+
     render(){
         return(
             <div>
