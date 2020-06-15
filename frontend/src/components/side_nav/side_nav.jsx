@@ -16,10 +16,14 @@ class SideNav extends React.Component {
 
     openNav() {
         document.getElementById("my-sidenav").style.width = "250px";
+        document.getElementById('my-dashboard-stats').style.marginLeft = "250px";
+        document.getElementById('my-prescription-square').style.marginLeft = "250px";
     }
 
     closeNav() {
         document.getElementById("my-sidenav").style.width = "0";
+        document.getElementById('my-dashboard-stats').style.marginLeft = "0";
+        document.getElementById('my-prescription-square').style.marginLeft = "0";
     }
 
     render(){
