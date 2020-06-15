@@ -20,12 +20,11 @@ const App = () => {
       <Switch>
         <GuestRoute exact path="/" component={Splash} />
         <GuestRoute exact path="/login" component={Login} />
-        <GuestRoute exact path="/records/new" component={NewRecord} />
         <GuestRoute exact path="/register" component={Register} />
         
+        <PrivateRoute exact path="/records/new" component={NewRecord} />
         <PrivateRoute exact path='/home' component={Splash} /> 
         <PrivateRoute path='/dashboard' component={DashboardContainer} /> 
-        {/* ^change this to PrivateRoute when login is setup */}
 
       </Switch>
     );
