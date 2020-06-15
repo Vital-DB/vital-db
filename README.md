@@ -1,6 +1,6 @@
 # Vital DB
 
-## MVPs
+## Functionality & MVPs
 - [ ] Hosting on Heroku
 - [ ] User authorization: sign up, login and logout
 - [ ] Users can upload and view their own medical records
