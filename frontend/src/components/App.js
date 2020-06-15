@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from 'react-router-dom';
-import { GuestRoute, PrivateRoute } from '../util/route';
+import { GuestRoute } from '../util/route';
 import DashboardContainer from './dashboard/dashboard_container';
 
 import { Login} from './session/Login';

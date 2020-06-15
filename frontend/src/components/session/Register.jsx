@@ -44,6 +44,20 @@ export const Register = () => {
         });
     }
 
+    const renderErrors = () => {
+        if(errors){
+            return (
+                <>
+                    {errors.map((error, idx) => {
+                        return (
+                            <p key={idx} className="login__errors">{error}</p>
+                        )
+                    })}
+                </>
+            )
+        }
+    }
+
     return (
         <div className="register">
             <form onSubmit={handleSubmit} className="login__form">
@@ -53,21 +67,30 @@ export const Register = () => {
                     onChange ={handleChange('handle')} className="login__input--handle universal__input" 
                     placeholder="Username" />
                 <input 
-                    type="text" 
-                    value={email} 
+                    type="email" 
+                    value={email}
+                    autoComplete="username" 
                     onChange ={handleChange('email')} className="login__input--email universal__input" 
                     placeholder="Email" />
                 <input 
-                    type="text" 
+                    type="password" 
                     value={password} 
+                    autoComplete="new-password" 
                     onChange ={handleChange('password')} className="login__input--password universal__input" 
                     placeholder="Password" />
+                <input 
+                    type="password" 
+                    value={password2}
+                    autoComplete="new-password" 
+                    onChange ={handleChange('password2')} className="login__input--confirm-password universal__input" 
+                    placeholder="Confirm password" />
                 <button 
                     type="submit"
                     className="universal__button login__button">
                     Login
                 </button>
             </form>
+            {renderErrors()}
         </div>
     )
 
