@@ -1,6 +1,6 @@
 # Vital DB
 
-# Technologies
+## Technologies
 - MongoDB
 - Express
 - React
@@ -10,7 +10,7 @@
 - Node
 - Redux
 
-# Technical Challenges
+## Technical Challenges
 - Security
   - Securing our users' forms and medical information is our most critical priority.
 - AWS
@@ -19,7 +19,7 @@
   - A stretch feature of ours is to allow users to look for nearby doctors and medical providers right on the app.
   
 
-# Group Members and Work Breakdown
+## Group Members and Work Breakdown
 Alex Tong, Clifford Yan, Douglas Crawford, Nahuel Gorosito
 
 - Backend: Alex Tong
