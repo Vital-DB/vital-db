@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  
+  window.getState = store.getState;
 
   window.getState = store.getState;
 
