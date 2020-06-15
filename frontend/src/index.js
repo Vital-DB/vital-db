@@ -3,7 +3,7 @@ import './reset.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import jwt_decode from 'jwt-decode';
-import axios from 'axios';
+// import axios from 'axios';
 
 import Root from './components/Root'
 import configureStore from './store/store'
@@ -13,7 +13,7 @@ import { logout } from './actions/session';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  axios.defaults.baseURL= "http://localhost:5000";
+  // axios.defaults.baseURL= "http://localhost:5000";
   // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
   
   let store;

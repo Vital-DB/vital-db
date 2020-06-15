@@ -10,7 +10,7 @@ const Guest = ({ component: Component, path, loggedIn, exact }) => {
         path={path}
         exact={exact}
         render={props =>
-            !loggedIn ? <Component {...props} /> : <Redirect to="/login" />
+            !loggedIn ? <Component {...props} /> : <Redirect to="/dashboard" />
         }
     />);
 };
@@ -21,7 +21,7 @@ const Private = ({ component: Component, path, loggedIn, exact }) => {
         path={path}
         exact={exact}
         render={props =>
-            loggedIn ? <Component {...props} /> : <Redirect to="/" />
+            loggedIn ? <Component {...props} /> : <Redirect to="/login" />
         }
     />);
 };

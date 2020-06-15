@@ -35,6 +35,7 @@ class SideNav extends React.Component {
                     <a>About</a>
                     <a>Services</a>
                     <a>Clients</a>
+                    <button onClick={this.logoutUser}>LOGOUT</button>
                 </div>
                 <span className='sidenav-open' onClick={this.openNav}>&#9776;</span>
             </div>
