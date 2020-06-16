@@ -26,11 +26,11 @@
   text-align: center;
   font-size: 28px;
   width: 100%;
-  background-color: rgb(237, 79, 73);
+  /* background-color: rgb(237, 79, 73); */
   background-color: rgb(64, 187, 192);
   border-radius: 8px 8px 0px 0px;
   padding: 5px 0 5px 0;
-  color: #e07575;
+  /* color: #e07575; */
 }
 
 #heading {
@@ -40,7 +40,7 @@
   border-radius: 4px;
   text-align: center;
   padding: 5px;
-  color: rgb(237, 79, 73);
+  /* color: rgb(237, 79, 73); */
   font-weight: bold;
 }
 
@@ -60,7 +60,7 @@
   position: relative;
   height: 40%;
   width: 42%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 2px;
   text-align: center;
   box-sizing: border-box;
@@ -99,7 +99,7 @@
 
 .vital h3 {
   font-size: 12px;
-  color: rgb(237, 79, 73);
+  /* color: rgb(237, 79, 73); */
 }
 
 .vital h4 {
@@ -149,7 +149,7 @@
   height: 69%;
   width: 80%;
   filter: hue-rotate(684deg);
-  filter: hue-rotate(381deg);
+  /* filter: hue-rotate(381deg); */
 }
 
 .splash__NavLink {
