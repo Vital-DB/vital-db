@@ -10,7 +10,7 @@
 }
 
 .splash {
-  /* top: 10%; */
+  top: 10%;
   height: 700px;
   width: 60%;
   background-color: #f7f7f7;
@@ -30,7 +30,6 @@
   background-color: rgb(64, 187, 192);
   border-radius: 8px 8px 0px 0px;
   padding: 5px 0 5px 0;
-  /* opacity: 100%; */
   color: #e07575;
 }
 
@@ -41,55 +40,48 @@
   border-radius: 4px;
   text-align: center;
   padding: 5px;
-  /* color: rgb(237, 79, 73); */
-  /* font-weight: bold; */
+  color: rgb(237, 79, 73);
+  font-weight: bold;
 }
 
 .splash-content {
   position: relative;
-  /* top: -20px; */
+  top: -20px;
   color: black;
   height: 100%;
-  /* text-align: center; */
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  /* background-color: rgb(63, 80, 177); */
 }
-
-
-
-
 
 .feature {
   position: relative;
   height: 40%;
   width: 42%;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   border-radius: 2px;
-  /* text-align: center; */
+  text-align: center;
   box-sizing: border-box;
   padding-top: 21px;
   padding-left: 15px;
 }
 
 .feature:first-of-type {
-  /* background-color: rgb(93, 79, 189); */
   background-image: url('/images/safe.png');
-  /* background-image: image_url('safe.png'); */
   background-size: 142px;
   background-repeat: no-repeat;
   background-position-x: 92px;
   background-position-y: 70px;
-  /* background-position-x: 174px;
-  background-position-y: 76px; */
+  background-position-x: 174px;
+  background-position-y: 76px;
 }
 
 .vital-list {
   opacity: .8;
-  /* position: relative; */
-  /* left: 0px; */
+  position: relative;
+  left: 0px;
   top: 14px;
   background-color: #e8f0f3;
   border-radius: 8px;
@@ -102,12 +94,12 @@
 .vital {
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .vital h3 {
   font-size: 12px;
-  /* color: rgb(237, 79, 73); */
+  color: rgb(237, 79, 73);
 }
 
 .vital h4 {
@@ -117,58 +109,58 @@
 }
 
 #chatbox {
-  /* position: relative; */
-  /* left: 46px; */
+  position: relative;
+  left: 46px;
 }
 
 #user-icon {
-  /* position: relative; */
-  /* left: -133px;
+  position: relative;
+  left: -133px;
   bottom: -44px;
-  height: 112px; */
+  height: 112px;
 }
 
 #doctor-icon {
-  /* position: relative;
+  position: relative;
   top: -63px;
   right: -86px;
-  height: 175px; */
+  height: 175px;
 }
 
 #docchat {
-  /* position: relative;
+  position: relative;
   top: 14px;
   vertical-align: middle;
-  /* left: 10%; */
+  left: 10%;
   height: 69%;
 }
 
 #chart-icon {
-  /* position: absolute;
+  position: absolute;
   left: 20%;
-  /* top: 55px; */
+  top: 55px;
   height: 69%;
 }
 
 #med-remind {
-  /* position: absolute; */
-  /* left: 19%;
-  top: 23%; */
+  position: absolute;
+  left: 19%;
+  top: 23%;
   height: 69%;
   width: 80%;
   filter: hue-rotate(684deg);
-  /* filter: hue-rotate(381deg); */
+  filter: hue-rotate(381deg);
 }
 
 .NavLink {
-  /* position: relative; */
-  /* margin-left: 10px; */
+  position: relative;
+  margin-left: 10px;
   border-radius: 8px;
   background-color: rgb(64, 187, 192);
   color: white;
   text-decoration: none;
   text-align: center;
-  /* margin-bottom: 5px; */
+  margin-bottom: 5px;
   padding: 5px 0 5px 0;
 }
 
@@ -181,5 +173,3 @@
   opacity: 0.9;
   filter: drop-shadow(2px 4px 6px black);
 }
-
-    
