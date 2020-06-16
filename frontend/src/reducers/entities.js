@@ -8,9 +8,11 @@ import restingHeartRate from './restingHeartRate'
 import temperature from './temperature'
 import allergy from './allergy'
 import medicalCondition from './medicalCondition'
+import vitals from './vitalsReducer'
 
 const entitiesReducer = combineReducers({
     user,
+    vitals,
     cholesterol,
     bloodPressure,
     weight,

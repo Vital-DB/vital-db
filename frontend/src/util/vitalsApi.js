@@ -1,14 +1,14 @@
-import axios from 'axios'
+import axios from 'axios';
 
-export const fetchCholesterolLevels = (userId) => (
-    axios.get({
-        url: `/api/cholesterols/user/${userId}`,
-    })
+export const fetchCholesterolLevels = ({userId}) => (
+    axios.get(
+        `/api/cholesterols/user/${userId}`
+    )
 );
 export const fetchAllergies = (userId) => (
-    axios.get({
-        url: `/api/allergies/user/${userId}`,
-    })
+    axios.get(
+        `/api/allergies/user/${userId}`,
+    )
 );
 export const fetchBloodPressureLevels = (userId) => (
     axios.get({
