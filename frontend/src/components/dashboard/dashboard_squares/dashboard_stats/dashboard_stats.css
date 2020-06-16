@@ -9,19 +9,41 @@
 }
 
 .dashboard-stats-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+}
+
+.dashboard-stats-list {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    width: 165px;
+    text-align: center;
+    background: white;
+    border: 1px solid gray;
 }
 
 .dashboard-stats-list li {
-    display: none;
+    padding: 10px;
 }
 
-.dashboard-stats-list li:first-child {
-    display: block;
+.dashboard-stats-list .selected {
+    background: lightblue;
+}
+
+.dashboard-stats-list li:not(.selected) {
+    display: none;
 }
 
 .dashboard-stats-list li:hover {
     background: blue;
+}
+
+.recharts-wrapper {
+
+}
+
+.recharts-surface {
+
 }
