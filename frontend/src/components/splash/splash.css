@@ -119,8 +119,7 @@
   filter: hue-rotate(684deg);
 }
 
-
-
+.splash__NavLink {
 @media only screen and (max-width: 925px) {
   #heading {
     font-size: 70%;
