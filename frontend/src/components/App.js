@@ -1,22 +1,13 @@
 import React from "react";
-import { Switch, NavLink } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import {Route} from 'react-router-dom'
 import { GuestRoute, PrivateRoute } from '../util/route';
 import NewPicture from './pictures/NewPicture'
-import DashboardContainer from './dashboard/dashboard_container';
+// import DashboardContainer from './dashboard/dashboard_container';
 import MainContainer from './main/main_container'
 import { Login} from './session/Login';
 import { Register } from './session/Register';
 import Splash from './splash/splash';
-
-// function Splash() {
-//   return (
-//   <div>
-//     the frontend is working. paths available: /login /dashboard /register
-//     <NavLink to="/login">Login</NavLink>
-//     <NavLink to="/register">Register</NavLink>
-//   </div>)
-// }
 
 const App = () => {
     return (

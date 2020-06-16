@@ -1,8 +1,7 @@
 
 .splash-container {
-  min-height: -webkit-fill-available;
-  width: 100%;
-  position: relative;
+  width: 100vw;
+  height: 100vh;
   background-image: url('/images/vitaldb-bg.png');
   display: flex;
   justify-content: space-evenly;
@@ -11,8 +10,7 @@
 }
 
 .splash {
-  position: relative;
-  top: 10%;
+  /* top: 10%; */
   height: 700px;
   width: 60%;
   background-color: #f7f7f7;
