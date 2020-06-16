@@ -36,7 +36,7 @@ class Splash extends React.Component {
                   </li>
                 <li className="vital">
                   <h3>Medications: </h3>
-                  <h4>Escitalopram, Indapamide</h4>
+                  <h4>Escitalopram, <br/> Indapamide</h4>
                   </li>
                 </ul>
             </section>
