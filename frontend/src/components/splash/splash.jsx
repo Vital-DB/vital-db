@@ -59,10 +59,10 @@ class Splash extends React.Component {
             {/* <h1 id="heading">All your vitals stored in one secure space</h1> */}
           </div>
         </div>
-          <div className="navlinks">
-            <NavLink className="NavLink" to="/login">Login</NavLink>
-            <NavLink className="NavLink" to="/register">Register</NavLink>
-          </div>
+        <div className="navlinks">
+          <NavLink className="NavLink" to="/login">Login</NavLink>
+          <NavLink className="NavLink" to="/register">Register</NavLink>
+        </div>
       </div>
     )
   }
