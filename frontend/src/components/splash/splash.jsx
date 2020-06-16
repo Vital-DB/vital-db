@@ -1,11 +1,9 @@
 import React from 'react';
 import './splash.css';
 import { NavLink } from 'react-router-dom';
-// import * as Images from '../../public/images';
 import chat from './docchat-icon.png';
 import chart from './chart-icon.png';
 import remind from './med-remind6.png';
-
 
 class Splash extends React.Component {
   // constructor(props) {
