@@ -1,8 +1,8 @@
-
 .splash-container {
   width: 100vw;
   height: 100vh;
   background-image: url('/images/vitaldb-bg.png');
+  background-size: cover;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -15,10 +15,10 @@
   width: 60%;
   background-color: #f7f7f7;
   color: white;
-  /* font: 15px/23px "Helvetica Neue",Helvetica,Arial,sans-serif; */
+  font: 15px/23px "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-family: Helvetica, sans-serif;
   border-radius: 8px;
-  opacity: 90%;
+  opacity: 0.9;
   filter: drop-shadow(2px 4px 6px black);
 }
 
@@ -26,12 +26,12 @@
   text-align: center;
   font-size: 28px;
   width: 100%;
-  /* background-color: rgb(237, 79, 73); */
+  background-color: rgb(237, 79, 73);
   background-color: rgb(64, 187, 192);
   border-radius: 8px 8px 0px 0px;
   padding: 5px 0 5px 0;
   /* opacity: 100%; */
-  /* color: #e07575; */
+  color: #e07575;
 }
 
 #heading {
@@ -87,8 +87,8 @@
 }
 
 .vital-list {
-  opacity: 85%;
-  position: relative;
+  opacity: .8;
+  /* position: relative; */
   /* left: 0px; */
   top: 14px;
   background-color: #e8f0f3;
@@ -117,43 +117,43 @@
 }
 
 #chatbox {
-  position: relative;
-  left: 46px;
+  /* position: relative; */
+  /* left: 46px; */
 }
 
 #user-icon {
-  position: relative;
-  left: -133px;
+  /* position: relative; */
+  /* left: -133px;
   bottom: -44px;
-  height: 112px;
+  height: 112px; */
 }
 
 #doctor-icon {
-  position: relative;
+  /* position: relative;
   top: -63px;
   right: -86px;
-  height: 175px;
+  height: 175px; */
 }
 
 #docchat {
-  position: relative;
+  /* position: relative;
   top: 14px;
   vertical-align: middle;
-  left: 10%;
+  /* left: 10%; */
   height: 69%;
 }
 
 #chart-icon {
-  position: absolute;
+  /* position: absolute;
   left: 20%;
-  top: 55px;
+  /* top: 55px; */
   height: 69%;
 }
 
 #med-remind {
-  position: absolute;
-  left: 19%;
-  top: 23%;
+  /* position: absolute; */
+  /* left: 19%;
+  top: 23%; */
   height: 69%;
   width: 80%;
   filter: hue-rotate(684deg);
@@ -161,14 +161,14 @@
 }
 
 .NavLink {
-  position: relative;
-  margin-left: 10px;
+  /* position: relative; */
+  /* margin-left: 10px; */
   border-radius: 8px;
   background-color: rgb(64, 187, 192);
   color: white;
   text-decoration: none;
   text-align: center;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   padding: 5px 0 5px 0;
 }
 
@@ -178,7 +178,7 @@
   flex-direction: column;
   border-radius: 2px;
   width: 30%;
-  opacity: 90%;
+  opacity: 0.9;
   filter: drop-shadow(2px 4px 6px black);
 }
 
