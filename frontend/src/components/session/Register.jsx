@@ -1,4 +1,5 @@
 import {register} from '../../actions/session';
+import {login} from '../../actions/session';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
@@ -60,6 +61,14 @@ export const Register = () => {
         }
     }
 
+    const loginAsDemo = () => {
+        let demo = {
+            handle: "demo",
+            password: "password"
+        }
+        dispatch(login(demo));
+    }
+
     return (
         <div className="register">
             <form onSubmit={handleSubmit} className="register__form">
@@ -92,6 +101,11 @@ export const Register = () => {
                     Signup
                 </button>
             </form>
+            <button 
+                onClick={loginAsDemo}
+                className="universal__button login__button">
+                Login as Demo
+            </button>
             <NavLink to="/login">Login</NavLink>
             <NavLink to="/">Home</NavLink>
             {renderErrors()}

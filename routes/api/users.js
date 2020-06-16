@@ -21,9 +21,7 @@ const passport = require('passport');
 // GETS
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    res.json({
-        currentUser: req.user
-    });
+    res.json(req.user);
 })
 
 // POSTS
