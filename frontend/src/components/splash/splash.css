@@ -79,10 +79,13 @@
 .feature:first-of-type {
   /* background-color: rgb(93, 79, 189); */
   background-image: url('/images/safe.png');
+  /* background-image: image_url('safe.png'); */
   background-size: 142px;
   background-repeat: no-repeat;
   background-position-x: 92px;
   background-position-y: 70px;
+  /* background-position-x: 174px;
+  background-position-y: 76px; */
 }
 
 .vital-list {
