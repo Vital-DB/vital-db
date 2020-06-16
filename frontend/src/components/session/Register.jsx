@@ -72,41 +72,43 @@ export const Register = () => {
     return (
         <div className="register">
             <form onSubmit={handleSubmit} className="register__form">
-                <input 
+                <input
+                className="register-input" 
                     type="text" 
                     value={handle} 
-                    onChange ={handleChange('handle')} className="login__input--handle universal__input" 
+                    onChange ={handleChange('handle')} 
                     placeholder="Username" />
                 <input 
+                className="register-input"
                     type="email" 
                     value={email}
                     autoComplete="username" 
-                    onChange ={handleChange('email')} className="login__input--email universal__input" 
+                    onChange ={handleChange('email')} 
                     placeholder="Email" />
                 <input 
+                className="register-input"
                     type="password" 
                     value={password} 
                     autoComplete="new-password" 
-                    onChange ={handleChange('password')} className="login__input--password universal__input" 
+                    onChange ={handleChange('password')}  
                     placeholder="Password" />
                 <input 
+                className="register-input"
                     type="password" 
                     value={password2}
                     autoComplete="new-password" 
-                    onChange ={handleChange('password2')} className="login__input--confirm-password universal__input" 
+                    onChange ={handleChange('password2')}  
                     placeholder="Confirm password" />
                 <button 
                     type="submit"
-                    // className="universal__button login__button"
-                    className="signup-button"
-                    >
+                    className="signup-button">
                     Signup
                 </button>
             </form>
-            {/* <div className="navlinks"> */}
+            
             <NavLink className="register-nav" to="/login">Login</NavLink>
             <NavLink className="register-nav" to="/">Home</NavLink>
-            {/* </div> */}
+           
             <button 
                 onClick={loginAsDemo}
                 className="universal__button login__button">
