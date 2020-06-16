@@ -50,10 +50,6 @@
   width: 12%;
 }
 
-/* .Navlink:first-of-type {
-  margin-top: 10px;
-} */
-
 
 .signup-button {
   background-color: rgb(64, 187, 192);
@@ -72,3 +68,4 @@
 .register-input, .signup-button, .register-nav {
   filter: drop-shadow(2px 4px 6px black);
 }
+
