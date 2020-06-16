@@ -14,6 +14,14 @@ const validateAllergyInput = require('../../validations/allergies');
 router.get("/test", (req, res) => {
     res.json({ msg: "This is the Allergy route" })
 });
+router.get('/user/:user_id', (req, res) => {
+  Allergy.find({user: req.params.user_id})
+      .then(allergy => res.json(allergy))
+      .catch(err =>
+          res.status(404).json({ vitalsError: 'No allergy found from that user' }
+      )
+  );
+});
 
 // POSTS
 // signup

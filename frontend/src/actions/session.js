@@ -55,13 +55,13 @@ export const login = (user) => (dispatch) => {
         const decoded = jwt_decode(token);
         dispatch(receiveCurrentUser(decoded));
     }).catch(error => {
-        // debugger
+        
         dispatch(receiveErrors(error.response.data));
     });
 };
 
 export const register = (user) => (dispatch) => {
-    // debugger
+    
     return APIUtil.register(user).then(() => {
         dispatch(receiveCurrentUser(user));
     }, (error) => {

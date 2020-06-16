@@ -14,7 +14,14 @@ const validateTemperature = require('../../validations/temperature');
 router.get("/test", (req, res) => {
     res.json({ msg: "This is the Temperature route" })
 });
-
+router.get('/user/:user_id', (req, res) => {
+  Temperature.find({user: req.params.user_id})
+      .then(temperature => res.json(temperature))
+      .catch(err =>
+          res.status(404).json({ vitalsError: 'No temperature found from that user' }
+      )
+  );
+});
 // POSTS
 // signup
 router.post('/',

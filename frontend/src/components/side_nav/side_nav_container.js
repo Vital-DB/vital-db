@@ -3,7 +3,7 @@ import SideNav from './side_nav';
 import { logout } from '../../actions/session';
 
 const mapStateToProps = state => {
-    // debugger;
+    
     return {
         loggedIn: state.session.isAuthenticated,
         currentUser: {
