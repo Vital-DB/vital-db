@@ -118,7 +118,7 @@
   color: #3682a4;
 }
 
-#chatbox {
+/* #chatbox {
   position: relative;
   left: 46px;
 }
@@ -135,7 +135,7 @@
   top: -63px;
   right: -86px;
   height: 175px;
-}
+} */
 
 #docchat {
   position: relative;
@@ -155,14 +155,52 @@
 #med-remind {
   position: absolute;
   left: 19%;
-  top: 23%;
+  top: 20%;
   height: 69%;
   width: 80%;
   filter: hue-rotate(684deg);
   /* filter: hue-rotate(381deg); */
 }
 
-.NavLink {
+
+
+@media only screen and (max-width: 925px) {
+  #heading {
+    font-size: 70%;
+    text-align: start;
+  }
+
+  #docchat {
+    height: 69%;
+    width: 80%;
+  }
+
+  #chart-icon {
+    height: 57%;
+    width: 75%;
+    top: 20%;
+  }
+
+  #med-remind {
+    top: 15%;
+    height: 69%;
+    width: 80%;
+  }
+
+  .feature:first-of-type {
+    background-position-x: left;
+  }
+
+  .vital-list {
+    height: 80%;
+  }
+
+  .vital {
+    flex-direction: column;
+  }
+}
+
+.splash-nav{
   position: relative;
   margin-left: 10px;
   border-radius: 8px;
@@ -174,7 +212,7 @@
   padding: 5px 0 5px 0;
 }
 
-.navlinks {
+.splash-navlinks {
   font-family: Helvetica, sans-serif;
   display: flex;
   flex-direction: column;

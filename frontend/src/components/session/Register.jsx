@@ -88,13 +88,15 @@ export const Register = () => {
                     placeholder="Confirm password" />
                 <button 
                     type="submit"
-                    className="universal__button login__button">
+                    // className="universal__button login__button"
+                    className="signup-button"
+                    >
                     Signup
                 </button>
             </form>
             {/* <div className="navlinks"> */}
-            <NavLink className="Navlink" to="/login">Login</NavLink>
-            <NavLink className="Navlink" to="/">Home</NavLink>
+            <NavLink className="register-nav" to="/login">Login</NavLink>
+            <NavLink className="register-nav" to="/">Home</NavLink>
             {/* </div> */}
             {renderErrors()}
         </div>

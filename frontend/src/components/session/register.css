@@ -19,7 +19,7 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  input, button, .Navlink {
+  input, .signup-button, .register-nav {
     filter: drop-shadow(2px 4px 6px black);
   }
   .register {
@@ -27,7 +27,7 @@
   }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1230px) {
   input {
     width: 16vw;
   }
@@ -45,7 +45,7 @@
 
 
 
-.Navlink {
+.register-nav {
   position: relative;
   top: 7%;
   border-radius: 8px;
@@ -62,7 +62,7 @@
   margin-top: 10px;
 } */
 
-button {
+.signup-button {
   background-color: rgb(64, 187, 192);
   color: white;
   font-size: 16px;
@@ -77,6 +77,6 @@ input {
   /* filter: drop-shadow(2px 4px 6px black); */
 }
 
-input, button, .Navlink {
+input, .signup-button, .register-nav {
   filter: drop-shadow(2px 4px 6px black);
 }
