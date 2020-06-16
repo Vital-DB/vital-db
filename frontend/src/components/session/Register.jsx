@@ -72,24 +72,28 @@ export const Register = () => {
     return (
         <div className="register">
             <form onSubmit={handleSubmit} className="register__form">
-                <input 
+                <input
+                className="register-input" 
                     type="text" 
                     value={handle} 
                     onChange ={handleChange('handle')} className="login__input--handle universal__input" 
                     placeholder="Username" />
                 <input 
+                className="register-input"
                     type="email" 
                     value={email}
                     autoComplete="username" 
                     onChange ={handleChange('email')} className="login__input--email universal__input" 
                     placeholder="Email" />
                 <input 
+                className="register-input"
                     type="password" 
                     value={password} 
                     autoComplete="new-password" 
                     onChange ={handleChange('password')} className="login__input--password universal__input" 
                     placeholder="Password" />
                 <input 
+                className="register-input"
                     type="password" 
                     value={password2}
                     autoComplete="new-password" 

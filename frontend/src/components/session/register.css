@@ -19,22 +19,15 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  input, .signup-button, .register-nav {
+  .register-input, .signup-button, .register-nav {
     filter: drop-shadow(2px 4px 6px black);
-  }
-  .register {
-    filter: blur(0.5);
   }
 }
 
 @media only screen and (min-width: 1230px) {
-  input {
+  .register-input {
     width: 16vw;
   }
-
-  /* .Navlink {
-   width: 302px;
-  } */
 }
 
 
@@ -44,9 +37,7 @@
 }
 
 
-
 .register-nav {
-
   position: relative;
   top: 7%;
   border-radius: 8px;
@@ -72,13 +63,12 @@
   margin: 5px 0 5px 0;
 }
 
-/* input {
+.register-input {
   border-radius: 8px;
   border-color: rgb(64, 187, 192);
   margin-bottom: 4px;
-} */
+}
 
-input, .signup-button, .register-nav {
-
+.register-input, .signup-button, .register-nav {
   filter: drop-shadow(2px 4px 6px black);
 }
