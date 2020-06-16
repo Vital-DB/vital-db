@@ -1,9 +1,31 @@
+.whole-edit-page {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.edit-board{
+    border: 2px solid rgb(106, 201, 201);
+    background-color: rgb(106,201,201);
+    border-radius: 20px;
+    margin-left: 200px;
+    width: 700px;
+    transition: 0.5s;
+    padding: 40px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
 .edit-form{
     display: flex;
     justify-content: center;
     border: 2px solid rgb(106, 201, 201);
-    margin-left: 200px;
+    background-color: rgb(248, 255, 254);
+    border-radius: 20px;
+    width: 600px;
     transition: 0.5s;
+    padding: 40px;
 }
 
 .edit-form-profile {
@@ -15,7 +37,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 50px;
-    margin-top: 100px;
+
 }
 
 .edit-form-col-1 {
@@ -29,7 +51,6 @@
 }
 
 .edit-info {
-    margin-top: 75px;
 }
 
 .edit-info label {
@@ -39,3 +60,48 @@
 .edit-form-blood-type{
     margin-left: 15px;
 }
+
+.edit-form-organ-donor{
+    margin-left: 15px;
+}
+
+.edit-form-col-1 input {
+    margin-top: 10px;
+    border: 2px solid rgb(142, 210, 233);
+    border-radius: 5px;
+}
+
+.edit-form-col-2 select, .edit-form-col-2 input {
+    margin-top: 10px;
+}
+
+.edit-form-header{
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.pencil{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.pencil-eraser{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(223, 71, 71);
+}
+
+.pencil-body{
+    height: 160px;
+    width: 40px;
+    background-color: rgb(255, 255, 0);
+}
+
+.pencil-tip { 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    
+    border-top: 20px solid rgb(255, 234, 163);
+  }
