@@ -48,6 +48,14 @@ export const Login = () => {
         }
     }
 
+    const loginAsDemo = () => {
+        let demo = {
+            handle: "demo",
+            password: "password"
+        }
+        dispatch(login(demo));
+    }
+
 
     return (
         <div className="login">
@@ -69,6 +77,12 @@ export const Login = () => {
                     Login
                 </button>
             </form>
+
+            <button 
+                onClick={loginAsDemo}
+                className="universal__button login__button">
+                Login as Demo
+            </button>
             <NavLink to="/register">Signup</NavLink>
             <NavLink to="/">Home</NavLink>
             {renderErrors()}
