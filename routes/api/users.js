@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // for token signature
-const keys = require('../../config/keys_dev');
+const keys = require('../../config/keys');
 
 // auth required technologies
 const bcrypt = require('bcryptjs');
