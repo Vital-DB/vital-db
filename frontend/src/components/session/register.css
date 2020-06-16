@@ -46,6 +46,7 @@
 
 
 .register-nav {
+
   position: relative;
   top: 7%;
   border-radius: 8px;
@@ -62,6 +63,7 @@
   margin-top: 10px;
 } */
 
+
 .signup-button {
   background-color: rgb(64, 187, 192);
   color: white;
@@ -70,13 +72,13 @@
   margin: 5px 0 5px 0;
 }
 
-input {
+/* input {
   border-radius: 8px;
   border-color: rgb(64, 187, 192);
   margin-bottom: 4px;
-  /* filter: drop-shadow(2px 4px 6px black); */
-}
+} */
 
 input, .signup-button, .register-nav {
+
   filter: drop-shadow(2px 4px 6px black);
 }
