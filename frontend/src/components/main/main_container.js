@@ -3,7 +3,6 @@ import Main from './main';
 import { fetchCurrentUser } from '../../actions/session';
 
 const mapStateToProps = state => {
-    
     return {
         loggedIn: state.session.isAuthenticated,
     }
