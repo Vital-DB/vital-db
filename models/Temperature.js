@@ -8,8 +8,8 @@ const TemperatureSchema = new Schema({
   },
   value: {
     type: Number,
-    min: 1,
-    max: 300,
+    min: 90,
+    max: 110,
     required: true
   },
   date: {
