@@ -44,17 +44,17 @@ class Splash extends React.Component {
             <section className="feature">
               <h1 id="heading">Connect with your doctor</h1>
               {/* <img src="/images/docchat-icon.png" id="docchat"/> */}
-              <img src={chat} id="docchat"/>
+              <img src={chat} id="docchat" alt="chat"/>
             </section>
             <section className="feature">
               <h1 id="heading">Easy access to charts</h1>
               {/* <img src="/images/chart-icon.png" id="chart-icon"/> */}
-              <img src={chart} id="chart-icon"/>
+              <img src={chart} id="chart-icon" alt="chart"/>
             </section>
             <section className="feature">
               <h1 id="heading">Medication reminders</h1>
               {/* <img src="/images/med-remind6.png" id="med-remind"/> */}
-              <img src={remind} id="med-remind"/>
+              <img src={remind} id="med-remind" alt="remind"/>
             </section>
             {/* <h1 id="heading">All your vitals stored in one secure space</h1> */}
           </div>
