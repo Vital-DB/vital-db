@@ -1,8 +1,9 @@
 import React from 'react';
 import './splash.css';
 import { NavLink } from 'react-router-dom';
-// import { Login } from '../session/Login';
-// import { Register } from '../session/Register';
+import chat from './docchat-icon.png';
+import chart from './chart-icon.png';
+import remind from './med-remind6.png';
 
 class Splash extends React.Component {
   // constructor(props) {
@@ -36,24 +37,24 @@ class Splash extends React.Component {
                   </li>
                 <li className="vital">
                   <h3>Medications: </h3>
-                  <h4>Escitalopram, Indapamide</h4>
+                  <h4>Escitalopram, <br/> Indapamide</h4>
                   </li>
                 </ul>
             </section>
             <section className="feature">
               <h1 id="heading">Connect with your doctor</h1>
-              <img src="/images/docchat-icon.png" id="docchat"/>
-              {/* <img src="/images/chatbox.png" id="chatbox"/>
-              <img src="/images/user-icon.png" id="user-icon"/>
-              <img src="/images/doctor-icon.png" id="doctor-icon"/> */}
+              {/* <img src="/images/docchat-icon.png" id="docchat"/> */}
+              <img src={chat} id="docchat"/>
             </section>
             <section className="feature">
               <h1 id="heading">Easy access to charts</h1>
-              <img src="/images/chart-icon.png" id="chart-icon"/>
+              {/* <img src="/images/chart-icon.png" id="chart-icon"/> */}
+              <img src={chart} id="chart-icon"/>
             </section>
             <section className="feature">
               <h1 id="heading">Medication reminders</h1>
-              <img src="/images/med-remind6.png" id="med-remind"/>
+              {/* <img src="/images/med-remind6.png" id="med-remind"/> */}
+              <img src={remind} id="med-remind"/>
             </section>
             {/* <h1 id="heading">All your vitals stored in one secure space</h1> */}
           </div>
