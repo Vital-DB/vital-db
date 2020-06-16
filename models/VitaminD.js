@@ -9,7 +9,7 @@ const VitaminDSchema = new Schema({
   value: {
     type: Number,
     min: 1,
-    max: 300,
+    max: 100,
     required: true
   },
   date: {

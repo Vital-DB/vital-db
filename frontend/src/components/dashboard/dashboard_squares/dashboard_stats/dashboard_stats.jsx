@@ -10,7 +10,8 @@ class DashboardStats extends React.Component {
     }
 
     handleClick(e) {
-
+        // debugger;
+        this.setState({dataKey: e.currentTarget.value})
     }
 
     render(){
@@ -21,19 +22,27 @@ class DashboardStats extends React.Component {
                     <Line type="monotone" dataKey={this.state.dataKey} fill="#7cc5f5" />
                     <CartesianGrid stroke="#ccc" />
                     <XAxis dataKey='date' />
-                    <YAxis dataKey='weight' domain={['dataMin - 5', 'dataMax + 5']} />
+                    <YAxis dataKey={this.state.dataKey} domain={['dataMin - 5', 'dataMax + 5']} />
                 </LineChart>
             </ResponsiveContainer>
         );
 
         return(
             <div id='my-dashboard-stats' className='dashboard-stats'>
-                <div>
-                DASHBOARD STATS
-                    <select name='stat' id='stat'>
-                        <option onClick={this.handleClick} value="weight">Weight</option>
-                        <option onClick={this.handleClick} value="restingHR">Resting Heart Rate</option>
-                    </select>
+                <div className='dashboard-stats-header'>
+                <div>DASHBOARD STATS</div>
+
+                <div>{this.state.dataKey}</div>
+                    <form>
+                        <label>
+                            Weight
+                            <input type="radio" value='weight' name='dashboard-info' onClick={this.handleClick} />
+                        </label>
+                        <label>
+                            Resting Heart Rate
+                            <input type="radio" value='restingHR' name='dashboard-info' onClick={this.handleClick} />
+                        </label>
+                    </form>
                 </div>
                 {renderLineChart}
             </div>

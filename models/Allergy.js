@@ -6,7 +6,7 @@ const AllergySchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  value: {
+  allergy: {
     type: String,
     required: true
   },

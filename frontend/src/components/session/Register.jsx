@@ -8,7 +8,7 @@ import './register.css'
 export const Register = () => {
     const dispatch = useDispatch();
     const errors = useSelector(state => state.errors);
-    // debugger
+    
     const [handle, setHandle] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

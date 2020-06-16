@@ -14,7 +14,14 @@ const validateWeightInput = require('../../validations/weight');
 router.get("/test", (req, res) => {
     res.json({ msg: "This is the Weight route" })
 });
-
+router.get('/user/:user_id', (req, res) => {
+  Weight.find({user: req.params.user_id})
+      .then(weight => res.json(weight))
+      .catch(err =>
+          res.status(404).json({ vitalsError: 'No weight found from that user' }
+      )
+  );
+});
 // POSTS
 // signup
 router.post('/',

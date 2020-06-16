@@ -3,7 +3,7 @@ import Main from './main';
 import { fetchCurrentUser } from '../../actions/session';
 
 const mapStateToProps = state => {
-    // debugger;
+    
     return {
         loggedIn: state.session.isAuthenticated,
     }

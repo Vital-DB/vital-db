@@ -14,6 +14,14 @@ const validateMedicalConditionInput = require('../../validations/medicalConditio
 router.get("/test", (req, res) => {
     res.json({ msg: "This is the MedicalCondition route" })
 });
+router.get('/user/:user_id', (req, res) => {
+  MedicalCondition.find({user: req.params.user_id})
+      .then(medicalCondition => res.json(medicalCondition))
+      .catch(err =>
+          res.status(404).json({ vitalsError: 'No medicalCondition found from that user' }
+      )
+  );
+});
 
 // POSTS
 // signup

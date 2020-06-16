@@ -11,6 +11,8 @@ import configureStore from './store/store'
 import { setAuthToken } from './util/sessionApi';
 import { logout } from './actions/session';
 
+import * as VitalsUtil from './actions/vitals'
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // axios.defaults.baseURL= "http://localhost:5000";
@@ -42,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   window.getState = store.getState;
-
-  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.VitalsUtil = VitalsUtil;
 
   const root = document.getElementById('root')
   ReactDOM.render(<Root store={store} />, root);
