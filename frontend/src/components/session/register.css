@@ -25,16 +25,16 @@
   .register {
     filter: blur(0.5);
   }
-}
+} 
 
 @media only screen and (min-width: 1230px) {
   input {
     width: 16vw;
   }
 
-  /* .Navlink {
+  .Navlink {
    width: 302px;
-  } */
+  }
 }
 
 
