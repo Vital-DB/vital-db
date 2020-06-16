@@ -11,7 +11,7 @@ class DashboardStats extends React.Component {
 
     showList(e){
 
-        debugger;
+        
         e.preventDefault();
         const listItems = e.currentTarget.children;
 

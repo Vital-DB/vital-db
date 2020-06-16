@@ -42,7 +42,7 @@ const receiveVitaminDLevels = (vitaminDLevels) => ({
     vitaminDLevels,
 });
 const receiveWeights = (weights) => {
-//     debugger;
+//     
     return {
         type: RECEIVE_WEIGHTS,
         weights,

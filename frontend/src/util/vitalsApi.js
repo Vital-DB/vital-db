@@ -41,7 +41,7 @@ export const fetchVitaminDLevels = (userId) => (
     )
 );
 export const fetchWeights = (userId) => {
-    // debugger
+    
     return axios.get(
         `/api/weights/user/${userId}`,
     )
