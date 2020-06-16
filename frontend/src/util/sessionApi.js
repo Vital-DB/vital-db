@@ -28,9 +28,9 @@ export const fetchCurrentUser = () => {
     )
 };
 
-export const editUser = userId => {
+export const editUser = user => {
     return axios.patch(
-        `/api/users/${userId}`,
-        userId
+        `/api/users/${user.id}`,
+        user
     )
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 class EditForm extends React.Component {
     render(){
-        debugger;
+        // debugger;
         return(
             <div className='edit-form'>
                 EDIT FORM
