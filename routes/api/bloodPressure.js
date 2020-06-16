@@ -11,18 +11,17 @@ const validateBloodPressureInput = require('../../validations/bloodPressure');
 // // ROUTES
 // GETS
 // test route, to be deleted
+
 router.get("/test", (req, res) => {
     res.json({ msg: "This is the BloodPressure route" })
 });
+
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
-  BloodPressure.find({user: req.user.id})
+  BloodPressure.find({ user: req.user.id })
       .sort({ date: -1 })
-      .then(bloodPressure => res.json(bloodPressure))
-      .catch(err =>
-          res.status(404).json({ vitalsError: 'No bloodPressure found from that user' }
-      )
-  );
-});
+      .then(bloodPressure => res.json(bloodPressure) )
+      .catch(err => res.status(404).json({ vitalsError: "No blood pressures found for that user id" }))
+})
 
 // POSTS
 // signup

@@ -11,7 +11,6 @@ const validateAllergyInput = require('../../validations/allergies');
 // // ROUTES
 // GETS
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
-  
     Allergy.find({ user: req.user.id })
         .sort({ date: -1 })
         .then(allergies => res.json(allergies) )
