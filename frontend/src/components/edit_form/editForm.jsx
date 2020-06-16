@@ -6,9 +6,23 @@ class EditForm extends React.Component {
     constructor(props){
         super(props);
         this.state = this.props.currentUser;
+        // this.state = {
+        //     firstName: '',
+        //     lastName: '',
+        //     birthday: '',
+        //     bloodType: '',
+        //     weight: '',
+        //     height: '',
+        //     organDonor: '',
+        // }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentWillReceiveProps(){
+    //     // debugger;
+    //     this.setState(this.props.currentUser)
+    // }
+    
     update(field){
         debugger;
         return e => this.setState( { [field]: e.currentTarget.value } );
@@ -39,6 +53,15 @@ class EditForm extends React.Component {
                         <label>Height
                             <select onChange={this.update('height')}>
                                 <option selected disabled></option>
+                                <option value={59}>4'11</option>
+                                <option value={60}>5'</option>
+                                <option value={61}>5'1</option>
+                                <option value={62}>5'2</option>
+                                <option value={63}>5'3</option>
+                                <option value={64}>5'4</option>
+                                <option value={65}>5'5</option>
+                                <option value={66}>5'6</option>
+                                <option value={67}>5'7</option>
                                 <option value={68}>5'8</option>
                                 <option value={69}>5'9</option>
                                 <option value={70}>5'10</option>
@@ -46,6 +69,9 @@ class EditForm extends React.Component {
                                 <option value={72}>6'</option>
                                 <option value={73}>6'1</option>
                                 <option value={74}>6'2</option>
+                                <option value={75}>6'3</option>
+                                <option value={76}>6'4</option>
+                                <option value={77}>6'5</option>
                             </select>
                         </label>
                         <label>Weight

@@ -40,7 +40,7 @@ class SideNav extends React.Component {
     }
 
     render(){
-        let { firstName, lastName, sex, birthday, bloodType, weight, height } = this.props.currentUser;
+        let { firstName, lastName, sex, birthday, bloodType, weight, height, organDonor } = this.props.currentUser;
 
         if(!birthday){
             return null;
@@ -58,7 +58,8 @@ class SideNav extends React.Component {
                         <h1>{`Birthdate: ${dateFormatter(birthday)}`}</h1>
                         <h1>{`Blood Type: ${bloodType}`}</h1>
                         <h1>{`Current Weight: ${weight}lbs`}</h1>
-                        <h1 className='sidenav-info-last'>{`Height: ${heightFormatter(height)}`}</h1>
+                        <h1>{`Height: ${heightFormatter(height)}`}</h1>
+                        <h1 className='sidenav-info-last'>{`Organ Donor: ${organDonor}`}</h1>
                     </div>
                     <NavLink to="/main/dashboard">Home</NavLink>
                     <NavLink to="/home">Splash</NavLink>
