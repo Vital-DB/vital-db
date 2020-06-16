@@ -10,12 +10,9 @@ const validateVitaminDInput = require('../../validations/vitaminD');
 
 // // ROUTES
 // GETS
-// test route, to be deleted
-router.get("/test", (req, res) => {
-    res.json({ msg: "This is the VitaminD route" })
-});
-router.get('/user/:user_id', (req, res) => {
-  VitaminD.find({user: req.params.user_id})
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+  VitaminD.find({ user: req.user.id })
+      .sort({ date: -1 })
       .then(vitaminD => res.json(vitaminD))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No vitaminD found from that user' }

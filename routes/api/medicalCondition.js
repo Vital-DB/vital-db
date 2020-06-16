@@ -10,12 +10,9 @@ const validateMedicalConditionInput = require('../../validations/medicalConditio
 
 // // ROUTES
 // GETS
-// test route, to be deleted
-router.get("/test", (req, res) => {
-    res.json({ msg: "This is the MedicalCondition route" })
-});
-router.get('/user/:user_id', (req, res) => {
-  MedicalCondition.find({user: req.params.user_id})
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+    MedicalCondition.find({ user: req.user.id })
+      .sort({ date: -1 })
       .then(medicalCondition => res.json(medicalCondition))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No medicalCondition found from that user' }

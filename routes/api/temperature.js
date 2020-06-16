@@ -10,12 +10,9 @@ const validateTemperature = require('../../validations/temperature');
 
 // // ROUTES
 // GETS
-// test route, to be deleted
-router.get("/test", (req, res) => {
-    res.json({ msg: "This is the Temperature route" })
-});
-router.get('/user/:user_id', (req, res) => {
-  Temperature.find({user: req.params.user_id})
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+  Temperature.find({ user: req.user.id })
+      .sort({ date: -1 })
       .then(temperature => res.json(temperature))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No temperature found from that user' }

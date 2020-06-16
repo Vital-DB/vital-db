@@ -1,12 +1,22 @@
 import React from 'react';
-import { LineChart, Line, CartesianGrid, YAxis, XAxis, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, CartesianGrid, YAxis, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import './dashboard_stats.css';
+import {Route} from 'react-router-dom'
 
 class DashboardStats extends React.Component {
     constructor(props){
         super(props);
-        this.state = {dataKey: 'weight'}
+        this.state = {dataKey: 'cholesterolLevels'}
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.fetchWeights();
+        this.props.fetchVitaminDLevels();  
+        this.props.fetchTemperatures();
+        this.props.fetchRestingHeartRates();  
+        this.props.fetchBloodPressureLevels();   
+        this.props.fetchCholesterolLevels();
     }
 
     handleClick(e) {
@@ -31,29 +41,12 @@ class DashboardStats extends React.Component {
         }
 
         const dataKey = e.currentTarget.getAttribute('value');
-        switch (dataKey) {
-            case 'weights':
-                this.props.fetchWeights(this.props.userId);
-                break;
-            case 'vitaminDLevels':
-                this.props.fetchVitaminDLevels(this.props.userId);
-                break;
-            case 'temperatures':
-                this.props.fetchTemperatures(this.props.userId);
-                break;
-            case 'restingHeartRates':
-                this.props.fetchRestingHeartRates(this.props.userId);
-                break;
-            case 'bloodPressureLevels':
-                this.props.fetchBloodPressureLevels(this.props.userId);
-                break;
-            case 'cholesterolLevels':
-                this.props.fetchCholesterolLevels(this.props.userId);
-                break;
-            default:
-                break;
-        } 
+
         this.setState({dataKey: dataKey});
+    }
+
+    handleClickSub(e){
+        
     }
 
     render(){
@@ -68,24 +61,45 @@ class DashboardStats extends React.Component {
         // const dummyStats = [{weight: 220, restingHR: 75, date: '6/01/2020'}, {weight: 218, restingHR: 80, date: '6/12/2020'}, {weight: 210, restingHR: 78, date: '6/15/2020'}, {weight: 214, restingHR: 85, date: '6/16/2020'}]
         const data = vitals[this.state.dataKey];
 
-        const renderLineChart = (
+        let renderLineChart = (
             <ResponsiveContainer>
                 <LineChart data={data}>
                     <Line type="monotone" dataKey={"value"} fill="#7cc5f5" />
                     <CartesianGrid stroke="#ccc" />
                     <XAxis dataKey='date' />
                     <YAxis domain={['dataMin - 5', 'dataMax + 5']} />
+                    <Tooltip/>
                 </LineChart>
             </ResponsiveContainer>
         );
+
+        switch (this.state.dataKey) {
+            case "bloodPressureLevels":
+                renderLineChart = (
+                    <ResponsiveContainer>
+                    <LineChart data={data}>
+                        <Line type="monotone" dataKey={"systolic"} fill="#7cc5f5" />
+                        <Line type="monotone" dataKey={"diastolic"} fill="#7cc5f5" />
+                        <CartesianGrid stroke="#ccc" />
+                        <Tooltip/>
+                        <XAxis dataKey='date' />
+                        <YAxis domain={['dataMin - 5', 'dataMax + 5']} />
+                    </LineChart>
+                    </ResponsiveContainer>
+                )
+                break;
+        
+            default:
+                break;
+        }
+
 
         return(
 
             <div id='my-dashboard-stats' className='dashboard-stats'>
                 <div className='dashboard-stats-header'>
-                <div>DASHBOARD STATS</div>
 
-                <div>{this.state.dataKey}</div>
+                {/* <div>{this.state.dataKey}</div> */}
                     {/* <form>
                         <label>
                             Weight
@@ -101,8 +115,12 @@ class DashboardStats extends React.Component {
                         {/* exclude values if they don't have numeric stats */}
                         {Object.keys(vitals).map((vitalName, idx) => (!dontInclude.includes(vitalName)) ? <li key={idx} value={vitalName} className={(idx == 0) ? "selected" : ""} onClick={this.handleClick}>{vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })}</li> : "")}
                     </ul>
+                    <ul className="dashboard-stats-sublist">
+                        {Object.keys(data).map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
+                    </ul>
                 </div>
                 {renderLineChart}
+
             </div>
         )
     }
