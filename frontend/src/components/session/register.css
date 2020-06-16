@@ -4,10 +4,79 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-image: url('/images/signup-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    font-family: Helvetica, sans-serif;
 }
+
+@media only screen and (max-width: 1403px) {
+  .register {
+    background-repeat: repeat;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  input, button, .Navlink {
+    filter: drop-shadow(2px 4px 6px black);
+  }
+  .register {
+    filter: blur(0.5);
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  input {
+    width: 16vw;
+  }
+
+  /* .Navlink {
+   width: 302px;
+  } */
+}
+
 
 .register__form {
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column; 
+}
+
+
+
+.Navlink {
+  position: relative;
+  top: 7%;
+  border-radius: 8px;
+  background-color: rgb(64, 187, 192);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 5px 0 5px 0;
+  width: 12%;
+}
+
+/* .Navlink:first-of-type {
+  margin-top: 10px;
+} */
+
+button {
+  background-color: rgb(64, 187, 192);
+  color: white;
+  font-size: 16px;
+  padding: 5px 0 5px 0;
+  margin: 5px 0 5px 0;
+}
+
+input {
+  border-radius: 8px;
+  border-color: rgb(64, 187, 192);
+  margin-bottom: 4px;
+  /* filter: drop-shadow(2px 4px 6px black); */
+}
+
+input, button, .Navlink {
+  filter: drop-shadow(2px 4px 6px black);
 }
