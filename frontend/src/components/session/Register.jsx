@@ -111,7 +111,7 @@ export const Register = () => {
            
             <button 
                 onClick={loginAsDemo}
-                className="universal__button login__button">
+                className="demo-button">
                 Login as Demo
             </button>
            

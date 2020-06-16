@@ -63,28 +63,28 @@ export const Login = () => {
                 <input 
                     type="text" 
                     value={handle} 
-                    onChange ={handleChange('handle')} className="login__input--handle universal__input" 
+                    onChange={handleChange('handle')} className="register-input"  
                     placeholder="User handle" />
                 <input 
                     type="password" 
                     value={password}
-                    onChange ={handleChange('password')} className="login__input--password universal__input" 
+                    onChange={handleChange('password')} className="register-input" 
                     placeholder="User password" />
 
                 <button 
                     type="submit"
-                    className="universal__button login__button">
+                    className="login-button">
                     Login
                 </button>
             </form>
-
+            <NavLink className="login-nav" to="/register">Signup</NavLink>
+            <NavLink className="login-nav" to="/">Home</NavLink>
             <button 
                 onClick={loginAsDemo}
-                className="universal__button login__button">
+                className="demo-button">
                 Login as Demo
             </button>
-            <NavLink to="/register">Signup</NavLink>
-            <NavLink to="/">Home</NavLink>
+        
             {renderErrors()}
         </div>
     )
