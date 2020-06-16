@@ -35,6 +35,7 @@ router.post('/new', passport.authenticate('jwt', {session: false}), (req, res) =
   );
 
 router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+
     Allergy.deleteOne( { _id: req.params.id}, function(err, result) {
        if(err) {
          res.send(err);
