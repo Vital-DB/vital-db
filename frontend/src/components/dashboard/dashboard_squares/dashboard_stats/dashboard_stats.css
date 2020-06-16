@@ -13,3 +13,15 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.dashboard-stats-list li {
+    display: none;
+}
+
+.dashboard-stats-list li:first-child {
+    display: block;
+}
+
+.dashboard-stats-list li:hover {
+    background: blue;
+}
