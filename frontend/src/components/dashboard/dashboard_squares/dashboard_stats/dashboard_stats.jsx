@@ -85,7 +85,7 @@ class DashboardStats extends React.Component {
                 <div className='dashboard-stats-header'>
                 <div>DASHBOARD STATS</div>
 
-                {/* <div>{this.state.dataKey}</div> */}
+                <div>{this.state.dataKey}</div>
                     {/* <form>
                         <label>
                             Weight
