@@ -1,5 +1,4 @@
-// import {allergies} from '../../actions/session';
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import './allergies.css'
@@ -9,6 +8,7 @@ import {fetchAllergies} from '../../actions/vitals';
 export default () => {
     const dispatch = useDispatch();
     const errors = useSelector(state => state.errors);
+    const allergies = useSelector(state => state.entities.vitals.allergies);
     // const [handle, setHandle] = useState("");
     // const [password, setPassword] = useState("");
 
