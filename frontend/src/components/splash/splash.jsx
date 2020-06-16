@@ -1,8 +1,6 @@
 import React from 'react';
 import './splash.css';
 import { NavLink } from 'react-router-dom';
-// import { Login } from '../session/Login';
-// import { Register } from '../session/Register';
 
 class Splash extends React.Component {
   // constructor(props) {
