@@ -21,7 +21,6 @@ const passport = require('passport');
 // GETS
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    debugger
     res.json({
         currentUser: req.user
     });
@@ -85,7 +84,7 @@ router.post('/login', (req, res) => {
     const handle = req.body.handle;
     // const email = req.body.email;
     const password = req.body.password;
-    // debugger
+    
     User.findOne({handle})
         .then(user => {
             if(!user) {
@@ -124,20 +123,22 @@ router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) 
         if(!user) {
             return res.status(400).json(err);
         } else {
-            user.firstName = req.body.firstName;
-            user.lastName = req.body.lastName;
-            user.birthday = req.body.birthday;
-            user.bloodType = req.body.bloodType;
-            user.height = req.body.height;
-            user.weight = req.body.weight;
-            user.sex = req.body.sex;
-            user.organDonor = req.body.organDonor;
+            user.firstName = req.body.firstName || user.firstName;
+            user.lastName = req.body.lastName || user.lastName;
+            user.birthday = req.body.birthday || user.birthday;
+            user.bloodType = req.body.bloodType || user.bloodType;
+            user.height = req.body.height || user.height;
+            user.weight = req.body.weight || user.weight;
+            user.sex = req.body.sex || user.sex;
+            user.organDonor = req.body.organDonor || user.organDonor;
 
             user.save()
             .then(user => res.json(user))
             .catch(err => console.log(err));
         }
     })
+
+   
 })
 
 module.exports = router;

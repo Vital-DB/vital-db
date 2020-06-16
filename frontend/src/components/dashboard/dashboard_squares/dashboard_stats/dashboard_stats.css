@@ -7,3 +7,9 @@
     transition: 0.5s;
     margin-left: 250px;
 }
+
+.dashboard-stats-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

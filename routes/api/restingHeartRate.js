@@ -14,6 +14,14 @@ const validateRestingHeartRateInput = require('../../validations/restingHeartRat
 router.get("/test", (req, res) => {
     res.json({ msg: "This is the RestingHeartRate route" })
 });
+router.get('/user/:user_id', (req, res) => {
+  RestingHeartRate.find({user: req.params.user_id})
+      .then(restingHeartRate => res.json(restingHeartRate))
+      .catch(err =>
+          res.status(404).json({ vitalsError: 'No restingHeartRate found from that user' }
+      )
+  );
+});
 
 // POSTS
 // signup
