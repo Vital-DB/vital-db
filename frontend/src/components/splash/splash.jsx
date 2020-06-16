@@ -25,7 +25,7 @@ class Splash extends React.Component {
                   </li >             
                 <li className="vital">
                   <h3>Blood type: </h3>
-                  <h4>O-negative</h4>
+                  <h4>O-</h4>
                   </li >
                 <li className="vital">
                   <h3>Insurance: </h3>

@@ -1,9 +1,13 @@
 .login {
     width: 100vw;
-    height: 100vh;
+    min-height: -webkit-fill-available;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('/images/signup-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .login__form {
