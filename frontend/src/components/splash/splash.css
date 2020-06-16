@@ -21,6 +21,7 @@
   font-family: Helvetica, sans-serif;
   border-radius: 8px;
   opacity: 90%;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 #title {
@@ -36,15 +37,19 @@
 }
 
 #heading {
-  font-size: 24px;
-  /* color: rgb(64, 187, 192); */
-  color: rgb(237, 79, 73);
-  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(64, 187, 192);
+  border-radius: 4px;
+  text-align: center;
+  padding: 5px;
+  /* color: rgb(237, 79, 73); */
+  /* font-weight: bold; */
 }
 
 .splash-content {
   position: relative;
-  top: -20px;
+  /* top: -20px; */
   color: black;
   height: 100%;
   /* text-align: center; */
@@ -57,13 +62,107 @@
 
 
 
+
+
+.feature {
+  position: relative;
+  height: 40%;
+  width: 42%;
+  /* border: 1px solid black; */
+  border-radius: 2px;
+  /* text-align: center; */
+  box-sizing: border-box;
+  padding-top: 21px;
+  padding-left: 15px;
+}
+
+.feature:first-of-type {
+  /* background-color: rgb(93, 79, 189); */
+  background-image: url('/images/safe.png');
+  background-size: 142px;
+  background-repeat: no-repeat;
+  background-position-x: 92px;
+  background-position-y: 70px;
+}
+
+.vital-list {
+  opacity: 85%;
+  position: relative;
+  /* left: 0px; */
+  top: 14px;
+  background-color: #e8f0f3;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-top: 10px;
+  padding-bottom: 60px;
+}
+
+.vital {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+
+.vital h3 {
+  font-size: 12px;
+  /* color: rgb(237, 79, 73); */
+}
+
+.vital h4 {
+  font-family: Bradley Hand, cursive;
+  text-decoration: underline;
+  color: #3682a4;
+}
+
+#chatbox {
+  position: relative;
+  left: 46px;
+}
+
+#user-icon {
+  position: relative;
+  left: -133px;
+  bottom: -44px;
+  height: 112px;
+}
+
+#doctor-icon {
+  position: relative;
+  top: -63px;
+  right: -86px;
+  height: 175px;
+}
+
+#docchat {
+  position: relative;
+  top: 14px;
+  vertical-align: middle;
+  left: 10%;
+  height: 69%;
+}
+
+#chart-icon {
+  position: absolute;
+  left: 20%;
+  top: 55px;
+  height: 69%;
+}
+
+#med-remind {
+  position: absolute;
+  left: 19%;
+  top: 23%;
+  height: 69%;
+  width: 80%;
+  filter: hue-rotate(684deg);
+  /* filter: hue-rotate(381deg); */
+}
+
 .NavLink {
   position: relative;
   margin-left: 10px;
-  /* bottom: 5px; */
   border-radius: 8px;
-  /* background-color: #3b6078; */
-  /* background-color: rgb(237, 79, 73); */
   background-color: rgb(64, 187, 192);
   color: white;
   text-decoration: none;
@@ -79,51 +178,7 @@
   border-radius: 2px;
   width: 30%;
   opacity: 90%;
+  filter: drop-shadow(2px 4px 6px black);
 }
-
-.feature {
-  height: 40%;
-  width: 40%;
-  border: 1px solid black;
-  border-radius: 2px;
-  /* text-align: center; */
-  box-sizing: border-box;
-  padding-top: 21px;
-  padding-left: 15px;
-}
-
-.feature:first-of-type {
-  background-image: url('/images/safe.png');
-  background-size: 208px;
-  background-repeat: no-repeat;
-  background-position-x: -22px;
-  background-position-y: 18px;
-}
-
-.vital-list {
-  position: relative;
-  left: 10px;
-  top: 50px;
-}
-
-.vital {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: center; */
-}
-
-h3 {
-  font-size: 12px;
-  /* color: rgb(237, 79, 73); */
-}
-
-h4 {
-  font-family: Bradley Hand, cursive;
-  text-decoration: underline;
-  
-  color: #3682a4;
-}
-
-
 
     
