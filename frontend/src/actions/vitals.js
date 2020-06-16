@@ -41,10 +41,13 @@ const receiveVitaminDLevels = (vitaminDLevels) => ({
     type: RECEIVE_VITAMIN_D_LEVELS,
     vitaminDLevels,
 });
-const receiveWeights = (weights) => ({
-    type: RECEIVE_WEIGHTS,
-    weights,
-});
+const receiveWeights = (weights) => {
+//     debugger;
+    return {
+        type: RECEIVE_WEIGHTS,
+        weights,
+    }
+};
 const receiveVitalsErrors = (errors) => ({
     type: RECEIVE_VITALS_ERRORS,
     errors

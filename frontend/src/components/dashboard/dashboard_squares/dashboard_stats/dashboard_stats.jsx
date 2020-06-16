@@ -5,34 +5,58 @@ import './dashboard_stats.css';
 class DashboardStats extends React.Component {
     constructor(props){
         super(props);
-        this.state = {dataKey: 'test'}
+        this.state = {dataKey: 'weight'}
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(e) {
-        // debugger;
-        this.setState({dataKey: e.currentTarget.getAttribute('value')})
+        const dataKey = e.currentTarget.getAttribute('value');
+        switch (dataKey) {
+            case 'weights':
+                this.props.fetchWeights(this.props.userId);
+                break;
+            case 'vitaminDLevels':
+                this.props.fetchVitaminDLevels(this.props.userId);
+                break;
+            case 'temperatures':
+                this.props.fetchTemperatures(this.props.userId);
+                break;
+            case 'restingHeartRates':
+                this.props.fetchRestingHeartRates(this.props.userId);
+                break;
+            case 'bloodPressureLevels':
+                this.props.fetchBloodPressureLevels(this.props.userId);
+                break;
+            case 'cholesterolLevels':
+                this.props.fetchCholesterolLevels(this.props.userId);
+                break;
+            default:
+                break;
+        } 
+        this.setState({dataKey: dataKey})
     }
 
     render(){
         const { vitals } = this.props;
 
-        if (!vitals) return null;
+        // if (!vitals) return null;
 
         // fields to exclude when generating chart type selections
         const dontInclude = ["allergies", "medicalConditions"];
 
         
-        // const dummyStats = [{weight: 220, restingHR: 75, date: '6/01/2020'}, {weight: 218, restingHR: 80, date: '6/12/2020'}, {weight: 210, restingHR: 78, date: '6/15/2020'}, {weight: 214, restingHR: 85, date: '6/16/2020'}]
-        const data = vitals;
-        
+        const dummyStats = [{weight: 220, restingHR: 75, date: '6/01/2020'}, {weight: 218, restingHR: 80, date: '6/12/2020'}, {weight: 210, restingHR: 78, date: '6/15/2020'}, {weight: 214, restingHR: 85, date: '6/16/2020'}]
+        const data = vitals[this.state.dataKey];
+
+        debugger
+
         const renderLineChart = (
             <ResponsiveContainer>
                 <LineChart data={data}>
-                    <Line type="monotone" dataKey={this.state.dataKey} fill="#7cc5f5" />
+                    <Line type="monotone" dataKey={"value"} fill="#7cc5f5" />
                     <CartesianGrid stroke="#ccc" />
                     <XAxis dataKey='date' />
-                    <YAxis dataKey={this.state.dataKey} domain={['dataMin - 5', 'dataMax + 5']} />
+                    <YAxis domain={['dataMin - 5', 'dataMax + 5']} />
                 </LineChart>
             </ResponsiveContainer>
         );
@@ -43,7 +67,7 @@ class DashboardStats extends React.Component {
                 <div className='dashboard-stats-header'>
                 <div>DASHBOARD STATS</div>
 
-                <div>{this.state.dataKey}</div>
+                {/* <div>{this.state.dataKey}</div> */}
                     {/* <form>
                         <label>
                             Weight
