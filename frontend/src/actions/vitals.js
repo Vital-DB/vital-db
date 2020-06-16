@@ -9,6 +9,7 @@ export const RECEIVE_TEMPERATURES = "RECEIVE_TEMPERATURES";
 export const RECEIVE_VITAMIN_D_LEVELS = "RECEIVE_VITAMIN_D_LEVELS";
 export const RECEIVE_WEIGHTS = "RECEIVE_WEIGHTS";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
+export const CLEAR_VITALS = "CLEAR_VITALS";
 
 const receiveCholesterolLevels = (cholesterolLevels) => {
     return { 

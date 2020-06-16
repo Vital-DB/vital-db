@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import DashboardStats from './dashboard_stats';
 
-const mapStateToProps = state => {
+const mapStateToProps = ({session, entities: {vitals}}) => {
     return {
-        loggedIn: state.session.isAuthenticated,
+        loggedIn: session.isAuthenticated,
+        vitals,
     }
 }
 
