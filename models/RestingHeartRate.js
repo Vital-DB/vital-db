@@ -9,7 +9,7 @@ const RestingHeartRateSchema = new Schema({
   value: {
     type: Number,
     min: 30,
-    max: 300,
+    max: 150,
     required: true
   },
   date: {
