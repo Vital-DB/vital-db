@@ -21,7 +21,7 @@ const passport = require('passport');
 // GETS
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    // debugger
+    
     res.json({
         currentUser: req.user
     });
@@ -85,7 +85,7 @@ router.post('/login', (req, res) => {
     const handle = req.body.handle;
     // const email = req.body.email;
     const password = req.body.password;
-    // debugger
+    
     User.findOne({handle})
         .then(user => {
             if(!user) {
@@ -137,7 +137,7 @@ router.post('/login', (req, res) => {
 // })
 
 // router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-//     // debugger
+//     
 //     res.json({
 //         currentUser: req.user
 //     });
