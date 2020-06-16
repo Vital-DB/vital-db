@@ -6,7 +6,7 @@ const MedicalConditionSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  value: {
+  condition: {
     type: String,
     required: true
   },

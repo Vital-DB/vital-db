@@ -6,10 +6,16 @@ const BloodPressureSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  value: {
+  systolic: {
     type: Number,
-    min: 1,
-    max: 1000,
+    min: 0,
+    max: 300,
+    required: true
+  },
+  diastolic: {
+    type: Number,
+    min: 0,
+    max: 200,
     required: true
   },
   date: {

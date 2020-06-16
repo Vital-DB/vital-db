@@ -23,6 +23,14 @@ router.get('/user/:user_id', (req, res) => {
   );
 });
 
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+    Allergy.find({ user: req.user.id })
+        .sort({ date: -1 })
+        .then(allergies => res.json(allergies))
+        .catch(err => res.status(404.json({ noAllergiesFound: "No allergies found for that user id" })))
+})
+
+
 // POSTS
 // signup
 router.post('/',
