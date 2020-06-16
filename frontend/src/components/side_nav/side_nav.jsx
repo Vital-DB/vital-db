@@ -56,6 +56,7 @@ class SideNav extends React.Component {
                     </div>
                     <NavLink to="/main/dashboard">Home</NavLink>
                     <NavLink to="/home">Splash</NavLink>
+                    <NavLink to="/main/edit">Edit Profile</NavLink>
                     <NavLink to="/main/checkup/history">Checkup History</NavLink>
                     <NavLink to="/main/prescriptions">Medications</NavLink>
                     <NavLink to="/main/vaccinations">Vaccinations</NavLink>
