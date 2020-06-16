@@ -70,3 +70,6 @@ export const register = (user) => (dispatch) => {
 
 export const fetchCurrentUser = () => dispatch => APIUtil.fetchCurrentUser()
     .then(user => dispatch(receiveCurrentUserInfo(user)));
+
+export const editUser = user => dispatch => APIUtil.editUser(user)
+    .then(user => dispatch(receiveCurrentUserInfo(user)));

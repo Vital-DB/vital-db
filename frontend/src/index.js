@@ -1,5 +1,5 @@
-import './index.css';
 import './reset.css';
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import jwt_decode from 'jwt-decode';
