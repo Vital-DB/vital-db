@@ -11,7 +11,7 @@ export const RECEIVE_WEIGHTS = "RECEIVE_WEIGHTS";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
 
 const receiveCholesterolLevels = (cholesterolLevels) => {
-    debugger;
+    
     return { 
         type: RECEIVE_CHOLESTEROL_LEVELS,
         cholesterolLevels,
