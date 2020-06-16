@@ -21,6 +21,7 @@
   font-family: Helvetica, sans-serif;
   border-radius: 8px;
   opacity: 90%;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 #title {
@@ -143,7 +144,9 @@
 
 #chart-icon {
   position: absolute;
+  left: 20%;
   top: 55px;
+  height: 69%;
 }
 
 #med-remind {
@@ -175,6 +178,7 @@
   border-radius: 2px;
   width: 30%;
   opacity: 90%;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
     
