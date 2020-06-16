@@ -4,7 +4,7 @@ import Dashboard from './dashboard';
 const mapStateToProps = state => {
     
     return {
-        user: state.session.user
+        user: state.entities.user,
     }
 }
 
