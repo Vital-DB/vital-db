@@ -61,7 +61,6 @@ export const login = (user) => (dispatch) => {
 };
 
 export const register = (user) => (dispatch) => {
-    
     return APIUtil.register(user).then(() => {
         dispatch(receiveCurrentUser(user));
     }, (error) => {

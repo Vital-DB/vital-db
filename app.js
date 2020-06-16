@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const express = require("express");
 const app = express();
 const passport = require('passport');
+const path = require('path');
 
 // parses json
 const bodyParser = require('body-parser');
@@ -18,8 +19,15 @@ const weight = require("./routes/api/weight");
 const vitaminD = require("./routes/api/vitaminD");
 const restingHeartRate = require("./routes/api/restingHeartRate");
 const temperature = require("./routes/api/temperature");
-const allergy = require("./routes/api/allergy");
+const allergy = require("./routes/api/allergies");
 const medicalCondition = require("./routes/api/medicalCondition");
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 // CONNECT TO MONGOOSE -> MONGO DB
 mongoose
