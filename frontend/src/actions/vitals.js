@@ -9,6 +9,7 @@ export const RECEIVE_TEMPERATURES = "RECEIVE_TEMPERATURES";
 export const RECEIVE_VITAMIN_D_LEVELS = "RECEIVE_VITAMIN_D_LEVELS";
 export const RECEIVE_WEIGHTS = "RECEIVE_WEIGHTS";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
+export const CLEAR_VITALS = "CLEAR_VITALS";
 
 const receiveCholesterolLevels = (cholesterolLevels) => {
     return { 
@@ -40,10 +41,13 @@ const receiveVitaminDLevels = (vitaminDLevels) => ({
     type: RECEIVE_VITAMIN_D_LEVELS,
     vitaminDLevels,
 });
-const receiveWeights = (weights) => ({
-    type: RECEIVE_WEIGHTS,
-    weights,
-});
+const receiveWeights = (weights) => {
+//     
+    return {
+        type: RECEIVE_WEIGHTS,
+        weights,
+    }
+};
 const receiveVitalsErrors = (errors) => ({
     type: RECEIVE_VITALS_ERRORS,
     errors
