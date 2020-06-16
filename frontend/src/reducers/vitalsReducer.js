@@ -7,10 +7,22 @@ import {
     RECEIVE_TEMPERATURES,
     RECEIVE_VITAMIN_D_LEVELS,
     RECEIVE_WEIGHTS,
+    CLEAR_VITALS,
 } from '../actions/vitals'
 import {merge} from 'lodash'
 
-export default (state = {}, action) => {
+const _nullState = {
+    cholesterolLevels: [],
+    allergies: [],
+    bloodPressureLevels: [],
+    medicalConditions: [],
+    restingHeartRates: [],
+    temperatures: [],
+    vitaminDLevels: [],
+    weights: [],
+}
+
+export default (state = _nullState, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_CHOLESTEROL_LEVELS:
@@ -29,6 +41,8 @@ export default (state = {}, action) => {
             return merge({}, state, {vitaminDLevels: action.vitaminDLevels} )
         case RECEIVE_WEIGHTS:
             return merge({}, state, {weights: action.weights} )
+        case CLEAR_VITALS:
+            return _nullState;
         default:
             return state;
     }

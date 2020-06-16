@@ -19,12 +19,12 @@ class EditForm extends React.Component {
     }
 
     // componentWillReceiveProps(){
-    //     // debugger;
+    //     
     //     this.setState(this.props.currentUser)
     // }
     
     update(field){
-        debugger;
+        
         return e => this.setState( { [field]: e.currentTarget.value } );
     }
 
@@ -35,7 +35,7 @@ class EditForm extends React.Component {
     }
 
     render(){
-        // debugger;
+        
         return(
             <div id='my-edit-form' className='edit-form'>
                 <div className='edit-form-profile'>Profile Picture</div>

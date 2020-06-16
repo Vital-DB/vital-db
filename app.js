@@ -46,7 +46,7 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
 app.use("/api/pictures", pictures);
-app.use("/api/cholesterol", cholesterol);
+app.use("/api/cholesterols", cholesterol);
 app.use("/api/bloodPressures", bloodPressure);
 app.use("/api/weights", weight);
 app.use("/api/vitaminDs", vitaminD);
