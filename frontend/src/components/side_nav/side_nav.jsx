@@ -61,14 +61,30 @@ class SideNav extends React.Component {
                         <h1>{`Height: ${heightFormatter(height)}`}</h1>
                         <h1 className='sidenav-info-last'>{`Organ Donor: ${organDonor}`}</h1>
                     </div>
-                    <NavLink to="/main/dashboard">Home</NavLink>
-                    <NavLink to="/home">Splash</NavLink>
-                    <NavLink to="/main/edit">Edit Profile</NavLink>
-                    <NavLink to="/main/checkup/history">Checkup History</NavLink>
-                    <NavLink to="/main/prescriptions">Medications</NavLink>
-                    <NavLink to="/main/vaccinations">Vaccinations</NavLink>
-                    <NavLink to='/main/allergies'>Allergies</NavLink>
-                    <button onClick={this.logoutUser}>LOGOUT</button>
+                    <div className='sidenav-links'>
+                        <NavLink to="/main/dashboard"><i class="fas fa-home"></i> Home</NavLink>
+                    </div>
+                    <div className='sidenav-links'>
+                        <NavLink to="/main/edit"><i class="fas fa-user-edit"></i> Edit Profile</NavLink>
+                    </div>
+                    <div className='sidenav-links'>
+                        <NavLink to="/main/checkup/history"><i class="fas fa-notes-medical"></i> Checkup History</NavLink>
+                    </div>
+                    <div className='sidenav-links'>
+                        <NavLink to="/main/prescriptions"><i class="fas fa-capsules"></i> Medications</NavLink>
+                    </div>
+                    <div className='sidenav-links'>
+                        <NavLink to="/main/vaccinations"><i class="fas fa-syringe"></i> Vaccinations</NavLink>
+                    </div>
+                    <div className='sidenav-links'>
+                        <NavLink to='/main/allergies'><i class="fas fa-allergies"></i> Allergies</NavLink>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    <button className='sidenav-logout' onClick={this.logoutUser}>LOGOUT</button>
                 </div>
                 <span className='sidenav-open' onClick={this.openNav}>&#9776;</span>
             </div>
