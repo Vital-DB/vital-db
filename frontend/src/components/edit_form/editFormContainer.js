@@ -3,6 +3,7 @@ import EditForm from './editForm';
 import { editUser } from '../../actions/session';
 
 const mapStateToProps = state => {
+    // debugger;
     return {
         currentUser: state.entities.user,
     }

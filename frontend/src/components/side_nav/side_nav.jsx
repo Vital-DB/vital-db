@@ -22,6 +22,9 @@ class SideNav extends React.Component {
             document.getElementById('my-dashboard-stats').style.marginLeft = "250px";
             document.getElementById('my-dashboard-info').style.marginLeft = "250px";
         }
+        if(document.getElementById('my-edit-form')){
+            document.getElementById('my-edit-form').style.marginLeft = "200px"
+        }
     }
 
     closeNav() {
@@ -30,6 +33,9 @@ class SideNav extends React.Component {
         if(document.getElementById('my-dashboard-stats')){
             document.getElementById('my-dashboard-stats').style.marginLeft = "0";
             document.getElementById('my-dashboard-info').style.marginLeft = "0";
+        }
+        if(document.getElementById('my-edit-form')){
+            document.getElementById('my-edit-form').style.marginLeft = "0"
         }
     }
 
