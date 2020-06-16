@@ -15,7 +15,7 @@ class DashboardStats extends React.Component {
         const listItems = e.currentTarget.parentNode.children;
         
         if (selected){
-            // selected.classList.remove('selected');
+            selected.classList.remove('selected');
             for (let i = 0; i < listItems.length; i++){
                 e.currentTarget.parentNode.children[i].style.display = "block";
             }
@@ -27,6 +27,7 @@ class DashboardStats extends React.Component {
                     e.currentTarget.parentNode.children[i].style.display = "none";
                 }
             }
+            // e.currentTarget.parentNode.prepend(selected)
         }
 
         const dataKey = e.currentTarget.getAttribute('value');
