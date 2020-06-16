@@ -119,28 +119,25 @@ router.post('/login', (req, res) => {
 
 // PATCH
 // update a user
-// router.patch('/:handle', passport.authenticate('jwt', {session: false}), (req, res) => {
-//     User.update({
-//         firstName: req.body.firstName,
-//         lastName: req.body.lastName,
-//         birthday: req.body.birthday,
-//         bloodType: req.body.bloodType,
-//         height: req.body.height,
-//         sex: req.body.sex,
-//         organDonor: req.body.organDonor
-//     },
-//     { where: { handle: req.params.handle } }).then((result) => {
-//         res.json(result);
-//     }).catch((error) => {
-//         console.log(error);
-//     })
-// })
+router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+    User.findById(req.params.id, function(err, user) {
+        if(!user) {
+            return res.status(400).json(err);
+        } else {
+            user.firstName = req.body.firstName;
+            user.lastName = req.body.lastName;
+            user.birthday = req.body.birthday;
+            user.bloodType = req.body.bloodType;
+            user.height = req.body.height;
+            user.weight = req.body.weight;
+            user.sex = req.body.sex;
+            user.organDonor = req.body.organDonor;
 
-// router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-//     
-//     res.json({
-//         currentUser: req.user
-//     });
-// })
+            user.save()
+            .then(user => res.json(user))
+            .catch(err => console.log(err));
+        }
+    })
+})
 
 module.exports = router;
