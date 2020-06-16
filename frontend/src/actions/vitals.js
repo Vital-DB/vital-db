@@ -61,13 +61,14 @@ export const fetchCholesterolLevels = (userId) => dispatch => {
             errs => dispatch(receiveVitalsErrors(errs.message))
         )
 };
-export const fetchAllergies = (userId) => dispatch => (
-    VitalsUtil.fetchAllergies(userId)
+export const fetchAllergies = () => dispatch => (
+    VitalsUtil.fetchAllergies()
         .then(
             res => dispatch(receiveAllergies(res.data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
 );
+
 export const fetchBloodPressureLevels = (userId) => dispatch => (
     VitalsUtil.fetchBloodPressureLevels(userId)
         .then(

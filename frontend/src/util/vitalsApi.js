@@ -10,9 +10,9 @@ export const createCholesterolLevels = (userId) => (
         `/api/cholesterols/user/${userId}`
     )
 );
-export const fetchAllergies = (userId) => (
+export const fetchAllergies = () => (
     axios.get(
-        `/api/allergies/user/${userId}`,
+        `/api/allergies/`
     )
 );
 export const fetchBloodPressureLevels = (userId) => (

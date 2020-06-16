@@ -45,7 +45,7 @@
 
 
 
-.Navlink {
+/* .Navlink {
   position: relative;
   top: 7%;
   border-radius: 8px;
@@ -56,27 +56,26 @@
   margin-bottom: 5px;
   padding: 5px 0 5px 0;
   width: 12%;
-}
+} */
 
 /* .Navlink:first-of-type {
   margin-top: 10px;
 } */
 
-button {
+/* button {
   background-color: rgb(64, 187, 192);
   color: white;
   font-size: 16px;
   padding: 5px 0 5px 0;
   margin: 5px 0 5px 0;
-}
+} */
 
-input {
+/* input {
   border-radius: 8px;
   border-color: rgb(64, 187, 192);
   margin-bottom: 4px;
-  /* filter: drop-shadow(2px 4px 6px black); */
-}
+} */
 
-input, button, .Navlink {
+/* input, button, .Navlink {
   filter: drop-shadow(2px 4px 6px black);
-}
+} */
