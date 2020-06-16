@@ -92,8 +92,10 @@ export const Register = () => {
                     Signup
                 </button>
             </form>
+            {/* <div className="navlinks"> */}
             <NavLink className="Navlink" to="/login">Login</NavLink>
             <NavLink className="Navlink" to="/">Home</NavLink>
+            {/* </div> */}
             {renderErrors()}
         </div>
     )
