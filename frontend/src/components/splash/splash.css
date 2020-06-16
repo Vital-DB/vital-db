@@ -64,6 +64,7 @@
 
 
 .feature {
+  position: relative;
   height: 40%;
   width: 42%;
   /* border: 1px solid black; */
@@ -130,6 +131,29 @@
   top: -63px;
   right: -86px;
   height: 175px;
+}
+
+#docchat {
+  position: relative;
+  top: 14px;
+  vertical-align: middle;
+  left: 10%;
+  height: 69%;
+}
+
+#chart-icon {
+  position: absolute;
+  top: 55px;
+}
+
+#med-remind {
+  position: absolute;
+  left: 19%;
+  top: 23%;
+  height: 69%;
+  width: 80%;
+  filter: hue-rotate(684deg);
+  /* filter: hue-rotate(381deg); */
 }
 
 .NavLink {
