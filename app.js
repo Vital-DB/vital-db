@@ -18,7 +18,7 @@ const weight = require("./routes/api/weight");
 const vitaminD = require("./routes/api/vitaminD");
 const restingHeartRate = require("./routes/api/restingHeartRate");
 const temperature = require("./routes/api/temperature");
-const allergy = require("./routes/api/allergy");
+const allergy = require("./routes/api/allergies");
 const medicalCondition = require("./routes/api/medicalCondition");
 
 // CONNECT TO MONGOOSE -> MONGO DB
