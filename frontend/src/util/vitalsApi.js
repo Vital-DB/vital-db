@@ -5,6 +5,11 @@ export const fetchCholesterolLevels = ({userId}) => (
         `/api/cholesterols/user/${userId}`
     )
 );
+export const createCholesterolLevels = ({userId}) => (
+    axios.get(
+        `/api/cholesterols/user/${userId}`
+    )
+);
 export const fetchAllergies = ({userId}) => (
     axios.get(
         `/api/allergies/user/${userId}`,
