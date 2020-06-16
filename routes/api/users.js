@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // for token signature
-const keys = require('../../config/keys');
+const keys = require('../../config/keys_dev');
 
 // auth required technologies
 const bcrypt = require('bcryptjs');
@@ -21,9 +21,7 @@ const passport = require('passport');
 // GETS
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    res.json({
-        currentUser: req.user
-    });
+    res.json(req.user);
 })
 
 // POSTS

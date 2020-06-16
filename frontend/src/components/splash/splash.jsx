@@ -25,7 +25,7 @@ class Splash extends React.Component {
                   </li >             
                 <li className="vital">
                   <h3>Blood type: </h3>
-                  <h4>O-negative</h4>
+                  <h4>O-</h4>
                   </li >
                 <li className="vital">
                   <h3>Insurance: </h3>
@@ -59,10 +59,10 @@ class Splash extends React.Component {
             {/* <h1 id="heading">All your vitals stored in one secure space</h1> */}
           </div>
         </div>
-          <div className="navlinks">
-            <NavLink className="NavLink" to="/login">Login</NavLink>
-            <NavLink className="NavLink" to="/register">Register</NavLink>
-          </div>
+        <div className="navlinks">
+          <NavLink className="NavLink" to="/login">Login</NavLink>
+          <NavLink className="NavLink" to="/register">Register</NavLink>
+        </div>
       </div>
     )
   }
