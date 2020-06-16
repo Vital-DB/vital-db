@@ -1,5 +1,6 @@
 /config/keys.js
 /node_modules
+package.json
 .env
 .env*
 .DS_Store
