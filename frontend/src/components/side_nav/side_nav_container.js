@@ -6,15 +6,7 @@ const mapStateToProps = state => {
     // debugger;
     return {
         loggedIn: state.session.isAuthenticated,
-        currentUser: {
-            firstName: 'Clifford',
-            lastName: 'Yan',
-            sex: 'm',
-            birthday: new Date('03/10/1995'),
-            bloodType: 'O+',
-            weight: 200,
-            height: 72,
-        }
+        currentUser: state.entities.user,
     }
 }
 

@@ -34,7 +34,14 @@ class SideNav extends React.Component {
     }
 
     render(){
-        const { firstName, lastName, sex, birthday, bloodType, weight, height } = this.props.currentUser;
+        let { firstName, lastName, sex, birthday, bloodType, weight, height } = this.props.currentUser;
+
+        if(!birthday){
+            return null;
+        } else {
+            birthday = new Date(birthday);
+        }
+
         return (
             <div>
                 <div id='my-sidenav' className='sidenav'>
