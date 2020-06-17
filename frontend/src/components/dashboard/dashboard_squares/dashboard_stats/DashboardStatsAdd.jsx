@@ -22,7 +22,7 @@ class DashboardStatsAdd extends Component {
         // debugger
         e.preventDefault();
         switch (this.props.vital) {
-            case cholesterolLevel:
+            case 'cholesterolLevels':
                 this.props.createCholesterolLevel(this.state);
                 break;
         
