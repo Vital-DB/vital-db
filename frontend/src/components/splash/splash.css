@@ -39,6 +39,14 @@
   width: 148px;
 }
 
+@media only screen and (max-width: 750px) {
+  #caduceus {
+    left: 18%;
+  }
+}
+
+
+
 #heading {
   font-size: 16px;
   color: white;
@@ -129,9 +137,12 @@
 }
 
 
-@media only screen and (max-width: 925px) {
+@media only screen and (max-width: 950px) {
+  
+ 
+
   #heading {
-    font-size: 70%;
+    font-size: 50%;
     text-align: start;
   }
 
@@ -154,6 +165,7 @@
 
   .feature:first-of-type {
     background-position-x: center;
+    overflow: hidden;
   }
 
   .vital-list {
@@ -186,9 +198,9 @@
   filter: drop-shadow(2px 4px 6px black);
 }
 
-@media only screen and (max-height: 725px) {
+@media only screen and (max-height: 625px) {
   .feature {
-    font-size: 50%;
+    /* font-size: 50%; */
     height: 50%;
     width: 50%;
   }
@@ -199,7 +211,10 @@
     width: 50%;
   }
 
- 
+  .splash-content {
+    left: -1%;
+  }
+
 
   .feature:first-of-type {
     background-size: 30%;
@@ -208,9 +223,21 @@
 } 
 
 @media only screen and (max-height: 325px) {
+
+  #caduceus {
+    top: -2%;
+  }
+
   #med-remind, #chart-icon {
     top: 45%;
     height: 31%;
     width: 41%;
   }
+   .vital h3, .vital h4 {
+   font-size: 8px;
+ }
+
+ .splash-content {
+   left: -2%;
+ }
 }
