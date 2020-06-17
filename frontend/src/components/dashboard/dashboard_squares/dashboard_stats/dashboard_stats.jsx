@@ -16,6 +16,7 @@ class DashboardStats extends React.Component {
 
     componentDidMount(){
         // fetch the user's vitals on load
+        debugger
         this.props.startLoadingVitals();
         this.props.fetchWeights();
         this.props.fetchVitaminDLevels();  
@@ -26,6 +27,7 @@ class DashboardStats extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState){
+        debugger
         // this manages graph display whenever a user clicks a subvital
         // it will reset subDataKeys and selected-sub styling when user clicks on another dataKey
         if (this.state.dataKey !== prevState.dataKey){ // when user selects a new vital
@@ -109,6 +111,7 @@ class DashboardStats extends React.Component {
 
     render(){
         const { vitalsLoading, vitals, userId, loggedIn } = this.props;
+        if (!loggedIn || !userId ) return null;
         debugger
         // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;
         const dontInclude = ["allergies", "medicalConditions"]; // these vitals have no numerical values
