@@ -57,7 +57,10 @@
   width: 16%;
 }
 
-.login p {
+.login_errors {
+  position: absolute;
+  top: 72%;
+  font-weight: bold;
+  list-style: disc;
   color: #F44336;
-  opacity: .9;
 }
