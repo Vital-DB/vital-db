@@ -1,6 +1,7 @@
 import {
     RECEIVE_CURRENT_USER,
     LOGOUT_CURRENT_USER,
+    LOGIN_USER
 } from "../actions/session";
 
 // when there is no user logged in (page startup/logout/etc.)
@@ -21,6 +22,11 @@ export default (state = _nullUser, action) => {
                 isSignedIn: true,
                 user: action.currentUser
             };
+        case LOGIN_USER:
+            return {
+                ...state,
+                isSignedIn: true
+            }
         case LOGOUT_CURRENT_USER:
             return _nullUser;
         default:
