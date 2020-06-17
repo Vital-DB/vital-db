@@ -10,6 +10,8 @@ export const RECEIVE_VITAMIN_D_LEVELS = "RECEIVE_VITAMIN_D_LEVELS";
 export const RECEIVE_WEIGHTS = "RECEIVE_WEIGHTS";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
 export const CLEAR_VITALS = "CLEAR_VITALS";
+export const START_LOADING_VITALS = "START_LOADING_VITALS";
+export const DONE_LOADING_VITALS = "DONE_LOADING_VITALS";
 
 const receiveCholesterolLevels = (cholesterolLevels) => {
     return { 
@@ -52,9 +54,14 @@ const receiveVitalsErrors = (errors) => ({
     type: RECEIVE_VITALS_ERRORS,
     errors
 });
+export const startLoadingVitals = () => ({
+    type: START_LOADING_VITALS,
+});
+export const doneLoadingVitals = () => ({
+    type: DONE_LOADING_VITALS,
+});
 
 export const fetchCholesterolLevels = (userId) => dispatch => {
-
     return VitalsUtil.fetchCholesterolLevels(userId)
         .then(
             res => dispatch(receiveCholesterolLevels(res.data)),
