@@ -34,6 +34,7 @@ class DashboardStats extends React.Component {
         }
         // this manages graph display whenever a user clicks a subvital
         // it will reset subDataKeys and selected-sub styling when user clicks on another dataKey
+        const currentDataKey = this.state.dataKey
         if (this.state.dataKey !== prevState.dataKey){ // when user selects a new vital
             this.setState({subDataKeys: ["All"]}); // reset default subs
             let selected = document.querySelectorAll('.dashboard-stats .selected-sub'); // currently selected subvitals, to have styling removed
@@ -41,19 +42,19 @@ class DashboardStats extends React.Component {
                 selected[i].classList.remove('selected-sub');
             }
             document.querySelectorAll('.dashboard-stats-sublist li')[0].classList.add('selected-sub') // add selected styling to 'All'
+            switch (currentDataKey) {
+                case 'cholesterolLevels':
+                    this.props.fetchCholesterolLevels();   
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
     fetchVital(vital){
         // debugger
-        switch (vital) {
-            case 'cholesterolLevels':
-                this.props.fetchCholesterolLevels();   
-                break;
-        
-            default:
-                break;
-        }
+
     }
 
     // handles the state change & dropdown visibility for vitals that are clicked from the menu
@@ -137,7 +138,7 @@ class DashboardStats extends React.Component {
     render(){
        
         const { vitalsLoading, vitals, userId, loggedIn } = this.props;
-        // if (vitalsLoading) return <Loading />
+        if (vitalsLoading) return <Loading />
         if (!userId || !loggedIn) return null;
       
         // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;
