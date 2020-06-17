@@ -14,7 +14,7 @@ class Splash extends React.Component {
       <div className="splash-container">
         <div className="splash">
           <h1 id="title">
-            <img src={caduceus} id="caduceus"/>
+            <img alt="caduceus" src={caduceus} id="caduceus"/>
           </h1>
           <div className="splash-content">
             <section className="feature">
