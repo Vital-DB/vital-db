@@ -20,9 +20,8 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   );
 });
 // POSTS
-// signup
 router.post('/',
-    // passport.authenticate('jwt', { session: false }), this isnt working
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validateWeightInput(req.body);
         
@@ -31,11 +30,13 @@ router.post('/',
       }
   
       const newWeight = new Weight({
-        user: req.body.user,
+        user: req.user.id,
         value: req.body.value,
       });
   
-      newWeight.save().then(weight => res.json(weight));
+      newWeight.save()
+        .then(weight => res.json(weight))
+        .catch(err => res.status(422).json(err));
     }
   );
 

@@ -20,9 +20,8 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   );
 });
 // POSTS
-// signup
 router.post('/',
-    // passport.authenticate('jwt', { session: false }), this isnt working
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validateVitaminDInput(req.body);
         
@@ -31,12 +30,15 @@ router.post('/',
       }
   
       const newVitaminD = new VitaminD({
-        user: req.body.user,
+        user: req.user.id,
         value: req.body.value,
       });
   
-      newVitaminD.save().then(vitaminD => res.json(vitaminD));
+      newVitaminD.save()
+        .then(vitaminD => res.json(vitaminD))
+        .catch(err => res.status(422).json(err));
     }
   );
+
 
 module.exports = router;
