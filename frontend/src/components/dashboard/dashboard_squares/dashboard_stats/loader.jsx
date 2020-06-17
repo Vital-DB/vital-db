@@ -1,8 +1,9 @@
 import React from 'react'
 import './loader.css';
 
-export default (props) => {
+const loader = () => {
     return (
         <div class="loader">Loading...</div>
     )
-};
+}
+export default loader
