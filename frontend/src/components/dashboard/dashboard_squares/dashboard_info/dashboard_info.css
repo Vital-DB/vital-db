@@ -1,11 +1,14 @@
 .dashboard-info {
-    border-radius: 0.7em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* border-radius: 0.7em;
     padding: 2vh;
     height: 25vh;
     width: 50vw;
     transition: 0.5s;
     /* background-color: #2E95BB; */
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    color: white;
+    color: white; */
 }

@@ -12,7 +12,7 @@ const validateTemperatureInput = require('../../validations/temperature');
 // GETS
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   Temperature.find({ user: req.user.id })
-      .sort({ date: -1 })
+      .sort({ date: 1 })
       .then(temperature => res.json(temperature))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No temperature found from that user' }

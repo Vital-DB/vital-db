@@ -17,7 +17,7 @@ export const RECEIVE_MEDICAL_CONDITIONS = "RECEIVE_MEDICAL_CONDITIONS";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
 export const CLEAR_VITALS = "CLEAR_VITALS";
 export const START_LOADING_VITALS = "START_LOADING_VITALS";
-export const DONE_LOADING_VITALS = "DONE_LOADING_VITALS";
+export const START_LOADING_VITAL = "START_LOADING_VITAL";
 
 const receiveCholesterolLevels = (cholesterolLevels) => {
     return { 
@@ -91,107 +91,120 @@ const receiveVitalsErrors = (errors) => ({
 export const startLoadingVitals = () => ({
     type: START_LOADING_VITALS,
 });
-export const doneLoadingVitals = () => ({
-    type: DONE_LOADING_VITALS,
+export const startLoadingVital = () => ({
+    type: START_LOADING_VITAL,
 });
 
-export const fetchCholesterolLevels = (userId) => dispatch => {
-    return VitalsUtil.fetchCholesterolLevels(userId)
+export const fetchCholesterolLevels = () => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.fetchCholesterolLevels()
         .then(
             res => dispatch(receiveCholesterolLevels(res.data)),
             errs => dispatch(receiveVitalsErrors(errs.message))
         )
 };
 export const createCholesterolLevel = (data) => dispatch => {
-    
+    dispatch(startLoadingVital());    
     return VitalsUtil.createCholesterolLevel(data)
         .then(
             res => dispatch(receiveCholesterolLevel(res.data)),
             errs => dispatch(receiveVitalsErrors(errs.response.data.errors))
         )
 };
-export const fetchAllergies = () => dispatch => (
-    VitalsUtil.fetchAllergies()
+export const fetchAllergies = () => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.fetchAllergies()
         .then(
             res => dispatch(receiveAllergies(res.data)),
             errors => dispatch(receiveVitalsErrors(errors))
         )
-);
+};
 
-export const fetchBloodPressureLevels = (userId) => dispatch => (
-    VitalsUtil.fetchBloodPressureLevels(userId)
+export const fetchBloodPressureLevels = () => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.fetchBloodPressureLevels()
         .then(
             res => dispatch(receiveBloodPressureLevels(res.data)),
             errs => dispatch(receiveVitalsErrors(errs.message))
         )
-);
-export const createBloodPressureLevel = (data) => dispatch => (
-    VitalsUtil.createBloodPressureLevel(data)
+};
+export const createBloodPressureLevel = (data) => dispatch => {
+    dispatch(startLoadingVital());
+    return VitalsUtil.createBloodPressureLevel(data)
         .then(
             res => dispatch(receiveBloodPressureLevel(res.data)),
             errs => dispatch(receiveVitalsErrors(errs.response.data.errors))
         )
-);
-export const fetchMedicalConditions = (userId) => dispatch => (
-    VitalsUtil.fetchMedicalConditions(userId)
+};
+export const fetchMedicalConditions = () => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.fetchMedicalConditions()
         .then(
             res => dispatch(receiveMedicalConditions(res.data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
-);
-export const fetchRestingHeartRates = (userId) => dispatch => (
-    VitalsUtil.fetchRestingHeartRates(userId)
+};
+export const fetchRestingHeartRates = () => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.fetchRestingHeartRates()
         .then(
             res => dispatch(receiveRestingHeartRates(res.data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
-);
-export const createRestingHeartRate = (data) => dispatch => (
-    VitalsUtil.createRestingHeartRate(data)
+};
+export const createRestingHeartRate = (data) => dispatch => {
+    dispatch(startLoadingVital());
+    return VitalsUtil.createRestingHeartRate(data)
         .then(
             res => dispatch(receiveRestingHeartRate(res.data)),
             errs => dispatch(receiveVitalsErrors(errs.response.data.errors))
         )
-);
-export const fetchTemperatures = (userId) => dispatch => (
-    VitalsUtil.fetchTemperatures(userId)
+};
+export const fetchTemperatures = () => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.fetchTemperatures()
         .then(
             res => dispatch(receiveTemperatures(res.data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
-);
-export const createTemperature = (data) => dispatch => (
-    VitalsUtil.createTemperature(data)
+};
+export const createTemperature = (data) => dispatch => {
+    dispatch(startLoadingVital());
+    return VitalsUtil.createTemperature(data)
         .then(
             res => dispatch(receiveTemperature(res.data)),
             errs => dispatch(receiveVitalsErrors(errs.response.data.errors))
         )
-);
-export const fetchVitaminDLevels = (userId) => dispatch => (
-    VitalsUtil.fetchVitaminDLevels(userId)
+};
+export const fetchVitaminDLevels = () => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.fetchVitaminDLevels()
         .then(
             res => dispatch(receiveVitaminDLevels(res.data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
-);
-export const createVitaminDLevel = (data) => dispatch => (
-    VitalsUtil.createVitaminDLevel(data)
+};
+export const createVitaminDLevel = (data) => dispatch => {
+    dispatch(startLoadingVital());
+    return VitalsUtil.createVitaminDLevel(data)
         .then(
             res => dispatch(receiveVitaminDLevel(res.data)),
             errs => dispatch(receiveVitalsErrors(errs.response.data.errors))
         )
-);
-export const fetchWeights = (userId) => dispatch => (
-    VitalsUtil.fetchWeights(userId)
+};
+export const fetchWeights = () => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.fetchWeights()
         .then(
             res => dispatch(receiveWeights(res.data)),
             errs => dispatch(receiveVitalsErrors(errs))
         )
-);
-export const createWeight = (data) => dispatch => (
-    VitalsUtil.createWeight(data)
+};
+export const createWeight = (data) => dispatch => {
+    dispatch(startLoadingVital());
+    return VitalsUtil.createWeight(data)
         .then(
             res => dispatch(receiveWeight(res.data)),
             errs => dispatch(receiveVitalsErrors(errs.response.data.errors))
         )
-);
+};
