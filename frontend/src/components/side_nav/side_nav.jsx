@@ -55,7 +55,7 @@ class SideNav extends React.Component {
                     <a className="closebtn" onClick={this.closeNav}>&times;</a>
                     <div className='sidenav-profile-image'>PROFILE IMAGE</div>
                     <div className="sidenav-info">
-                        <h1>{`Hello, ${firstName}`}</h1>
+                        <h1>{`Hello, ${firstName}!`}</h1>
                         <h1>{`Birthdate: ${dateFormatter(birthday)}`}</h1>
                         <h1>{`Blood Type: ${bloodType}`}</h1>
                         <h1>{`Current Weight: ${weight}lbs`}</h1>
