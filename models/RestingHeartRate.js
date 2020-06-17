@@ -8,9 +8,9 @@ const RestingHeartRateSchema = new Schema({
   },
   value: {
     type: Number,
-    min: 30,
-    max: 150,
-    required: true
+    min: [30, 'Must be more than 30'],
+    max: [150, 'Must be less than 150'],
+    required: [true, 'Please enter value']
   },
   date: {
     type: Date,

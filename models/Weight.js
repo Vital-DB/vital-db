@@ -8,9 +8,9 @@ const WeightSchema = new Schema({
   },
   value: {
     type: Number,
-    min: 10,
-    max: 5000,
-    required: true
+    min: [10, 'Must be more than 10'],
+    max: [500, 'Must be less than 500'],
+    required: [true, 'Please enter value']
   },
   date: {
     type: Date,
