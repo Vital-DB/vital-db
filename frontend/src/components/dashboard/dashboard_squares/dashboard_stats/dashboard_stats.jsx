@@ -28,9 +28,9 @@ class DashboardStats extends React.Component {
 
     componentDidUpdate(prevProps, prevState){
         // debugger
-        // if (this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length){
-        //     document.querySelector('.add-vital-container').style.display = "";
-        // }
+        if (this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length){
+            document.querySelector('.add-vital-container').style.display = "";
+        }
         // this manages graph display whenever a user clicks a subvital
         // it will reset subDataKeys and selected-sub styling when user clicks on another dataKey
         if (this.state.dataKey !== prevState.dataKey){ // when user selects a new vital
