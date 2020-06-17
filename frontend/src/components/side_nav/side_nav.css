@@ -6,20 +6,36 @@
     top: 0;
     left: 0;
     background-color: aquamarine;
+    background-image: linear-gradient(150deg, rgb(55, 255, 215), #2e95bb);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     box-sizing: border-box;
     font-family: sans-serif;
+    box-shadow: 5px 10px #888888;
+    
 }
 
 .sidenav-info {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #00d7bc;
+    border-radius: 10px;
+    width: 80%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    box-shadow: 5px 5px #888888;
+}
+
+.sidenav-link-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sidenav-info h1 {
@@ -30,17 +46,17 @@
     margin-bottom: 15px;
 }
 
-.sidenav a {
+.sidenav .closebtn {
     padding: 8px 8px 8px 8px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #818181;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: #dbdbdb;
     cursor: pointer;
 }
 
@@ -74,22 +90,89 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 5px 5px #888888;
 }
+
+#sidenav-home-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-edit-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-history-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-prescription-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-vaccination-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-allergy-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 
 .sidenav-logout{
     margin-top: 10px;
-    background-color: rgb(70, 226, 200);
+    background-color: #00d7bc;
+    width: 100px;
 }
 
 .sidenav-logout:hover{
-    background-color: #ececec;
+    background-color: rgb(126, 246, 206);
+    color: white;
     transition: 0.5s;
 }
 
 .sidenav-links {
-    background-color: rgb(71, 233, 179);
+    background-color: #00d7bc;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 3px;
+}
+
+.sidenav-links a {
+    height: 40px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.sidenav-links i {
+    margin-right: 10px;
 }

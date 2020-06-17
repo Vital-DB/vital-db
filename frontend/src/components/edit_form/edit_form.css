@@ -26,6 +26,7 @@
     width: 600px;
     transition: 0.5s;
     padding: 40px;
+    box-shadow: 5px 5px #888888;
 }
 
 .edit-form-profile {
@@ -37,7 +38,6 @@
     align-items: center;
     justify-content: center;
     margin-right: 50px;
-
 }
 
 .edit-form-col-1 {
@@ -48,9 +48,6 @@
 .edit-form-col-2 {
     display: flex;
     flex-direction: row;
-}
-
-.edit-info {
 }
 
 .edit-info label {
@@ -71,8 +68,21 @@
     border-radius: 5px;
 }
 
+.edit-form-col-1 input:focus {
+    outline: none;
+    /* box-shadow: 3px 3px rgb(97, 199, 140); */
+    box-shadow: 5px 5px #888888;
+}
+
+.edit-form-col-2 select:focus {
+    outline: none;
+    /* box-shadow: 3px 3px rgb(97, 199, 140); */
+    box-shadow: 5px 5px #888888;
+}
+
 .edit-form-col-2 select, .edit-form-col-2 input {
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 .edit-form-header{

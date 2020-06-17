@@ -4,6 +4,7 @@ import jwt_decode from 'jwt-decode';
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const LOGIN_USER = "LOGIN_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_CURRENT_USER_INFO = 'RECEIVE_CURRENT_USER_INFO';
 
@@ -21,12 +22,15 @@ export const clearSessionErrors = () => {
 };
 
 export const receiveCurrentUser = (currentUser) => {
-    console.log(currentUser);
     return {
         type: RECEIVE_CURRENT_USER,
         currentUser,
     }
 };
+
+export const loginUser = () => ({
+    type: LOGIN_USER
+})
 
 const receiveCurrentUserInfo = (currentUser) => {
     return {
@@ -62,7 +66,7 @@ export const login = (user) => (dispatch) => {
 
 export const register = (user) => (dispatch) => {
     return APIUtil.register(user).then(() => {
-        dispatch(receiveCurrentUser(user));
+        dispatch(login(user));
     }, (error) => {
         dispatch(receiveErrors(error.response.data));
     });
