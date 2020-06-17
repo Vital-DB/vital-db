@@ -62,7 +62,7 @@ export const login = (user) => (dispatch) => {
 
 export const register = (user) => (dispatch) => {
     debugger
-    return APIUtil.register(user).then(() => {
+    return APIUtil.register(user).then((user) => {
         dispatch(receiveCurrentUser(user));
     }, (error) => {
         dispatch(receiveErrors(error.response.data));

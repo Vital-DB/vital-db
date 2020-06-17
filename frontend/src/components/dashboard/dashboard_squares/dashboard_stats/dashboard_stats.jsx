@@ -110,8 +110,9 @@ class DashboardStats extends React.Component {
     }
 
     render(){
+        debugger;
         const { vitalsLoading, vitals, userId, loggedIn } = this.props;
-        if (!loggedIn || !userId ) return null;
+        if (!loggedIn) return null;
         debugger
         // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;
         const dontInclude = ["allergies", "medicalConditions"]; // these vitals have no numerical values

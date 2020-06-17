@@ -15,7 +15,7 @@ import {
 const mapStateToProps = ({loading: {vitalsLoading}, session, entities: {vitals}}) => {
     return {
         loggedIn: session.isAuthenticated,
-        userId: session.user.id,
+        userId: session.user.data.id || session.user.id,
         vitalsLoading,
         vitals,
     }
