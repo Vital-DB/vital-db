@@ -72,6 +72,7 @@
 .register p {
   margin-bottom: 14%;
   color: #F44336;
+  opacity: .9;
 }
 
 .errors-container {

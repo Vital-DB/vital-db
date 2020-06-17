@@ -56,3 +56,8 @@
   padding: 5px 0 5px 0;
   width: 16%;
 }
+
+.login p {
+  color: #F44336;
+  opacity: .9;
+}
