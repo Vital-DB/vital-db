@@ -2,7 +2,7 @@ import React from 'react'
 import { LineChart, Line, CartesianGrid, YAxis, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 
 export default ({chartLines, data}) => {
-    const colors = ["#FF4E66","#FF5733","#86FF33","#6337D8"]
+    const colors = ["#FF4E66","#FF5733","#86FF33","#6337D8"];
 
     // use with attribute 'content={<CustomTooltip />' on line, for custom tooltip}
     // const CustomTooltip = ({ payload, label, active }) => {
@@ -25,7 +25,7 @@ export default ({chartLines, data}) => {
                 <CartesianGrid stroke="#ccc" />
                 <XAxis dataKey='date' />
                 <YAxis domain={['dataMin - 5', 'dataMax + 5']} />
-                <Tooltip/>
+                <Tooltip contentStyle={{opacity: .95}}cursor={false} offset="70" isAnimationActive={false} />
             </LineChart>
         </ResponsiveContainer>
     )
