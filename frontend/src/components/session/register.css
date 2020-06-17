@@ -69,3 +69,34 @@
   filter: drop-shadow(2px 4px 6px black);
 }
 
+.register p {
+  margin-bottom: 14%;
+  color: #F44336;
+}
+
+.errors-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  right: -22%;
+  top: 12%;
+  height: 10%;
+}
+
+@media only screen and (max-width: 900px) {
+  .errors-container {
+    right: 20%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .errors-container {
+     width: 30%;
+    font-size: 12px;
+    right: 35%;
+  }
+  .register p {
+    margin-bottom: 47px;
+  }
+}
