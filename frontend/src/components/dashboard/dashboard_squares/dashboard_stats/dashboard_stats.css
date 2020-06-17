@@ -63,6 +63,51 @@
     background: lightblue;
 }
 
+.add-vital {
+    position: absolute;
+    right: -20px;
+}
+.add-vital-modal {
+    height: 100%;
+    width: 100%;
+    background: gray;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: .7;
+}
+.add-vital-container {
+    display: none;
+    position: absolute;
+    z-index: 10;
+}
+
+.add-vital-form {
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+    position: relative;
+}
+
+.add-vital-form input {
+    display: block;
+}
+
+.vitals-error-list {
+    width: 100%;
+    /* border: 5px solid red; */
+    box-sizing: border-box;
+    text-align: center;
+    color: red;
+    padding: 10px;
+    background: white;
+    border: 1px solid gray;
+    margin-top: 10px;
+}
+
+
+
 
 .recharts-responsive-container{
 }

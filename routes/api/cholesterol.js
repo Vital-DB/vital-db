@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 
 // models
-debugger
+
 const Cholesterol = require('../../models/Cholesterol');
 
 // validations
@@ -11,7 +11,7 @@ const validateCholesterolInput = require('../../validations/cholesterol');
 
 // // ROUTES
 // GETS
-debugger
+
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   Cholesterol.find({ user: req.user.id })
       .sort({ date: -1 })
@@ -25,7 +25,7 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 // POSTS
 // signup
 router.post('/',
-    // passport.authenticate('jwt', { session: false }), this isnt working
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validateCholesterolInput(req.body);
         
@@ -34,11 +34,16 @@ router.post('/',
       }
   
       const newCholesterol = new Cholesterol({
-        user: req.body.user,
-        value: req.body.value,
+        user: req.user.id,
+        LDL: req.body.LDL,
+        HDL: req.body.HDL,
+        total: req.body.total,
+        triglycerides: req.body.triglycerides,
       });
   
-      newCholesterol.save().then(cholesterol => res.json(cholesterol));
+      newCholesterol.save()
+        .then(cholesterol => res.json(cholesterol))
+        .catch(err => res.status(422).json(err));
     }
   );
 

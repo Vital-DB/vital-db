@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import session from './session';
-import errors from './sessionErrors';
+import errors from './errorsReducer';
 import entities from './entities';
 import loading from './loadingReducer'
 
