@@ -1,3 +1,12 @@
+.dashboard__container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;  
+}
+
 .dashboard-stats {
     height: 40vh;
     /* position: relative; */
@@ -21,14 +30,14 @@
 .dashboard-stats-list {
     /* display: flex; */
     /* width: 100%; */
-    
-    /* position: absolute; */
+    z-index: 10;
+    position: absolute;
     width: 38%;
     text-align: center;
     font-size: 3em;
     color: white;
     justify-content: space-between;
-    
+    background-color: rgba(0, 43, 64, 0.8)
 }
 
 .dashboard-stats-list li {
@@ -52,6 +61,7 @@
     font-family: 'Barlow', sans-serif;
     font-weight: 500;
     /* color: white; */
+    background-color: none !important;
 }
 
 .dashboard-stats-list li:not(.selected) {
@@ -78,13 +88,13 @@
 } */
 
 .dashboard-stats-sublist {
-    /* position: absolute; */
+    position: absolute;
     /* display: block; */
     /* right: -450px; */
     /* margin-left: auto; */
-    /* top: 250px; */
+    top: 250px;
     /* width: 100px; */
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: space-evenly;
     height: 5vh;
@@ -138,4 +148,14 @@
 }
 
 .recharts-text tspan {
+}
+
+path {
+    stroke: #FF4E66;
+    stroke-width: 2;
+}
+
+circle {
+    stroke: #00D7BC;
+    stroke-width: 4;
 }

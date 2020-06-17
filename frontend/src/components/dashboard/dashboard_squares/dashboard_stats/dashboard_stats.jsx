@@ -141,23 +141,30 @@ class DashboardStats extends React.Component {
         }
         // debugger
         return(
-            <div id='my-dashboard-stats' className='dashboard-stats'>
-                <div className='dashboard-stats-header'>
-                    <ul className="dashboard-stats-list">
-                        {/* values on the li are the vitals keys, displayed text uses regex to convert camelcase to capitalized first letter with spaces in between */}
-                        {/* exclude values if they don't have numeric stats */}
-                        {Object.keys(vitals).map((vitalName, idx) => (!dontInclude.includes(vitalName)) ? 
-                        <li key={idx} value={vitalName} className={(idx == 0) ? "selected" : ""} onClick={this.handleClick}>{vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
-                         </li> : "")}
-                    </ul>
-                    
-                    {/* this is the navigation panel on the right of the graph. it shows all the relevant numerical sub data keys, as defined by subVitals */}
-                    <ul className="dashboard-stats-sublist">
-                        <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li>
-                        {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
-                    </ul>
+            <div className="dashboard__container">
+                <div id='my-dashboard-stats' className='dashboard-stats'>
+                    <div className='dashboard-stats-header'>
+                        <ul className="dashboard-stats-list">
+                            {/* values on the li are the vitals keys, displayed text uses regex to convert camelcase to capitalized first letter with spaces in between */}
+                            {/* exclude values if they don't have numeric stats */}
+                            {Object.keys(vitals).map((vitalName, idx) => (!dontInclude.includes(vitalName)) ? 
+                            <li key={idx} value={vitalName} className={(idx == 0) ? "selected" : ""} onClick={this.handleClick}>{vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
+                            </li> : "")}
+                        </ul>
+                        
+                        {/* this is the navigation panel on the right of the graph. it shows all the relevant numerical sub data keys, as defined by subVitals */}
+                        <ul className="dashboard-stats-sublist">
+                            <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li>
+                            {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
+                        </ul>
+                    </div>
+                    {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
                 </div>
-                {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
+
+                <div id="my-dashboard-info" className='dashboard-info'>
+                    <h1 class="universal__h1">More Info</h1>
+                </div>
+
             </div>
         )
     }

@@ -4,7 +4,7 @@
     height: 25vh;
     width: 50vw;
     transition: 0.5s;
-    background-color: #2E95BB;
+    /* background-color: #2E95BB; */
     display: flex;
     justify-content: center;
     color: white;
