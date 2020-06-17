@@ -1,4 +1,5 @@
 .dashboard-stats {
+    position: relative;
     height: 100%;
     width: 100%;
     transition: 0.5s;
@@ -18,12 +19,13 @@
 }
 
 .dashboard-stats-list {
+    position: absolute;
+    top: 1vh;
     z-index: 10;
     text-align: center;
     font-size: 2vw;
     color: white;
     background-color: rgba(0, 43, 64, 0.8);
-    
 }
 
 .dashboard-stats-list li {
@@ -36,7 +38,6 @@
 .dashboard-stats-list .selected {
     font-family: 'Barlow', sans-serif;
     font-weight: 500;
-    background-color: none !important;
 }
 
 .dashboard-stats-list li:not(.selected) {
@@ -44,7 +45,6 @@
 }
 
 .dashboard-stats-list li:not(.selected):hover {
-    /* display: none; */
     color: red;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .fa-plus-circle {
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: white;
 }
 
@@ -62,9 +62,9 @@
     display: flex;
     justify-content: space-evenly;
     height: 5vh;
-    margin-bottom: 1vh;
+    /* margin-bottom: 1vh; */
     z-index: 0;
-    
+    margin-top: 4vh;
 }
 
 .dashboard-stats-sublist li {
@@ -165,6 +165,21 @@
 }
 
 .recharts-text tspan {
+}
+
+.dash__addAVital {
+    display: flex;
+    width: 12%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.dash__addAVital:hover * {
+    color: #FF4E66 ;
 }
 
 path {

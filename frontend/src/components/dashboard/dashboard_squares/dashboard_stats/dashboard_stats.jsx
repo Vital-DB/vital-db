@@ -168,7 +168,6 @@ class DashboardStats extends React.Component {
                         onClick={this.handleClick}>
                             {vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
                     </li> : "")}
-
                 </ul>
                 <DashboardStatsAddContainer vital={this.state.dataKey} subVitals={subVitals} />
                     
@@ -181,9 +180,9 @@ class DashboardStats extends React.Component {
 
                 {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
 
-                <div>
+                <div className="dash__addAVital" onClick={() => this.addVital()} >
+                    <i className="fas fa-plus-circle"></i>
                     <h1>Add a Vital</h1>
-                    <i class="fas fa-plus-circle" onClick={() => this.addVital()}></i>
                 </div>
                 
             </div>

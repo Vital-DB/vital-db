@@ -22,7 +22,7 @@ class SideNav extends React.Component {
         document.getElementById("my-sidenav").style.width = "250px";
 
         if(document.getElementById('dashboard')){
-            document.getElementById('dashboard').style.marginLeft = "400px";
+            // document.getElementById('dashboard').style.marginLeft = "400px";
         }
 
         if(document.getElementById('my-edit-form')){
@@ -34,7 +34,7 @@ class SideNav extends React.Component {
         document.getElementById("my-sidenav").style.width = "0";
 
         if(document.getElementById('dashboard')){
-            document.getElementById('dashboard').style.marginLeft = "200px";
+            // document.getElementById('dashboard').style.marginLeft = "200px";
         }
         if(document.getElementById('my-edit-form')){
             document.getElementById('my-edit-form').style.marginLeft = "0"
