@@ -154,7 +154,6 @@ class DashboardStats extends React.Component {
         }
    
         return(
-            <div className="dashboard__container">
             <div id='my-dashboard-stats' className='dashboard-stats'>
                 <div className='dashboard-stats-header'>
                     <div className="double-column">
@@ -175,13 +174,9 @@ class DashboardStats extends React.Component {
                         {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
                     </ul>
                 </div>
-
-                <div id="my-dashboard-info" className='dashboard-info'>
-                    <h1 class="universal__h1">More Info</h1>
-                </div>
-
+                {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
             </div>
-        </div>
+
         )
     }
 }

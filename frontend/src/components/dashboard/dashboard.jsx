@@ -9,7 +9,7 @@ class Dashboard extends React.Component {
         return(
                 <div className='dashboard'>
                     <DashboardStatsContainer />
-                    {/* <DashboardInfoContainer /> */}
+                    <DashboardInfoContainer />
                 </div>
         )
     }
