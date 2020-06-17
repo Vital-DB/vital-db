@@ -10,12 +10,9 @@ const validateWeightInput = require('../../validations/weight');
 
 // // ROUTES
 // GETS
-// test route, to be deleted
-router.get("/test", (req, res) => {
-    res.json({ msg: "This is the Weight route" })
-});
-router.get('/user/:user_id', (req, res) => {
-  Weight.find({user: req.params.user_id})
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+  Weight.find({ user: req.user.id })
+      .sort({ date: -1 })
       .then(weight => res.json(weight))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No weight found from that user' }

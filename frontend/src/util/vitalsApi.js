@@ -1,48 +1,48 @@
 import axios from 'axios';
 
-export const fetchCholesterolLevels = (userId) => (
+export const fetchCholesterolLevels = () => (
     axios.get(
-        `/api/cholesterols/user/${userId}`
+        `/api/cholesterols`
     )
 );
-export const createCholesterolLevels = (userId) => (
+export const createCholesterolLevels = () => (
     axios.get(
-        `/api/cholesterols/user/${userId}`
+        `/api/cholesterols`
     )
 );
-export const fetchAllergies = (userId) => (
+export const fetchAllergies = () => (
     axios.get(
-        `/api/allergies/user/${userId}`
+        `/api/allergies`
     )
 );
-export const fetchBloodPressureLevels = (userId) => (
+export const fetchBloodPressureLevels = () => (
     axios.get(
-        `/api/bloodPressures/user/${userId}`,
+        `/api/bloodPressures`,
     )
 );
-export const fetchMedicalConditions = (userId) => (
+export const fetchMedicalConditions = () => (
     axios.get(
-        `/api/medicalConditions/user/${userId}`,
+        `/api/medicalConditions`,
     )
 );
-export const fetchRestingHeartRates = (userId) => (
+export const fetchRestingHeartRates = () => (
     axios.get(
-        `/api/restingHeartRates/user/${userId}`,
+        `/api/restingHeartRates`,
     )
 );
-export const fetchTemperatures = (userId) => (
+export const fetchTemperatures = () => (
     axios.get(
-        `/api/temperatures/user/${userId}`,
+        `/api/temperatures`,
     )
 );
-export const fetchVitaminDLevels = (userId) => (
+export const fetchVitaminDLevels = () => (
     axios.get(
-        `/api/vitaminDs/user/${userId}`,
+        `/api/vitaminDs`,
     )
 );
-export const fetchWeights = (userId) => {
+export const fetchWeights = () => {
     
     return axios.get(
-        `/api/weights/user/${userId}`,
+        `/api/weights`,
     )
 }

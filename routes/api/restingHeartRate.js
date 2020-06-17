@@ -10,12 +10,9 @@ const validateRestingHeartRateInput = require('../../validations/restingHeartRat
 
 // // ROUTES
 // GETS
-// test route, to be deleted
-router.get("/test", (req, res) => {
-    res.json({ msg: "This is the RestingHeartRate route" })
-});
-router.get('/user/:user_id', (req, res) => {
-  RestingHeartRate.find({user: req.params.user_id})
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+  RestingHeartRate.find({ user: req.user.id })
+      .sort({ date: -1 })
       .then(restingHeartRate => res.json(restingHeartRate))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No restingHeartRate found from that user' }
