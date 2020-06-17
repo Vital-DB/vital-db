@@ -46,6 +46,21 @@ class DashboardStats extends React.Component {
                 case 'cholesterolLevels':
                     this.props.fetchCholesterolLevels();   
                     break;
+                case 'bloodPressureLevels':
+                    this.props.fetchBloodPressureLevels();   
+                    break;
+                case 'weights':
+                    this.props.fetchWeights();   
+                    break;
+                case 'vitaminDLevels':
+                    this.props.fetchVitaminDLevels();   
+                    break;
+                case 'temperatures':
+                    this.props.fetchTemperatures();   
+                    break;
+                case 'restingHeartRates':
+                    this.props.fetchRestingHeartRates();   
+                    break;
                 default:
                     break;
             }
