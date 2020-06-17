@@ -19,17 +19,18 @@ class DashboardStats extends React.Component {
     
         // fetch the user's vitals on load
         this.props.fetchCholesterolLevels();
-        this.props.fetchWeights();
-        this.props.fetchVitaminDLevels();  
-        this.props.fetchTemperatures();
-        this.props.fetchRestingHeartRates();  
-        this.props.fetchBloodPressureLevels();   
+        // this.props.fetchWeights();
+        // this.props.fetchVitaminDLevels();  
+        // this.props.fetchTemperatures();
+        // this.props.fetchRestingHeartRates();  
+        // this.props.fetchBloodPressureLevels();   
     }
 
     componentDidUpdate(prevProps, prevState){
-        // debugger
-        if (this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length){
-            document.querySelector('.add-vital-outer-container').style.display = "";
+        debugger
+        const subModal = document.querySelector('.add-vital-outer-container');
+        if ((this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length) && subModal){
+            subModal.style.display = "";
         }
         // this manages graph display whenever a user clicks a subvital
         // it will reset subDataKeys and selected-sub styling when user clicks on another dataKey
@@ -43,8 +44,21 @@ class DashboardStats extends React.Component {
         }
     }
 
+    fetchVital(vital){
+        // debugger
+        switch (vital) {
+            case 'cholesterolLevels':
+                this.props.fetchCholesterolLevels();   
+                break;
+        
+            default:
+                break;
+        }
+    }
+
     // handles the state change & dropdown visibility for vitals that are clicked from the menu
     handleClick(e) {
+        this.fetchVital(e.currentTarget.getAttribute('value'))
         const selected1 = document.querySelector('.dashboard-stats-sublist').classList.toggle("hidden");
 
         const selected = document.querySelector('.dashboard-stats-list .selected'); // select the current list item with class selected
@@ -123,7 +137,7 @@ class DashboardStats extends React.Component {
     render(){
        
         const { vitalsLoading, vitals, userId, loggedIn } = this.props;
-        if (vitalsLoading) return <Loading />
+        // if (vitalsLoading) return <Loading />
         if (!userId || !loggedIn) return null;
       
         // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;

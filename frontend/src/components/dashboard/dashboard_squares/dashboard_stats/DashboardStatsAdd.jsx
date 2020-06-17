@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Loading from './loader'
 
 class DashboardStatsAdd extends Component {
     constructor(props) {
@@ -57,8 +58,9 @@ class DashboardStatsAdd extends Component {
     }
     
     render() {
-        const { vital, subVitals, errors } = this.props;
-
+        const { vitalsLoading, vital, subVitals, errors } = this.props;
+        if (vitalsLoading) return <Loading />
+        if (!vital || !subVitals) return null;
         const input = (
             subVitals.map(sub => <label>{sub}<input subDataKey={sub} type="number" value={this.state[sub]} onChange={this.handleChange} /></label>)
         )
