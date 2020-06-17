@@ -1,13 +1,15 @@
 import axios from 'axios';
 
-export const fetchCholesterolLevels = () => (
-    axios.get(
+export const fetchCholesterolLevels = () => {
+    debugger
+    return axios.get(
         `/api/cholesterols`
     )
-);
-export const createCholesterolLevels = () => (
-    axios.get(
-        `/api/cholesterols`
+};
+export const createCholesterolLevels = (data) => (
+    axios.post(
+        `/api/cholesterols`,
+        data,
     )
 );
 export const fetchAllergies = () => (

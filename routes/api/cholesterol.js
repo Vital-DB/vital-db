@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 
 // models
+debugger
 const Cholesterol = require('../../models/Cholesterol');
 
 // validations
@@ -10,6 +11,7 @@ const validateCholesterolInput = require('../../validations/cholesterol');
 
 // // ROUTES
 // GETS
+debugger
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   Cholesterol.find({ user: req.user.id })
       .sort({ date: -1 })
