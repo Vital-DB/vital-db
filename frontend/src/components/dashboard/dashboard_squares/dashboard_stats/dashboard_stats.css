@@ -81,6 +81,12 @@
     display: none;
     position: absolute;
     z-index: 10;
+    width: 50vw;
+    border: 5px solid black;
+    margin: 0 auto;
+    background: blue;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 .add-vital-form {
@@ -88,10 +94,16 @@
     flex-direction: column;
     z-index: 20;
     position: relative;
+    align-items: center;
 }
 
 .add-vital-form input {
     display: block;
+}
+
+.add-vital-form label {
+    display: block;
+    margin-bottom: 20px;
 }
 
 .vitals-error-list {
