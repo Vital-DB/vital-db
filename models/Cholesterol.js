@@ -9,26 +9,26 @@ const CholesterolSchema = new Schema({
   LDL: {
     type: Number,
     min: 0,
-    max: 150,
-    required: true
+    max: [150, 'Must be less than 150'],
+    required: [true, 'Please enter value'],
   },
   HDL: {
     type: Number,
     min: 0,
-    max: 100,
-    required: true
+    max: [100, 'Must be less than 100'],
+    required: [true, 'Please enter value']
   },
   total: {
     type: Number,
     min: 0,
-    max: 300,
-    required: true
+    max: [300, 'Must be less than 300'],
+    required: [true, 'Please enter value']
   },
   triglycerides: {
     type: Number,
     min: 0,
-    max: 200,
-    required: true
+    max: [200, 'Must be less than 200'],
+    required: [true, 'Please enter value']
   },
   date: {
     type: Date,

@@ -1,5 +1,6 @@
 import {
     RECEIVE_CHOLESTEROL_LEVELS,
+    RECEIVE_CHOLESTEROL_LEVEL,
     RECEIVE_ALLERGIES, 
     RECEIVE_BLOOD_PRESSURE_LEVELS, 
     RECEIVE_MEDICAL_CONDITIONS,
@@ -27,6 +28,11 @@ export default (state = _nullState, action) => {
     switch (action.type) {
         case RECEIVE_CHOLESTEROL_LEVELS:
             return merge({}, state, {cholesterolLevels: action.cholesterolLevels} )
+        case RECEIVE_CHOLESTEROL_LEVEL:
+            const newVital = action.cholesterolLevel;
+            const newState = merge({}, state);
+            newState['cholesterolLevels'].push(newVital);
+            return merge({}, state, newState )
         case RECEIVE_ALLERGIES:
             return merge({}, state, {allergies: action.allergies} )
         case RECEIVE_BLOOD_PRESSURE_LEVELS:
