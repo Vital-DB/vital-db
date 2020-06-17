@@ -14,7 +14,7 @@ export const createCholesterolLevels = (data) => (
 );
 export const fetchAllergies = () => (
     axios.get(
-        `/api/allergies`
+        `/api/allergies/`
     )
 );
 export const fetchBloodPressureLevels = () => (

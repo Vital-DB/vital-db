@@ -1,5 +1,5 @@
-import {register} from '../../actions/session';
-import {login} from '../../actions/session';
+import {register, login} from '../../actions/session';
+// import {login} from '../../actions/session';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';

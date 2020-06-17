@@ -117,7 +117,7 @@ class DashboardStats extends React.Component {
         // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;
         const dontInclude = ["allergies", "medicalConditions"]; // these vitals have no numerical values
         const data = vitals[this.state.dataKey]; // used for recharts component
-        debugger
+        // debugger
 
         // this specificies the subVitals that should be extracted from the specific vital's slice of state
         let subVitals = (function(vital) {
@@ -133,7 +133,7 @@ class DashboardStats extends React.Component {
 
         // use to determine what the number of subvitals to display on graph
         let chartLines; 
-        debugger
+        // debugger
         // this shows all subvitals if all is selected
         if (this.state.subDataKeys.includes('All') && this.state.subDataKeys.length == 1){
             chartLines = subVitals;
@@ -141,7 +141,7 @@ class DashboardStats extends React.Component {
         } else {
             chartLines = this.state.subDataKeys;
         }
-        debugger
+        // debugger
         return(
             <div id='my-dashboard-stats' className='dashboard-stats'>
                 <div className='dashboard-stats-header'>
