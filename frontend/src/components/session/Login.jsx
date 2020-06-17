@@ -6,7 +6,7 @@ import './login.css'
 
 export const Login = () => {
     const dispatch = useDispatch();
-    const errors = useSelector(state => state.errors);
+    const errors = useSelector(state => state.errors.session);
     const [handle, setHandle] = useState("");
     const [password, setPassword] = useState("");
 

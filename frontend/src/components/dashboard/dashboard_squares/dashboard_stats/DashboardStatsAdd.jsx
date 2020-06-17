@@ -10,7 +10,12 @@ class DashboardStatsAdd extends Component {
     }
 
     componentDidUpdate(prevProps){
-
+        debugger
+        if (prevProps.vital !== this.props.vital){
+            for (let i = 0; i < this.props.subVitals.length; i++){
+                this.setState({[this.props.subVitals[i]]: ""})
+            }
+        } 
     }
 
     hideModal(e){
@@ -21,7 +26,28 @@ class DashboardStatsAdd extends Component {
     handleSubmit(e){
         // debugger
         e.preventDefault();
-        this.props.createCholesterolLevel(this.state);
+        switch (this.props.vital) {
+            case 'cholesterolLevels':
+                this.props.createCholesterolLevel(this.state);
+                break;
+            case 'weights':
+                this.props.createWeight(this.state);
+                break;
+            case 'vitaminDLevels':
+                this.props.createVitaminDLevel(this.state);
+                break;
+            case 'temperatures':
+                this.props.createTemperature(this.state);
+                break;
+            case 'restingHeartRates':
+                this.props.createRestingHeartRate(this.state);
+                break;
+            case 'bloodPressureLevels':
+                this.props.createBloodPressureLevel(this.state);
+                break;
+            default:
+                break;
+        }
     }
 
     handleChange(e){
@@ -34,7 +60,7 @@ class DashboardStatsAdd extends Component {
         const { vital, subVitals, errors } = this.props;
 
         const input = (
-            subVitals.map(sub => <label>{sub}<input subDataKey={sub} type="number" value={this.state.sub} onChange={this.handleChange} /></label>)
+            subVitals.map(sub => <label>{sub}<input subDataKey={sub} type="number" value={this.state[sub]} onChange={this.handleChange} /></label>)
         )
 
         const errorList = [];

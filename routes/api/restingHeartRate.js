@@ -21,9 +21,8 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 });
 
 // POSTS
-// signup
 router.post('/',
-    // passport.authenticate('jwt', { session: false }), this isnt working
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validateRestingHeartRateInput(req.body);
         
@@ -32,11 +31,13 @@ router.post('/',
       }
   
       const newRestingHeartRate = new RestingHeartRate({
-        user: req.body.user,
+        user: req.user.id,
         value: req.body.value,
       });
   
-      newRestingHeartRate.save().then(restingHeartRate => res.json(restingHeartRate));
+      newRestingHeartRate.save()
+        .then(restingHeartRate => res.json(restingHeartRate))
+        .catch(err => res.status(422).json(err));
     }
   );
 
