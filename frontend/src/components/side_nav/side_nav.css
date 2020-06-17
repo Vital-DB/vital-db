@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     background-color: aquamarine;
-    background-image: linear-gradient(150deg, rgb(55, 255, 215), rgb(62, 161, 165));
+    background-image: linear-gradient(150deg, rgb(55, 255, 215), #2e95bb);
     overflow-x: hidden;
     transition: 0.5s;
     display: flex;
@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(71, 233, 179);
+    background-color: #00d7bc;
     border-radius: 10px;
     width: 80%;
     margin-bottom: 15px;
@@ -95,7 +95,7 @@
 
 #sidenav-home-link.active {
     color: #dbdbdb;
-    background-color: rgb(90, 163, 139);
+    background-color: #ff4e66;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -103,7 +103,7 @@
 
 #sidenav-edit-link.active {
     color: #dbdbdb;
-    background-color: rgb(90, 163, 139);
+    background-color: #ff4e66;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -111,7 +111,7 @@
 
 #sidenav-history-link.active {
     color: #dbdbdb;
-    background-color: rgb(90, 163, 139);
+    background-color: #ff4e66;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -119,7 +119,7 @@
 
 #sidenav-prescription-link.active {
     color: #dbdbdb;
-    background-color: rgb(90, 163, 139);
+    background-color: #ff4e66;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -127,7 +127,7 @@
 
 #sidenav-vaccination-link.active {
     color: #dbdbdb;
-    background-color: rgb(90, 163, 139);
+    background-color: #ff4e66;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -135,7 +135,7 @@
 
 #sidenav-allergy-link.active {
     color: #dbdbdb;
-    background-color: rgb(90, 163, 139);
+    background-color: #ff4e66;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -144,7 +144,7 @@
 
 .sidenav-logout{
     margin-top: 10px;
-    background-color: rgb(71, 233, 179);
+    background-color: #00d7bc;
     width: 100px;
 }
 
@@ -155,7 +155,7 @@
 }
 
 .sidenav-links {
-    background-color: rgb(71, 233, 179);
+    background-color: #00d7bc;
     width: 100%;
     display: flex;
     justify-content: center;
