@@ -8,11 +8,12 @@ class DashboardStatsAdd extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.hideModal = this.hideModal.bind(this);
-    }
+    }    
 
     componentDidUpdate(prevProps){
         // debugger
         const currentVital = this.props.vital;
+        // clear modal values if user changes vitals from the dropdown menu, or successfully adds them
         if ((prevProps.vital !== currentVital) || this.props.vitals[currentVital].length !== prevProps.vitals[currentVital].length){
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
@@ -55,7 +56,7 @@ class DashboardStatsAdd extends Component {
     handleChange(e){
         e.preventDefault();
         // debugger
-        this.setState({[e.currentTarget.getAttribute('subDataKey')]: e.currentTarget.value})
+        this.setState({[e.currentTarget.getAttribute('subdatakey')]: e.currentTarget.value})
     }
     
     render() {
@@ -63,12 +64,13 @@ class DashboardStatsAdd extends Component {
         if (vitalLoading && !errors) return <Loading />
         if (!vital || !subVitals) return null;
         const input = (
-            subVitals.map(sub => <label key={sub}>{sub}<input key={sub} subdatakey={sub} type="number" value={this.state[sub]} onChange={this.handleChange} /></label>)
+            subVitals.map(sub => <label key={sub}>{sub}<input key={sub} subdatakey={sub} type="number" value={this.state[sub] || ""} onChange={this.handleChange} /></label>)
         )
 
         const errorList = [];
         for (let i = 0; i < subVitals.length; i++){
-            if (errors[subVitals[i]]) errorList.push(<li>{`${subVitals[i]}: ${errors[subVitals[i]].properties.message}`}</li>)
+            const subVital = subVitals[i];
+            if (errors[subVital]) errorList.push(<li key={subVital}>{`${subVital}: ${errors[subVital].properties.message}`}</li>)
         }
         return (
             <div className="add-vital-outer-container">
