@@ -1,51 +1,43 @@
 .dashboard-stats {
-    height: 50vh;
-    width: 60vw;
-    transition: 0.5s;
-    margin-left: 250px;
-}
-
-.dashboard-stats-header {
     position: relative;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
+    
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: space-between;
-    height: 15vh;
+    box-sizing: border-box;
+}
+
+.outer {
+    display: flex;
+    flex-direction: row;
 }
 
 .dashboard-stats-list {
-    /* display: flex;  */
-    /* width: 100%; */
+    position: absolute;
+    top: 1vh;
     z-index: 10;
-    /* position: absolute; */
-    /* width: 90%; */
     text-align: center;
-    font-size: 3em;
-    /* box-sizing: border-box; */
+    font-size: 2vw;
     color: white;
-    justify-content: space-between;
-    background-color: rgba(0, 43, 64, 0.8)
+    background-color: rgba(0, 43, 64, 0.8);
 }
 
 .dashboard-stats-list li {
-    
     margin-top: 2vh;
-
     font-family: 'Barlow', sans-serif;
     font-weight: 500;
-    /* color: white; */
     cursor: pointer;
-    /* width: 60% */
 }
 
 .dashboard-stats-list .selected {
-    /* font-size: 3em; */
-    /* background: lightblue; */
     font-family: 'Barlow', sans-serif;
     font-weight: 500;
-    /* color: white; */
-    background-color: none !important;
 }
 
 .dashboard-stats-list li:not(.selected) {
@@ -53,55 +45,38 @@
 }
 
 .dashboard-stats-list li:not(.selected):hover {
-    /* display: none; */
     color: red;
 }
 
 .selected:hover {
-    /* font-size: 3em; */
-    /* background: lightblue; */
-    /* font-family: 'Barlow', sans-serif; */
-    /* font-weight: 500; */
-    /* color: white; */
     color: red;
 }
 
-/* .fa-chevron-circle-down:hover {
-    color: #2E95BB;
-    cursor: pointer;
-} */
+.fa-plus-circle {
+    font-size: 1.5vw;
+    color: white;
+}
 
 .dashboard-stats-sublist {
-    position: absolute;
-    /* display: block; */
-    /* right: -450px; */
-    /* margin-left: auto; */
-    top: 100px;
-    /* width: 100px; */
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: space-evenly;
     height: 5vh;
-    /* border-radius: 1em; */
-    /* overflow: hidden; */
-    /* padding-top: 11vh; */
-    margin-bottom: 1vh;
+    /* margin-bottom: 1vh; */
     z-index: 0;
-    
+    margin-top: 4vh;
 }
 
 .dashboard-stats-sublist li {
     width: 18%;
-    /* background-color: #2E95BB; */
     background-color: #00D7BC;
     transition: 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Barlow', sans-serif;
-    font-size: 1.3em;
+    font-size: 1vw;
     font-weight: 400;
-
     color: white;
     border-radius: 0.7em;
     cursor: pointer;
@@ -112,34 +87,11 @@
 }
 
 .dashboard-stats-sublist li:hover {
-    /* background: blue; */
     color: black;
 }
 
 .dashboard-stats-sublist .selected-sub {
     background: #FF4E66;
-}
-
-.double-column {
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    /* position: absolute; */
-    /* z-index: 5; */
-}
-
-.add-vital {
-    border: 5px solid white;
-    color: white;
-    font-size: 3em;
-    font-weight: bold;
-    height: 50px;
-    cursor: pointer;
-}
-
-.add-vital:hover {
-    background: white;
-    color: #002B40;
 }
 
 .add-vital-modal {
@@ -189,7 +141,6 @@
 
 .vitals-error-list {
     width: 100%;
-    /* border: 5px solid red; */
     box-sizing: border-box;
     text-align: center;
     color: red;
@@ -199,11 +150,10 @@
     margin-top: 10px;
 }
 
-
-
-
 .recharts-responsive-container{
     font-family: 'Barlow', sans-serif;
+    width: 80% !important;
+    height: 60% !important;
 }
 
 .recharts-wrapper {
@@ -215,6 +165,21 @@
 }
 
 .recharts-text tspan {
+}
+
+.dash__addAVital {
+    display: flex;
+    width: 12%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.dash__addAVital:hover * {
+    color: #FF4E66 ;
 }
 
 path {
