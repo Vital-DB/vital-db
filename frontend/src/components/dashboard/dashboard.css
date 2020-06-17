@@ -2,5 +2,5 @@
     height: 100vh;
     background-color: #002B40;
     margin-left: 250px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
