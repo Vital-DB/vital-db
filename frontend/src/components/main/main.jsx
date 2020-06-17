@@ -17,9 +17,8 @@ class Main extends React.Component {
 
 
         return(
-            <div className='vital-main'>
+            <div>
                 <PrivateRoute path='/main' component={SideNavContainer} />
-                
                 <PrivateRoute path='/main/dashboard' component={DashboardContainer} />
                 <PrivateRoute exact path="/main/pictures/new" component={NewPicture} />
                 <PrivateRoute path='/main/edit' component={editFormContainer} />
