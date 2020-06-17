@@ -2,6 +2,7 @@
     height: 50vh;
     width: 60vw;
     transition: 0.5s;
+    margin-left: 250px;
 }
 
 .dashboard-stats-header {
@@ -106,7 +107,7 @@
     cursor: pointer;
 }
 
-.dashboard-stats-sublist .hidden: {
+.dashboard-stats-sublist .hidden {
     display: none;
 }
 

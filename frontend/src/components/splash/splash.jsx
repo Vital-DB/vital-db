@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import chat from './docchat-icon.png';
 import chart from './chart-icon.png';
 import remind from './med-remind6.png';
+import caduceus from './caduceus2.png';
 
 class Splash extends React.Component {
   
@@ -12,7 +13,9 @@ class Splash extends React.Component {
     return (
       <div className="splash-container">
         <div className="splash">
-          <h1 id="title">VitalDB</h1>
+          <h1 id="title">
+            <img src={caduceus} id="caduceus"/>
+          </h1>
           <div className="splash-content">
             <section className="feature">
               <h1 id="heading">Store vitals in one place</h1>
