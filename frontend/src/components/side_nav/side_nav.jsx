@@ -2,6 +2,8 @@ import React from 'react';
 import './side_nav.css';
 import {NavLink} from 'react-router-dom'
 import { dateFormatter, heightFormatter } from '../../util/helper_util';
+import danc from './danc.png';
+
 class SideNav extends React.Component {
     constructor(props){
         super(props);
@@ -19,10 +21,10 @@ class SideNav extends React.Component {
     openNav() {
         document.getElementById("my-sidenav").style.width = "250px";
 
-        if(document.getElementById('my-dashboard-stats')){
-            document.getElementById('my-dashboard-stats').style.marginLeft = "250px";
-            document.getElementById('my-dashboard-info').style.marginLeft = "250px";
+        if(document.getElementById('dashboard')){
+            // document.getElementById('dashboard').style.marginLeft = "400px";
         }
+
         if(document.getElementById('my-edit-form')){
             document.getElementById('my-edit-form').style.marginLeft = "200px"
         }
@@ -31,9 +33,8 @@ class SideNav extends React.Component {
     closeNav() {
         document.getElementById("my-sidenav").style.width = "0";
 
-        if(document.getElementById('my-dashboard-stats')){
-            document.getElementById('my-dashboard-stats').style.marginLeft = "0";
-            document.getElementById('my-dashboard-info').style.marginLeft = "0";
+        if(document.getElementById('dashboard')){
+            // document.getElementById('dashboard').style.marginLeft = "200px";
         }
         if(document.getElementById('my-edit-form')){
             document.getElementById('my-edit-form').style.marginLeft = "0"
@@ -43,6 +44,12 @@ class SideNav extends React.Component {
     render(){
         let { firstName, lastName, sex, birthday, bloodType, weight, height, organDonor } = this.props.currentUser;
 
+        if(!birthday){
+            return null;
+        } else {
+            birthday = new Date(birthday);
+        }
+        
         const date = new Date();
         const hours = date.getHours();
         let greeting = '';
@@ -61,19 +68,13 @@ class SideNav extends React.Component {
             greeting = `Sleep is important for the body ${firstName}!`;
         }
 
-        if(!birthday){
-            return null;
-        } else {
-            birthday = new Date(birthday);
-        }
-
         return (
             <div>
                 <div id='my-sidenav' className='sidenav'>
                     <a className="closebtn" onClick={this.closeNav}>&times;</a>
                     <div className='sidenav-profile-image'>PROFILE IMAGE</div>
                     <div className="sidenav-info">
-                        <h1>{greeting}</h1>
+                        <h1>`Hello {firstName}!`</h1>
                         <h1>{`Birthdate: ${dateFormatter(birthday)}`}</h1>
                         <h1>{`Blood Type: ${bloodType}`}</h1>
                         <h1>{`Current Weight: ${weight}lbs`}</h1>
@@ -105,7 +106,10 @@ class SideNav extends React.Component {
                     
                     
                 </div>
-                <span className='sidenav-open' onClick={this.openNav}>&#9776;</span>
+                <div className='danc-talk'>
+                    <div className='speech-bubble'>{greeting}</div>
+                    <img src={danc} width='100' height='140' onClick={this.openNav} className='danc' alt=""/>
+                </div>
             </div>
         )
     }
