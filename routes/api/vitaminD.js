@@ -12,7 +12,7 @@ const validateVitaminDInput = require('../../validations/vitaminD');
 // GETS
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   VitaminD.find({ user: req.user.id })
-      .sort({ date: -1 })
+      .sort({ date: 1 })
       .then(vitaminD => res.json(vitaminD))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No vitaminD found from that user' }

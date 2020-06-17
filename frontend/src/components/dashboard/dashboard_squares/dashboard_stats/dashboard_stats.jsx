@@ -181,10 +181,11 @@ class DashboardStats extends React.Component {
         }
 
         const noVitals = (
-            <p className="no-vitals">Looks like you have no stats yet! Click the <span className="no-vitals-plus">+</span> next to the Vital to get started!</p>
+            <p className="no-vitals">Looks like you have no stats yet! Click the <span className="no-vitals-plus">+</span> below to get started!</p>
         )
 
-        const loadingOrNoVitals = (vitalsLoading) ? <Loading /> : noVitals;
+        // this var goes below.. shows a loader while fetching and then changes to noVitals (another conditional used below)
+        const loadingOrNoVitals = (vitalsLoading) ? <Loading /> : noVitals; 
    
         return(
             // <div className='outer'>
@@ -210,6 +211,7 @@ class DashboardStats extends React.Component {
                     {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
                 </ul>
 
+                {/* show a loader while fetching; if user has no stats, show the helper message  */}
                 {(!data.length) ? loadingOrNoVitals : <DashboardStatsGraph data={data} chartLines={chartLines} />}
 
                 <div className="dash__addAVital" onClick={() => this.addVital()} >

@@ -12,7 +12,7 @@ const validateRestingHeartRateInput = require('../../validations/restingHeartRat
 // GETS
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   RestingHeartRate.find({ user: req.user.id })
-      .sort({ date: -1 })
+      .sort({ date: 1 })
       .then(restingHeartRate => res.json(restingHeartRate))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No restingHeartRate found from that user' }

@@ -12,7 +12,7 @@ const validateWeightInput = require('../../validations/weight');
 // GETS
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   Weight.find({ user: req.user.id })
-      .sort({ date: -1 })
+      .sort({ date: 1 })
       .then(weight => res.json(weight))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No weight found from that user' }
