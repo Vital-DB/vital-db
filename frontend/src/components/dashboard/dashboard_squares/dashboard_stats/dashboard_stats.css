@@ -13,6 +13,11 @@
     box-sizing: border-box;
 }
 
+.outer {
+    display: flex;
+    flex-direction: row;
+}
+
 .dashboard-stats-list {
     position: absolute;
     top: 1vh;
@@ -48,7 +53,7 @@
 }
 
 .fa-plus-circle {
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: white;
 }
 
@@ -164,16 +169,18 @@
 
 .dash__addAVital {
     display: flex;
-    width: 14%;
+    width: 12%;
     justify-content: space-between;
     align-items: center;
     color: white;
     font-family: 'Barlow', sans-serif;
-    font-size: 2em;
+    font-size: 1.5vw;
     cursor: pointer;
 }
 
-
+.dash__addAVital:hover * {
+    color: #FF4E66 ;
+}
 
 path {
     stroke: #FF4E66;

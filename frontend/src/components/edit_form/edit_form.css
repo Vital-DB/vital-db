@@ -1,6 +1,7 @@
 .whole-edit-page {
     display: flex;
     justify-content: center;
+    width: 100%;
     font-family: 'Barlow', sans-serif;
 }
 

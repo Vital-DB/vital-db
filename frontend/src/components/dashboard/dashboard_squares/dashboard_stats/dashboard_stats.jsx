@@ -3,6 +3,7 @@ import Loading from './loader'
 import React from 'react';
 import DashboardStatsGraph from './DashboardStatsGraph'
 import DashboardStatsAddContainer from './DashboardStatsAddContainer'
+// import danc from './danc.png';
 
 class DashboardStats extends React.Component {
     constructor(props){
@@ -18,12 +19,12 @@ class DashboardStats extends React.Component {
     componentDidMount(){
     
         // fetch the user's vitals on load
-        // this.props.fetchWeights();
-        // this.props.fetchVitaminDLevels();  
-        // this.props.fetchTemperatures();
-        // this.props.fetchRestingHeartRates();  
-        // this.props.fetchBloodPressureLevels();   
         this.props.fetchCholesterolLevels();
+        this.props.fetchWeights();
+        this.props.fetchVitaminDLevels();  
+        this.props.fetchTemperatures();
+        this.props.fetchRestingHeartRates();  
+        this.props.fetchBloodPressureLevels();   
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -154,6 +155,7 @@ class DashboardStats extends React.Component {
         }
    
         return(
+            // <div className='outer'>
             <div id='my-dashboard-stats' className='dashboard-stats'>
                 <ul className="dashboard-stats-list">
                     {/* values on the li are the vitals keys, displayed text uses regex to convert camelcase to capitalized first letter with spaces in between */}
@@ -182,7 +184,10 @@ class DashboardStats extends React.Component {
                     <i className="fas fa-plus-circle"></i>
                     <h1>Add a Vital</h1>
                 </div>
+                
             </div>
+            //     {/* <img src={danc} width="400" alt=""/> */}
+            // {/* </div> */}
 
         )
     }
