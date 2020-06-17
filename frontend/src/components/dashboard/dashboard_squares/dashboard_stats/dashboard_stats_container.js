@@ -8,7 +8,6 @@ import {
     fetchTemperatures,
     fetchVitaminDLevels,
     startLoadingVitals,
-    doneLoadingVitals,
 
 } from '../../../../actions/vitals'
 
@@ -24,7 +23,6 @@ const mapStateToProps = ({loading: {vitalsLoading}, session, entities: {vitals}}
 const mapDispatchToProps = dispatch => {
     return {
         startLoadingVitals: () => dispatch(startLoadingVitals()),
-        doneLoadingVitals: () => dispatch(doneLoadingVitals()),
         fetchWeights: () => dispatch(fetchWeights()),
         fetchCholesterolLevels: () => dispatch(fetchCholesterolLevels()),
         fetchBloodPressureLevels: () => dispatch(fetchBloodPressureLevels()),
