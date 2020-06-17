@@ -12,7 +12,7 @@ class DashboardStatsAdd extends Component {
 
     componentDidUpdate(prevProps){
         // debugger
-        if (prevProps.vital !== this.props.vital){
+        if ((prevProps.vital !== this.props.vital) || ){
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
             }
@@ -59,7 +59,7 @@ class DashboardStatsAdd extends Component {
     
     render() {
         const { vitalLoading, vital, subVitals, errors } = this.props;
-        if (vitalLoading) return <Loading />
+        if (vitalLoading && !errors) return <Loading />
         if (!vital || !subVitals) return null;
         const input = (
             subVitals.map(sub => <label key={sub}>{sub}<input key={sub} subdatakey={sub} type="number" value={this.state[sub]} onChange={this.handleChange} /></label>)
