@@ -3,7 +3,7 @@
     height: 50vh;
     position: relative;
     width: 50vw;
-    border: 2px solid rgb(131, 216, 131);
+    /* border: 2px solid rgb(131, 216, 131); */
     padding: 2vh;
     /* box-sizing: border-box; */
     margin-bottom: 3vh;
@@ -54,17 +54,17 @@
     margin-left: auto;
     top: 55px;
     width: 100px;
-    
+}
+.dashboard-stats-sublist li:hover {
+    background: blue;
 }
 
 .dashboard-stats-sublist .selected-sub {
     background: lightblue;
 }
 
-.recharts-responsive-container{
-    /* width: 100% !important;
-    height: 50vh !important; */
 
+.recharts-responsive-container{
 }
 
 .recharts-wrapper {
