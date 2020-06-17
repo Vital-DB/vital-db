@@ -8,9 +8,9 @@ const TemperatureSchema = new Schema({
   },
   value: {
     type: Number,
-    min: 90,
-    max: 110,
-    required: true
+    min: [90, 'Must be more than 90'],
+    max: [110, 'Must be less than 110'],
+    required: [true, 'Please enter value']
   },
   date: {
     type: Date,
