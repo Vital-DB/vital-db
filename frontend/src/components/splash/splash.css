@@ -11,23 +11,35 @@
 
 .splash {
   top: 10%;
-  height: 700px;
-  width: 60%;
+  /* height: 700px;
+  width: 50%; */
+  height: 73vh;
+  width: 50vw;
   background-color: #f7f7f7;
   color: white;
   font-family: Helvetica, sans-serif;
   border-radius: 8px;
-  opacity: 0.9;
+  /* opacity: 0.9; */
   filter: drop-shadow(2px 4px 6px black);
 }
 
 #title {
-  text-align: center;
+  text-align: center; 
   font-size: 28px;
   width: 100%;
+  height: 6%;
   background-color: rgb(64, 187, 192);
   border-radius: 8px 8px 0px 0px;
   padding: 5px 0 5px 0;
+}
+
+#caduceus {
+  position: absolute;
+  image-rendering: -webkit-optimize-contrast;
+  top: -4%;
+  left: 37%;
+  height: 15%;
+  width: 148px;
 }
 
 #heading {
@@ -113,7 +125,7 @@
 #med-remind {
   position: absolute;
   left: 19%;
-  top: 20%;
+  top: 27%;
   height: 69%;
   width: 80%;
   filter: hue-rotate(684deg);
@@ -144,7 +156,7 @@
   }
 
   .feature:first-of-type {
-    background-position-x: left;
+    background-position-x: center;
   }
 
   .vital-list {
@@ -176,4 +188,33 @@
   width: 30%;
   opacity: 0.9;
   filter: drop-shadow(2px 4px 6px black);
+}
+
+@media only screen and (max-height: 725px) {
+  .feature {
+    font-size: 50%;
+    height: 50%;
+    width: 50%;
+  }
+
+  #med-remind, #chart-icon {
+    top: 33%;
+    height: 40%;
+    width: 50%;
+  }
+
+ 
+
+  .feature:first-of-type {
+    background-size: 30%;
+    overflow: hidden;
+  }
+} 
+
+@media only screen and (max-height: 325px) {
+  #med-remind, #chart-icon {
+    top: 45%;
+    height: 31%;
+    width: 41%;
+  }
 }
