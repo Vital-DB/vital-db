@@ -1,6 +1,5 @@
 .dashboard-stats {
-    height: 40vh;
-    /* position: relative; */
+    height: 50vh;
     width: 60vw;
     transition: 0.5s;
     margin-left: 250px;
@@ -12,32 +11,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* height: 24px; */
-    /* width: 100%; */
     height: 15vh;
 }
 
 .dashboard-stats-list {
     /* display: flex;  */
     /* width: 100%; */
+    z-index: 10;
     /* position: absolute; */
-    width: 30vw;
+    /* width: 90%; */
     text-align: center;
     font-size: 3em;
     /* box-sizing: border-box; */
     color: white;
     justify-content: space-between;
-    background-color: #002B40;
-    /* border: 1px solid gray;
-    
+    background-color: rgba(0, 43, 64, 0.8)
 }
 
 .dashboard-stats-list li {
-    /* padding: 10px; */
-    /* z-index: 1; */
-    /* background-color: white; */
-    /* box-sizing: border-box; */
-    /* font-size: 3em; */
     
     margin-top: 2vh;
 
@@ -45,6 +36,7 @@
     font-weight: 500;
     /* color: white; */
     cursor: pointer;
+    /* width: 60% */
 }
 
 .dashboard-stats-list .selected {
@@ -53,6 +45,7 @@
     font-family: 'Barlow', sans-serif;
     font-weight: 500;
     /* color: white; */
+    background-color: none !important;
 }
 
 .dashboard-stats-list li:not(.selected) {
@@ -79,21 +72,22 @@
 } */
 
 .dashboard-stats-sublist {
-    /* position: absolute; */
+    position: absolute;
     /* display: block; */
     /* right: -450px; */
     /* margin-left: auto; */
-    /* top: 250px; */
+    top: 100px;
     /* width: 100px; */
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: space-evenly;
     height: 5vh;
     /* border-radius: 1em; */
     /* overflow: hidden; */
-    padding-top: 11vh;
+    /* padding-top: 11vh; */
     margin-bottom: 1vh;
     z-index: 0;
+    
 }
 
 .dashboard-stats-sublist li {
@@ -128,10 +122,10 @@
 
 .double-column {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    position: absolute;
-    z-index: 5;
+    justify-content: space-between;
+    width: 50%;
+    /* position: absolute; */
+    /* z-index: 5; */
 }
 
 .add-vital {
@@ -221,4 +215,14 @@
 }
 
 .recharts-text tspan {
+}
+
+path {
+    stroke: #FF4E66;
+    stroke-width: 2;
+}
+
+circle {
+    stroke: #00D7BC;
+    stroke-width: 4;
 }
