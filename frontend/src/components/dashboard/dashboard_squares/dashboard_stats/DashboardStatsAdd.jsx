@@ -6,10 +6,16 @@ class DashboardStatsAdd extends Component {
         this.state = {};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.hideModal = this.hideModal.bind(this);
     }
 
     componentDidUpdate(prevProps){
 
+    }
+
+    hideModal(e){
+        e.stopPropagation();
+        document.querySelector('.add-vital-outer-container').style.display = "";
     }
 
     handleSubmit(e){
@@ -37,9 +43,9 @@ class DashboardStatsAdd extends Component {
         }
             debugger
         return (
-            <>
+            <div className="add-vital-outer-container">
+                <div onClick={this.hideModal}className="add-vital-modal"></div>
                 <div className="add-vital-container">
-                    <div className="add-vital-modal"></div>
                     <form className="add-vital-form" onSubmit={this.handleSubmit}>
                         <h1>Add {vital}</h1>
                         {input}
@@ -49,7 +55,7 @@ class DashboardStatsAdd extends Component {
                         </ul>
                     </form>
                 </div>
-            </>
+            </div>
         )
     }
 }

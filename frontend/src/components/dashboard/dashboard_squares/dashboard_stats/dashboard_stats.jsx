@@ -29,7 +29,7 @@ class DashboardStats extends React.Component {
     componentDidUpdate(prevProps, prevState){
         // debugger
         if (this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length){
-            document.querySelector('.add-vital-container').style.display = "";
+            document.querySelector('.add-vital-outer-container').style.display = "";
         }
         // this manages graph display whenever a user clicks a subvital
         // it will reset subDataKeys and selected-sub styling when user clicks on another dataKey
@@ -114,7 +114,7 @@ class DashboardStats extends React.Component {
 
     addVital(){
         // debugger
-        let container = document.querySelector('.add-vital-container');
+        let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
     }
 
