@@ -11,7 +11,6 @@ class DashboardStatsAdd extends Component {
 
     componentDidUpdate(prevProps){
         debugger
-        const initialState = {};
         if (prevProps.vital !== this.props.vital){
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
