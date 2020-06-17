@@ -176,6 +176,7 @@ class DashboardStats extends React.Component {
                 </div>
                 {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
             </div>
+
         )
     }
 }

@@ -12,6 +12,10 @@ input {
 
 .universal__h1 {
     font-family: 'Barlow', sans-serif;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 500;
+}
+
+body {
+    background-color: #002b40;
 }
