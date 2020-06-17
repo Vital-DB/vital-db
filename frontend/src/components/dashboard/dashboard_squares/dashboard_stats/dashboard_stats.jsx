@@ -123,6 +123,7 @@ class DashboardStats extends React.Component {
     render(){
        
         const { vitalsLoading, vitals, userId, loggedIn } = this.props;
+        if (vitalsLoading) return <Loading />
         if (!userId || !loggedIn) return null;
       
         // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;
@@ -152,6 +153,10 @@ class DashboardStats extends React.Component {
         } else {
             chartLines = this.state.subDataKeys;
         }
+
+        const noVitals = (
+            <p className="no-vitals">Looks like you have no stats yet! Click the <span className="no-vitals-plus">+</span> next to the Vital to get started!</p>
+        )
    
         return(
             <div id='my-dashboard-stats' className='dashboard-stats'>
@@ -174,7 +179,7 @@ class DashboardStats extends React.Component {
                         {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
                     </ul>
                 </div>
-                {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
+                {(!data.length) ? noVitals : <DashboardStatsGraph data={data} chartLines={chartLines} />}
             </div>
 
         )

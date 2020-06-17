@@ -71,6 +71,15 @@
     cursor: pointer;
 } */
 
+.no-vitals {
+    color: white;
+    font-size: 2em;
+}
+.no-vitals-plus {
+    font-size:3em;
+    font-weight:bold;
+}
+
 .dashboard-stats-sublist {
     position: absolute;
     /* display: block; */
