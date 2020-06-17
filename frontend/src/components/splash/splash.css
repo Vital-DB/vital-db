@@ -11,15 +11,12 @@
 
 .splash {
   top: 10%;
-  /* height: 700px;
-  width: 50%; */
   height: 73vh;
   width: 50vw;
   background-color: #f7f7f7;
   color: white;
   font-family: Helvetica, sans-serif;
   border-radius: 8px;
-  /* opacity: 0.9; */
   filter: drop-shadow(2px 4px 6px black);
 }
 
@@ -186,7 +183,6 @@
   flex-direction: column;
   border-radius: 2px;
   width: 30%;
-  opacity: 0.9;
   filter: drop-shadow(2px 4px 6px black);
 }
 
