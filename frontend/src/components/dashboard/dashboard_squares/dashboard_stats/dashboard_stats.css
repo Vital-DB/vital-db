@@ -50,8 +50,10 @@
 
 .dashboard-stats-sublist {
     position: absolute;
-    right: -80px;
+    right: -103px;
+    margin-left: auto;
     top: 55px;
+    width: 100px;
     
 }
 
