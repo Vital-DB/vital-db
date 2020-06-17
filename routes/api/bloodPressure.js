@@ -12,7 +12,7 @@ const validateBloodPressureInput = require('../../validations/bloodPressure');
 // GETS
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   BloodPressure.find({ user: req.user.id })
-      .sort({ date: -1 })
+      .sort({ date: 1 })
       .then(bloodPressure => res.json(bloodPressure) )
       .catch(err => res.status(404).json({ vitalsError: "No blood pressures found for that user id" }))
 })

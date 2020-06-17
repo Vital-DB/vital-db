@@ -5,7 +5,7 @@ class DashboardInfo extends React.Component {
     render() {
         return(
             <div id="my-dashboard-info" className='dashboard-info'>
-                <h1 class="universal__h1">Hello its me</h1>
+                <h1 className="universal__h1">Hello its me</h1>
             </div>
         )
     }

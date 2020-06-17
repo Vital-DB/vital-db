@@ -20,20 +20,22 @@ class DashboardStats extends React.Component {
     
         // fetch the user's vitals on load
         this.props.fetchCholesterolLevels();
-        this.props.fetchWeights();
-        this.props.fetchVitaminDLevels();  
-        this.props.fetchTemperatures();
-        this.props.fetchRestingHeartRates();  
-        this.props.fetchBloodPressureLevels();   
+        // this.props.fetchWeights();
+        // this.props.fetchVitaminDLevels();  
+        // this.props.fetchTemperatures();
+        // this.props.fetchRestingHeartRates();  
+        // this.props.fetchBloodPressureLevels();   
     }
 
     componentDidUpdate(prevProps, prevState){
-        // debugger
-        if (this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length){
-            document.querySelector('.add-vital-outer-container').style.display = "";
+        debugger
+        const subModal = document.querySelector('.add-vital-outer-container'); // require the subModal to be loaded to prevent error
+        if ((this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length) && subModal){
+            subModal.style.display = "";
         }
         // this manages graph display whenever a user clicks a subvital
         // it will reset subDataKeys and selected-sub styling when user clicks on another dataKey
+        const currentDataKey = this.state.dataKey
         if (this.state.dataKey !== prevState.dataKey){ // when user selects a new vital
             this.setState({subDataKeys: ["All"]}); // reset default subs
             let selected = document.querySelectorAll('.dashboard-stats .selected-sub'); // currently selected subvitals, to have styling removed
@@ -41,8 +43,31 @@ class DashboardStats extends React.Component {
                 selected[i].classList.remove('selected-sub');
             }
             document.querySelectorAll('.dashboard-stats-sublist li')[0].classList.add('selected-sub') // add selected styling to 'All'
+            switch (currentDataKey) {
+                case 'cholesterolLevels':
+                    this.props.fetchCholesterolLevels();   
+                    break;
+                case 'bloodPressureLevels':
+                    this.props.fetchBloodPressureLevels();   
+                    break;
+                case 'weights':
+                    this.props.fetchWeights();   
+                    break;
+                case 'vitaminDLevels':
+                    this.props.fetchVitaminDLevels();   
+                    break;
+                case 'temperatures':
+                    this.props.fetchTemperatures();   
+                    break;
+                case 'restingHeartRates':
+                    this.props.fetchRestingHeartRates();   
+                    break;
+                default:
+                    break;
+            }
         }
     }
+
 
     // handles the state change & dropdown visibility for vitals that are clicked from the menu
     handleClick(e) {
@@ -124,6 +149,7 @@ class DashboardStats extends React.Component {
     render(){
        
         const { vitalsLoading, vitals, userId, loggedIn } = this.props;
+        // if (vitalsLoading) return <Loading />
         if (!userId || !loggedIn) return null;
       
         // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;
@@ -153,6 +179,13 @@ class DashboardStats extends React.Component {
         } else {
             chartLines = this.state.subDataKeys;
         }
+
+        const noVitals = (
+            <p className="no-vitals">Looks like you have no stats yet! Click the <span className="no-vitals-plus">+</span> below to get started!</p>
+        )
+
+        // this var goes below.. shows a loader while fetching and then changes to noVitals (another conditional used below)
+        const loadingOrNoVitals = (vitalsLoading) ? <Loading /> : noVitals; 
    
         return(
             // <div className='outer'>
@@ -178,7 +211,8 @@ class DashboardStats extends React.Component {
                     {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
                 </ul>
 
-                {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
+                {/* show a loader while fetching; if user has no stats, show the helper message  */}
+                {(!data.length) ? loadingOrNoVitals : <DashboardStatsGraph data={data} chartLines={chartLines} />}
 
                 <div className="dash__addAVital" onClick={() => this.addVital()} >
                     <i className="fas fa-plus-circle"></i>

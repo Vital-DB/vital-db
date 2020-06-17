@@ -57,6 +57,15 @@
     color: white;
 }
 
+.no-vitals {
+    color: white;
+    font-size: 2em;
+}
+.no-vitals-plus {
+    font-size:3em;
+    font-weight:bold;
+}
+
 .dashboard-stats-sublist {
     width: 80%;
     display: flex;

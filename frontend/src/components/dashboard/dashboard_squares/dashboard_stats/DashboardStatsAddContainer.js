@@ -9,9 +9,11 @@ import {
 } from '../../../../actions/vitals'
 import DashboardStatsAdd from './DashboardStatsAdd'
 
-const mapStateToProps = ({errors: {vitals}}) => {
+const mapStateToProps = ({entities: {vitals},loading: {vitalLoading}, errors}) => {
     return ({
-        errors: vitals,
+        errors: errors.vitals,
+        vitalLoading,
+        vitals
     })
 }
 
