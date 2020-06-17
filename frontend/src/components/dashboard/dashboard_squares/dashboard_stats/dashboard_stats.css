@@ -17,16 +17,17 @@
 }
 
 .dashboard-stats-list {
-    /* display: flex; */
+    /* display: flex;  */
     /* width: 100%; */
     /* position: absolute; */
     min-width: 50%;
     text-align: center;
     font-size: 3em;
+    /* box-sizing: border-box; */
     color: white;
     justify-content: space-between;
     background-color: #002B40;
-    /* border: 1px solid gray; */
+    /* border: 1px solid gray;
     
 }
 
@@ -89,7 +90,7 @@
     height: 5vh;
     /* border-radius: 1em; */
     /* overflow: hidden; */
-    padding-top: 75px;
+    padding-top: 11vh;
     margin-bottom: 1vh;
     z-index: 0;
 }
