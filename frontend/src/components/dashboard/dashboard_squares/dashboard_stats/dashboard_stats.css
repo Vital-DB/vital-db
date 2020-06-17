@@ -50,8 +50,13 @@
 
 .dashboard-stats-sublist {
     position: absolute;
-    right: -10px;
+    right: -80px;
     top: 55px;
+    
+}
+
+.dashboard-stats-sublist .selected-sub {
+    background: lightblue;
 }
 
 .recharts-responsive-container{
