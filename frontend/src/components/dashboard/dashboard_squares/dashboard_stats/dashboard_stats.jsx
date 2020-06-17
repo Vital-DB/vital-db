@@ -1,4 +1,5 @@
 import './dashboard_stats.css';
+import Loading from './loader'
 import React from 'react';
 import DashboardStatsGraph from './DashboardStatsGraph'
 
@@ -15,6 +16,7 @@ class DashboardStats extends React.Component {
 
     componentDidMount(){
         // fetch the user's vitals on load
+        this.props.startLoadingVitals();
         this.props.fetchWeights();
         this.props.fetchVitaminDLevels();  
         this.props.fetchTemperatures();
@@ -106,9 +108,12 @@ class DashboardStats extends React.Component {
     }
 
     render(){
-        const { vitals } = this.props;
+        const { vitalsLoading, vitals, userId, loggedIn } = this.props;
+        debugger
+        // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;
         const dontInclude = ["allergies", "medicalConditions"]; // these vitals have no numerical values
         const data = vitals[this.state.dataKey]; // used for recharts component
+        debugger
 
         // this specificies the subVitals that should be extracted from the specific vital's slice of state
         let subVitals = (function(vital) {
@@ -124,14 +129,15 @@ class DashboardStats extends React.Component {
 
         // use to determine what the number of subvitals to display on graph
         let chartLines; 
+        debugger
         // this shows all subvitals if all is selected
-        if (this.state.subDataKeys.includes('All') & this.state.subDataKeys.length == 1){
+        if (this.state.subDataKeys.includes('All') && this.state.subDataKeys.length == 1){
             chartLines = subVitals;
         // otherwise, it shows the subs as specified by the user
         } else {
             chartLines = this.state.subDataKeys;
         }
-    
+        debugger
         return(
             <div id='my-dashboard-stats' className='dashboard-stats'>
                 <div className='dashboard-stats-header'>
@@ -146,7 +152,7 @@ class DashboardStats extends React.Component {
                         {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
                     </ul>
                 </div>
-                <DashboardStatsGraph data={data} chartLines={chartLines} />
+                {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
             </div>
         )
     }
