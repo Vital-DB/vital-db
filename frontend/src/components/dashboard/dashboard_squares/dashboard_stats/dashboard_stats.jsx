@@ -16,8 +16,6 @@ class DashboardStats extends React.Component {
 
     componentDidMount(){
         // fetch the user's vitals on load
-        debugger
-        this.props.startLoadingVitals();
         this.props.fetchWeights();
         this.props.fetchVitaminDLevels();  
         this.props.fetchTemperatures();
@@ -112,7 +110,7 @@ class DashboardStats extends React.Component {
     render(){
         debugger;
         const { vitalsLoading, vitals, userId, loggedIn } = this.props;
-        if (!loggedIn) return null;
+        if (!userId && !loggedIn) return null;
         debugger
         // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;
         const dontInclude = ["allergies", "medicalConditions"]; // these vitals have no numerical values
