@@ -18,9 +18,8 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 })
 
 // POSTS
-// signup
 router.post('/',
-    // passport.authenticate('jwt', { session: false }), this isnt working
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validateBloodPressureInput(req.body);
         
@@ -29,11 +28,14 @@ router.post('/',
       }
   
       const newBloodPressure = new BloodPressure({
-        user: req.body.user,
-        value: req.body.value,
+        user: req.user.id,
+        systolic: req.body.systolic,
+        diastolic: req.body.diastolic,
       });
   
-      newBloodPressure.save().then(bloodPressure => res.json(bloodPressure));
+      newBloodPressure.save()
+        .then(bloodPressure => res.json(bloodPressure))
+        .catch(err => res.status(422).json(err));
     }
   );
 

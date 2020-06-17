@@ -6,7 +6,7 @@ const passport = require('passport');
 const Temperature = require('../../models/Temperature');
 
 // validations
-const validateTemperature = require('../../validations/temperature');
+const validateTemperatureInput = require('../../validations/temperature');
 
 // // ROUTES
 // GETS
@@ -20,22 +20,23 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   );
 });
 // POSTS
-// signup
 router.post('/',
-    // passport.authenticate('jwt', { session: false }), this isnt working
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
-      const { errors, isValid } = validateTemperature(req.body);
+      const { errors, isValid } = validateTemperatureInput(req.body);
         
       if (!isValid) {
         return res.status(400).json(errors);
       }
   
       const newTemperature = new Temperature({
-        user: req.body.user,
+        user: req.user.id,
         value: req.body.value,
       });
   
-      newTemperature.save().then(Temperature => res.json(Temperature));
+      newTemperature.save()
+        .then(temperature => res.json(temperature))
+        .catch(err => res.status(422).json(err));
     }
   );
 

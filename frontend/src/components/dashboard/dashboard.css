@@ -1,9 +1,7 @@
 .dashboard {
-    width: 100vw;
     height: 100vh;
     background-color: #002B40;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    margin-left: 400px;
+    /* overflow-y: scroll; */
+    transition: 0.5s;
 }
