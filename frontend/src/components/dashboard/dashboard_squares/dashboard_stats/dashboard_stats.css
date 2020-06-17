@@ -12,6 +12,11 @@
     box-sizing: border-box;
 }
 
+.outer {
+    display: flex;
+    flex-direction: row;
+}
+
 .dashboard-stats-list {
     z-index: 10;
     text-align: center;

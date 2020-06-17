@@ -1,6 +1,7 @@
 .dashboard {
     height: 100vh;
     background-color: #002B40;
-    margin-left: 250px;
-    overflow-y: scroll;
+    margin-left: 400px;
+    /* overflow-y: scroll; */
+    transition: 0.5s;
 }
