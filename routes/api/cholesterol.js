@@ -10,12 +10,9 @@ const validateCholesterolInput = require('../../validations/cholesterol');
 
 // // ROUTES
 // GETS
-// test route, to be deleted
-router.get("/", (req, res) => {
-    res.json({ msg: "This is the Cholesterol route" })
-});
-router.get('/user/:user_id', (req, res) => {
-  Cholesterol.find({user: req.params.user_id})
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+  Cholesterol.find({ user: req.user.id })
+      .sort({ date: -1 })
       .then(cholesterol => res.json(cholesterol))
       .catch(err =>
           res.status(404).json({ vitalsError: 'No cholesterol found from that user' }

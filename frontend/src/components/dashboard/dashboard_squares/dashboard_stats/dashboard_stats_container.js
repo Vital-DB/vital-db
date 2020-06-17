@@ -7,24 +7,30 @@ import {
     fetchRestingHeartRates,
     fetchTemperatures,
     fetchVitaminDLevels,
+    startLoadingVitals,
+    doneLoadingVitals,
+
 } from '../../../../actions/vitals'
 
-const mapStateToProps = ({session, entities: {vitals}}) => {
+const mapStateToProps = ({loading: {vitalsLoading}, session, entities: {vitals}}) => {
     return {
         loggedIn: session.isAuthenticated,
         userId: session.user.id,
+        vitalsLoading,
         vitals,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchWeights: (userId) => dispatch(fetchWeights(userId)),
-        fetchCholesterolLevels: (userId) => dispatch(fetchCholesterolLevels(userId)),
-        fetchBloodPressureLevels: (userId) => dispatch(fetchBloodPressureLevels(userId)),
-        fetchRestingHeartRates: (userId) => dispatch(fetchRestingHeartRates(userId)),
-        fetchTemperatures: (userId) => dispatch(fetchTemperatures(userId)),
-        fetchVitaminDLevels: (userId) => dispatch(fetchVitaminDLevels(userId)),
+        startLoadingVitals: () => dispatch(startLoadingVitals()),
+        doneLoadingVitals: () => dispatch(doneLoadingVitals()),
+        fetchWeights: () => dispatch(fetchWeights()),
+        fetchCholesterolLevels: () => dispatch(fetchCholesterolLevels()),
+        fetchBloodPressureLevels: () => dispatch(fetchBloodPressureLevels()),
+        fetchRestingHeartRates: () => dispatch(fetchRestingHeartRates()),
+        fetchTemperatures: () => dispatch(fetchTemperatures()),
+        fetchVitaminDLevels: () => dispatch(fetchVitaminDLevels()),
     }
 }
 

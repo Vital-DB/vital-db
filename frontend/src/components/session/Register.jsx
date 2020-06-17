@@ -71,13 +71,18 @@ export const Register = () => {
 
     return (
         <div className="register">
+
+        <div className="errors-container">
+          {renderErrors()}
+        </div>
+         
             <form onSubmit={handleSubmit} className="register__form">
                 <input
                 className="register-input" 
                     type="text" 
                     value={handle} 
                     onChange ={handleChange('handle')} 
-                    placeholder="Username" />
+                    placeholder="Handle" />                
                 <input 
                 className="register-input"
                     type="email" 
@@ -99,6 +104,7 @@ export const Register = () => {
                     autoComplete="new-password" 
                     onChange ={handleChange('password2')}  
                     placeholder="Confirm password" />
+                     
                 <button 
                     type="submit"
                     className="signup-button">
@@ -108,14 +114,13 @@ export const Register = () => {
             
             <NavLink className="register-nav" to="/login">Login</NavLink>
             <NavLink className="register-nav" to="/">Home</NavLink>
-           
+         
             <button 
                 onClick={loginAsDemo}
-                className="universal__button login__button">
+                className="demo-button">
                 Login as Demo
             </button>
-           
-            {renderErrors()}
+          
         </div>
     )
 
