@@ -2,6 +2,8 @@ import React from 'react';
 import './side_nav.css';
 import {NavLink} from 'react-router-dom'
 import { dateFormatter, heightFormatter } from '../../util/helper_util';
+import danc from './danc.png';
+
 class SideNav extends React.Component {
     constructor(props){
         super(props);
@@ -47,6 +49,24 @@ class SideNav extends React.Component {
         } else {
             birthday = new Date(birthday);
         }
+        
+        const date = new Date();
+        const hours = date.getHours();
+        let greeting = '';
+
+        if(hours >= 4 && hours <= 5) {
+            greeting = `Wow ${firstName}, you're up early!`
+        } else if(hours < 12 && hours >= 6) {
+            greeting = `Good morning ${firstName}!`;
+        } else if (hours >= 12 && hours <= 17) {
+            greeting = `Good afternoon ${firstName}`;
+        } else if (hours > 17 && hours <= 21) {
+            greeting = `Good evening ${firstName}!`;
+        } else if (hours >= 22 && hours <= 24) {
+            greeting = `Good night ${firstName}!`;
+        } else if (hours >= 1 && hours <= 3) {
+            greeting = `Sleep is important for the body ${firstName}!`;
+        }
 
         return (
             <div>
@@ -86,7 +106,10 @@ class SideNav extends React.Component {
                     
                     
                 </div>
-                <span className='sidenav-open' onClick={this.openNav}>&#9776;</span>
+                <div className='danc-talk'>
+                    <div className='speech-bubble'>{greeting}</div>
+                    <img src={danc} width='100' height='140' onClick={this.openNav} className='danc' alt=""/>
+                </div>
             </div>
         )
     }
