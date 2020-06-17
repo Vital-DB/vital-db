@@ -23,7 +23,7 @@ export const fetchBloodPressureLevels = () => (
 );
 export const createBloodPressureLevel = (data) => {
     return axios.post(
-        `/api/bloodPressureLevel`,
+        `/api/bloodPressures`,
         data,
     )
 };
@@ -61,7 +61,7 @@ export const fetchVitaminDLevels = () => (
 );
 export const createVitaminDLevel = (data) => {
     return axios.post(
-        `/api/vitaminDLevels`,
+        `/api/vitaminDs`,
         data,
     )
 };

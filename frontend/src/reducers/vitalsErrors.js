@@ -8,6 +8,7 @@ import {
     RECEIVE_BLOOD_PRESSURE_LEVEL,
 
 } from "../actions/vitals";
+import {merge} from 'lodash'
 
 // checking for session errors and updating slice of state
 // in the case there are no errors, empty array is returned
@@ -27,7 +28,7 @@ export default (state = [], action) => {
         case RECEIVE_BLOOD_PRESSURE_LEVEL:
             return [];
         case RECEIVE_VITALS_ERRORS:
-            return action.errors;
+            return merge({}, state, action.errors);
         default:
             return state;
     }

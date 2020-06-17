@@ -10,7 +10,12 @@ class DashboardStatsAdd extends Component {
     }
 
     componentDidUpdate(prevProps){
-
+        debugger
+        if (prevProps.vital !== this.props.vital){
+            for (let i = 0; i < this.props.subVitals.length; i++){
+                this.setState({[this.props.subVitals[i]]: ""})
+            }
+        } 
     }
 
     hideModal(e){
@@ -55,7 +60,7 @@ class DashboardStatsAdd extends Component {
         const { vital, subVitals, errors } = this.props;
 
         const input = (
-            subVitals.map(sub => <label>{sub}<input subDataKey={sub} type="number" value={this.state.sub} onChange={this.handleChange} /></label>)
+            subVitals.map(sub => <label>{sub}<input subDataKey={sub} type="number" value={this.state[sub]} onChange={this.handleChange} /></label>)
         )
 
         const errorList = [];

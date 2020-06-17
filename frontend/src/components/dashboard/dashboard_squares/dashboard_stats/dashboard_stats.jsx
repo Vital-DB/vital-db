@@ -18,12 +18,12 @@ class DashboardStats extends React.Component {
     componentDidMount(){
     
         // fetch the user's vitals on load
-        // this.props.fetchWeights();
-        // this.props.fetchVitaminDLevels();  
-        // this.props.fetchTemperatures();
-        // this.props.fetchRestingHeartRates();  
-        // this.props.fetchBloodPressureLevels();   
         this.props.fetchCholesterolLevels();
+        this.props.fetchWeights();
+        this.props.fetchVitaminDLevels();  
+        this.props.fetchTemperatures();
+        this.props.fetchRestingHeartRates();  
+        this.props.fetchBloodPressureLevels();   
     }
 
     componentDidUpdate(prevProps, prevState){
