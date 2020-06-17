@@ -3,6 +3,7 @@ import Loading from './loader'
 import React from 'react';
 import DashboardStatsGraph from './DashboardStatsGraph'
 import DashboardStatsAddContainer from './DashboardStatsAddContainer'
+// import danc from './danc.png';
 
 class DashboardStats extends React.Component {
     constructor(props){
@@ -154,6 +155,7 @@ class DashboardStats extends React.Component {
         }
    
         return(
+            // <div className='outer'>
             <div id='my-dashboard-stats' className='dashboard-stats'>
                 <div className='dashboard-stats-header'>
                     <div className="double-column">
@@ -176,6 +178,8 @@ class DashboardStats extends React.Component {
                 </div>
                 {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
             </div>
+            //     {/* <img src={danc} width="400" alt=""/> */}
+            // {/* </div> */}
 
         )
     }

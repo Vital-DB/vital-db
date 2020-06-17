@@ -2,7 +2,7 @@
     height: 50vh;
     width: 60vw;
     transition: 0.5s;
-    margin-left: 250px;
+    /* margin-left: 250px */
 }
 
 .dashboard-stats-header {
@@ -12,6 +12,11 @@
     align-items: center;
     justify-content: space-between;
     height: 15vh;
+}
+
+.outer {
+    display: flex;
+    flex-direction: row;
 }
 
 .dashboard-stats-list {

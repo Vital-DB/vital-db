@@ -1,0 +1,32 @@
+.vital-main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.danc {
+    /* margin-top: 400px; */
+    margin-left: 50px;
+}
+
+.speech-bubble{
+    /* background-color: aqua; */
+    height: 150px;
+    width: 200px;
+    border: 2px solid lightblue;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.danc-talk{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    margin-left: 30px;
+}
