@@ -1,7 +1,7 @@
 .whole-edit-page {
     display: flex;
     justify-content: center;
-    font-family: sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 .edit-board{
@@ -9,6 +9,7 @@
     background-color: rgb(106,201,201);
     border-radius: 20px;
     margin-left: 200px;
+    margin-top: 50px;
     width: 700px;
     transition: 0.5s;
     padding: 40px;
@@ -26,6 +27,7 @@
     width: 600px;
     transition: 0.5s;
     padding: 40px;
+    box-shadow: 5px 5px #888888;
 }
 
 .edit-form-profile {
@@ -49,9 +51,6 @@
     flex-direction: row;
 }
 
-.edit-info {
-}
-
 .edit-info label {
     margin-bottom: 50px;
 }
@@ -70,8 +69,21 @@
     border-radius: 5px;
 }
 
+.edit-form-col-1 input:focus {
+    outline: none;
+    /* box-shadow: 3px 3px rgb(97, 199, 140); */
+    box-shadow: 5px 5px #888888;
+}
+
+.edit-form-col-2 select:focus {
+    outline: none;
+    /* box-shadow: 3px 3px rgb(97, 199, 140); */
+    box-shadow: 5px 5px #888888;
+}
+
 .edit-form-col-2 select, .edit-form-col-2 input {
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 .edit-form-header{

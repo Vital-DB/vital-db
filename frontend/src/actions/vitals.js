@@ -1,6 +1,7 @@
 import * as VitalsUtil from '../util/vitalsApi'
 
 export const RECEIVE_CHOLESTEROL_LEVELS = "RECEIVE_CHOLESTEROL_LEVELS";
+export const RECEIVE_CHOLESTEROL_LEVEL = "RECEIVE_CHOLESTEROL_LEVEL";
 export const RECEIVE_ALLERGIES = "RECEIVE_ALLERGIES";
 export const RECEIVE_BLOOD_PRESSURE_LEVELS = "RECEIVE_BLOOD_PRESSURE_LEVELS";
 export const RECEIVE_MEDICAL_CONDITIONS = "RECEIVE_MEDICAL_CONDITIONS";
@@ -17,6 +18,13 @@ const receiveCholesterolLevels = (cholesterolLevels) => {
     return { 
         type: RECEIVE_CHOLESTEROL_LEVELS,
         cholesterolLevels,
+    }
+};
+const receiveCholesterolLevel = (cholesterolLevel) => {
+    
+    return { 
+        type: RECEIVE_CHOLESTEROL_LEVEL,
+        cholesterolLevel,
     }
 };
 const receiveAllergies = (allergies) => ({
@@ -68,11 +76,19 @@ export const fetchCholesterolLevels = (userId) => dispatch => {
             errs => dispatch(receiveVitalsErrors(errs.message))
         )
 };
+export const createCholesterolLevel = (data) => dispatch => {
+    
+    return VitalsUtil.createCholesterolLevel(data)
+        .then(
+            res => dispatch(receiveCholesterolLevel(res.data)),
+            errs => dispatch(receiveVitalsErrors(errs.response.data.errors))
+        )
+};
 export const fetchAllergies = () => dispatch => (
     VitalsUtil.fetchAllergies()
         .then(
             res => dispatch(receiveAllergies(res.data)),
-            errs => dispatch(receiveVitalsErrors(errs))
+            errors => dispatch(receiveVitalsErrors(errors))
         )
 );
 

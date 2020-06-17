@@ -2,6 +2,7 @@ import './dashboard_stats.css';
 import Loading from './loader'
 import React from 'react';
 import DashboardStatsGraph from './DashboardStatsGraph'
+import DashboardStatsAddContainer from './DashboardStatsAddContainer'
 
 class DashboardStats extends React.Component {
     constructor(props){
@@ -15,17 +16,21 @@ class DashboardStats extends React.Component {
     }
 
     componentDidMount(){
+    
         // fetch the user's vitals on load
-        this.props.startLoadingVitals();
-        this.props.fetchWeights();
-        this.props.fetchVitaminDLevels();  
-        this.props.fetchTemperatures();
-        this.props.fetchRestingHeartRates();  
-        this.props.fetchBloodPressureLevels();   
+        // this.props.fetchWeights();
+        // this.props.fetchVitaminDLevels();  
+        // this.props.fetchTemperatures();
+        // this.props.fetchRestingHeartRates();  
+        // this.props.fetchBloodPressureLevels();   
         this.props.fetchCholesterolLevels();
     }
 
     componentDidUpdate(prevProps, prevState){
+        // debugger
+        if (this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length){
+            document.querySelector('.add-vital-outer-container').style.display = "";
+        }
         // this manages graph display whenever a user clicks a subvital
         // it will reset subDataKeys and selected-sub styling when user clicks on another dataKey
         if (this.state.dataKey !== prevState.dataKey){ // when user selects a new vital
@@ -109,13 +114,21 @@ class DashboardStats extends React.Component {
         this.setState({subDataKeys: selectedSubs}) // this sets the subVitals to be displayed on the graph
     }
 
-    render(){
-        const { vitalsLoading, vitals, userId, loggedIn } = this.props;
+    addVital(){
         // debugger
+        let container = document.querySelector('.add-vital-outer-container');
+        container.style.display = (container.style.display === '') ? "block" : "";
+    }
+
+    render(){
+       
+        const { vitalsLoading, vitals, userId, loggedIn } = this.props;
+        if (!userId || !loggedIn) return null;
+      
         // if (!loggedIn || !userId || (!vitals['bloodPressureLevels'] && !vitals['cholesterolLevels'] && !vitals['weights'] && !vitals['vitaminDLevels'] && !vitals['temperatureLevels'] && !vitals['restingHeartRates']) ) return null;
         const dontInclude = ["allergies", "medicalConditions"]; // these vitals have no numerical values
         const data = vitals[this.state.dataKey]; // used for recharts component
-        // debugger
+       
 
         // this specificies the subVitals that should be extracted from the specific vital's slice of state
         let subVitals = (function(vital) {
@@ -131,7 +144,7 @@ class DashboardStats extends React.Component {
 
         // use to determine what the number of subvitals to display on graph
         let chartLines; 
-        // debugger
+     
         // this shows all subvitals if all is selected
         if (this.state.subDataKeys.includes('All') && this.state.subDataKeys.length == 1){
             chartLines = subVitals;
@@ -139,26 +152,28 @@ class DashboardStats extends React.Component {
         } else {
             chartLines = this.state.subDataKeys;
         }
-        // debugger
+   
         return(
             <div className="dashboard__container">
-                <div id='my-dashboard-stats' className='dashboard-stats'>
-                    <div className='dashboard-stats-header'>
+            <div id='my-dashboard-stats' className='dashboard-stats'>
+                <div className='dashboard-stats-header'>
+                    <div className="double-column">
                         <ul className="dashboard-stats-list">
                             {/* values on the li are the vitals keys, displayed text uses regex to convert camelcase to capitalized first letter with spaces in between */}
                             {/* exclude values if they don't have numeric stats */}
                             {Object.keys(vitals).map((vitalName, idx) => (!dontInclude.includes(vitalName)) ? 
                             <li key={idx} value={vitalName} className={(idx == 0) ? "selected" : ""} onClick={this.handleClick}>{vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
                             </li> : "")}
+                            
                         </ul>
-                        
-                        {/* this is the navigation panel on the right of the graph. it shows all the relevant numerical sub data keys, as defined by subVitals */}
-                        <ul className="dashboard-stats-sublist">
-                            <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li>
-                            {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
-                        </ul>
+                        <div className="add-vital" onClick={() => this.addVital()}>+</div>
                     </div>
-                    {(!data.length) ? <Loading /> : <DashboardStatsGraph data={data} chartLines={chartLines} />}
+                    <DashboardStatsAddContainer vital={this.state.dataKey} subVitals={subVitals} />
+                    {/* this is the navigation panel on the right of the graph. it shows all the relevant numerical sub data keys, as defined by subVitals */}
+                    <ul className="dashboard-stats-sublist">
+                        <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li>
+                        {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
+                    </ul>
                 </div>
 
                 <div id="my-dashboard-info" className='dashboard-info'>
@@ -166,6 +181,7 @@ class DashboardStats extends React.Component {
                 </div>
 
             </div>
+        </div>
         )
     }
 }
