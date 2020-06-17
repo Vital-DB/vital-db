@@ -200,7 +200,6 @@
 
 @media only screen and (max-height: 625px) {
   .feature {
-    /* font-size: 50%; */
     height: 50%;
     width: 50%;
   }
