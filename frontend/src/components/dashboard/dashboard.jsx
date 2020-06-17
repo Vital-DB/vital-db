@@ -7,12 +7,10 @@ class Dashboard extends React.Component {
 
     render(){
         return(
-            <div>
                 <div className='dashboard'>
                     <DashboardStatsContainer />
                     <DashboardInfoContainer />
                 </div>
-            </div>
         )
     }
 }

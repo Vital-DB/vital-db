@@ -45,6 +45,8 @@ class DashboardStats extends React.Component {
 
     // handles the state change & dropdown visibility for vitals that are clicked from the menu
     handleClick(e) {
+        const selected1 = document.querySelector('.dashboard-stats-sublist').classList.toggle("hidden");
+
         const selected = document.querySelector('.dashboard-stats-list .selected'); // select the current list item with class selected
         const listItems = e.currentTarget.parentNode.children; // the list items from .dashboard-stats-list
         
@@ -157,7 +159,9 @@ class DashboardStats extends React.Component {
                     <ul className="dashboard-stats-list">
                         {/* values on the li are the vitals keys, displayed text uses regex to convert camelcase to capitalized first letter with spaces in between */}
                         {/* exclude values if they don't have numeric stats */}
-                        {Object.keys(vitals).map((vitalName, idx) => (!dontInclude.includes(vitalName)) ? <li key={idx} value={vitalName} className={(idx == 0) ? "selected" : ""} onClick={this.handleClick}>{vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })}</li> : "")}
+                        {Object.keys(vitals).map((vitalName, idx) => (!dontInclude.includes(vitalName)) ? 
+                        <li key={idx} value={vitalName} className={(idx == 0) ? "selected" : ""} onClick={this.handleClick}>{vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
+                         </li> : "")}
                     </ul>
                     <div className="add-vital" onClick={() => this.addVital()}>+</div>
                     <DashboardStatsAddContainer vital={this.state.dataKey} subVitals={subVitals} />

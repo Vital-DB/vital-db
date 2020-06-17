@@ -8,6 +8,7 @@ class SideNav extends React.Component {
         this.logoutUser = this.logoutUser.bind(this);
         this.openNav = this.openNav.bind(this);
         this.closeNav = this.closeNav.bind(this);
+        // this.highlightNav = this.highlightNav.bind(this);
     }
 
     logoutUser(e) {
@@ -63,22 +64,22 @@ class SideNav extends React.Component {
                     </div>
                     <div className='sidenav-link-group'>
                         <div className='sidenav-links'>
-                            <NavLink to="/main/dashboard"><i className="fas fa-home"></i> Home</NavLink>
+                            <NavLink to="/main/dashboard" id='sidenav-home-link'><i className="fas fa-home"></i>Home</NavLink>
                         </div>
                         <div className='sidenav-links'>
-                            <NavLink to="/main/edit"><i className="fas fa-user-edit"></i> Edit Profile</NavLink>
+                            <NavLink to="/main/edit" id='sidenav-edit-link'><i className="fas fa-user-edit"></i>Edit Profile</NavLink>
                         </div>
                         <div className='sidenav-links'>
-                            <NavLink to="/main/checkup/history"><i className="fas fa-notes-medical"></i> Checkup History</NavLink>
+                            <NavLink to="/main/checkup/history" id='sidenav-history-link'><i className="fas fa-notes-medical"></i>Checkup History</NavLink>
                         </div>
                         <div className='sidenav-links'>
-                            <NavLink to="/main/prescriptions"><i className="fas fa-capsules"></i> Medications</NavLink>
+                            <NavLink to="/main/prescriptions" id='sidenav-prescription-link'><i className="fas fa-capsules"></i>Medications</NavLink>
                         </div>
                         <div className='sidenav-links'>
-                            <NavLink to="/main/vaccinations"><i className="fas fa-syringe"></i> Vaccinations</NavLink>
+                            <NavLink to="/main/vaccinations" id='sidenav-vaccination-link'><i className="fas fa-syringe"></i>Vaccinations</NavLink>
                         </div>
                         <div className='sidenav-links'>
-                            <NavLink to='/main/allergies'><i className="fas fa-allergies"></i> Allergies</NavLink>
+                            <NavLink to='/main/allergies' id='sidenav-allergy-link'><i className="fas fa-allergies"></i>Allergies</NavLink>
                         </div>
                     <button className='sidenav-logout' onClick={this.logoutUser}>LOGOUT</button>
                     </div>

@@ -29,7 +29,6 @@ export default (state = _nullState, action) => {
         case RECEIVE_CHOLESTEROL_LEVELS:
             return merge({}, state, {cholesterolLevels: action.cholesterolLevels} )
         case RECEIVE_CHOLESTEROL_LEVEL:
-            debugger
             const newVital = action.cholesterolLevel;
             const newState = merge({}, state);
             newState['cholesterolLevels'].push(newVital);

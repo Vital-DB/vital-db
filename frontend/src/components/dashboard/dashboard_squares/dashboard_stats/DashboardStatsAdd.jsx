@@ -41,7 +41,6 @@ class DashboardStatsAdd extends Component {
         for (let i = 0; i < subVitals.length; i++){
             if (errors[subVitals[i]]) errorList.push(<li>{`${subVitals[i]}: ${errors[subVitals[i]].properties.message}`}</li>)
         }
-            debugger
         return (
             <div className="add-vital-outer-container">
                 <div onClick={this.hideModal}className="add-vital-modal"></div>
