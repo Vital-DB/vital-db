@@ -28,7 +28,7 @@ class DashboardStats extends React.Component {
 
     componentDidUpdate(prevProps, prevState){
         debugger
-        const subModal = document.querySelector('.add-vital-outer-container');
+        const subModal = document.querySelector('.add-vital-outer-container'); // require the subModal to be loaded to prevent error
         if ((this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length) && subModal){
             subModal.style.display = "";
         }
@@ -67,14 +67,9 @@ class DashboardStats extends React.Component {
         }
     }
 
-    fetchVital(vital){
-        // debugger
-
-    }
 
     // handles the state change & dropdown visibility for vitals that are clicked from the menu
     handleClick(e) {
-        this.fetchVital(e.currentTarget.getAttribute('value'))
         const selected1 = document.querySelector('.dashboard-stats-sublist').classList.toggle("hidden");
 
         const selected = document.querySelector('.dashboard-stats-list .selected'); // select the current list item with class selected
