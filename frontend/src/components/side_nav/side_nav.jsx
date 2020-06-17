@@ -43,6 +43,24 @@ class SideNav extends React.Component {
     render(){
         let { firstName, lastName, sex, birthday, bloodType, weight, height, organDonor } = this.props.currentUser;
 
+        const date = new Date();
+        const hours = date.getHours();
+        let greeting = '';
+
+        if(hours >= 4 && hours <= 5) {
+            greeting = `Wow ${firstName}, you're up early!`
+        } else if(hours < 12 && hours >= 6) {
+            greeting = `Good morning ${firstName}!`;
+        } else if (hours >= 12 && hours <= 17) {
+            greeting = `Good afternoon ${firstName}`;
+        } else if (hours > 17 && hours <= 21) {
+            greeting = `Good evening ${firstName}!`;
+        } else if (hours >= 22 && hours <= 24) {
+            greeting = `Good night ${firstName}!`;
+        } else if (hours >= 1 && hours <= 3) {
+            greeting = `Sleep is important for the body ${firstName}!`;
+        }
+
         if(!birthday){
             return null;
         } else {
@@ -55,7 +73,7 @@ class SideNav extends React.Component {
                     <a className="closebtn" onClick={this.closeNav}>&times;</a>
                     <div className='sidenav-profile-image'>PROFILE IMAGE</div>
                     <div className="sidenav-info">
-                        <h1>{`Hello, ${firstName}`}</h1>
+                        <h1>{greeting}</h1>
                         <h1>{`Birthdate: ${dateFormatter(birthday)}`}</h1>
                         <h1>{`Blood Type: ${bloodType}`}</h1>
                         <h1>{`Current Weight: ${weight}lbs`}</h1>

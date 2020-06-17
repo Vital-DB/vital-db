@@ -14,9 +14,7 @@
     align-items: center;
     justify-content: space-around;
     box-sizing: border-box;
-    font-family: sans-serif;
-    box-shadow: 5px 10px #888888;
-    
+    font-family: 'Barlow', sans-serif;
 }
 
 .sidenav-info {
@@ -80,6 +78,10 @@
 .sidenav-open {
     font-size: 30px;
     cursor: pointer;
+    position: fixed;
+    color: #00d7bc;
+    font-size: 42px;
+    font-weight: bolder;
 }
 
 .sidenav-profile-image {
@@ -96,6 +98,9 @@
 #sidenav-home-link.active {
     color: #dbdbdb;
     background-color: #ff4e66;
+}
+
+#sidenav-home-link {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -104,6 +109,9 @@
 #sidenav-edit-link.active {
     color: #dbdbdb;
     background-color: #ff4e66;
+}
+
+#sidenav-edit-link {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -112,6 +120,9 @@
 #sidenav-history-link.active {
     color: #dbdbdb;
     background-color: #ff4e66;
+}
+
+#sidenav-history-link {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -120,6 +131,9 @@
 #sidenav-prescription-link.active {
     color: #dbdbdb;
     background-color: #ff4e66;
+}
+
+#sidenav-prescription-link {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -128,6 +142,9 @@
 #sidenav-vaccination-link.active {
     color: #dbdbdb;
     background-color: #ff4e66;
+}
+
+#sidenav-vaccination-link {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -136,11 +153,13 @@
 #sidenav-allergy-link.active {
     color: #dbdbdb;
     background-color: #ff4e66;
+}
+
+#sidenav-allergy-link {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-
 
 .sidenav-logout{
     margin-top: 10px;

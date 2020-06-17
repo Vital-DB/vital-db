@@ -1,7 +1,7 @@
 .whole-edit-page {
     display: flex;
     justify-content: center;
-    font-family: sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 .edit-board{
@@ -9,6 +9,7 @@
     background-color: rgb(106,201,201);
     border-radius: 20px;
     margin-left: 200px;
+    margin-top: 50px;
     width: 700px;
     transition: 0.5s;
     padding: 40px;
