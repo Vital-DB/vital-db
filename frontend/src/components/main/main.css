@@ -8,6 +8,11 @@
 .danc {
     /* margin-top: 400px; */
     margin-left: 50px;
+    /* cursor:pointer; */
+}
+
+.danc:hover {
+    cursor: pointer;
 }
 
 .speech-bubble{
