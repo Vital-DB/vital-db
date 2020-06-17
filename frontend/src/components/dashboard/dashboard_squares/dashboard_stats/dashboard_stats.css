@@ -103,6 +103,10 @@
     top: 0;
     left: 0;
     opacity: .7;
+
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 .add-vital-outer-container {
     position: absolute;
@@ -115,11 +119,12 @@
     position: absolute;
     z-index: 10;
     width: 50vw;
-    border: 5px solid black;
+    /* border: 5px solid black; */
     margin: 0 auto;
-    background: blue;
+    background: white;
     padding: 30px;
     box-sizing: border-box;
+
 }
 
 .add-vital-form {
@@ -190,4 +195,13 @@ path {
 circle {
     stroke: #00D7BC;
     stroke-width: 4;
+}
+
+line {
+    stroke: white;
+}
+
+tspan {
+    /* color: white !important; */
+    fill: white;
 }
