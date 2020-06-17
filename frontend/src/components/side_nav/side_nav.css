@@ -6,6 +6,7 @@
     top: 0;
     left: 0;
     background-color: aquamarine;
+    background-image: linear-gradient(150deg, rgb(55, 255, 215), rgb(62, 161, 165));
     overflow-x: hidden;
     transition: 0.5s;
     display: flex;
@@ -14,6 +15,8 @@
     justify-content: space-around;
     box-sizing: border-box;
     font-family: sans-serif;
+    box-shadow: 5px 10px #888888;
+    
 }
 
 .sidenav-info {
@@ -25,6 +28,7 @@
     width: 80%;
     margin-bottom: 15px;
     margin-top: 15px;
+    box-shadow: 5px 5px #888888;
 }
 
 .sidenav-link-group{
@@ -42,7 +46,7 @@
     margin-bottom: 15px;
 }
 
-.sidenav a {
+.sidenav .closebtn {
     padding: 8px 8px 8px 8px;
     text-decoration: none;
     font-size: 20px;
@@ -86,7 +90,57 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 5px 5px #888888;
 }
+
+#sidenav-home-link.active {
+    color: #dbdbdb;
+    background-color: rgb(90, 163, 139);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-edit-link.active {
+    color: #dbdbdb;
+    background-color: rgb(90, 163, 139);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-history-link.active {
+    color: #dbdbdb;
+    background-color: rgb(90, 163, 139);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-prescription-link.active {
+    color: #dbdbdb;
+    background-color: rgb(90, 163, 139);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-vaccination-link.active {
+    color: #dbdbdb;
+    background-color: rgb(90, 163, 139);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-allergy-link.active {
+    color: #dbdbdb;
+    background-color: rgb(90, 163, 139);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 
 .sidenav-logout{
     margin-top: 10px;
@@ -103,9 +157,22 @@
 .sidenav-links {
     background-color: rgb(71, 233, 179);
     width: 100%;
-    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 3px;
+}
+
+.sidenav-links a {
+    height: 40px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.sidenav-links i {
+    margin-right: 10px;
 }

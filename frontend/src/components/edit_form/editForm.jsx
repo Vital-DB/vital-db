@@ -5,23 +5,19 @@ class EditForm extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = this.props.currentUser;
-        // this.state = {
-        //     firstName: '',
-        //     lastName: '',
-        //     birthday: '',
-        //     bloodType: '',
-        //     weight: '',
-        //     height: '',
-        //     organDonor: '',
-        // }
+        // this.state = this.props.currentUser;
+        this.state = {
+            firstName: this.props.currentUser.firstName,
+            lastName: this.props.currentUser.lastName,
+            birthday: this.props.currentUser.birthday,
+            bloodType: this.props.currentUser.bloodType,
+            weight: this.props.currentUser.weight,
+            height: this.props.currentUser.height,
+            organDonor: this.props.currentUser.organDonor,
+            _id: this.props.currentUser._id
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    // componentWillReceiveProps(){
-    //     
-    //     this.setState(this.props.currentUser)
-    // }
 
     update(field){
         
@@ -30,7 +26,6 @@ class EditForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({ _id: this.props.currentUser._id })
         this.props.editUser(this.state)
     }
 
@@ -59,7 +54,7 @@ class EditForm extends React.Component {
                             </div>
                             <div className='edit-form-col-2'>
                             <label><div>Height</div>
-                                <select className='edit-user-height' onChange={this.update('height')}>
+                                <select className='edit-user-height' value={this.state.height} onChange={this.update('height')}>
                                     <option selected disabled></option>
                                     <option value={59}>4'11</option>
                                     <option value={60}>5'</option>
@@ -91,7 +86,7 @@ class EditForm extends React.Component {
                                     false</label>
                                 </label>
                                 <label className='edit-form-blood-type'><div>Blood Type</div>
-                                    <select  onChange={this.update('bloodType')}>
+                                    <select  value={this.state.bloodType} onChange={this.update('bloodType')}>
                                         <option selected disabled></option>
                                         <option value="A+">A+</option>
                                         <option value="A-">A-</option>
