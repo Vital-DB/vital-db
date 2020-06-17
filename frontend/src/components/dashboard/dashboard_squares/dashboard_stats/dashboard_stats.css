@@ -7,8 +7,6 @@
 
 .dashboard-stats-header {
     position: relative;
-    /*top: -39px;
-    right: 300px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,13 +19,14 @@
 .dashboard-stats-list {
     /* display: flex; */
     /* width: 100%; */
-    
     /* position: absolute; */
-    width: 38%;
+    min-width: 50%;
     text-align: center;
     font-size: 3em;
     color: white;
     justify-content: space-between;
+    background-color: #002B40;
+    /* border: 1px solid gray; */
     
 }
 
@@ -90,6 +89,7 @@
     height: 5vh;
     /* border-radius: 1em; */
     /* overflow: hidden; */
+    padding-top: 75px;
     margin-bottom: 1vh;
     z-index: 0;
 }
@@ -124,15 +124,28 @@
     background: #FF4E66;
 }
 
-.add-vital {
+.double-column {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     position: absolute;
-    right: 0;
-    top: 0;
+    z-index: 5;
+}
+
+.add-vital {
     border: 5px solid white;
     color: white;
     font-size: 3em;
     font-weight: bold;
+    height: 50px;
+    cursor: pointer;
 }
+
+.add-vital:hover {
+    background: white;
+    color: #002B40;
+}
+
 .add-vital-modal {
     height: 100%;
     width: 100%;
