@@ -25,7 +25,7 @@ export default ({chartLines, data}) => {
                 <CartesianGrid stroke="#ccc" />
                 <XAxis dataKey='date' />
                 <YAxis domain={['dataMin - 5', 'dataMax + 5']} />
-                <Tooltip contentStyle={{opacity: .95}}cursor={false} offset="70" isAnimationActive={false} />
+                <Tooltip contentStyle={{opacity: .99, backgroundColor: "#40B5A3", borderRadius: "5px", boxShadow: "1px 1px 1px #2E3030"}}cursor={false} offset="70" isAnimationActive={false} />
             </LineChart>
         </ResponsiveContainer>
     )
