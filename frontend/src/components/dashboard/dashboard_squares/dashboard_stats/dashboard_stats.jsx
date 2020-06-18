@@ -28,7 +28,7 @@ class DashboardStats extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        debugger
+        // debugger
         const subModal = document.querySelector('.add-vital-outer-container'); // require the subModal to be loaded to prevent error
         if ((this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length) && subModal){
             subModal.style.display = "";

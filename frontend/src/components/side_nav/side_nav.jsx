@@ -12,6 +12,10 @@ class SideNav extends React.Component {
         this.closeNav = this.closeNav.bind(this);
     }
 
+    componentDidMount(){
+        this.props.fetchWeights();
+    }
+
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
@@ -41,9 +45,17 @@ class SideNav extends React.Component {
     }
 
     render(){
-        debugger;
-        let { firstName, lastName, sex, birthday, weight, bloodType, height, organDonor } = this.props.currentUser;
+        // debugger;
+        let { firstName, lastName, sex, birthday, bloodType, height, organDonor } = this.props.currentUser;
         
+        let { vitals } = this.props;
+
+        if(!vitals.weights.length){
+            return null;
+        }
+
+        let weight = vitals.weights[vitals.weights.length - 1].value;
+
         if(!birthday){
             return null;
         } else {

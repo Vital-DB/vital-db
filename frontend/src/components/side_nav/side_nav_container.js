@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import SideNav from './side_nav';
 import { logout } from '../../actions/session';
-// import { fetchWeights } from '../../actions/vitals';
+import { fetchWeights } from '../../actions/vitals';
 
 const mapStateToProps = state => {
     // debugger;
@@ -12,11 +12,11 @@ const mapStateToProps = state => {
     }
 }
 
-// const mapDispatchToProps = dispatch => {
-//     return{
-//         fetchWeights: () => dispatch(fetchWeights()),
-//         // logout: () => dispatch(logout()),
-//     }
-// }
+const mapDispatchToProps = dispatch => {
+    return{
+        fetchWeights: () => dispatch(fetchWeights()),
+        logout: () => dispatch(logout()),
+    }
+}
 
-export default connect(mapStateToProps, {logout})(SideNav);
+export default connect(mapStateToProps, mapDispatchToProps)(SideNav);

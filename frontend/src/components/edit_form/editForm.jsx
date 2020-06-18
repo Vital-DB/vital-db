@@ -26,7 +26,9 @@ class EditForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // debugger;
         this.props.editUser(this.state)
+        this.props.createWeight({ value: this.state.weight});
     }
 
     render(){
