@@ -21,9 +21,8 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 });
 
 // POSTS
-// signup
 router.post('/',
-    // passport.authenticate('jwt', { session: false }), this isnt working
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validateMedicalConditionInput(req.body);
         
@@ -32,11 +31,14 @@ router.post('/',
       }
   
       const newMedicalCondition = new MedicalCondition({
-        user: req.body.user,
-        value: req.body.value,
+        user: req.user.id,
+        date: req.body.date,
+        medicalCondition: req.body.medicalCondition,
       });
   
-      newMedicalCondition.save().then(medicalCondition => res.json(medicalCondition));
+      newMedicalCondition.save()
+        .then(medicalCondition => res.json(medicalCondition))
+        .catch(err => res.status(422).json(err));
     }
   );
 

@@ -18,6 +18,7 @@ class DashboardStatsAdd extends Component {
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
             }
+            document.querySelector('.add-vital-outer-container').style.display = "";
         } 
     }
 
@@ -51,6 +52,9 @@ class DashboardStatsAdd extends Component {
             case 'allergies':
                 this.props.createAllergy(this.state);
                 break;
+            case 'medicalConditions':
+                this.props.createMedicalCondition(this.state);
+                break;
             default:
                 break;
         }
@@ -71,10 +75,13 @@ class DashboardStatsAdd extends Component {
         )
 
         const errorList = [];
+
         for (let i = 0; i < subVitals.length; i++){
             const subVital = subVitals[i];
-            if (errors[subVital]) errorList.push(<li key={subVital}>{`${subVital}: ${errors[subVital].properties.message}`}</li>)
+            const errorPath = (subVital !== 'allergy' && subVital !== 'medicalCondition' && subVital !== 'date' && errors[subVital]) ? errors[subVital].properties.message : errors[subVital];
+            if (errors[subVital]) errorList.push(<li key={subVital}>{`${subVital}: ${errorPath}`}</li>)
         }
+ 
         return (
             <div className="add-vital-outer-container">
                 <div onClick={this.hideModal}className="add-vital-modal"></div>

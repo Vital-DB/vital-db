@@ -5,6 +5,7 @@ import SideNavContainer from '../side_nav/side_nav_container';
 import NewPicture from '../pictures/NewPicture';
 import editFormContainer from '../edit_form/editFormContainer';
 import Allergies from '../allergies/Allergies';
+import CheckupHistory from '../checkupHistory/CheckupHistory';
 // import danc from './danc.png';
 import './main.css';
 
@@ -23,6 +24,7 @@ class Main extends React.Component {
                 <PrivateRoute exact path="/main/pictures/new" component={NewPicture} />
                 <PrivateRoute path='/main/edit' component={editFormContainer} />
                 <PrivateRoute path='/main/allergies' component={Allergies} />
+                <PrivateRoute path='/main/checkup/history' component={CheckupHistory} />
             </div>
         )
     }

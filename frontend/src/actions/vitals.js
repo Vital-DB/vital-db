@@ -15,6 +15,7 @@ export const RECEIVE_WEIGHT = "RECEIVE_WEIGHT";
 export const RECEIVE_ALLERGIES = "RECEIVE_ALLERGIES";
 export const RECEIVE_ALLERGY = "RECEIVE_ALLERGY";
 export const RECEIVE_MEDICAL_CONDITIONS = "RECEIVE_MEDICAL_CONDITIONS";
+export const RECEIVE_MEDICAL_CONDITION = "RECEIVE_MEDICAL_CONDITION";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
 export const CLEAR_VITALS = "CLEAR_VITALS";
 export const START_LOADING_VITALS = "START_LOADING_VITALS";
@@ -52,6 +53,10 @@ const receiveBloodPressureLevel = (bloodPressureLevel) => ({
 const receiveMedicalConditions = (medicalConditions) => ({
     type: RECEIVE_MEDICAL_CONDITIONS,
     medicalConditions,
+});
+const receiveMedicalCondition = (medicalCondition) => ({
+    type: RECEIVE_MEDICAL_CONDITION,
+    medicalCondition,
 });
 const receiveRestingHeartRates = (restingHeartRates) => ({
     type: RECEIVE_RESTING_HEART_RATES,
@@ -129,7 +134,7 @@ export const createAllergy = (data) => dispatch => {
     return VitalsUtil.createAllergy(data)
         .then(
             res => dispatch(receiveAllergy(res.data)),
-            errs => dispatch(receiveVitalsErrors(errs.response.data.errors))
+            errs => dispatch(receiveVitalsErrors(errs.response.data))
         )
 };
 export const fetchBloodPressureLevels = () => dispatch => {
@@ -154,6 +159,14 @@ export const fetchMedicalConditions = () => dispatch => {
         .then(
             res => dispatch(receiveMedicalConditions(res.data)),
             errs => dispatch(receiveVitalsErrors(errs))
+        )
+};
+export const createMedicalCondition = (data) => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.createMedicalCondition(data)
+        .then(
+            res => dispatch(receiveMedicalCondition(res.data)),
+            errs => dispatch(receiveVitalsErrors(errs.response.data))
         )
 };
 export const fetchRestingHeartRates = () => dispatch => {

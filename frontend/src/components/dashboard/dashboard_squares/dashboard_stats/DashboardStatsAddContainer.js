@@ -7,6 +7,7 @@ import {
     createRestingHeartRate,
     createBloodPressureLevel,
     createAllergy,
+    createMedicalCondition,
 } from '../../../../actions/vitals'
 import DashboardStatsAdd from './DashboardStatsAdd'
 
@@ -27,6 +28,7 @@ const mapDispatchToProps = dispatch => {
         createRestingHeartRate: data => dispatch(createRestingHeartRate(data)),
         createBloodPressureLevel: data => dispatch(createBloodPressureLevel(data)),
         createAllergy: data => dispatch(createAllergy(data)),
+        createMedicalCondition: data => dispatch(createMedicalCondition(data)),
     })
 }
 

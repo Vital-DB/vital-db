@@ -38,6 +38,12 @@ export const fetchMedicalConditions = () => (
         `/api/medicalConditions`,
     )
 );
+export const createMedicalCondition = (data) => (
+    axios.post(
+        `/api/medicalConditions`,
+        data
+    )
+);
 export const fetchRestingHeartRates = () => (
     axios.get(
         `/api/restingHeartRates`,

@@ -6,12 +6,13 @@ const MedicalConditionSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  condition: {
+  medicalCondition: {
     type: String,
     required: true
   },
   date: {
     type: Date,
+    required: true,
     default: Date.now
   }
 });

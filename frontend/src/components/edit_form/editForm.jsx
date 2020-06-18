@@ -81,7 +81,7 @@ class EditForm extends React.Component {
                                 </label>
                                 <label className='edit-form-organ-donor'><div>Organ Donor</div>
                                     <label>
-                                        <input type="radio" value={true} name='organDonor' onChange={this.update('organDonor')}/>
+                                        <input type="radio" value={true} name='organDonor' onChange={this.update('organDonor')} />
                                     true</label>
                                     <label>
                                         <input type="radio" value={false} name='organDonor' onChange={this.update('organDonor')}/>
