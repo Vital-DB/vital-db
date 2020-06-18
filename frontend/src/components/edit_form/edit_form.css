@@ -142,43 +142,73 @@
     border-radius: 10px;
 }
 
+.allergic {
+    margin-right: 10px;
+}
+
+.allergies-list{
+    box-shadow: 3px 3px #888888;
+}
+
 /* ALLERGIES / CHECKUPHISTORY ADD VITAL BUTTON */
+
 .dash__addAVital.allergies {
     margin: 0 auto;
     margin-top: 1vh;
     margin-bottom: 1vh;
     display: flex;
-    width: 25%;
-    justify-content: space-between;
-    align-items: center;
+    width: 27%;
     color: white;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-family: 'Barlow', sans-serif;
     font-size: 1.5em;
     cursor: pointer;
     background-color: lightblue;
-
 }
 
+.dash__addAVital.checkup {
+    margin: 0 auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    display: flex;
+    width: 35%;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: lightblue;
+}
+
+.dash__addAVital.allergies:hover{
+    outline: none;
+    transition: 0.5s;
+    box-shadow: 5px 5px #888888;
+    /* background-color: green; */
+}
+
+.dash__addAVital.checkup:hover{
+    outline: none;
+    transition: 0.5s;
+    box-shadow: 5px 5px #888888;
+}
 /* CHECKUP HISTORY */
+
+.fa-clipboard-check{
+    margin-right: 10px;
+}
 
 .edit-form.allergies table {
     background-color: lightblue;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 30px;
     box-sizing: border-box;
     position: relative;
-    display: block;
-    text-align: center;
-}
-
-.edit-form.allergies table tbody {
-    width: 100%;
-}
-
-.edit-form.allergies table tbody tr {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px #888888;
 }
 
 .edit-form.allergies table tbody tr td:first-child, .edit-form.allergies table thead tr th:first-child {
@@ -186,12 +216,15 @@
     width: 50%;
 }
 .edit-form.allergies table thead {
-    border-bottom: 1px solid black;
-
+    height: 30px;
+    width: 40%;
+    /* border-bottom: 1px solid black; */
+    margin-left: 65px;
+    margin-bottom: 15px;
 }
+
 .edit-form.allergies table thead th {
-    padding-bottom: 10px;
-    /* margin-bottom: 10px; */
+    padding-bottom: 30px;
 }
 .edit-form.allergies table thead tr th {
     font-weight: bold;

@@ -67,16 +67,16 @@ export default () => {
                 <DashboardStatsAddContainer vital={"medicalConditions"} subVitals={["medicalCondition"]} />
                 <div id='my-edit-form' className='edit-board'>
                     <div className='edit-form allergies'>
-                        <h1 className="edit-form-header">Checkup History</h1>
-                        <div className="dash__addAVital allergies" onClick={() => addVital()} >
+                        <h1 className="edit-form-header"><i class="fas fa-clipboard-check"></i>Checkup History</h1>
+                        <div className="dash__addAVital allergies checkup" onClick={() => addVital()} >
                             <i className="fas fa-plus-circle"></i>
-                            <h1>Add a Vital</h1>
+                            <h1>Add Checkup</h1>
                         </div>
                         <table>
                             <thead>
-                                <tr>
+                                <tr className='header-tr'>
                                     <th>Date</th>
-                                    <th>Description</th>
+                                    <th className='checkup-description'>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
