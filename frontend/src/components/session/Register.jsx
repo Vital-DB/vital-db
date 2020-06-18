@@ -1,13 +1,20 @@
 import {register, login} from '../../actions/session';
 // import {login} from '../../actions/session';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 
+import { clearSessionErrors } from '../../actions/session';
+
 import './register.css'
 
-export const Register = () => {
+export const Register = (props) => {
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(clearSessionErrors());
+    }, [props.history])
+
     const errors = useSelector(state => state.errors.session);
     
     const [handle, setHandle] = useState("");

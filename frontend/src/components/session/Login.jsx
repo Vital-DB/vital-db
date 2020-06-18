@@ -1,11 +1,20 @@
 import {login} from '../../actions/session';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
-import './login.css'
+import './login.css';
 
-export const Login = () => {
+import { clearSessionErrors } from '../../actions/session';
+
+export const Login = (props) => {
+    // debugger
+   
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(clearSessionErrors());
+    }, [props.history])
+
     const errors = useSelector(state => state.errors.session);
     const [handle, setHandle] = useState("");
     const [password, setPassword] = useState("");

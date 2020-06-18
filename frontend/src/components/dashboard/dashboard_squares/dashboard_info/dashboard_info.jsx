@@ -1,14 +1,21 @@
-import React from 'react';
-import './dashboard_info.css';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {NavLink} from 'react-router-dom';
+import './dashboard_info.css'
 
-class DashboardInfo extends React.Component {
-    render() {
-        return(
-            <div id="my-dashboard-info" className='dashboard-info'>
-                <h1 className="universal__h1">Hello its me</h1>
-            </div>
-        )
+export default (props) => {
+    const dispatch = useDispatch();
+    const errors = useSelector(state => state.errors);
+  
+
+    const renderAllergies = () => {
+        
     }
-}
 
-export default DashboardInfo;
+
+    return (
+        <div className="dashboardInfo">
+            <h1>hello</h1>
+        </div>
+    )
+}
