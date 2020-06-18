@@ -73,13 +73,24 @@ class DashboardStatsAdd extends Component {
         const { vitalLoading, vital, subVitals, errors } = this.props;
         if (vitalLoading && !errors) return <Loading />
         if (!vital || !subVitals) return null;
-        // const inputType = (!vital === 'medicalConditions') ? <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} /> : <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} />
+
+        const dataKeys = {
+            cholesterolLevels: "Cholesterol",
+            bloodPressureLevels: "Blood Pressure",
+            weights: "Weight",
+            vitaminDLevels: "Vitamin D",
+            temperatures: "Body Temperature",
+            restingHeartRates: "Resting Heart Rate",
+            medicalConditions: "Checkup Details",
+            allergies: "Allergy",
+        }
+
         const input = (
             subVitals.map(sub => {
                 let inputType;
-                if (vital !== 'medicalConditions'){
+                if (vital !== 'medicalConditions'){ // text area
                     inputType = <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />;
-                } else {
+                } else { // input[type="text"]
                     inputType = <textarea key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />
                 }
                 return <label key={sub}>{sub}{inputType}</label>
@@ -99,7 +110,7 @@ class DashboardStatsAdd extends Component {
                 <div onClick={this.hideModal}className="add-vital-modal"></div>
                 <div className="add-vital-container">
                     <form className="add-vital-form" onSubmit={this.handleSubmit}>
-                        <h1>Add {vital}</h1>
+                        <h1>Add {dataKeys[vital]}</h1>
                         {input}
                         <ul className="vitals-error-list">
                             {errorList}
