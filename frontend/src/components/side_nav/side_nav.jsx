@@ -86,7 +86,7 @@ class SideNav extends React.Component {
             'NIH stands for National Institutes of Health',
             'Remember to get your flu shots each year!',
             'Statistically, 9 out of 10 injections are in vein',
-
+            'Remember to take breaks!'
         ];
 
         let randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -99,22 +99,6 @@ class SideNav extends React.Component {
     }
 
     render(){
-        let { firstName, lastName, sex, birthday, bloodType, height, organDonor } = this.props.currentUser;
-        
-        let { vitals } = this.props;
-
-        if(!vitals.weights.length){
-            return null;
-        }
-
-        let weight = vitals.weights[vitals.weights.length - 1].value;
-
-        if(!birthday){
-            return null;
-        } else {
-            birthday = new Date(birthday);
-        }
-
         let hiding = 'Oh, You found me! Click on me to show sidebar!';
 
         return (
@@ -134,7 +118,7 @@ class SideNav extends React.Component {
                             <NavLink to="/main/dashboard" id='sidenav-home-link'><i className="fas fa-home"></i>Home</NavLink>
                         </div>
                         <div className='sidenav-links'>
-                            <NavLink to="/main/edit" id='sidenav-edit-link'><i className="fas fa-user-edit"></i>Edit Profile</NavLink>
+                            <NavLink to="/main/profile" id='sidenav-edit-link'><i className="fas fa-user"></i>View Profile</NavLink>
                         </div>
                         <div className='sidenav-links'>
                             <NavLink to='/main/allergies' id='sidenav-allergy-link'><i className="fas fa-allergies"></i>Allergies</NavLink>
