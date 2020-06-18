@@ -3,6 +3,7 @@ import './side_nav.css';
 import {NavLink} from 'react-router-dom'
 import { dateFormatter, heightFormatter } from '../../util/helper_util';
 import danc from './danc.png';
+import dancSurprise from './danc-surprise.png';
 
 class SideNav extends React.Component {
     constructor(props){
@@ -10,10 +11,31 @@ class SideNav extends React.Component {
         this.logoutUser = this.logoutUser.bind(this);
         this.openNav = this.openNav.bind(this);
         this.closeNav = this.closeNav.bind(this);
+        this.changeGreeting = this.changeGreeting.bind(this); 
+        
+        this.state = { bool: true, greeting: '' };
     }
 
     componentDidMount(){
         this.props.fetchWeights();
+        const date = new Date();
+        const hours = date.getHours();
+        const { handle } = this.props;
+        if(this.state.bool){
+            if(hours >= 4 && hours <= 5) {
+                this.setState({ greeting: `Wow ${handle}, you're up early!`});
+            } else if(hours < 12 && hours >= 6) {
+                this.setState({ greeting: `Good morning ${handle}!`});
+            } else if (hours >= 12 && hours <= 17) {
+                this.setState({ greeting: `Good afternoon ${handle}!`});
+            } else if (hours > 17 && hours <= 21) {
+                this.setState({ greeting: `Good evening ${handle}`});
+            } else if (hours >= 22 && hours <= 24) {
+                this.setState({ greeting: `Good night ${handle}!`});
+            } else if (hours >= 1 && hours <= 3) {
+                this.setState({ greeting: `Sleeping is for humans as recharging is for robots!`});
+            }
+        }
     }
 
     logoutUser(e) {
@@ -44,8 +66,39 @@ class SideNav extends React.Component {
         }
     }
 
+    changeGreeting(){
+        const greetings = [
+            'Normal total cholesterol levels for adults without heart disease is less than 200mg/dL',
+            'Coffee is high in antioxidants!',
+            'Fish is a great source of high-quality protein and healthy fat',
+            'Poor sleep can reduce your physical and mental performance',
+            'General rule of thumb is to drink two to three cups of water per hour',
+            'Try to get at least 150 minutes of exercise in each week!',
+            'Avoid bright lights before sleeping to get quality sleep',
+            'Vitamin D is important, take vitamin D3 if you are not outside enough',
+            'Studies show that smoking takes at least 10 years off of life expectancy',
+            'Remember to get up and stretch!',
+            'Remember to wash your hands, we are in an epidemic!!',
+            'That tickles! Try again',
+            'The WHO recommends wearing a mask when going outside',
+            'Maintain social distancing of 6 feet from others not from the same household',
+            'Who is WHO? WHO stands for World Health Organization!',
+            'NIH stands for National Institutes of Health',
+            'Remember to get your flu shots each year!',
+            'Statistically, 9 out of 10 injections are in vein',
+
+        ];
+
+        let randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+
+        while(randomGreeting === this.state.greeting){
+            randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+        }
+
+        this.setState({ greeting: randomGreeting, bool: false })
+    }
+
     render(){
-        // debugger;
         let { firstName, lastName, sex, birthday, bloodType, height, organDonor } = this.props.currentUser;
         
         let { vitals } = this.props;
@@ -61,37 +114,20 @@ class SideNav extends React.Component {
         } else {
             birthday = new Date(birthday);
         }
-        
-        const date = new Date();
-        const hours = date.getHours();
-        let greeting = '';
 
-        if(hours >= 4 && hours <= 5) {
-            greeting = `Wow ${firstName}, you're up early!`
-        } else if(hours < 12 && hours >= 6) {
-            greeting = `Good morning ${firstName}!`;
-        } else if (hours >= 12 && hours <= 17) {
-            greeting = `Good afternoon ${firstName}`;
-        } else if (hours > 17 && hours <= 21) {
-            greeting = `Good evening ${firstName}!`;
-        } else if (hours >= 22 && hours <= 24) {
-            greeting = `Good night ${firstName}!`;
-        } else if (hours >= 1 && hours <= 3) {
-            greeting = `Sleep is important for the body ${firstName}!`;
-        }
+        let hiding = 'Oh, You found me! Click on me to show sidebar!';
 
         return (
             <div>
                 <div id='my-sidenav' className='sidenav'>
                     <a className="closebtn" onClick={this.closeNav}>&times;</a>
-                    <div className='sidenav-profile-image'>PROFILE IMAGE</div>
-                    <div className="sidenav-info">
-                        <h1>`Hello {firstName}!`</h1>
-                        <h1>{`Birthdate: ${dateFormatter(birthday)}`}</h1>
-                        <h1>{`Blood Type: ${bloodType}`}</h1>
-                        <h1>{`Current Weight: ${weight}lbs`}</h1>
-                        <h1>{`Height: ${heightFormatter(height)}`}</h1>
-                        <h1 className='sidenav-info-last'>{`Organ Donor: ${organDonor}`}</h1>
+                    <div className='danc-talk'>
+                        <div className='speech-bubble'>{this.state.greeting}</div>
+                        <img src={danc} width='100' height='140' onClick={this.changeGreeting} className='danc' alt=""/>
+                        <div className="arrow bounce">
+                            <i className="fa fa-sort-up fa-2x"></i>
+                        </div>
+                        <div className='arrow-text'>Press on me for helpful info!</div>
                     </div>
                     <div className='sidenav-link-group'>
                         <div className='sidenav-links'>
@@ -101,26 +137,26 @@ class SideNav extends React.Component {
                             <NavLink to="/main/edit" id='sidenav-edit-link'><i className="fas fa-user-edit"></i>Edit Profile</NavLink>
                         </div>
                         <div className='sidenav-links'>
-                            <NavLink to="/main/checkup/history" id='sidenav-history-link'><i className="fas fa-notes-medical"></i>Checkup History</NavLink>
+                            <NavLink to='/main/allergies' id='sidenav-allergy-link'><i className="fas fa-allergies"></i>Allergies</NavLink>
                         </div>
                         <div className='sidenav-links'>
-                            <NavLink to="/main/prescriptions" id='sidenav-prescription-link'><i className="fas fa-capsules"></i>Medications</NavLink>
+                            <NavLink to="/main/checkup/history" id='sidenav-history-link'><i className="fas fa-notes-medical"></i>Checkup History</NavLink>
                         </div>
                         <div className='sidenav-links'>
                             <NavLink to="/main/vaccinations" id='sidenav-vaccination-link'><i className="fas fa-syringe"></i>Vaccinations</NavLink>
                         </div>
-                        <div className='sidenav-links'>
-                            <NavLink to='/main/allergies' id='sidenav-allergy-link'><i className="fas fa-allergies"></i>Allergies</NavLink>
-                        </div>
+                        {/* <div className='sidenav-links'>
+                            <NavLink to="/main/prescriptions" id='sidenav-prescription-link'><i className="fas fa-capsules"></i>Medications</NavLink>
+                        </div> */}
                     <button className='sidenav-logout' onClick={this.logoutUser}>LOGOUT</button>
                     </div>
                     
                     
                     
                 </div>
-                <div className='danc-talk'>
-                    <div className='speech-bubble'>{greeting}</div>
-                    <img src={danc} width='100' height='140' onClick={this.openNav} className='danc' alt=""/>
+                <div className='danc-talk-2'>
+                    <div className='speech-bubble-2'>{hiding}</div>
+                    <img src={dancSurprise} width='100' height='140' onClick={this.openNav} className='danc' alt=""/>
                 </div>
             </div>
         )
