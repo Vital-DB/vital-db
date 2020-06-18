@@ -1,26 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { LineChart, Line, CartesianGrid, YAxis, XAxis, ResponsiveContainer, Tooltip, ReferenceArea, Label } from 'recharts';
 import {merge} from 'lodash';
 
 export default ({chartLines, data}) => {
     const colors = ["#FF4E66","#FF5733","#86FF33","#6337D8"];
-
-    const [newData, setNewData] = useState(data);
-
-    useEffect(() => {
-        newData.map((element, idx) => {
-            setNewData((prevState) => {
-                let currDate = new Date(prevState[idx].date);
-
-                prevState[idx].date = `${currDate.getMonth() + 1}-${currDate.getDate()}-${currDate.getFullYear()}`;
-                return ([
-                    ...prevState
-                ])
-            })
-        });
-        
-    }, [])
-
 
     // use with attribute 'content={<CustomTooltip />' on line, for custom tooltip}
     // const CustomTooltip = ({ payload, label, active }) => {
@@ -35,6 +18,7 @@ export default ({chartLines, data}) => {
     
     //     return null;
     // }
+
     for (let i = 0; i < data.length; i++){
         let rawDate = data[i].date;
         let date = rawDate.slice(0,10);
@@ -97,7 +81,7 @@ export default ({chartLines, data}) => {
 
     return (
         <ResponsiveContainer>
-            <LineChart data={newData}>
+            <LineChart data={data}>
                 {referenceLines()}
 
                 {chartLines.map((subVital, idx) => {
