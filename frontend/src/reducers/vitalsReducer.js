@@ -12,6 +12,7 @@ import {
     RECEIVE_WEIGHTS,
     RECEIVE_WEIGHT,
     RECEIVE_ALLERGIES, 
+    RECEIVE_ALLERGY,
     RECEIVE_MEDICAL_CONDITIONS,
     CLEAR_VITALS,
 } from '../actions/vitals'
@@ -76,6 +77,11 @@ export default (state = _nullState, action) => {
             return merge({}, state, newState )  
         case RECEIVE_ALLERGIES:
             return merge({}, state, {allergies: action.allergies} )
+        case RECEIVE_ALLERGY:
+            newVital = action.allergy;
+            newState = merge({}, state);
+            newState['allergies'].push(newVital);
+            return merge({}, state, newState )  
         case RECEIVE_MEDICAL_CONDITIONS:
             return merge({}, state, {medicalConditions: action.medicalConditions} )            
         case CLEAR_VITALS:

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import './allergies.css'
+import DashboardStatsAddContainer from '../dashboard/dashboard_squares/dashboard_stats/DashboardStatsAddContainer'
 
 import {fetchAllergies} from '../../actions/vitals';
 
@@ -44,13 +45,23 @@ export default () => {
         }
     }
 
+    const addVital = () => {
+        // debugger
+        let container = document.querySelector('.add-vital-outer-container');
+        container.style.display = (container.style.display === '') ? "block" : "";
+    }
 
     return (
             <div className='whole-edit-page'>
+                <DashboardStatsAddContainer vital={"allergies"} subVitals={["allergy"]} />
                 <div id='my-edit-form' className='edit-board'>
                     <div className='edit-form allergies'>
                         <h1 className="edit-form-header">Allergies</h1>
                         {renderAllergies()}
+                        <div className="dash__addAVital allergies" onClick={() => addVital()} >
+                            <i className="fas fa-plus-circle"></i>
+                            <h1>Add a Vital</h1>
+                        </div>
                     </div>
                     <div className='pencil'>
                         <div className='pencil-eraser'></div>

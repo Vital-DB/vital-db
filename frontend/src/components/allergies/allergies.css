@@ -1,11 +1,12 @@
-.allergies {
-    width: 100vw;
-    height: 100vh;
-    /* background-color: black; */
-}
 
 .edit-form.allergies {
     display: block;
     text-align: center;
 }
+
+.dash__addAVital.allergies {
+    color: black;
+}
+
+
 

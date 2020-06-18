@@ -13,6 +13,7 @@ export const RECEIVE_VITAMIN_D_LEVEL = "RECEIVE_VITAMIN_D_LEVEL";
 export const RECEIVE_WEIGHTS = "RECEIVE_WEIGHTS";
 export const RECEIVE_WEIGHT = "RECEIVE_WEIGHT";
 export const RECEIVE_ALLERGIES = "RECEIVE_ALLERGIES";
+export const RECEIVE_ALLERGY = "RECEIVE_ALLERGY";
 export const RECEIVE_MEDICAL_CONDITIONS = "RECEIVE_MEDICAL_CONDITIONS";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
 export const CLEAR_VITALS = "CLEAR_VITALS";
@@ -35,6 +36,10 @@ const receiveCholesterolLevel = (cholesterolLevel) => {
 const receiveAllergies = (allergies) => ({
     type: RECEIVE_ALLERGIES,
     allergies,
+});
+const receiveAllergy = (allergy) => ({
+    type: RECEIVE_ALLERGY,
+    allergy,
 });
 const receiveBloodPressureLevels = (bloodPressureLevels) => ({
     type: RECEIVE_BLOOD_PRESSURE_LEVELS,
@@ -119,7 +124,14 @@ export const fetchAllergies = () => dispatch => {
             errors => dispatch(receiveVitalsErrors(errors))
         )
 };
-
+export const createAllergy = (data) => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.createAllergy(data)
+        .then(
+            res => dispatch(receiveAllergy(res.data)),
+            errs => dispatch(receiveVitalsErrors(errs.response.data.errors))
+        )
+};
 export const fetchBloodPressureLevels = () => dispatch => {
     dispatch(startLoadingVitals());
     return VitalsUtil.fetchBloodPressureLevels()

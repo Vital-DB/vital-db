@@ -48,6 +48,9 @@ class DashboardStatsAdd extends Component {
             case 'bloodPressureLevels':
                 this.props.createBloodPressureLevel(this.state);
                 break;
+            case 'allergies':
+                this.props.createAllergy(this.state);
+                break;
             default:
                 break;
         }
@@ -64,7 +67,7 @@ class DashboardStatsAdd extends Component {
         if (vitalLoading && !errors) return <Loading />
         if (!vital || !subVitals) return null;
         const input = (
-            subVitals.map(sub => <label key={sub}>{sub}<input key={sub} subdatakey={sub} type="number" value={this.state[sub] || ""} onChange={this.handleChange} /></label>)
+            subVitals.map(sub => <label key={sub}>{sub}<input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} /></label>)
         )
 
         const errorList = [];
