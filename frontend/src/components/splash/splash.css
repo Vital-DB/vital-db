@@ -116,7 +116,7 @@
   position: relative;
   top: 14px;
   vertical-align: middle;
-  left: 10%;
+  left: 23%;
   height: 69%;
 }
 
@@ -139,14 +139,13 @@
 
 @media only screen and (max-width: 950px) {
   
- 
-
   #heading {
     font-size: 50%;
     text-align: start;
   }
 
   #docchat {
+    left: 13%;
     height: 69%;
     width: 80%;
   }
@@ -200,7 +199,6 @@
 
 @media only screen and (max-height: 625px) {
   .feature {
-    /* font-size: 50%; */
     height: 50%;
     width: 50%;
   }

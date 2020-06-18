@@ -28,7 +28,6 @@ class DashboardStats extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        // debugger
         const subModal = document.querySelector('.add-vital-outer-container'); // require the subModal to be loaded to prevent error
         if ((this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length) && subModal){
             subModal.style.display = "";
@@ -145,6 +144,14 @@ class DashboardStats extends React.Component {
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
     }
+    
+    // hideDropdown(e){
+    //     debugger
+    //     const listItems = document.querySelector('.dashboard-stats-list li');
+    //     for (let i = 0; i < listItems.length; i++){ 
+    //         if (!listItems[i].classList.contains('selected')) listItems[i].style.display = "none";
+    //     }
+    // }
 
     render(){
        
@@ -186,7 +193,8 @@ class DashboardStats extends React.Component {
 
         // this var goes below.. shows a loader while fetching and then changes to noVitals (another conditional used below)
         const loadingOrNoVitals = (vitalsLoading) ? <Loading /> : noVitals; 
-   
+
+
         return(
             // <div className='outer'>
             <div id='my-dashboard-stats' className='dashboard-stats'>
