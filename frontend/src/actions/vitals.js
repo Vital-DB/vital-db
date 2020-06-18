@@ -18,9 +18,13 @@ export const RECEIVE_MEDICAL_CONDITIONS = "RECEIVE_MEDICAL_CONDITIONS";
 export const RECEIVE_MEDICAL_CONDITION = "RECEIVE_MEDICAL_CONDITION";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
 export const CLEAR_VITALS = "CLEAR_VITALS";
+export const CLEAR_VITALS_ERRORS = "CLEAR_VITALS_ERRORS";
 export const START_LOADING_VITALS = "START_LOADING_VITALS";
 export const START_LOADING_VITAL = "START_LOADING_VITAL";
 
+export const clearVitalsErrors = () => ({
+    type: CLEAR_VITALS_ERRORS,
+});
 const receiveCholesterolLevels = (cholesterolLevels) => {
     return { 
         type: RECEIVE_CHOLESTEROL_LEVELS,

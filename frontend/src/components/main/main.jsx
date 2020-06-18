@@ -13,6 +13,12 @@ class Main extends React.Component {
     componentDidMount(){
         this.props.fetchCurrentUser();
     }
+    componentDidUpdate(prevProps){
+        debugger
+        if (this.props.location.pathname !== prevProps.location.pathname){
+            this.props.clearVitalsErrors();
+        }
+    }
 
     render(){
 

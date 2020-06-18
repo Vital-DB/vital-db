@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 import '../edit_form/edit_form.css'
 import DashboardStatsAddContainer from '../dashboard/dashboard_squares/dashboard_stats/DashboardStatsAddContainer'
 
-import {fetchMedicalConditions} from '../../actions/vitals';
+import {fetchMedicalConditions, clearVitalsErrors} from '../../actions/vitals';
 
 export default () => {
     const dispatch = useDispatch();
@@ -16,10 +16,12 @@ export default () => {
         // debugger
     }, []) 
     useEffect(() => {
+        // fetch updated conditions after uploading successfully
         dispatch(fetchMedicalConditions());
         // document.querySelector('.add-vital-outer-container').style.display = "";
         // debugger
-    }, [checkupHistory.length]) 
+    }, [checkupHistory.length]); 
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,7 +43,7 @@ export default () => {
     }
 
     const renderCheckupHistory = () => {
-        debugger
+        // debugger
         if(checkupHistory) {
             return checkupHistory.map((history, idx) => {
                 return (

@@ -8,8 +8,10 @@ import {
     createBloodPressureLevel,
     createAllergy,
     createMedicalCondition,
+    clearVitalsErrors
 } from '../../../../actions/vitals'
 import DashboardStatsAdd from './DashboardStatsAdd'
+import {withRouter} from 'react-router-dom'
 
 const mapStateToProps = ({entities: {vitals},loading: {vitalLoading}, errors}) => {
     return ({
@@ -29,7 +31,8 @@ const mapDispatchToProps = dispatch => {
         createBloodPressureLevel: data => dispatch(createBloodPressureLevel(data)),
         createAllergy: data => dispatch(createAllergy(data)),
         createMedicalCondition: data => dispatch(createMedicalCondition(data)),
+        clearVitalsErrors: () => dispatch(clearVitalsErrors()),
     })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardStatsAdd)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DashboardStatsAdd))
