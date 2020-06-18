@@ -7,6 +7,7 @@ const mapStateToProps = state => {
     return {
         loggedIn: state.session.isAuthenticated,
         handle: state.session.user.handle,
+        user: state.entities.user,
     }
 }
 

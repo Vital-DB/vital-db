@@ -35,6 +35,11 @@ export default ({chartLines, data}) => {
     
     //     return null;
     // }
+    for (let i = 0; i < data.length; i++){
+        let rawDate = data[i].date;
+        let date = rawDate.slice(0,10);
+        data[i].date = date;
+    }
 
     // debugger
 
