@@ -73,8 +73,17 @@ class DashboardStatsAdd extends Component {
         const { vitalLoading, vital, subVitals, errors } = this.props;
         if (vitalLoading && !errors) return <Loading />
         if (!vital || !subVitals) return null;
+        // const inputType = (!vital === 'medicalConditions') ? <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} /> : <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} />
         const input = (
-            subVitals.map(sub => <label key={sub}>{sub}<input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} /></label>)
+            subVitals.map(sub => {
+                let inputType;
+                if (vital !== 'medicalConditions'){
+                    inputType = <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} />;
+                } else {
+                    inputType = <textarea key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} />
+                }
+                return <label key={sub}>{sub}{inputType}</label>
+            })
         )
 
         const errorList = [];

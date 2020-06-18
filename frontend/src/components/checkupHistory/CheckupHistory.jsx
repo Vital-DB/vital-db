@@ -73,6 +73,12 @@ export default () => {
                             <h1>Add a Vital</h1>
                         </div>
                         <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
                             <tbody>
                             {renderCheckupHistory()}
                             </tbody>

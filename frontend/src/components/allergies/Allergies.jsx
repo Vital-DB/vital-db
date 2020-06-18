@@ -28,7 +28,7 @@ export default () => {
                 <>
                     {Object.values(errors).map((error, idx) => {
                         return (
-                            <p key={idx} className="allergies__errors">{error}</p>
+                            <li key={idx} className="allergies__errors">{error}</li>
                         )
                     })}
                 </>
@@ -60,7 +60,9 @@ export default () => {
                             <i className="fas fa-plus-circle"></i>
                             <h1>Add a Vital</h1>
                         </div>
-                        {renderAllergies()}
+                        <ul className="allergies-list">
+                            {renderAllergies()}
+                        </ul>
                     </div>
                     <div className='pencil'>
                         <div className='pencil-eraser'></div>
