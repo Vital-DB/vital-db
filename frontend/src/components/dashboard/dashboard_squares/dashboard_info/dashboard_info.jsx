@@ -29,9 +29,9 @@ export default (props) => {
     const dataKeyInfo = {
         cholesterolLevels: "Cholesterol readings are a good indication of your heart health. Healthy cholesterol reduces your chances of heart disease and having a stroke. You should get your cholesterol checked once every 5 years once you past 20 years old.",
         bloodPressureLevels: "Blood pressure is the force of blood flowing through your veins. High blood pressure can damage your circulatory system which can lead to heart attacks or strokes.",
-        weights: "Weight",
-        vitaminDLevels: "Vitamin D",
-        temperatures: "Body Temperature",
+        weights: "Healthy weight levels depend on a lot of factors like height and age. Recommended levels shown will not account for these factors and will only show weight recommended by the health department based on gender.",
+        vitaminDLevels: "Vitamin D is critical to the human body, it helps us absorb calcium and is thereby necessary for bone, teeth and muscle strength. It is present in some foods but on average, most of it is produced when the sun's ultraviolet rays hit our skin and force our body to produce it.",
+        temperatures: "Body temperature is critical to health. High body temperatures over 100.4°F usually indicate you have a fever cause either by illness or infection. 'Normal' temperatures usually fun everywhere between 97°F and 99°F. Readings that are lower than 95°F can be an indicator of hypothermia.",
         restingHeartRates: "Normal resting heart rate runs from 60 to 100 beats per minute. Lower resting heart rates signify your heart is running efficiently and your cardiovascular fitness levels are good."
     }
 
