@@ -53,7 +53,7 @@ export const Register = () => {
                 <>
                     {Object.values(errors).map((error, idx) => {
                         return (
-                            <p key={idx} className="register__errors">{error}</p>
+                            <p key={idx} className="register__errors">-{error}</p>
                         )
                     })}
                 </>
