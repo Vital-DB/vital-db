@@ -68,15 +68,15 @@ export default () => {
                 <div id='my-edit-form' className='edit-board'>
                     <div className='edit-form allergies'>
                         <h1 className="edit-form-header">Checkup History</h1>
+                        <div className="dash__addAVital allergies" onClick={() => addVital()} >
+                            <i className="fas fa-plus-circle"></i>
+                            <h1>Add a Vital</h1>
+                        </div>
                         <table>
                             <tbody>
                             {renderCheckupHistory()}
                             </tbody>
                         </table>
-                        <div className="dash__addAVital allergies" onClick={() => addVital()} >
-                            <i className="fas fa-plus-circle"></i>
-                            <h1>Add a Vital</h1>
-                        </div>
                     </div>
                     <div className='pencil'>
                         <div className='pencil-eraser'></div>

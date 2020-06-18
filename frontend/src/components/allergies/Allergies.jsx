@@ -39,7 +39,7 @@ export default () => {
     const renderAllergies = () => {
         if(allergies) {
             return allergies.map((allergy, idx) => {
-                return <h1 className="universal__h1" key={idx}>{allergy.allergy}</h1>
+                return <p key={idx}>{allergy.allergy}</p>
             })
         }
     }
@@ -56,11 +56,11 @@ export default () => {
                 <div id='my-edit-form' className='edit-board'>
                     <div className='edit-form allergies'>
                         <h1 className="edit-form-header">Allergies</h1>
-                        {renderAllergies()}
                         <div className="dash__addAVital allergies" onClick={() => addVital()} >
                             <i className="fas fa-plus-circle"></i>
                             <h1>Add a Vital</h1>
                         </div>
+                        {renderAllergies()}
                     </div>
                     <div className='pencil'>
                         <div className='pencil-eraser'></div>
