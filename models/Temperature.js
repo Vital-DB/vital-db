@@ -6,7 +6,7 @@ const TemperatureSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  value: {
+  degrees: {
     type: Number,
     min: [90, 'Must be more than 90'],
     max: [110, 'Must be less than 110'],
