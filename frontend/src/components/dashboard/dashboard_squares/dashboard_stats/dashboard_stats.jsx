@@ -1,9 +1,9 @@
 import './dashboard_stats.css';
-import Loading from './loader'
+import Loading from './loader';
 import React from 'react';
-import DashboardStatsGraph from './DashboardStatsGraph'
-import DashboardStatsAddContainer from './DashboardStatsAddContainer'
-// import danc from './danc.png';
+import DashboardStatsGraph from './DashboardStatsGraph';
+import DashboardStatsAddContainer from './DashboardStatsAddContainer';
+import DashboardInfo from '../dashboard_info/dashboard_info';
 
 class DashboardStats extends React.Component {
     constructor(props){
@@ -227,6 +227,7 @@ class DashboardStats extends React.Component {
                     <h1>Add a Vital</h1>
                 </div>
                 
+                <DashboardInfo />
             </div>
             //     {/* <img src={danc} width="400" alt=""/> */}
             // {/* </div> */}

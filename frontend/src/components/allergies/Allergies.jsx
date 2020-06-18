@@ -14,8 +14,7 @@ export default () => {
 
     useEffect(() => {
         dispatch(fetchAllergies());
-        // debugger
-    }) // commented out the ,[] that was here (to reduce console warning)
+    }, []) // commented out the ,[] that was here (to reduce console warning)
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -39,7 +38,7 @@ export default () => {
     const renderAllergies = () => {
         if(allergies) {
             return allergies.map((allergy, idx) => {
-                return <p>{allergy.allergy}</p>
+                return <h1 className="universal__h1" key={idx}>{allergy.allergy}</h1>
             })
         }
     }
@@ -47,10 +46,7 @@ export default () => {
 
     return (
         <div className="allergies">
-            <NavLink to="/register">Signup</NavLink>
-            <NavLink to="/">Home</NavLink>
             {renderErrors()}
-
             {renderAllergies()}
         </div>
     )
