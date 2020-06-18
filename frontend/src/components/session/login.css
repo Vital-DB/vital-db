@@ -19,13 +19,16 @@
 
 .login__form {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    background-color: #082b40;
+    padding: 12px;
+    border-radius: 26px;    
 }
 
 
 .login-button {
   margin-bottom: 30px;
-  background-color: rgb(64, 187, 192);
+  background-color: rgb(65, 200, 212);
   color: white;
   font-size: 16px;
   padding: 5px 0 5px 0;
@@ -50,8 +53,8 @@
   font-family: 'Concert One', cursive;
   font-size: 16px;
   position: relative;
-  top: -90px;
-  right: -36%;
+  top: -45px;
+  /* right: -36%; */
   overflow: hidden;
   font-size: 32px;
   border-radius: 80px;
@@ -87,13 +90,13 @@ button.demo-button::before {
   position: relative;
   top: 7%;
   border-radius: 8px;
-  background-color: rgb(64, 187, 192);
+  background-color: rgb(65, 200, 212);
   color: white;
   text-decoration: none;
   text-align: center;
   margin-bottom: 5px;
   padding: 5px 0 5px 0;
-  width: 16%;
+  width: 100%;
 }
 
 /* .login_errors {
