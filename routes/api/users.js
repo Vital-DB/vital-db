@@ -129,7 +129,7 @@ router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) 
             user.weight = req.body.weight || user.weight;
             user.sex = req.body.sex || user.sex;
             user.organDonor = req.body.organDonor || user.organDonor;
-
+            user.profilePic = req.body.profilePic || user.profilePic;
             user.save()
             .then(user => res.json(user))
             .catch(err => console.log(err));

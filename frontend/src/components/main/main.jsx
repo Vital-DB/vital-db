@@ -19,7 +19,7 @@ class Main extends React.Component {
                 <PrivateRoute path='/main' component={SideNavContainer} />
                 <PrivateRoute path='/main/dashboard' component={DashboardContainer} />
                 <PrivateRoute exact path="/main/pictures/new" component={NewPicture} />
-                <PrivateRoute path='/main/edit' component={editFormContainer} />
+                <PrivateRoute path='/main/profile' component={editFormContainer} />
                 <PrivateRoute path='/main/allergies' component={Allergies} />
             </div>
         )
