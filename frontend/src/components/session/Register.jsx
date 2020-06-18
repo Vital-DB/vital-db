@@ -72,9 +72,11 @@ export const Register = () => {
     return (
         <div className="register">
 
-        <div className="errors-container">
-          {renderErrors()}
-        </div>
+        <button
+          onClick={loginAsDemo}
+          className="demo-button">
+          Login as Demo
+        </button>
          
             <form onSubmit={handleSubmit} className="register__form">
                 <input
@@ -82,7 +84,8 @@ export const Register = () => {
                     type="text" 
                     value={handle} 
                     onChange ={handleChange('handle')} 
-                    placeholder="Handle" />                
+                    placeholder="Handle" /> 
+                   <p className="reg-error">{errors['handle']}</p>               
                 <input 
                 className="register-input"
                     type="email" 
@@ -90,6 +93,7 @@ export const Register = () => {
                     autoComplete="username" 
                     onChange ={handleChange('email')} 
                     placeholder="Email" />
+                  <p className="reg-error">{errors['email']}</p>
                 <input 
                 className="register-input"
                     type="password" 
@@ -97,6 +101,7 @@ export const Register = () => {
                     autoComplete="new-password" 
                     onChange ={handleChange('password')}  
                     placeholder="Password" />
+                  <p className="reg-error">{errors['password']}</p>
                 <input 
                 className="register-input"
                     type="password" 
@@ -104,7 +109,7 @@ export const Register = () => {
                     autoComplete="new-password" 
                     onChange ={handleChange('password2')}  
                     placeholder="Confirm password" />
-                     
+                  <p className="reg-error">{errors['password2']}</p>
                 <button 
                     type="submit"
                     className="signup-button">
@@ -114,13 +119,7 @@ export const Register = () => {
             
             <NavLink className="register-nav" to="/login">Login</NavLink>
             <NavLink className="register-nav" to="/">Home</NavLink>
-         
-            <button 
-                onClick={loginAsDemo}
-                className="demo-button">
-                Login as Demo
-            </button>
-          
+
         </div>
     )
 

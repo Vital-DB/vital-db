@@ -8,14 +8,14 @@
     background-image: url('/images/signup-bg.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 550%;
+    background-size: 100%;
     font-family: Helvetica, sans-serif;
 }
 
 @media only screen and (max-width: 1403px) {
-  .register {
+  /* .register {
     background-repeat: repeat;
-  }
+  } */
 }
 
 @media only screen and (max-width: 1000px) {
@@ -47,7 +47,7 @@
   text-align: center;
   margin-bottom: 5px;
   padding: 5px 0 5px 0;
-  width: 16%;
+  width: 202px;
 }
 
 
@@ -69,25 +69,17 @@
   filter: drop-shadow(2px 4px 6px black);
 }
 
-.register p {
-  margin-bottom: 21%;
-  color: #F44336;
+.reg-error {
+  color: #082b40;
+  background-color: #d86052;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
   opacity: .9;
 }
 
-.errors-container {
-  font-size: 12px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  position: relative;
-  right: -3px;
-  top: 105px;
-  z-index: 2;
-  height: 10%;
-}
-
-@media only screen and (max-width: 900px) {
+/* @media only screen and (max-width: 900px) {
   .errors-container {
     right: 20%;
   }
@@ -103,3 +95,7 @@
     margin-bottom: 47px;
   }
 }
+
+.register_errors {
+  color: red;
+}  */
