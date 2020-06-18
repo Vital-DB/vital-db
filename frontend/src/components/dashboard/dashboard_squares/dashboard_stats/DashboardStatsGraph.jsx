@@ -49,12 +49,8 @@ export default ({chartLines, data}) => {
             max: 200
         },
         diastolic: {
-            min: 100,
-            max: 200
-        },
-        value: {
-            min: 0,
-            max: 300,
+            min: 45,
+            max: 80
         }
     }
     // debugger
@@ -63,19 +59,21 @@ export default ({chartLines, data}) => {
         // debugger
         if(chartLines.length === 1) {
             let subVital = chartLines[0];
-                return (
-                    <ReferenceArea 
-                        y1={recommendedRanges[subVital].min} 
-                        y2={recommendedRanges[subVital].max} 
-                        fill="#32CD32" 
-                        // stroke="green"
-                        opacity={0.5}
-                        >
-                        <Label value={`Highest recommended ${subVital}`} 
-                        position="insideTopLeft" />
-                        <Label value={`Lowest recommended ${subVital}`} position="insideBottomLeft" />
-                    </ReferenceArea>
-                )
+                if(subVital !== "value") {
+                    return (
+                        <ReferenceArea 
+                            y1={recommendedRanges[subVital].min} 
+                            y2={recommendedRanges[subVital].max} 
+                            fill="#32CD32" 
+                            // stroke="green"
+                            opacity={0.5}
+                            >
+                            <Label value={`Highest recommended ${subVital}`} 
+                            position="insideTopLeft" />
+                            <Label value={`Lowest recommended ${subVital}`} position="insideBottomLeft" />
+                        </ReferenceArea>
+                    )
+                }
             }
     }
 
