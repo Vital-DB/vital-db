@@ -80,18 +80,25 @@ export const Login = (props) => {
 
     return (
         <div className="login">
+
+        <button
+          onClick={loginAsDemo}
+          className="demo-button">
+          Login as Demo
+            </button>
             <form onSubmit={handleSubmit} className="login__form">
                 <input 
                     type="text" 
                     value={handle} 
                     onChange={handleChange('handle')} className="register-input"  
                     placeholder="User handle" />
+                <p className="reg-error">{errors['handle']}</p> 
                 <input 
                     type="password" 
                     value={password}
                     onChange={handleChange('password')} className="register-input" 
                     placeholder="User password" />
-
+                <p className="reg-error">{errors['password']}</p>
                 <button 
                     type="submit"
                     className="login-button">
@@ -100,13 +107,6 @@ export const Login = (props) => {
             </form>
             <NavLink className="login-nav" to="/register">Signup</NavLink>
             <NavLink className="login-nav" to="/">Home</NavLink>
-            <button 
-                onClick={loginAsDemo}
-                className="demo-button">
-                Login as Demo
-            </button>
-        
-            {renderErrors()}
         </div>
     )
 }
