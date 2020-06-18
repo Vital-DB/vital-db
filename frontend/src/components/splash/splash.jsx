@@ -45,10 +45,7 @@ class Splash extends React.Component {
                   <h3>HDL: </h3>
                   <h4>60 mg/dL</h4>
                 </li>
-                {/* <li className="vital">
-                  <h3>Allergies: </h3>
-                  <h4> Peanuts, Shellfish</h4>
-                  </li> */}
+              
                 </ul>
             </section>
             <section className="feature">
