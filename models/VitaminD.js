@@ -6,7 +6,7 @@ const VitaminDSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  value: {
+  level: {
     type: Number,
     min: [10, 'Must be more than 10'],
     max: [500, 'Must be less than 500'],
