@@ -28,10 +28,7 @@ class DashboardStats extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        // const subModal = document.querySelector('.add-vital-outer-container'); // require the subModal to be loaded to prevent error
-        // if ((this.props.vitals[this.state.dataKey].length !== prevProps.vitals[this.state.dataKey].length) && subModal){
-        //     // subModal.style.display = "";
-        // }
+
         // this manages graph display whenever a user clicks a subvital
         // it will reset subDataKeys and selected-sub styling when user clicks on another dataKey
         const currentDataKey = this.state.dataKey

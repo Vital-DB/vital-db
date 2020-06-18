@@ -62,7 +62,7 @@ export default () => {
 
     return (
             <div className='whole-edit-page'>
-                <DashboardStatsAddContainer vital={"medicalConditions"} subVitals={["date", "medicalCondition"]} />
+                <DashboardStatsAddContainer vital={"medicalConditions"} subVitals={["medicalCondition"]} />
                 <div id='my-edit-form' className='edit-board'>
                     <div className='edit-form allergies'>
                         <h1 className="edit-form-header">Checkup History</h1>

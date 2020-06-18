@@ -18,7 +18,7 @@ class DashboardStatsAdd extends Component {
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
             }
-            document.querySelector('.add-vital-outer-container').style.display = "";
+            document.querySelector('.add-vital-outer-container').style.display = ""; // hide modal when user inputs data
         } 
     }
 
@@ -78,7 +78,7 @@ class DashboardStatsAdd extends Component {
 
         for (let i = 0; i < subVitals.length; i++){
             const subVital = subVitals[i];
-            const errorPath = (subVital !== 'allergy' && subVital !== 'medicalCondition' && subVital !== 'date' && errors[subVital]) ? errors[subVital].properties.message : errors[subVital];
+            const errorPath = (subVital !== 'allergy' && subVital !== 'medicalCondition') ? errors[subVital].properties.message : errors[subVital];
             if (errors[subVital]) errorList.push(<li key={subVital}>{`${subVital}: ${errorPath}`}</li>)
         }
  
