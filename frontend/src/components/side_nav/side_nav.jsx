@@ -115,7 +115,7 @@ class SideNav extends React.Component {
                     </div>
                     <div className='sidenav-link-group'>
                         <div className='sidenav-links'>
-                            <NavLink to="/main/dashboard" id='sidenav-home-link'><i className="fas fa-home"></i>Home</NavLink>
+                            <NavLink to="/main/dashboard" id='sidenav-home-link'><i class="fas fa-chart-area"></i>Dashbaord</NavLink>
                         </div>
                         <div className='sidenav-links'>
                             <NavLink to="/main/profile" id='sidenav-edit-link'><i className="fas fa-user"></i>View Profile</NavLink>

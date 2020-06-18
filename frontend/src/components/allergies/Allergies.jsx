@@ -58,7 +58,7 @@ export default () => {
                         <h1 className="edit-form-header">Allergies</h1>
                         <div className="dash__addAVital allergies" onClick={() => addVital()} >
                             <i className="fas fa-plus-circle"></i>
-                            <h1>Add a Vital</h1>
+                            <h1>Add</h1>
                         </div>
                         <ul className="allergies-list">
                             {renderAllergies()}
