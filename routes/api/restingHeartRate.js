@@ -32,7 +32,7 @@ router.post('/',
   
       const newRestingHeartRate = new RestingHeartRate({
         user: req.user.id,
-        value: req.body.value,
+        BPM: req.body.BPM,
       });
   
       newRestingHeartRate.save()

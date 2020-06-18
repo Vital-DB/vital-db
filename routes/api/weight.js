@@ -31,7 +31,7 @@ router.post('/',
   
       const newWeight = new Weight({
         user: req.user.id,
-        value: req.body.value,
+        pounds: req.body.pounds,
       });
   
       newWeight.save()

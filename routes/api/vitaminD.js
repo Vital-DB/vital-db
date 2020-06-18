@@ -31,7 +31,7 @@ router.post('/',
   
       const newVitaminD = new VitaminD({
         user: req.user.id,
-        value: req.body.value,
+        level: req.body.level,
       });
   
       newVitaminD.save()

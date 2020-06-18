@@ -31,7 +31,7 @@ router.post('/',
   
       const newTemperature = new Temperature({
         user: req.user.id,
-        value: req.body.value,
+        degrees: req.body.degrees,
       });
   
       newTemperature.save()
