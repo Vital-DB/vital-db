@@ -60,6 +60,8 @@
     cursor: pointer;
     transition: color .3s;
     padding-bottom: 1vh;
+    position: relative;
+    z-index: 10;
 }
 
 .dashboard-stats-list .selected {
