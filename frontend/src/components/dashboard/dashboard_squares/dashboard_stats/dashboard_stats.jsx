@@ -221,10 +221,10 @@ class DashboardStats extends React.Component {
                     {/* this is the navigation panel on the right of the graph. it shows all the relevant numerical sub data keys, as defined by subVitals */}
 
                 <ul className="dashboard-stats-sublist">
-                    <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li>
+                    {(subVitals.length > 1) ? <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li> : ""}
                     {subVitals.map((subVital, idx) => {
                         if(subVital !== "value") {
-                            return (<li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)
+                            return (<li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital[0].toUpperCase() + subVital.slice(1)}</li>)
                         }
                     })}
                 </ul>
