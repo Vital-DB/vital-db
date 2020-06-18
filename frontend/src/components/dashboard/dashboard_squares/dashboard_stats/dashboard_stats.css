@@ -49,6 +49,8 @@
     color: white;
     background-color: rgba(0, 43, 64, 0.4);
     width: 20vw;
+
+    border-radius: 0.8em;
 }
 
 .dashboard-stats-list li {
@@ -57,6 +59,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: color .3s;
+    padding-bottom: 1vh;
 }
 
 .dashboard-stats-list .selected {
@@ -212,7 +215,7 @@
     margin-top: 2vh;
     font-family: 'Barlow', sans-serif;
     width: 80% !important;
-    height: 50vh !important;
+    height: 40vh !important;
 }
 
 .recharts-wrapper {
@@ -227,7 +230,7 @@
 }
 
 .dash__addAVital {
-    margin-top: 1vh;
+    margin-top: 2vh;
     display: flex;
     width: 12%;
     justify-content: space-between;
@@ -248,8 +251,8 @@ path {
 }
 
 circle {
-    stroke: #00D7BC;
-    stroke-width: 4;
+    /* stroke: #42C2EF;
+    stroke-width: 4; */
 }
 
 line {
@@ -266,4 +269,12 @@ tspan {
     color: white;
     font-family: 'Barlow', sans-serif;
     font-size: 0.6vw;
+}
+
+.recharts-xAxis .recharts-cartesian-axis-tick:first-child line {
+    stroke: none; 
+}
+   
+.recharts-xAxis .recharts-cartesian-axis-tick:first-child text {
+    font-size: 0;
 }

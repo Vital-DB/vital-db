@@ -168,7 +168,7 @@ class DashboardStats extends React.Component {
                         currentItem.style.display = "block";
                     }
                 }
-                
+
 
 
     }
@@ -221,6 +221,13 @@ class DashboardStats extends React.Component {
 
         // this var goes below.. shows a loader while fetching and then changes to noVitals (another conditional used below)
         const loadingOrNoVitals = (vitalsLoading) ? <Loading /> : noVitals; 
+            // debugger
+
+        const allButton = () => {
+            if(subVitals.length > 1) {
+                return <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li>;
+            }
+        }
 
         return(  
             <div id='my-dashboard-stats' className='dashboard-stats'>
@@ -244,11 +251,10 @@ class DashboardStats extends React.Component {
                     {/* this is the navigation panel on the right of the graph. it shows all the relevant numerical sub data keys, as defined by subVitals */}
 
                 <ul className="dashboard-stats-sublist">
-                    {(subVitals.length > 1) ? <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li> : ""}
+                    {allButton()}    
                     {subVitals.map((subVital, idx) => {
-                        if(subVital !== "value") {
-                            return (<li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital[0].toUpperCase() + subVital.slice(1)}</li>)
-                        }
+                        let subVitalShow = subVital[0].toUpperCase() + subVital.slice(1);
+                        return (<li key={idx} value={subVital} onClick={this.handleClickSub}>{subVitalShow}</li>)
                     })}
                 </ul>
 
@@ -262,6 +268,7 @@ class DashboardStats extends React.Component {
                 <DashboardInfo dataKey={this.state.dataKey} subDataKeys={this.state.subDataKeys} />
                 
                 <h3 className="disclaimer">*None of the information on this website is medically affiliated in any way. We are not doctors and this application is purely for web development showcasing purposes only.</h3>
+                <h3 className="disclaimer">**First data point omitted on all graphs for visual purposes.</h3>
             </div>
         )
     }
