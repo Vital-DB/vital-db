@@ -78,9 +78,9 @@ class DashboardStatsAdd extends Component {
             subVitals.map(sub => {
                 let inputType;
                 if (vital !== 'medicalConditions'){
-                    inputType = <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} />;
+                    inputType = <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />;
                 } else {
-                    inputType = <textarea key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} />
+                    inputType = <textarea key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />
                 }
                 return <label key={sub}>{sub}{inputType}</label>
             })
@@ -101,10 +101,10 @@ class DashboardStatsAdd extends Component {
                     <form className="add-vital-form" onSubmit={this.handleSubmit}>
                         <h1>Add {vital}</h1>
                         {input}
-                        <button>Add</button>
                         <ul className="vitals-error-list">
                             {errorList}
                         </ul>
+                        <button className="universal__button">Add</button>
                     </form>
                 </div>
             </div>

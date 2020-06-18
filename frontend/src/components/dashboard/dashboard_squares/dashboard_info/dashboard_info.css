@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-around;
     margin-top: 2vh;
-    background-color: #42c2ef;
+    /* background-color: #42c2ef; */
     /* background-color: white; */
     height: 23%;
     border-radius: 1em;
@@ -12,7 +12,7 @@
 .dataKey--title {
     font-family: 'Barlow', sans-serif;
     font-size: 1.5vw;
-    font-weight: 600;
+    font-weight: 500;
     color: black;
     margin: 1vw;
 }
@@ -22,6 +22,12 @@
     font-family: 'Barlow', sans-serif;
     color: black;
     font-size: 1.4vh;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 150%;
+}
+
+.dataCard {
+    background-color: rgba(255, 256, 256, 1);
+    border-radius: 0.5em;
+    margin: 0 1em 0 1em;
 }
