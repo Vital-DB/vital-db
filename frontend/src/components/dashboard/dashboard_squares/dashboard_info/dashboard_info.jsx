@@ -37,18 +37,22 @@ export default (props) => {
 
     const displayMainKey = () => {
         return (
-            <div className="dataCard">
+            <div className="dataCard dataCard--4">
                 <h2 className="dataKey--title">{dataKeys[props.dataKey]}</h2>
                 <p className="dataKey__p--description">{dataKeyInfo[props.dataKey]}</p>
             </div>
         )
     }
 
+    const restricted = ["All", "BPM", "degrees", "level", "pounds"];
+
     const displaySubDataKeys = () => {
         return props.subDataKeys.map((dataKey, idx) => {
-            if(dataKey !== "All") {
+            if(!restricted.includes(dataKey)) {
                 return (
-                    <div key={idx} className="dataCard">
+                    <div key={idx} 
+                    className={`dataCard dataCard--${idx}`}
+                    >
                         <h2 className="dataKey--title">{dataKey}</h2>
                         <p className="dataKey__p--description">
                             {infos[dataKey]}
@@ -57,6 +61,7 @@ export default (props) => {
                 )
             }
         })
+
     }
 
     return (
