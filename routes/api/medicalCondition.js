@@ -33,7 +33,7 @@ router.post('/',
       const newMedicalCondition = new MedicalCondition({
         user: req.user.id,
         // date: req.body.date,
-        medicalCondition: req.body.medicalCondition,
+        condition: req.body.condition,
       });
   
       newMedicalCondition.save()

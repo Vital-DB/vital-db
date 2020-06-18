@@ -90,7 +90,7 @@ class DashboardStatsAdd extends Component {
 
         for (let i = 0; i < subVitals.length; i++){
             const subVital = subVitals[i];
-            const errorPath = (subVital !== 'allergy' && subVital !== 'medicalCondition' && errors[subVital]) ? errors[subVital].properties.message : errors[subVital];
+            const errorPath = (subVital !== 'allergy' && subVital !== 'condition' && errors[subVital]) ? errors[subVital].properties.message : errors[subVital];
             if (errors[subVital]) errorList.push(<li key={subVital}>{`${subVital}: ${errorPath}`}</li>)
         }
  

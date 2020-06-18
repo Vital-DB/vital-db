@@ -43,13 +43,13 @@ export default () => {
     }
 
     const renderCheckupHistory = () => {
-        // debugger
+        debugger
         if(checkupHistory) {
             return checkupHistory.map((history, idx) => {
                 return (
                     <tr>
                         <td>{history.date.slice(0,10)}: </td>
-                        <td>{history.medicalCondition}</td>
+                        <td>{history.condition}</td>
                     </tr>
                 )
             })
@@ -64,7 +64,7 @@ export default () => {
 
     return (
             <div className='whole-edit-page'>
-                <DashboardStatsAddContainer vital={"medicalConditions"} subVitals={["medicalCondition"]} />
+                <DashboardStatsAddContainer vital={"medicalConditions"} subVitals={["condition"]} />
                 <div id='my-edit-form' className='edit-board'>
                     <div className='edit-form allergies'>
                         <h1 className="edit-form-header">Checkup History</h1>

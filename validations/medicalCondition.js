@@ -4,14 +4,14 @@ const validText = require('./valid-text');
 module.exports = function validateMedicalConditionInput(data) {
     let errors = {};
 
-    data.medicalCondition = validText(data.medicalCondition) ? data.medicalCondition : "";
+    data.condition = validText(data.condition) ? data.condition : "";
 
-    if(!Validator.isLength(data.medicalCondition, { min: 3, max: 50 })) {
-        errors.medicalCondition = 'Medical Condition must be at least 3 characters';
+    if(!Validator.isLength(data.condition, { min: 3, max: 50 })) {
+        errors.condition = 'Medical Condition must be at least 3 characters';
     }
 
-    if(Validator.isEmpty(data.medicalCondition)) {
-        errors.medicalCondition = 'Medical Condition is required';
+    if(Validator.isEmpty(data.condition)) {
+        errors.condition = 'Medical Condition is required';
     }
 
     return {
