@@ -33,6 +33,7 @@
     font-family: 'Barlow', sans-serif;
     font-weight: 500;
     cursor: pointer;
+    transition: color .3s;
 }
 
 .dashboard-stats-list .selected {
@@ -197,7 +198,7 @@
 }
 
 path {
-    stroke: #FF4E66;
+    /* stroke: #FF4E66; */
     stroke-width: 2;
 }
 

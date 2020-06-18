@@ -34,19 +34,31 @@ export const Login = () => {
         });
     }
 
-    const renderErrors = () => {
-        if(errors) {
-            return (
-                <>
-                    {Object.values(errors).map((error, idx) => {
-                        return (
-                            <p key={idx} className="login__errors">{error}</p>
-                        )
-                    })}
-                </>
-            )
-        }
-    }
+  const renderErrors = () => {
+    return (
+      <ul className="login_errors">
+        {Object.values(errors).map((error, idx) => (
+          <li key={`error-${idx}`} className="login_error">
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+    // const renderErrors = () => {
+    //     // if(errors) {
+    //         return (
+    //             <ul>
+    //                 {Object.values(errors).map((error, idx) => ( 
+    //                     // return (
+    //                         <li key={idx} className="login__errors">{error}</li>
+    //                     // )
+    //                  ))}
+    //             <ul/>
+    //         )
+    //     {/* } */}
+    // }
 
     const loginAsDemo = () => {
         let demo = {
