@@ -126,9 +126,9 @@ class SideNav extends React.Component {
                         <div className='sidenav-links'>
                             <NavLink to="/main/checkup/history" id='sidenav-history-link'><i className="fas fa-notes-medical"></i>Checkup History</NavLink>
                         </div>
-                        <div className='sidenav-links'>
+                        {/* <div className='sidenav-links'>
                             <NavLink to="/main/vaccinations" id='sidenav-vaccination-link'><i className="fas fa-syringe"></i>Vaccinations</NavLink>
-                        </div>
+                        </div> */}
                         {/* <div className='sidenav-links'>
                             <NavLink to="/main/prescriptions" id='sidenav-prescription-link'><i className="fas fa-capsules"></i>Medications</NavLink>
                         </div> */}

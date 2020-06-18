@@ -18,7 +18,9 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 })
 
 // POSTS
-router.post('/new', passport.authenticate('jwt', {session: false}), (req, res) => {
+router.post('/',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
       const { errors, isValid } = validateAllergyInput(req.body);
         
       if (!isValid) {
@@ -30,7 +32,9 @@ router.post('/new', passport.authenticate('jwt', {session: false}), (req, res) =
         allergy: req.body.allergy,
       });
   
-      newAllergy.save().then(allergy => res.json(allergy));
+      newAllergy.save()
+        .then(allergy => res.json(allergy))
+        .catch(err => res.status(422).json(err));
     }
   );
 

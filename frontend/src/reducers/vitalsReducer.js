@@ -12,7 +12,9 @@ import {
     RECEIVE_WEIGHTS,
     RECEIVE_WEIGHT,
     RECEIVE_ALLERGIES, 
+    RECEIVE_ALLERGY,
     RECEIVE_MEDICAL_CONDITIONS,
+    RECEIVE_MEDICAL_CONDITION,
     CLEAR_VITALS,
 } from '../actions/vitals'
 import {merge} from 'lodash'
@@ -76,8 +78,18 @@ export default (state = _nullState, action) => {
             return merge({}, state, newState )  
         case RECEIVE_ALLERGIES:
             return merge({}, state, {allergies: action.allergies} )
+        case RECEIVE_ALLERGY:
+            newVital = action.allergy;
+            newState = merge({}, state);
+            newState['allergies'].push(newVital);
+            return merge({}, state, newState )  
         case RECEIVE_MEDICAL_CONDITIONS:
             return merge({}, state, {medicalConditions: action.medicalConditions} )            
+        case RECEIVE_MEDICAL_CONDITION:
+            newVital = action.medicalCondition;
+            newState = merge({}, state);
+            newState['medicalConditions'].push(newVital);
+            return merge({}, state, newState )          
         case CLEAR_VITALS:
             return _nullState;
         default:

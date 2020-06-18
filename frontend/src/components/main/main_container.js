@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Main from './main';
 import { fetchCurrentUser } from '../../actions/session';
+import {clearVitalsErrors} from '../../actions/vitals'
 
 const mapStateToProps = state => {
     // debugger;
@@ -14,6 +15,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchCurrentUser: () => dispatch(fetchCurrentUser()),
+        clearVitalsErrors: () => dispatch(clearVitalsErrors()),
 
     }
 }

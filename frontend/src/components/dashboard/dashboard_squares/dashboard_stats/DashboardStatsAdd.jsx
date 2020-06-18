@@ -18,7 +18,11 @@ class DashboardStatsAdd extends Component {
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
             }
-        } 
+            document.querySelector('.add-vital-outer-container').style.display = ""; // hide modal when user inputs data
+            this.props.clearVitalsErrors(); 
+        }
+
+
     }
 
     hideModal(e){
@@ -48,6 +52,12 @@ class DashboardStatsAdd extends Component {
             case 'bloodPressureLevels':
                 this.props.createBloodPressureLevel(this.state);
                 break;
+            case 'allergies':
+                this.props.createAllergy(this.state);
+                break;
+            case 'medicalConditions':
+                this.props.createMedicalCondition(this.state);
+                break;
             default:
                 break;
         }
@@ -63,17 +73,27 @@ class DashboardStatsAdd extends Component {
         const { vitalLoading, vital, subVitals, errors } = this.props;
         if (vitalLoading && !errors) return <Loading />
         if (!vital || !subVitals) return null;
+        // const inputType = (!vital === 'medicalConditions') ? <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} /> : <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} onChange={this.handleChange} />
         const input = (
-            subVitals.map(sub => <label key={sub}>
-            <h2>{sub}</h2>
-            <input key={sub} subdatakey={sub} type="number" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} /></label>)
+            subVitals.map(sub => {
+                let inputType;
+                if (vital !== 'medicalConditions'){
+                    inputType = <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />;
+                } else {
+                    inputType = <textarea key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />
+                }
+                return <label key={sub}>{sub}{inputType}</label>
+            })
         )
 
         const errorList = [];
+
         for (let i = 0; i < subVitals.length; i++){
             const subVital = subVitals[i];
-            if (errors[subVital]) errorList.push(<li key={subVital}>{`${subVital}: ${errors[subVital].properties.message}`}</li>)
+            const errorPath = (subVital !== 'allergy' && subVital !== 'medicalCondition' && errors[subVital]) ? errors[subVital].properties.message : errors[subVital];
+            if (errors[subVital]) errorList.push(<li key={subVital}>{`${subVital}: ${errorPath}`}</li>)
         }
+ 
         return (
             <div className="add-vital-outer-container">
                 <div onClick={this.hideModal}className="add-vital-modal"></div>
