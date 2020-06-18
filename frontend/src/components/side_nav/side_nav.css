@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     justify-content: space-around;
     box-sizing: border-box;
     font-family: 'Barlow', sans-serif;
@@ -48,14 +49,13 @@
 .sidenav .closebtn {
     padding: 8px 8px 8px 8px;
     text-decoration: none;
-    font-size: 20px;
     color: #818181;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: #dbdbdb;
+    color: #494949;
     cursor: pointer;
 }
 
@@ -63,8 +63,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 25px;
-    margin-left: 50px;
+    font-size: 50px;
 }
 
 .closebtn:hover {
@@ -196,4 +195,41 @@
 
 .sidenav-links i {
     margin-right: 10px;
+}
+
+/* @bg: #2d2d37; // Dark blue */
+/* @primary: #fd6b21; // Orange */
+
+/* body { background: @bg;} */
+.fa-sort-up { 
+    color: rgb(255, 255, 255); 
+    text-decoration: none; 
+    height: 10px;
+}
+
+.arrow {
+  margin-top: 8%;
+}
+
+.arrow-text {
+    color: rgb(83, 82, 82);
+    font-size: 18px;
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }

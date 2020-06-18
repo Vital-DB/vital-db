@@ -14,8 +14,6 @@ class Main extends React.Component {
     }
 
     render(){
-
-
         return(
             <div className='vital-main'>
                 <PrivateRoute path='/main' component={SideNavContainer} />
