@@ -64,7 +64,9 @@ class DashboardStatsAdd extends Component {
         if (vitalLoading && !errors) return <Loading />
         if (!vital || !subVitals) return null;
         const input = (
-            subVitals.map(sub => <label key={sub}>{sub}<input key={sub} subdatakey={sub} type="number" value={this.state[sub] || ""} onChange={this.handleChange} /></label>)
+            subVitals.map(sub => <label key={sub}>
+            <h2>{sub}</h2>
+            <input key={sub} subdatakey={sub} type="number" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} /></label>)
         )
 
         const errorList = [];
@@ -79,10 +81,10 @@ class DashboardStatsAdd extends Component {
                     <form className="add-vital-form" onSubmit={this.handleSubmit}>
                         <h1>Add {vital}</h1>
                         {input}
-                        <button>Add</button>
                         <ul className="vitals-error-list">
                             {errorList}
                         </ul>
+                        <button className="universal__button">Add</button>
                     </form>
                 </div>
             </div>

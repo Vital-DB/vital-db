@@ -19,3 +19,18 @@ input {
 body {
     background-color: #002b40;
 }
+
+.universal__button {
+    width: 10vw;
+    background-color: red;
+    color: white;
+    padding: 1vw;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1vw;
+    font-weight: 500;
+    cursor: pointer !important;
+}
+
+.universal__button:hover {
+    background-color: green;
+}

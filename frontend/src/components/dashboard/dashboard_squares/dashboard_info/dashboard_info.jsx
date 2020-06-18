@@ -37,7 +37,7 @@ export default (props) => {
 
     const displayMainKey = () => {
         return (
-            <div>
+            <div className="dataCard">
                 <h2 className="dataKey--title">{dataKeys[props.dataKey]}</h2>
                 <p className="dataKey__p--description">{dataKeyInfo[props.dataKey]}</p>
             </div>
@@ -48,9 +48,11 @@ export default (props) => {
         return props.subDataKeys.map((dataKey, idx) => {
             if(dataKey !== "All") {
                 return (
-                    <div key={idx}>
+                    <div key={idx} className="dataCard">
                         <h2 className="dataKey--title">{dataKey}</h2>
-                        <p className="dataKey__p--description">{infos[dataKey]}</p>
+                        <p className="dataKey__p--description">
+                            {infos[dataKey]}
+                        </p>
                     </div>
                 )
             }
