@@ -199,7 +199,6 @@ class DashboardStats extends React.Component {
         // this var goes below.. shows a loader while fetching and then changes to noVitals (another conditional used below)
         const loadingOrNoVitals = (vitalsLoading) ? <Loading /> : noVitals; 
 
-
         return(  
             <div id='my-dashboard-stats' className='dashboard-stats'>
                 <div className="dashboard-stats-list__container">

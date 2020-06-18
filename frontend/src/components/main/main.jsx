@@ -14,7 +14,7 @@ class Main extends React.Component {
         this.props.fetchCurrentUser();
     }
     componentDidUpdate(prevProps){
-        debugger
+   
         if (this.props.location.pathname !== prevProps.location.pathname){
             this.props.clearVitalsErrors();
         }
