@@ -95,7 +95,7 @@ export default ({chartLines, data}) => {
 
     return (
         <ResponsiveContainer>
-            <LineChart data={data}>
+            <LineChart data={data} >
                 {referenceLines()}
 
                 {chartLines.map((subVital, idx) => {
@@ -115,7 +115,7 @@ export default ({chartLines, data}) => {
                 
                 {/* <ReferenceArea y1={200} y2={300} fill="red" /> */}
                 <CartesianGrid vertical={false} horizontal={false} />
-                <XAxis dataKey="date"/>
+                <XAxis dataKey="date" />
                 <YAxis domain={['dataMin - 10', 'dataMax + 10']} />
                 
                 <Tooltip 
