@@ -6,6 +6,7 @@ import {
     RECEIVE_TEMPERATURE,
     RECEIVE_RESTING_HEART_RATE,
     RECEIVE_BLOOD_PRESSURE_LEVEL,
+    CLEAR_VITALS_ERRORS,
 
 } from "../actions/vitals";
 import {merge} from 'lodash'
@@ -26,6 +27,8 @@ export default (state = [], action) => {
         case RECEIVE_RESTING_HEART_RATE:
             return [];
         case RECEIVE_BLOOD_PRESSURE_LEVEL:
+            return [];
+        case CLEAR_VITALS_ERRORS:
             return [];
         case RECEIVE_VITALS_ERRORS:
             return merge({}, state, action.errors);

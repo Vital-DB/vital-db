@@ -118,6 +118,44 @@
     border-top: 20px solid rgb(255, 234, 163);
   }
 
+
+.edit-form.allergies {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+}
+
+.dash__addAVital.allergies {
+    color: black;
+}
+
+.edit-form.allergies table {
+
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.edit-form.allergies table tbody {
+
+    width: 100%;
+}
+
+.edit-form.allergies table tbody tr {
+    width: 100%;
+}
+
+.edit-form.allergies table tbody tr td:first-child {
+    text-align: right;
+    width: 50%;
+}
+.edit-form.allergies table tbody tr td:last-child {
+    text-align: left;
+    padding-left: 20px;
+    width: 50%;
+}
+
+
 .edit-saved {
     margin-top: 10px;
     transition: 0.5s;

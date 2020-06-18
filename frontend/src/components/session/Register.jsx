@@ -16,7 +16,7 @@ export const Register = (props) => {
     }, [props.history])
 
     const errors = useSelector(state => state.errors.session);
-    
+
     const [handle, setHandle] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

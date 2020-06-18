@@ -16,6 +16,12 @@ export const fetchAllergies = () => (
         `/api/allergies/`
     )
 );
+export const createAllergy = (data) => {
+    return axios.post(
+        `/api/allergies`,
+        data,
+    )
+};
 export const fetchBloodPressureLevels = () => (
     axios.get(
         `/api/bloodPressures`,
@@ -30,6 +36,12 @@ export const createBloodPressureLevel = (data) => {
 export const fetchMedicalConditions = () => (
     axios.get(
         `/api/medicalConditions`,
+    )
+);
+export const createMedicalCondition = (data) => (
+    axios.post(
+        `/api/medicalConditions`,
+        data
     )
 );
 export const fetchRestingHeartRates = () => (

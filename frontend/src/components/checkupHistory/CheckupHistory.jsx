@@ -4,18 +4,24 @@ import {NavLink} from 'react-router-dom';
 import '../edit_form/edit_form.css'
 import DashboardStatsAddContainer from '../dashboard/dashboard_squares/dashboard_stats/DashboardStatsAddContainer'
 
-import {fetchAllergies} from '../../actions/vitals';
+import {fetchMedicalConditions, clearVitalsErrors} from '../../actions/vitals';
 
 export default () => {
     const dispatch = useDispatch();
     const errors = useSelector(state => state.errors);
-    const allergies = useSelector(state => Object.values(state.entities.vitals.allergies));
-    // const [handle, setHandle] = useState("");
-    // const [password, setPassword] = useState("");
+    const checkupHistory = useSelector(state => Object.values(state.entities.vitals.medicalConditions));
 
     useEffect(() => {
-        dispatch(fetchAllergies());
-    }, []) // commented out the ,[] that was here (to reduce console warning)
+        dispatch(fetchMedicalConditions());
+        // debugger
+    }, []) 
+    useEffect(() => {
+        // fetch updated conditions after uploading successfully
+        dispatch(fetchMedicalConditions());
+        // document.querySelector('.add-vital-outer-container').style.display = "";
+        // debugger
+    }, [checkupHistory.length]); 
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -36,10 +42,16 @@ export default () => {
         }
     }
 
-    const renderAllergies = () => {
-        if(allergies) {
-            return allergies.map((allergy, idx) => {
-                return <p key={idx}>{allergy.allergy}</p>
+    const renderCheckupHistory = () => {
+        // debugger
+        if(checkupHistory) {
+            return checkupHistory.map((history, idx) => {
+                return (
+                    <tr>
+                        <td>{history.date.slice(0,10)}: </td>
+                        <td>{history.medicalCondition}</td>
+                    </tr>
+                )
             })
         }
     }
@@ -52,15 +64,19 @@ export default () => {
 
     return (
             <div className='whole-edit-page'>
-                <DashboardStatsAddContainer vital={"allergies"} subVitals={["allergy"]} />
+                <DashboardStatsAddContainer vital={"medicalConditions"} subVitals={["medicalCondition"]} />
                 <div id='my-edit-form' className='edit-board'>
                     <div className='edit-form allergies'>
-                        <h1 className="edit-form-header">Allergies</h1>
+                        <h1 className="edit-form-header">Checkup History</h1>
                         <div className="dash__addAVital allergies" onClick={() => addVital()} >
                             <i className="fas fa-plus-circle"></i>
                             <h1>Add a Vital</h1>
                         </div>
-                        {renderAllergies()}
+                        <table>
+                            <tbody>
+                            {renderCheckupHistory()}
+                            </tbody>
+                        </table>
                     </div>
                     <div className='pencil'>
                         <div className='pencil-eraser'></div>
