@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import EditForm from './editForm';
 import { editUser } from '../../actions/session';
+import { createWeight } from '../../actions/vitals';
 
 const mapStateToProps = state => {
     
@@ -12,6 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         editUser: userId => dispatch(editUser(userId)),
+        createWeight: weight => dispatch(createWeight(weight)),
     }
 }
 
