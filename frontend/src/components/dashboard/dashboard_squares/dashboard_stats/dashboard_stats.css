@@ -270,3 +270,11 @@ tspan {
     font-family: 'Barlow', sans-serif;
     font-size: 0.6vw;
 }
+
+.recharts-xAxis .recharts-cartesian-axis-tick:first-child line {
+    stroke: none; 
+}
+   
+.recharts-xAxis .recharts-cartesian-axis-tick:first-child text {
+    font-size: 0;
+}
