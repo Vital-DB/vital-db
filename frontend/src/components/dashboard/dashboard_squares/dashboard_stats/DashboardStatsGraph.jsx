@@ -51,7 +51,23 @@ export default ({chartLines, data}) => {
         diastolic: {
             min: 45,
             max: 80
-        }
+        },
+        BPM: {
+            min: 60,
+            max: 100
+        },
+        degrees: {
+            min: 95.9,
+            max: 98.5
+        },
+        level: {
+            min: 40,
+            max: 80
+        },
+        pounds: {
+            min: 100,
+            max: 200,
+        },
     }
     // debugger
 

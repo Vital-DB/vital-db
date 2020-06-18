@@ -6,7 +6,7 @@ const RestingHeartRateSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  value: {
+  BPM: {
     type: Number,
     min: [30, 'Must be more than 30'],
     max: [150, 'Must be less than 150'],

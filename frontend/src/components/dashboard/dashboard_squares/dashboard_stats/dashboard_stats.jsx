@@ -168,6 +168,14 @@ class DashboardStats extends React.Component {
                 return ["systolic", "diastolic"] // specific subvitals
               case 'cholesterolLevels':
                 return ["LDL", "HDL", "total", "triglycerides"]
+              case 'restingHeartRates':
+                return ["BPM"]
+              case 'temperatures':
+                return ["degrees"]
+              case 'vitaminDLevels':
+                return ["level"]
+              case 'weights':
+                return ["pounds"]
               default:
                 return ["value"];
             }
