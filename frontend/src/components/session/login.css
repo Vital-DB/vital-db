@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url('/images/login-bg3.png');
+    background-image: url('/images/login-bg3.png'); 
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: Helvetica, sans-serif;
@@ -32,18 +32,49 @@
   margin: 12px 0 50px 0;
 }
 
-.demo-button {
+/* .demo-button {
   position: absolute;
   top: 2%;
   right: 2%;
   background-color: rgb(64, 187, 192);
-  /* background-color:  rgb(244, 121, 122); */
+  background-image: url('/images/robo.png'); 
   color: white;
   font-size: 30px;
   padding: 7px 14px 7px 14px;
   margin: 5px 0 5px 0;
   filter: drop-shadow(2px 4px 6px black);
+} */
+
+.demo-button {
+  color: #082b40;
+  font-family: 'Concert One', cursive;
+  font-size: 16px;
+  position: relative;
+  right: -29%;
+  overflow: hidden;
+  font-size: 32px;
+  border-radius: 80px;
+  padding: 14px 14px 14px 14px;
+  filter: drop-shadow(2px 4px 6px black);
 }
+
+button.demo-button::before {
+  content: "";
+  position: absolute;
+  width: 205%;
+  height: 343%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  background: url(/images/robo.png) 0 0 repeat;
+  transform: rotate(-90deg);
+  background-repeat: no-repeat;
+  background-position-x: 208px;
+  background-position-y: -20px;
+  background-size: 29%;
+}
+
+
 
 .login-nav {
   position: relative;
@@ -58,10 +89,10 @@
   width: 16%;
 }
 
-.login_errors {
+/* .login_errors {
   position: absolute;
   top: 72%;
   font-weight: bold;
   list-style: disc;
   color: #F44336;
-}
+} */
