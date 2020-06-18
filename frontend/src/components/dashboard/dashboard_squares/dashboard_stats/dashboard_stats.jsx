@@ -223,11 +223,12 @@ class DashboardStats extends React.Component {
                         </li> : "")}
                     </ul>
                     <i className="fas fa-chevron-circle-down"></i>
+                    
                 </div>
+                
                 <DashboardStatsAddContainer vital={this.state.dataKey} subVitals={subVitals} />
                     
                     {/* this is the navigation panel on the right of the graph. it shows all the relevant numerical sub data keys, as defined by subVitals */}
-
                 <ul className="dashboard-stats-sublist">
                     {allButton()}    
                     {subVitals.map((subVital, idx) => {
