@@ -4,3 +4,8 @@
     /* background-color: black; */
 }
 
+.edit-form.allergies {
+    display: block;
+    text-align: center;
+}
+

@@ -15,7 +15,7 @@ export default () => {
     useEffect(() => {
         dispatch(fetchAllergies());
         // debugger
-    }) // commented out the ,[] that was here (to reduce console warning)
+    }, []) // commented out the ,[] that was here (to reduce console warning)
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -46,12 +46,18 @@ export default () => {
 
 
     return (
-        <div className="allergies">
-            <NavLink to="/register">Signup</NavLink>
-            <NavLink to="/">Home</NavLink>
-            {renderErrors()}
-
-            {renderAllergies()}
-        </div>
-    )
+            <div className='whole-edit-page'>
+                <div id='my-edit-form' className='edit-board'>
+                    <div className='edit-form allergies'>
+                        <h1 className="edit-form-header">Allergies</h1>
+                        {renderAllergies()}
+                    </div>
+                    <div className='pencil'>
+                        <div className='pencil-eraser'></div>
+                        <div className='pencil-body'></div>
+                        <div className='pencil-tip'></div>
+                    </div>
+                </div>
+            </div>
+        )
 }
