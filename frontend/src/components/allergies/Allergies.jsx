@@ -55,10 +55,10 @@ export default () => {
                 <DashboardStatsAddContainer vital={"allergies"} subVitals={["allergy"]} />
                 <div id='my-edit-form' className='edit-board'>
                     <div className='edit-form allergies'>
-                        <h1 className="edit-form-header">Allergies</h1>
+                        <h1 className="edit-form-header"><i class="fas fa-allergies allergic"></i>Allergies</h1>
                         <div className="dash__addAVital allergies" onClick={() => addVital()} >
                             <i className="fas fa-plus-circle"></i>
-                            <h1>Add a Vital</h1>
+                            <h1>Add Allergy</h1>
                         </div>
                         <ul className="allergies-list">
                             {renderAllergies()}
