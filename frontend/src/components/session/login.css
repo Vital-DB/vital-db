@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url('/images/login-bg2.jpeg');
+    background-image: url('/images/login-bg3.png');
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: Helvetica, sans-serif;
@@ -37,9 +37,10 @@
   top: 2%;
   right: 2%;
   background-color: rgb(64, 187, 192);
+  /* background-color:  rgb(244, 121, 122); */
   color: white;
-  font-size: 16px;
-  padding: 5px 5px 5px 5px;
+  font-size: 30px;
+  padding: 7px 14px 7px 14px;
   margin: 5px 0 5px 0;
   filter: drop-shadow(2px 4px 6px black);
 }
