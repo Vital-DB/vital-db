@@ -72,22 +72,36 @@ class DashboardStats extends React.Component {
         const selected = document.querySelector('.dashboard-stats-list .selected'); // select the current list item with class selected
         const listItems = e.currentTarget.parentNode.children; // the list items from .dashboard-stats-list
         
-        // this operates the dropdown on first click
-        if (selected){ // if there is a currently selected vital
-            selected.classList.remove('selected'); // remove the selected class
+
+
+        if (!this.state.opened){
+            this.setState({opened: true});
             for (let i = 0; i < listItems.length; i++){ // iterate through the list items and display them
                 listItems[i].style.display = "block";
             }
-        } else { // this is the 2nd click
-            e.currentTarget.classList.add('selected'); // style the clickedlist item
-
-            // hide the other list items that aren't selected
-            for (let i = 0; i < listItems.length; i++){ 
-                if (!listItems[i].classList.contains('selected')) listItems[i].style.display = "none";
-            }
+        } else {
+            debugger
+            const dataKey = e.currentTarget.getAttribute('value'); // get the value attribute set on each <li>, must match state
+            this.setState({dataKey: dataKey, opened: false}, this.hideModal); // this sets which vital will be shown
+            
         }
-        const dataKey = e.currentTarget.getAttribute('value'); // get the value attribute set on each <li>, must match state
-        this.setState({dataKey: dataKey}); // this sets which vital will be shown
+
+        // // this operates the dropdown on first click
+        // if (selected){ // if there is a currently selected vital
+        //     selected.classList.remove('selected'); // remove the selected class
+            // for (let i = 0; i < listItems.length; i++){ // iterate through the list items and display them
+            //     listItems[i].style.display = "block";
+            // }
+        // } else { // this is the 2nd click
+        //     e.currentTarget.classList.add('selected'); // style the clickedlist item
+
+        //     // hide the other list items that aren't selected
+        //     for (let i = 0; i < listItems.length; i++){ 
+        //         if (!listItems[i].classList.contains('selected')) listItems[i].style.display = "none";
+        //     }
+        // }
+
+
     }
 
     // when user clicks the subDataKey list (nav on the right of the graph), this sets the specific vital statistics to display
@@ -141,14 +155,23 @@ class DashboardStats extends React.Component {
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
     }
-    
-    // hideDropdown(e){
-    //     debugger
-    //     const listItems = document.querySelector('.dashboard-stats-list li');
-    //     for (let i = 0; i < listItems.length; i++){ 
-    //         if (!listItems[i].classList.contains('selected')) listItems[i].style.display = "none";
-    //     }
-    // }
+
+    hideModal(){
+        debugger
+
+                const vitalListItems = document.querySelectorAll('.dashboard-stats-list li');
+                for (let i = 0; i < vitalListItems.length; i++){
+                    const currentItem = vitalListItems[i];
+                    if (vitalListItems[i].getAttribute('value') !== this.state.dataKey){
+                        currentItem.style.display = "none";
+                    } else {
+                        currentItem.style.display = "block";
+                    }
+                }
+                
+
+
+    }
 
     render(){
        
@@ -209,7 +232,7 @@ class DashboardStats extends React.Component {
                         <li 
                             key={idx} 
                             value={vitalName} 
-                            className={(idx == 0) ? "selected" : ""} 
+                            className={(this.state.dataKey === vitalName) ? "selected" : ""} 
                             onClick={this.handleClick}>
                                 {vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
                         </li> : "")}
