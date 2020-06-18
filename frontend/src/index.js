@@ -48,8 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.VitalsUtil = VitalsUtil;
   window.logout = logout;
 
-
-
   const root = document.getElementById('root')
   ReactDOM.render(<Root store={store} />, root);
 });

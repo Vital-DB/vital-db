@@ -78,7 +78,7 @@ class DashboardStats extends React.Component {
         }
     }
 
-    showModal(e){
+    showModal(){
         const listItems = document.querySelectorAll('.dashboard-stats-list li'); // the list items from .dashboard-stats-list
         // const listItems = e.currentTarget.parentNode.children; // the list items from .dashboard-stats-list
         for (let i = 0; i < listItems.length; i++){ // iterate through the list items and display them
@@ -86,7 +86,7 @@ class DashboardStats extends React.Component {
         }
     }
 
-    hideModal(e){
+    hideModal(){
         this.setState({opened: false});
 
         const vitalListItems = document.querySelectorAll('.dashboard-stats-list li');
@@ -153,7 +153,7 @@ class DashboardStats extends React.Component {
     }
 
     render(){
-       
+        window.onclick = () => this.hideModal();
         const { vitalsLoading, vitals, userId, loggedIn } = this.props;
         // if (vitalsLoading) return <Loading />
         if (!userId || !loggedIn) return null;
@@ -209,7 +209,7 @@ class DashboardStats extends React.Component {
         }
 
         return(  
-            <div id='my-dashboard-stats' onClick={(e)=>this.hideModal()} className='dashboard-stats'>
+            <div id='my-dashboard-stats' className='dashboard-stats'>
                 <div className="dashboard-stats-list__container">
                     <ul className="dashboard-stats-list">
                         {/* values on the li are the vitals keys, displayed text uses regex to convert camelcase to capitalized first letter with spaces in between */}
@@ -252,4 +252,5 @@ class DashboardStats extends React.Component {
         )
     }
 }
+
 export default DashboardStats;
