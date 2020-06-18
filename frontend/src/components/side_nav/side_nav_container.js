@@ -4,11 +4,11 @@ import { logout } from '../../actions/session';
 import { fetchWeights } from '../../actions/vitals';
 
 const mapStateToProps = state => {
-    // debugger;
     return {
         loggedIn: state.session.isAuthenticated,
         currentUser: state.entities.user,
         vitals: state.entities.vitals,
+        handle: state.session.user.handle,
     }
 }
 

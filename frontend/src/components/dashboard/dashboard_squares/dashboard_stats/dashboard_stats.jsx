@@ -1,9 +1,9 @@
 import './dashboard_stats.css';
-import Loading from './loader'
+import Loading from './loader';
 import React from 'react';
-import DashboardStatsGraph from './DashboardStatsGraph'
-import DashboardStatsAddContainer from './DashboardStatsAddContainer'
-// import danc from './danc.png';
+import DashboardStatsGraph from './DashboardStatsGraph';
+import DashboardStatsAddContainer from './DashboardStatsAddContainer';
+import DashboardInfo from '../dashboard_info/dashboard_info';
 
 class DashboardStats extends React.Component {
     constructor(props){
@@ -67,7 +67,7 @@ class DashboardStats extends React.Component {
 
     // handles the state change & dropdown visibility for vitals that are clicked from the menu
     handleClick(e) {
-        const selected1 = document.querySelector('.dashboard-stats-sublist').classList.toggle("hidden");
+        // const selected1 = document.querySelector('.dashboard-stats-sublist').classList.toggle("hidden");
 
         const selected = document.querySelector('.dashboard-stats-list .selected'); // select the current list item with class selected
         const listItems = e.currentTarget.parentNode.children; // the list items from .dashboard-stats-list
@@ -192,28 +192,34 @@ class DashboardStats extends React.Component {
         const loadingOrNoVitals = (vitalsLoading) ? <Loading /> : noVitals; 
 
 
-        return(
-            // <div className='outer'>
+        return(  
             <div id='my-dashboard-stats' className='dashboard-stats'>
-                <ul className="dashboard-stats-list">
-                    {/* values on the li are the vitals keys, displayed text uses regex to convert camelcase to capitalized first letter with spaces in between */}
-                    {/* exclude values if they don't have numeric stats */}
-                    {Object.keys(vitals).map((vitalName, idx) => (!dontInclude.includes(vitalName)) ? 
-                    <li 
-                        key={idx} 
-                        value={vitalName} 
-                        className={(idx == 0) ? "selected" : ""} 
-                        onClick={this.handleClick}>
-                            {vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
-                    </li> : "")}
-                </ul>
+                <div className="dashboard-stats-list__container">
+                    <ul className="dashboard-stats-list">
+                        {/* values on the li are the vitals keys, displayed text uses regex to convert camelcase to capitalized first letter with spaces in between */}
+                        {/* exclude values if they don't have numeric stats */}
+                        {Object.keys(vitals).map((vitalName, idx) => (!dontInclude.includes(vitalName)) ? 
+                        <li 
+                            key={idx} 
+                            value={vitalName} 
+                            className={(idx == 0) ? "selected" : ""} 
+                            onClick={this.handleClick}>
+                                {vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
+                        </li> : "")}
+                    </ul>
+                    <i className="fas fa-chevron-circle-down"></i>
+                </div>
                 <DashboardStatsAddContainer vital={this.state.dataKey} subVitals={subVitals} />
                     
                     {/* this is the navigation panel on the right of the graph. it shows all the relevant numerical sub data keys, as defined by subVitals */}
 
                 <ul className="dashboard-stats-sublist">
                     <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li>
-                    {subVitals.map((subVital, idx) => <li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)}
+                    {subVitals.map((subVital, idx) => {
+                        if(subVital !== "value") {
+                            return (<li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital}</li>)
+                        }
+                    })}
                 </ul>
 
                 {/* show a loader while fetching; if user has no stats, show the helper message  */}
@@ -223,11 +229,10 @@ class DashboardStats extends React.Component {
                     <i className="fas fa-plus-circle"></i>
                     <h1>Add a Vital</h1>
                 </div>
+                <DashboardInfo dataKey={this.state.dataKey} subDataKeys={this.state.subDataKeys} />
                 
+                <h3 className="disclaimer">*None of the information on this website is medically affiliated in any way. We are not doctors and this application is purely for web development showcasing purposes only.</h3>
             </div>
-            //     {/* <img src={danc} width="400" alt=""/> */}
-            // {/* </div> */}
-
         )
     }
 }
