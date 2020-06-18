@@ -198,6 +198,13 @@ class DashboardStats extends React.Component {
 
         // this var goes below.. shows a loader while fetching and then changes to noVitals (another conditional used below)
         const loadingOrNoVitals = (vitalsLoading) ? <Loading /> : noVitals; 
+            // debugger
+
+        const allButton = () => {
+            if(subVitals.length > 1) {
+                return <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li>;
+            }
+        }
 
         return(  
             <div id='my-dashboard-stats' className='dashboard-stats'>
@@ -210,7 +217,8 @@ class DashboardStats extends React.Component {
                             key={idx} 
                             value={vitalName} 
                             className={(idx == 0) ? "selected" : ""} 
-                            onClick={this.handleClick}>
+                            onClick={this.handleClick}
+                            >
                                 {vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
                         </li> : "")}
                     </ul>
@@ -221,11 +229,10 @@ class DashboardStats extends React.Component {
                     {/* this is the navigation panel on the right of the graph. it shows all the relevant numerical sub data keys, as defined by subVitals */}
 
                 <ul className="dashboard-stats-sublist">
-                    {(subVitals.length > 1) ? <li value="All" className="selected-sub" onClick={this.handleClickSub}>All</li> : ""}
+                    {allButton()}    
                     {subVitals.map((subVital, idx) => {
-                        if(subVital !== "value") {
-                            return (<li key={idx} value={subVital} onClick={this.handleClickSub}>{subVital[0].toUpperCase() + subVital.slice(1)}</li>)
-                        }
+                        let subVitalShow = subVital[0].toUpperCase() + subVital.slice(1);
+                        return (<li key={idx} value={subVital} onClick={this.handleClickSub}>{subVitalShow}</li>)
                     })}
                 </ul>
 

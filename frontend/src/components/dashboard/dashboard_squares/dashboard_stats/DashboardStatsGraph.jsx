@@ -80,13 +80,13 @@ export default ({chartLines, data}) => {
                         <ReferenceArea 
                             y1={recommendedRanges[subVital].min} 
                             y2={recommendedRanges[subVital].max} 
-                            fill="#32CD32" 
+                            fill="white" 
                             // stroke="green"
-                            opacity={0.5}
-                            >
-                            <Label value={`Highest recommended ${subVital}`} 
-                            position="insideTopLeft" />
-                            <Label value={`Lowest recommended ${subVital}`} position="insideBottomLeft" />
+                            opacity={0.4}
+                            alwaysShow={true}>
+                                <Label value={`Highest recommended ${subVital}`} 
+                                position="insideTopLeft" />
+                                <Label value={`Lowest recommended ${subVital}`} position="insideBottomLeft" />
                         </ReferenceArea>
                     )
                 }
@@ -99,13 +99,12 @@ export default ({chartLines, data}) => {
                 {referenceLines()}
 
                 {chartLines.map((subVital, idx) => {
-                    {/* debugger */}
                 return (
                         <Line 
                             key={idx} 
                             filterNull={true} 
                             connectNulls={true} 
-                            activeDot={{ stroke: 'red', strokeWidth: 2, r: 10 }} 
+                            activeDot={{ strokeWidth: 2, r: 10 }} 
                             dot={false} 
                             pointstype="monotone" 
                             strokeWidth="5" 
@@ -117,12 +116,12 @@ export default ({chartLines, data}) => {
                 {/* <ReferenceArea y1={200} y2={300} fill="red" /> */}
                 <CartesianGrid vertical={false} horizontal={false} />
                 <XAxis dataKey="date"/>
-                <YAxis domain={['dataMin - 5', 'dataMax + 5']} />
+                <YAxis domain={['dataMin - 10', 'dataMax + 10']} />
                 
                 <Tooltip 
-                    contentStyle={{opacity: .99, backgroundColor: "#40B5A3", borderRadius: "5px", boxShadow: "1px 1px 1px #2E3030"}} 
+                    contentStyle={{opacity: 1, backgroundColor: "white", borderRadius: "5px", boxShadow: "1px 1px 1px #2E3030"}} 
                     offset={20} 
-                    isAnimationActive={false} />
+                    isAnimationActive={true} />
             </LineChart>
         </ResponsiveContainer>
     )
