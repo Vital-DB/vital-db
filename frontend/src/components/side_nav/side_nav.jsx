@@ -122,7 +122,7 @@ debugger;
                             <div>
                                 {this.state.greeting}
                             </div>
-                            <a className='bubble-source' href={this.state.sources}>
+                            <a target='_blank' className='bubble-source' href={this.state.sources}>
                                 {source}
                             </a>
                         </div>
