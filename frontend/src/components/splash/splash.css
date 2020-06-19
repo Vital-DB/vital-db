@@ -42,6 +42,8 @@
   width: 148px;
 }
 
+
+
 @media only screen and (max-width: 750px) {
   #caduceus {
     left: 18%;
@@ -141,15 +143,6 @@
   border-radius: 8px;
 }
 
-
-/* #med-remind {
-  position: absolute;
-  left: 19%;
-  top: 27%;
-  height: 69%;
-  width: 80%;
-  filter: hue-rotate(684deg);
-} */
 
 
 @media only screen and (max-width: 950px) {
@@ -266,16 +259,50 @@
     top: -2%;
   }
 
-  #med-remind, #chart-icon {
+  #info, #chart-icon, #robochat, #vitalist {
     top: 45%;
+    left: 35%;
     height: 31%;
     width: 41%;
   }
-   .vital h3, .vital h4 {
+
+   /* .vital h3, .vital h4 {
    font-size: 8px;
- }
+ } */
 
  .splash-content {
    left: -2%;
  }
+}
+
+.team {
+  position: relative;
+  left: 5%;
+  font-family: Helvetica, sans-serif;
+  color: #0defec;
+  display: flex;
+  flex-direction: row;
+}
+
+#member a {
+  text-decoration: none;
+  color: #b39cd2;
+  filter: brightness(1.5);
+}
+
+#gitlink {
+  width: 5%;
+  margin-right:5px;
+  filter: invert(1);
+}
+
+#disclaimer {
+  font-size: 14px;
+  color: #55fefe;
+}
+
+#disclaimer p {
+  font-size: 12px;
+  color: white;
+  background-color: black;
 }

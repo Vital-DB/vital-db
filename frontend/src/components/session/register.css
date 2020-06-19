@@ -34,6 +34,10 @@
 .register__form {
     display: flex;
     flex-direction: column; 
+    background-color: #080d2b;
+    padding: 28px;
+    padding-bottom: 42px;
+    border-radius: 26px;  
 }
 
 
@@ -41,31 +45,38 @@
   position: relative;
   top: 7%;
   border-radius: 8px;
-  background-color: rgb(64, 187, 192);
+  /* background-color: rgb(64, 187, 192); */
+  background-color: #315ffe;
   color: white;
   text-decoration: none;
   text-align: center;
   margin-bottom: 5px;
   padding: 5px 0 5px 0;
-  width: 202px;
+  width: 100%;
 }
 
 
 .signup-button {
-  background-color: rgb(64, 187, 192);
+  /* background-color: rgb(64, 187, 192); */
+  background-color: #315ffe;
   color: white;
   font-size: 16px;
   padding: 5px 0 5px 0;
   margin: 5px 0 5px 0;
 }
 
+.register-nav:hover, .signup-button:hover {
+  /* background-color: #315ffe; */
+    background-color: #f53100;
+}
+
 .register-input {
   border-radius: 8px;
-  border-color: rgb(64, 187, 192);
+  border-color: #315ffe;
   margin-bottom: 4px;
 }
 
-.register-input, .signup-button, .login-button, .register-nav, .login-nav {
+.register-input, .login-input, .signup-button, .login-button, .register-nav, .login-nav {
   filter: drop-shadow(2px 4px 6px black);
 }
 

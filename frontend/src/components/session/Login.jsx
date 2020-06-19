@@ -90,13 +90,13 @@ export const Login = (props) => {
                 <input 
                     type="text" 
                     value={handle} 
-                    onChange={handleChange('handle')} className="register-input"  
+                    onChange={handleChange('handle')} className="login-input"  
                     placeholder="User handle" />
                 <p className="reg-error">{errors['handle']}</p> 
                 <input 
                     type="password" 
                     value={password}
-                    onChange={handleChange('password')} className="register-input" 
+                    onChange={handleChange('password')} className="login-input" 
                     placeholder="User password" />
                 <p className="reg-error">{errors['password']}</p>
                 <button 
