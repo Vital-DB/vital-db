@@ -73,13 +73,13 @@ export default () => {
                             <h1>Add Checkup</h1>
                         </div>
                         <table>
-                            <thead>
+
+
+                            <tbody>
                                 <tr className='header-tr'>
                                     <th>Date</th>
                                     <th className='checkup-description'>Description</th>
                                 </tr>
-                            </thead>
-                            <tbody>
                             {renderCheckupHistory()}
                             </tbody>
                         </table>

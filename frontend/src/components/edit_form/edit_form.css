@@ -244,29 +244,24 @@
     box-shadow: 3px 3px #888888;
 }
 
-.edit-form.allergies table tbody tr td:first-child, .edit-form.allergies table thead tr th:first-child {
+.edit-form.allergies table tbody tr td:first-child, .edit-form.allergies table tbody tr th:first-child {
     text-align: right;
     width: 50%;
 }
-.edit-form.allergies table thead {
-    height: 30px;
-    width: 40%;
-    /* border-bottom: 1px solid black; */
-    margin-left: 65px;
-    margin-bottom: 15px;
-}
 
-.edit-form.allergies table thead th {
-    padding-bottom: 30px;
+.edit-form.allergies table tbody th {
+    padding-bottom: 10px;
 }
-.edit-form.allergies table thead tr th {
+.edit-form.allergies table tbody tr th {
     font-weight: bold;
 }
-.edit-form.allergies table tbody tr td:last-child, .edit-form.allergies table thead tr th:last-child {
+.edit-form.allergies table tbody tr td:last-child, .checkup-description {
     text-align: left;
     padding-left: 20px;
     width: 50%;
     white-space: pre-wrap;
 }
+
+
 
 
