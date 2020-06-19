@@ -2,10 +2,11 @@ import React from 'react';
 import './splash.css';
 import { NavLink } from 'react-router-dom';
 import chat from './docchat-icon.png';
-import chart from './chart-icon.png';
+// import chart from './chart-icon.png';
 import remind from './med-remind6.png';
 import caduceus from './caduceus2.png';
 import choleschart from './chol-chart.png';
+import info from './med-info.png';
 
 class Splash extends React.Component {
   
@@ -23,7 +24,7 @@ class Splash extends React.Component {
                 <ul className="vital-list">                
                   <li className="vital">
                     <h3>Name: </h3>
-                    <h4>John Doe</h4>
+                    <h4>Demo Nanaan</h4>
                   </li > 
                 <li className="vital">
                   <h3>Height: </h3>
@@ -57,8 +58,8 @@ class Splash extends React.Component {
               <img src={choleschart} id="chart-icon" alt="chart"/>
             </section>
             <section className="feature">
-              <h1 id="heading">Medication reminders</h1>
-              <img src={remind} id="med-remind" alt="remind"/>
+              <h1 id="heading">Vital descriptors</h1>
+              <img src={info} id="info" alt="info"/>
             </section>
           </div>
         </div>
