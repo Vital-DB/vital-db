@@ -29,6 +29,9 @@ The following is a breakdown of the minimum viable product [MVP] for this web ap
 - [ ] host up master branch on heroku
 
 ### user account setup
+
+![image](https://user-images.githubusercontent.com/59629330/85146031-71b88280-b21b-11ea-888f-041df5e3e424.png)
+
 - [ ] signup `component` for new user
 - [ ] login `component` for existing user
 - [ ] demo login button
@@ -36,29 +39,44 @@ The following is a breakdown of the minimum viable product [MVP] for this web ap
     - [ ] logged out users will only have access to the title & signup pages
 - [ ] fully CSS styled splash and session pages
 
+### Edit Profile
+
+![image](https://user-images.githubusercontent.com/59629330/85145893-3ddd5d00-b21b-11ea-9cc1-1d8924fdfa58.png)
+
+- [ ] users can edit their personal information to access it in one place
+
 ### vitals
 - [ ] upload vitals
-    - [ ] create will be a modal
+
+![image](https://user-images.githubusercontent.com/59629330/85145843-2dc57d80-b21b-11ea-918c-1d865e590fc2.png)
+
 - [ ] show all vitals in visual charts on the dashboard page
-- [ ] delete a vital
-    - [ ] create will be a modal
 
-### reminders
-- [ ] users will see reminders on checkups
-- [ ] users can view current prescriptions and get reminders on when to refill
-- [ ] use a health API to show detailed information about prescriptions (side effects, what it's commonly used for, etc.)
+![image](https://user-images.githubusercontent.com/59629330/85145857-31f19b00-b21b-11ea-90ac-1ed6c36fb934.png)
 
-### averages & information
-- [ ] use a health API to find averages for each health vital and display on chart
+### Allergies/Checkup History
+
+![image](https://user-images.githubusercontent.com/59629330/85145876-374ee580-b21b-11ea-8506-87e761a8600f.png)
+
+- [ ] users can view allergies and checkup history
+- [ ] users can add allergies and checkup history
+
+### Averages & Information
+
+![image](https://user-images.githubusercontent.com/59629330/85147146-6c0f6c80-b21c-11ea-867f-5c164dbd8848.png)
+
+- [ ] use recommended health averages for each health vital and display on chart
 - [ ] dashboard component will show where user's currently selected vital sits in relation to people with similar statistics (exercise level, weight, height, etc.)
+- [ ] users can view more information about a particular vital 
 
-### medical recommendations
-- [ ] use a health API to find tips on how to improve certain conditions and/or vitals
-- [ ] recommended suggestions based off of current user's vital in comparison to the averages pulled from the previous API
+![image](https://user-images.githubusercontent.com/59629330/85145882-3ae26c80-b21b-11ea-98a6-963345f5055b.png)
 
-### doctor lookup
-- [ ] users can lookup nearby doctors and their information
-- [ ] will utilize the Google maps API 
+### Roboctor Health Tips
+
+![image](https://user-images.githubusercontent.com/59629330/85145909-42a21100-b21b-11ea-929e-3b683e0fca1e.png)
+
+- [ ] Interactive roboctor generates a random health tip for users each time it is clicked on
+- [ ] recommends sleeping once time reaches certain threshold
 
 ### production readme
 - [ ] have detailed docs outlining the entire process of the project
