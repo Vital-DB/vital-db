@@ -80,7 +80,7 @@ class DashboardStats extends React.Component {
     }
 
     showModal(e){
-        debugger
+  
         this.setState({opened: true});  
         const listItems = document.querySelectorAll('.dashboard-stats-list li'); // the list items from .dashboard-stats-list
         // const listItems = e.currentTarget.parentNode.children; // the list items from .dashboard-stats-list
@@ -91,7 +91,7 @@ class DashboardStats extends React.Component {
     }
 
     hideModal(e){
-        debugger
+      
         this.setState({opened: false});
         const vitalListItems = document.querySelectorAll('.dashboard-stats-list li');
         for (let i = 0; i < vitalListItems.length; i++){
@@ -152,7 +152,7 @@ class DashboardStats extends React.Component {
     }
 
     addVital(){
-        // debugger
+     
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
     }
@@ -205,7 +205,7 @@ class DashboardStats extends React.Component {
 
         // this var goes below.. shows a loader while fetching and then changes to noVitals (another conditional used below)
         const loadingOrNoVitals = (vitalsLoading) ? <Loading /> : noVitals; 
-            // debugger
+         
 
         const allButton = () => {
             if(subVitals.length > 1) {

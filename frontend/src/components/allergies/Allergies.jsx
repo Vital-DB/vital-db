@@ -45,7 +45,7 @@ export default () => {
     }
 
     const addVital = () => {
-        // debugger
+      
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
     }

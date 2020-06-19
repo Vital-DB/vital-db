@@ -11,7 +11,7 @@ class DashboardStatsAdd extends Component {
     }    
 
     componentDidUpdate(prevProps){
-        // debugger
+    
         const currentVital = this.props.vital;
         // clear modal values if user changes vitals from the dropdown menu, or successfully adds them
         if ((prevProps.vital !== currentVital) || this.props.vitals[currentVital].length !== prevProps.vitals[currentVital].length){
@@ -31,7 +31,7 @@ class DashboardStatsAdd extends Component {
     }
 
     handleSubmit(e){
-        // debugger
+     
         e.preventDefault();
         switch (this.props.vital) {
             case 'cholesterolLevels':
@@ -65,7 +65,7 @@ class DashboardStatsAdd extends Component {
 
     handleChange(e){
         e.preventDefault();
-        // debugger
+   
         this.setState({[e.currentTarget.getAttribute('subdatakey')]: e.currentTarget.value})
     }
     

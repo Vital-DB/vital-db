@@ -4,7 +4,7 @@ import { fetchCurrentUser } from '../../actions/session';
 import {clearVitalsErrors} from '../../actions/vitals'
 
 const mapStateToProps = state => {
-    // debugger;
+
     return {
         loggedIn: state.session.isAuthenticated,
         handle: state.session.user.handle,

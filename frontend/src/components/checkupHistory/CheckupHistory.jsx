@@ -13,13 +13,13 @@ export default () => {
 
     useEffect(() => {
         dispatch(fetchMedicalConditions());
-        // debugger
+      
     }, []) 
     useEffect(() => {
         // fetch updated conditions after uploading successfully
         dispatch(fetchMedicalConditions());
         // document.querySelector('.add-vital-outer-container').style.display = "";
-        // debugger
+     
     }, [checkupHistory.length]); 
 
 
@@ -43,7 +43,7 @@ export default () => {
     }
 
     const renderCheckupHistory = () => {
-        debugger
+     
         if(checkupHistory) {
             return checkupHistory.map((history, idx) => {
                 return (
@@ -57,7 +57,7 @@ export default () => {
     }
 
     const addVital = () => {
-        // debugger
+    
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
     }
