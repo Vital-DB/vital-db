@@ -125,18 +125,18 @@ The following is a breakdown of the minimum viable product [MVP] for this web ap
 
 ### SUMMARY OF PROJECT IMPLEMENTATION:
 BACK END:
-- Auth/User patch (Alex)
-- Vitals Routes, Validations, Models  (Doug, Alex)
+- Auth/User patch (**Alex**)
+- Vitals Routes, Validations, Models  (**Doug, Alex**)
 FRONT END:
-- Splash & Session Form Styling (Nahuel)
-- Dashboard, Sidebar, Allergies/Checkup History  (Doug, Cliff, Alex)
-- Redux/React integration w/ Backend (Doug, Alex)
-- Modal functionality (Doug)
-- Modal Styling (Alex)
-- Graph Functionality (Doug, Alex, Cliff)
-- Graph Styling & Display Recommended Averages (Alex)
-- Dash Info Functionality & Styling (Alex)
-- Roboctor Functionality & Styling (Cliff)
+- Splash & Session Form Styling (**Nahuel**)
+- Dashboard, Sidebar, Allergies/Checkup History  (**Doug, Cliff, Alex**)
+- Redux/React integration w/ Backend (**Doug, Alex**)
+- Modal functionality (**Doug**)
+- Modal Styling (**Alex**)
+- Graph Functionality (**Doug, Alex, Cliff**)
+- Graph Styling & Display Recommended Averages (**Alex**)
+- Dash Info Functionality & Styling (**Alex**)
+- Roboctor Functionality & Styling (**Cliff**)
 
 ## Technical Challenges
 
