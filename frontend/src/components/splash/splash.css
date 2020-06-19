@@ -3,7 +3,7 @@
   height: 100vh;
   /* background-image: url('/images/vitaldb-bg.png'); */
   background-image: url('/images/splash-bg.png');
-  background-size: 161vh;
+  background-size: 180vh;
   background-position-y: -57px;
   display: flex;
   justify-content: space-evenly;
@@ -131,7 +131,8 @@
   filter: hue-rotate(22deg);
 }
 
-#chart-icon {
+#chart-icon, #info {
+  image-rendering: -webkit-optimize-contrast;
   position: absolute;
   left: 13%;
   top: 32%;
@@ -141,14 +142,14 @@
 }
 
 
-#med-remind {
+/* #med-remind {
   position: absolute;
   left: 19%;
   top: 27%;
   height: 69%;
   width: 80%;
   filter: hue-rotate(684deg);
-}
+} */
 
 
 @media only screen and (max-width: 950px) {
@@ -164,7 +165,7 @@
     width: 80%;
   }
 
-  #chart-icon {
+  #chart-icon, #info {
     height: 50%;
     width: 70%;
     top: 29%;
@@ -235,7 +236,7 @@
     width: 50%;
   }
 
-  #med-remind, #chart-icon {
+  #info, #chart-icon {
     top: 33%;
     height: 40%;
     width: 50%;
@@ -247,7 +248,14 @@
 
 
   .feature:first-of-type {
-    background-size: 30%;
+    background-size: 20%;
+    overflow: hidden;
+  }
+
+  .vital-list {
+    font-size: 10px;
+    width: 53%;
+    height: 47%;
     overflow: hidden;
   }
 } 
