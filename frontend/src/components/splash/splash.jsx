@@ -5,6 +5,7 @@ import chat from './docchat-icon.png';
 import chart from './chart-icon.png';
 import remind from './med-remind6.png';
 import caduceus from './caduceus2.png';
+import choleschart from './chol-chart.png';
 
 class Splash extends React.Component {
   
@@ -23,32 +24,37 @@ class Splash extends React.Component {
                   <li className="vital">
                     <h3>Name: </h3>
                     <h4>John Doe</h4>
-                  </li >             
+                  </li > 
+                <li className="vital">
+                  <h3>Height: </h3>
+                  <h4>6'0''</h4>
+                </li >
+                <li className="vital">
+                  <h3>Weight: </h3>
+                  <h4>180lbs</h4>
+                </li >         
                 <li className="vital">
                   <h3>Blood type: </h3>
                   <h4>O-</h4>
                   </li >
                 <li className="vital">
-                  <h3>Insurance: </h3>
-                  <h4>Metroplus</h4>
+                  <h3>LDL: </h3>
+                  <h4>90 mg/dL</h4>
                   </li>
                 <li className="vital">
-                  <h3>Allergies: </h3>
-                  <h4>Peanuts, Shellfish</h4>
-                  </li>
-                <li className="vital">
-                  <h3>Medications: </h3>
-                  <h4>Escitalopram, <br/> Indapamide</h4>
-                  </li>
+                  <h3>HDL: </h3>
+                  <h4>60 mg/dL</h4>
+                </li>
+              
                 </ul>
             </section>
             <section className="feature">
-              <h1 id="heading">Connect with your doctor</h1>
+              <h1 id="heading">Connect with Roboctor</h1>
               <img src={chat} id="docchat" alt="chat"/>
             </section>
             <section className="feature">
-              <h1 id="heading">Easy access to charts</h1>
-              <img src={chart} id="chart-icon" alt="chart"/>
+              <h1 id="heading">Track vitals in real-time</h1>
+              <img src={choleschart} id="chart-icon" alt="chart"/>
             </section>
             <section className="feature">
               <h1 id="heading">Medication reminders</h1>
