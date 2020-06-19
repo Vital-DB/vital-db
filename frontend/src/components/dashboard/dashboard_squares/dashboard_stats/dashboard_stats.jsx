@@ -14,6 +14,7 @@ class DashboardStats extends React.Component {
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleClickSub = this.handleClickSub.bind(this);
+        window.onclick = (e) => this.hideModal(e);
     }
 
     componentDidMount(){
@@ -67,28 +68,31 @@ class DashboardStats extends React.Component {
 
     handleClick(e) {
         // const selected1 = document.querySelector('.dashboard-stats-sublist').classList.toggle("hidden");
-        e.stopPropagation(); // need this in order to not interfere with the onclick of #my-stats-div
-
+        
         // open/close based on this.state.opened, and SET DATAKEY
         if (!this.state.opened){
-            this.setState({opened: true}, this.showModal);
+            this.setState({opened: true}, (e) => this.showModal(e));
         } else {
             const dataKey = e.currentTarget.getAttribute('value'); // get the value attribute set on each <li>, must match state
-            this.setState({dataKey: dataKey, opened: false}, this.hideModal); // this sets which vital will be shown
+            this.setState({dataKey: dataKey, opened: false}, (e) => this.hideModal(e)); // this sets which vital will be shown
         }
+        e.stopPropagation(); // need this in order to not interfere with the onclick of #my-stats-div
     }
 
-    showModal(){
+    showModal(e){
+        debugger
+        this.setState({opened: true});  
         const listItems = document.querySelectorAll('.dashboard-stats-list li'); // the list items from .dashboard-stats-list
         // const listItems = e.currentTarget.parentNode.children; // the list items from .dashboard-stats-list
         for (let i = 0; i < listItems.length; i++){ // iterate through the list items and display them
             listItems[i].style.display = "block";
         }
+        if(e) e.stopPropagation();
     }
 
-    hideModal(){
+    hideModal(e){
+        debugger
         this.setState({opened: false});
-
         const vitalListItems = document.querySelectorAll('.dashboard-stats-list li');
         for (let i = 0; i < vitalListItems.length; i++){
             const currentItem = vitalListItems[i];
@@ -98,6 +102,7 @@ class DashboardStats extends React.Component {
                 currentItem.style.display = "block";
             }
         }
+        if(e) e.stopPropagation();
     }
 
     // when user clicks the subDataKey list (nav on the right of the graph), this sets the specific vital statistics to display
@@ -153,7 +158,7 @@ class DashboardStats extends React.Component {
     }
 
     render(){
-        window.onclick = () => this.hideModal();
+        
         const { vitalsLoading, vitals, userId, loggedIn } = this.props;
         // if (vitalsLoading) return <Loading />
         if (!userId || !loggedIn) return null;
@@ -219,11 +224,11 @@ class DashboardStats extends React.Component {
                             key={idx} 
                             value={vitalName} 
                             className={(this.state.dataKey === vitalName) ? "selected" : ""} 
-                            onClick={this.handleClick}>
+                            onClick={(e) => this.handleClick(e)}>
                                 {vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
                         </li> : "")}
                     </ul>
-                    <i className="fas fa-chevron-circle-down"></i>
+                    <i onClick={(e) => this.showModal(e)} className="fas fa-chevron-circle-down"></i>
                 </div>
                 <DashboardStatsAddContainer vital={this.state.dataKey} subVitals={subVitals} />
                     
