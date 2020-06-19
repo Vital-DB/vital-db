@@ -72,25 +72,58 @@
 
 .edit-form-col-1 input:focus {
     outline: none;
+    border: 4px solid rgb(238, 117, 117);
     /* box-shadow: 3px 3px rgb(97, 199, 140); */
     box-shadow: 5px 5px #888888;
 }
 
 .edit-form-col-2 select:focus {
     outline: none;
+    border: 4px solid rgb(238, 117, 117);
     /* box-shadow: 3px 3px rgb(97, 199, 140); */
     box-shadow: 5px 5px #888888;
 }
 
-.edit-form-col-2 select, .edit-form-col-2 input {
+.edit-form-col-2 select {
     margin-top: 5px;
     border-radius: 5px;
+    border: 2px solid rgb(142, 210, 233);
+    height: 30px;
+    width: 70px;
+    border-radius: 8px;
+}
+
+.edit-form-col-2 input {
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(142, 210, 233);
 }
 
 .edit-form-header{
     margin-bottom: 20px;
     font-size: 30px;
     text-decoration: underline;
+}
+
+.edit-form-sex-select{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border: 2px solid rgb(142, 210, 233);
+    height: 30px;
+    width: 100px;
+    border-radius: 8px;
+}
+
+.edit-form-sex-select:focus{
+    outline: none;
+    border: 4px solid rgb(238, 117, 117);
+    /* box-shadow: 3px 3px rgb(97, 199, 140); */
+    box-shadow: 5px 5px #888888;
+}
+
+.edit-profile-button:hover{
+    background-color: #818181;
+    transition: 0.5s;
 }
 
 .pencil{
