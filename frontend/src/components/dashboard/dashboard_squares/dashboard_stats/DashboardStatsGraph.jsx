@@ -7,7 +7,7 @@ export default ({chartLines, data}) => {
 
     // use with attribute 'content={<CustomTooltip />' on line, for custom tooltip}
     // const CustomTooltip = ({ payload, label, active }) => {
-    //     // debugger
+
     //     if (active) {
     //         return (
     //             <div className="custom-tooltip">
@@ -25,7 +25,7 @@ export default ({chartLines, data}) => {
         data[i].date = date;
     }
 
-    // debugger
+ 
 
     const recommendedRanges = {
         LDL: {
@@ -69,10 +69,10 @@ export default ({chartLines, data}) => {
             max: 200,
         },
     }
-    // debugger
+
 
     const referenceLines = () => {
-        // debugger
+
         if(chartLines.length === 1) {
             let subVital = chartLines[0];
                 if(subVital !== "value") {
@@ -116,7 +116,8 @@ export default ({chartLines, data}) => {
                 {/* <ReferenceArea y1={200} y2={300} fill="red" /> */}
                 <CartesianGrid vertical={false} horizontal={false} />
                 <XAxis dataKey="date" />
-                <YAxis domain={['dataMin - 10', 'dataMax + 10']} />
+                {/* <YAxis domain={['dataMin - 10', 'dataMax + 10']} /> */}
+                <YAxis domain={['auto', 'auto']} />
                 
                 <Tooltip 
                     contentStyle={{opacity: 1, backgroundColor: "white", borderRadius: "5px", boxShadow: "1px 1px 1px #2E3030"}} 

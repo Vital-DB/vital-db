@@ -19,7 +19,7 @@ class DashboardStatsSublist extends Component {
             target.classList.add('selected-sub');
             let allSubs = target.parentNode.children;
             for(let i = 0; i < allSubs.length; i++){
-                // debugger
+        
                 let currentSub = allSubs[i];
                 selectedSubs.push(currentSub.getAttribute('value'));
                 if (i !== 0) currentSub.classList.remove('selected-sub');
