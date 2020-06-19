@@ -53,6 +53,16 @@
     border-radius: 0.8em;
 }
 
+.fa-chevron-circle-down {
+    cursor: pointer;
+    transition: .3s color;
+}
+
+.fa-chevron-circle-down:hover {
+    color: red;
+
+}
+
 .dashboard-stats-list li {
     margin-top: 2vh;
     font-family: 'Barlow', sans-serif;
