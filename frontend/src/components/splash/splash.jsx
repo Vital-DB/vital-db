@@ -7,9 +7,11 @@ import chat from './docchat-icon.png';
 import caduceus from './caduceus2.png';
 import choleschart from './chol-chart.png';
 import info from './med-info.png';
-import roboChat from './robo-chat.png';
+import roboChat from './robochat.png';
 import vitalist from './vitalist.png';
 import gitlink from './github-logo.png';
+// import headshot from './headshot1.png';
+
 
 class Splash extends React.Component {
   
@@ -74,26 +76,29 @@ class Splash extends React.Component {
               <span>
                 <ul className="team">
                   <li id="member">
-                  <a href="https://github.com/tongsalex">
+              <a id="alex" href="https://github.com/tongsalex" target="_blank" >
                     <img src={gitlink} id="gitlink"/>
                     Alex Tong -- Backend
+                    {/* <img src={headshot} id="headshot"/> */}
                   </a>
                     </li>
-                    
+                      
                     <li id="member">
-                    <a href="https://github.com/dojobuns">
+              <a id="cliff" href="https://github.com/dojobuns" target="_blank">
                       <img src={gitlink} id="gitlink" />
-                    Cliff Yan -- Flex
+                    Clifford Yan -- Flex
                   </a>
                   </li>
+                      
                 <li id="member">
-                <a href="https://github.com/dacrawford89">
+              <a id="doug" href="https://github.com/dacrawford89" target="_blank">
                   <img src={gitlink} id="gitlink" />
                     Doug Crawford -- Team Lead
                   </a>
-                </li>
+                </li> 
+                      
             <li id="member">
-              <a href="https://github.com/devNahuelOper">
+              <a id="nahuel" href="https://github.com/devNahuelOper" target="_blank">
                 <img src={gitlink} id="gitlink" />
                     Nahuel Gorosito -- Frontend
                   </a>
