@@ -20,15 +20,22 @@
 
 .dashboard-stats-list__container {
     position: relative;
-    /* display: flex; */
-    /* ?flex-direction: row; */
-    width: 28%;
+    width: 40%;
+}
+
+.dashboard-stats-list__h1 {
+    position: absolute;
+    top: 8vh;
+    left: 3vw;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1vw;
+    color: white;
 }
 
 .fa-chevron-circle-down {
     position: absolute;
     top: 2vh;
-    right: 1vw;
+    right: 4vw;
     align-self: center;
     font-size: 2vw;
     color: white;
@@ -42,7 +49,7 @@
 .dashboard-stats-list {
     position: absolute;
     /* top: vh; */
-    /* right: 2vw; */
+    left: 7vw;
     z-index: 10;
     text-align: center;
     font-size: 2vw;
@@ -94,14 +101,13 @@
 }
 
 .dashboard-stats-sublist {
-
     width: 80%;
     display: flex;
     justify-content: space-evenly;
     height: 5vh;
     /* margin-bottom: 1vh; */
     z-index: 0;
-    margin-top: 10vh;
+    margin-top: 12vh;
 }
 
 .dashboard-stats-sublist li {
@@ -230,7 +236,7 @@
 }
 
 .dash__addAVital {
-    margin-top: 2vh;
+    margin-top: 1.5vh;
     display: flex;
     width: 12%;
     justify-content: space-between;
