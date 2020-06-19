@@ -86,7 +86,11 @@ class SideNav extends React.Component {
             'NIH stands for National Institutes of Health',
             'Remember to get your flu shots each year!',
             'Statistically, 9 out of 10 injections are in vein',
-            'Remember to take breaks!'
+            'Remember to take breaks!',
+            'I once heard a joke about amnesia, but I forgot how it goes',
+            'I don’t find health-related puns funny anymore since I started suffering from an irony deficiency',
+            '“The worst time to have a heart attack is during a game of charades',
+
         ];
 
         let randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -94,13 +98,15 @@ class SideNav extends React.Component {
         while(randomGreeting === this.state.greeting){
             randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
         }
-debugger;
+
         if(randomGreeting === greetings[0]) {
             this.setState({sources: 'https://www.healthywomen.org/condition/cholesterol#:~:text=A%20normal%20total%20cholesterol%20level,risk%20factor%20for%20heart%20disease.'})
         } else if(randomGreeting === greetings[6] || randomGreeting === greetings[7] || randomGreeting === greetings[2]){
             this.setState({sources: 'https://www.healthline.com/nutrition/27-health-and-nutrition-tips#section10'})
         } else if(randomGreeting === greetings[8]) {
             this.setState({sources: 'https://www.usatoday.com/story/news/nation/2013/01/23/smoking-cessation-life-expectancy/1858913/'})
+        } else if(randomGreeting === greetings[19] || randomGreeting === greetings[20] || randomGreeting === greetings[21] || randomGreeting === greetings[17]) {
+            this.setState({sources: 'https://www.aimseducation.edu/blog/medical-puns-jokes-and-one-liners/'})
         } else {
             this.setState({sources: ''})
         }

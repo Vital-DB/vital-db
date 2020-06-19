@@ -31,6 +31,7 @@
     flex-direction: column;
     text-align: center;
     padding: 20px;
+    transition: 0.5s;
 }
 
 .bubble-source {
