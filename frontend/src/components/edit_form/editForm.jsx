@@ -15,6 +15,7 @@ class EditForm extends React.Component {
             height: this.props.currentUser.height,
             organDonor: this.props.currentUser.organDonor,
             profilePic: this.props.currentUser.profilePic,
+            sex: this.props.currentUser.sex,
             _id: this.props.currentUser._id,
             saved: '',
         }
@@ -30,13 +31,14 @@ class EditForm extends React.Component {
  
         this.props.editUser(this.state)
         if(this.props.currentUser.weight !== this.state.weight){
-            this.props.createWeight({ value: this.state.weight});
+            this.props.createWeight({ pounds: this.state.weight});
         }
         this.setState({ saved: 'Saved'})
         setTimeout(() => this.setState({ saved: '' }), 4000);
     }
 
     render(){
+        debugger;
         if(!this.state.birthday){
             return null;
         }
@@ -125,8 +127,16 @@ class EditForm extends React.Component {
                                     </select>
                                 </label>
                             </div>
-                            <button>EDIT PROFILE</button>
+                            <label className='edit-form-sex'><div>Gender</div>
+                                <select className='edit-form-sex-select' value={this.state.sex} onChange={this.update('sex')}>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </label>
+                            <div>
+                            <button className='edit-profile-button'>EDIT PROFILE</button>
                             <div className='edit-saved'>{this.state.saved}</div>
+                            </div>
                         </form>
                     </div>
                     <div className='pencil'>

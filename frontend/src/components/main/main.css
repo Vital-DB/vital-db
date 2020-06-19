@@ -27,7 +27,14 @@
     color: rgb(20, 66, 83);
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
+    padding: 20px;
+}
+
+.bubble-source {
+    font-size: 12px;
 }
 
 .speech-bubble-2{

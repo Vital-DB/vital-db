@@ -13,7 +13,7 @@ class SideNav extends React.Component {
         this.closeNav = this.closeNav.bind(this);
         this.changeGreeting = this.changeGreeting.bind(this); 
         
-        this.state = { bool: true, greeting: '' };
+        this.state = { bool: true, greeting: '', sources: '', };
     }
 
     componentDidMount(){
@@ -94,19 +94,38 @@ class SideNav extends React.Component {
         while(randomGreeting === this.state.greeting){
             randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
         }
-
-        this.setState({ greeting: randomGreeting, bool: false })
+debugger;
+        if(randomGreeting === greetings[0]) {
+            this.setState({sources: 'https://www.healthywomen.org/condition/cholesterol#:~:text=A%20normal%20total%20cholesterol%20level,risk%20factor%20for%20heart%20disease.'})
+        } else if(randomGreeting === greetings[6] || randomGreeting === greetings[7] || randomGreeting === greetings[2]){
+            this.setState({sources: 'https://www.healthline.com/nutrition/27-health-and-nutrition-tips#section10'})
+        } else if(randomGreeting === greetings[8]) {
+            this.setState({sources: 'https://www.usatoday.com/story/news/nation/2013/01/23/smoking-cessation-life-expectancy/1858913/'})
+        } else {
+            this.setState({sources: ''})
+        }
+        this.setState({ greeting: randomGreeting, bool: false, });
     }
-
     render(){
         let hiding = 'Oh, You found me! Click on me to show sidebar!';
+        let source = '';
+        if(this.state.sources.length > 0){
+            source = 'source';
+        }
 
         return (
             <div>
                 <div id='my-sidenav' className='sidenav'>
                     <a className="closebtn" onClick={this.closeNav}>&times;</a>
                     <div className='danc-talk'>
-                        <div className='speech-bubble'>{this.state.greeting}</div>
+                        <div className='speech-bubble'>
+                            <div>
+                                {this.state.greeting}
+                            </div>
+                            <a className='bubble-source' href={this.state.sources}>
+                                {source}
+                            </a>
+                        </div>
                         <img src={danc} width='100' height='140' onClick={this.changeGreeting} className='danc' alt=""/>
                         <div className="arrow bounce">
                             <i className="fa fa-sort-up fa-2x"></i>
