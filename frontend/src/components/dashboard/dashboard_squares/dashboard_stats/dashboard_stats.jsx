@@ -228,7 +228,7 @@ class DashboardStats extends React.Component {
                                 {vitalName.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })} 
                         </li> : "")}
                     </ul>
-                    <i className="fas fa-chevron-circle-down"></i>
+                    <i onClick={(e) => this.showModal(e)} className="fas fa-chevron-circle-down"></i>
                     
                 </div>
                 
