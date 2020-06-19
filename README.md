@@ -89,10 +89,10 @@ The following is a breakdown of the minimum viable product [MVP] for this web ap
 - recharts
 
 # Group Members & Work Breakdown
-- (Backend Lead) Alexander Tong
-- (Flex Lead) Clifford Yan
-- (Group Lead/Flex) Douglas Crawford
-- (Frontend Lead) Nahuel Gorosito
+- **Alexander Tong** (Backend Lead) 
+- **Clifford Yan** (Flex Lead) 
+- **Douglas Crawford** (Group Lead/Flex) 
+- **Nahuel Gorosito** (Frontend Lead) 
 
 ### Day 1
 * Setup state - **Douglas**
