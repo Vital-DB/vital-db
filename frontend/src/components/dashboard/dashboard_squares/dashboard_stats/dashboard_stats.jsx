@@ -216,6 +216,7 @@ class DashboardStats extends React.Component {
         return(  
             <div id='my-dashboard-stats' className='dashboard-stats'>
                 <div className="dashboard-stats-list__container">
+
                     <ul className="dashboard-stats-list">
                         {/* values on the li are the vitals keys, displayed text uses regex to convert camelcase to capitalized first letter with spaces in between */}
                         {/* exclude values if they don't have numeric stats */}
@@ -229,6 +230,7 @@ class DashboardStats extends React.Component {
                         </li> : "")}
                     </ul>
                     <i onClick={(e) => this.showModal(e)} className="fas fa-chevron-circle-down"></i>
+                    <h1 className="dashboard-stats-list__h1">Choose which stats you would like to see and expand card details on.</h1>
                     
                 </div>
                 
