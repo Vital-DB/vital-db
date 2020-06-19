@@ -130,6 +130,7 @@ class EditForm extends React.Component {
                                 <select className='edit-form-sex-select' value={this.state.sex} onChange={this.update('sex')}>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </label>
                             <div>
