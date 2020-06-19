@@ -255,7 +255,7 @@ class DashboardStats extends React.Component {
                 <DashboardInfo dataKey={this.state.dataKey} subDataKeys={this.state.subDataKeys} />
                 
                 <h3 className="disclaimer">*None of the information on this website is medically affiliated in any way. We are not doctors and this application is purely for web development showcasing purposes only.</h3>
-                <h3 className="disclaimer">**First data point omitted on all graphs for visual purposes.</h3>
+                <h3 className="disclaimer">**First data point date label omitted on all graphs for visual purposes.</h3>
             </div>
         )
     }

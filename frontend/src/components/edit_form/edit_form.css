@@ -54,10 +54,18 @@
 
 .edit-info label {
     margin-bottom: 25px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                supported by Chrome, Edge, Opera and Firefox */
 }
 
 .edit-form-blood-type{
     margin-left: 15px;
+    
 }
 
 .edit-form-organ-donor{
@@ -103,6 +111,13 @@
     margin-bottom: 20px;
     font-size: 30px;
     text-decoration: underline;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                supported by Chrome, Edge, Opera and Firefox */
 }
 
 .edit-form-sex-select{
