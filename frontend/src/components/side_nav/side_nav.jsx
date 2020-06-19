@@ -94,7 +94,6 @@ class SideNav extends React.Component {
         while(randomGreeting === this.state.greeting){
             randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
         }
-debugger;
         if(randomGreeting === greetings[0]) {
             this.setState({sources: 'https://www.healthywomen.org/condition/cholesterol#:~:text=A%20normal%20total%20cholesterol%20level,risk%20factor%20for%20heart%20disease.'})
         } else if(randomGreeting === greetings[6] || randomGreeting === greetings[7] || randomGreeting === greetings[2]){
