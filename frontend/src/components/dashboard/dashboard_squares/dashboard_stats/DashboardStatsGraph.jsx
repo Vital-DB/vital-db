@@ -65,8 +65,8 @@ export default ({chartLines, data}) => {
             max: 80
         },
         pounds: {
-            min: 100,
-            max: 200,
+            min: 125,
+            max: 168,
         },
     }
 
