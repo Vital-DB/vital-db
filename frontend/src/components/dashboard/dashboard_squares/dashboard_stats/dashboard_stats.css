@@ -33,18 +33,20 @@
 }
 
 .fa-chevron-circle-down {
-    position: absolute;
+    position: relative;
     top: 2vh;
-    right: 4vw;
     align-self: center;
     font-size: 2vw;
     color: white;
+    z-index: 25;
+    left: 28vw;
+    cursor: pointer;
+    transition: .3s color;
 }
 
-/* .fa-chevron-circle-down:hover {
-    cursor: pointer;
+.fa-chevron-circle-down:hover {
     color: red;
-} */
+}
 
 .dashboard-stats-list {
     position: absolute;
@@ -67,15 +69,6 @@
                 supported by Chrome, Edge, Opera and Firefox */
 }
 
-.fa-chevron-circle-down {
-    cursor: pointer;
-    transition: .3s color;
-}
-
-.fa-chevron-circle-down:hover {
-    color: red;
-
-}
 
 .dashboard-stats-list li {
     margin-top: 2vh;
