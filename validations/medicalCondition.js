@@ -6,8 +6,8 @@ module.exports = function validateMedicalConditionInput(data) {
 
     data.condition = validText(data.condition) ? data.condition : "";
 
-    if(!Validator.isLength(data.condition, { min: 3, max: 50 })) {
-        errors.condition = 'Medical Condition must be at least 3 characters';
+    if(!Validator.isLength(data.condition, { min: 3, max: 1000 })) {
+        errors.condition = 'Medical Condition must be between 3 and 1000 characters';
     }
 
     if(Validator.isEmpty(data.condition)) {

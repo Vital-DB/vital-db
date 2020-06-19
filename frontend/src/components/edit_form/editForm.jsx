@@ -38,7 +38,6 @@ class EditForm extends React.Component {
     }
 
     render(){
-        debugger;
         if(!this.state.birthday){
             return null;
         }
