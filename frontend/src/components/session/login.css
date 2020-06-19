@@ -25,6 +25,11 @@
     border-radius: 26px;    
 }
 
+.login-input {
+  border-radius: 8px;
+  border-color: rgb(64, 187, 192);
+  margin-bottom: 4px;
+}
 
 .login-button {
   margin-bottom: 30px;

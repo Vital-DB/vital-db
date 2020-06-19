@@ -9,7 +9,7 @@ import choleschart from './chol-chart.png';
 import info from './med-info.png';
 import roboChat from './robo-chat.png';
 import vitalist from './vitalist.png';
-
+import gitlink from './github-logo.png';
 
 class Splash extends React.Component {
   
@@ -71,6 +71,40 @@ class Splash extends React.Component {
             <NavLink className="splash-nav" to="/login">Login</NavLink>
             <NavLink className="splash-nav" to="/register">Register</NavLink>
           </div>
+              <span>
+                <ul className="team">
+                  <li id="member">
+                  <a href="https://github.com/tongsalex">
+                    <img src={gitlink} id="gitlink"/>
+                    Alex Tong -- Backend
+                  </a>
+                    </li>
+                    
+                    <li id="member">
+                    <a href="https://github.com/dojobuns">
+                      <img src={gitlink} id="gitlink" />
+                    Cliff Yan -- Flex
+                  </a>
+                  </li>
+                <li id="member">
+                <a href="https://github.com/dacrawford89">
+                  <img src={gitlink} id="gitlink" />
+                    Doug Crawford -- Team Lead
+                  </a>
+                </li>
+            <li id="member">
+              <a href="https://github.com/devNahuelOper">
+                <img src={gitlink} id="gitlink" />
+                    Nahuel Gorosito -- Frontend
+                  </a>
+            </li>
+                </ul>
+              </span>
+
+        <details id="disclaimer">
+          <summary>Disclaimer:</summary> 
+          <p>*None of the information on this website is medically affiliated in any way. Though we actually did research, we are not doctors and this application is purely for web development showcasing purposes only.*</p>
+          </details>
       </div>
     )
   }

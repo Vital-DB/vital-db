@@ -122,10 +122,10 @@ export const Register = (props) => {
                     className="signup-button">
                     Signup
                 </button>
-            </form>
-            
             <NavLink className="register-nav" to="/login">Login</NavLink>
             <NavLink className="register-nav" to="/">Home</NavLink>
+            </form>
+            
 
         </div>
     )
