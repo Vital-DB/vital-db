@@ -81,13 +81,13 @@
   padding-left: 15px;
 }
 
-.feature:first-of-type {
+/* .feature:first-of-type {
   background-image: url('/images/safe.png');
   background-size: 43%;
   background-repeat: no-repeat;
   background-position-x: 72px;
   background-position-y: 70px;
-}
+} */
 
 .vital-list {
   opacity: .8;
@@ -131,7 +131,7 @@
   filter: hue-rotate(22deg);
 }
 
-#chart-icon, #info {
+#chart-icon, #info, #robochat, #vitalist {
   image-rendering: -webkit-optimize-contrast;
   position: absolute;
   left: 13%;
@@ -165,7 +165,7 @@
     width: 80%;
   }
 
-  #chart-icon, #info {
+  #chart-icon, #info, #robochat, #vitalist {
     height: 50%;
     width: 70%;
     top: 29%;
@@ -178,11 +178,11 @@
     width: 80%;
   }
 
-  .feature:first-of-type {
+  /* .feature:first-of-type {
     background-position-x: center;
     overflow: hidden;
     background-size: 50%;
-  }
+  } */
 
   .vital-list {
     height: 60%;
@@ -236,7 +236,7 @@
     width: 50%;
   }
 
-  #info, #chart-icon {
+  #info, #chart-icon, #robochat, #vitalist {
     top: 33%;
     height: 40%;
     width: 50%;

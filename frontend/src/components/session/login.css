@@ -60,6 +60,7 @@
   border-radius: 80px;
   padding: 14px 14px 14px 14px;
   filter: drop-shadow(2px 4px 6px black);
+  filter: saturate(2.5);
 }
 
 button.demo-button::before {
@@ -99,10 +100,10 @@ button.demo-button::before {
   width: 100%;
 }
 
-/* .login_errors {
-  position: absolute;
-  top: 72%;
-  font-weight: bold;
-  list-style: disc;
-  color: #F44336;
-} */
+.login-nav:hover, .login-button:hover {
+  background-color: #800283;
+}
+
+.demo-button:hover {
+  filter: invert(1);
+}

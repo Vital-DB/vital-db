@@ -3,10 +3,13 @@ import './splash.css';
 import { NavLink } from 'react-router-dom';
 import chat from './docchat-icon.png';
 // import chart from './chart-icon.png';
-import remind from './med-remind6.png';
+// import remind from './med-remind6.png';
 import caduceus from './caduceus2.png';
 import choleschart from './chol-chart.png';
 import info from './med-info.png';
+import roboChat from './robo-chat.png';
+import vitalist from './vitalist.png';
+
 
 class Splash extends React.Component {
   
@@ -21,7 +24,8 @@ class Splash extends React.Component {
           <div className="splash-content">
             <section className="feature">
               <h1 id="heading">Store vitals in one place</h1>
-                <ul className="vital-list">                
+              <img src={vitalist} id="vitalist"/>
+                {/* <ul className="vital-list">                
                   <li className="vital">
                     <h3>Name: </h3>
                     <h4>Demo Nanaan</h4>
@@ -47,18 +51,18 @@ class Splash extends React.Component {
                   <h4>60 mg/dL</h4>
                 </li>
               
-                </ul>
+                </ul> */}
             </section>
             <section className="feature">
-              <h1 id="heading">Connect with Roboctor</h1>
-              <img src={chat} id="docchat" alt="chat"/>
+              <h1 id="heading">Talk vitals with Roboctor</h1>
+              <img src={roboChat} id="robochat" alt="chat"/>
             </section>
             <section className="feature">
               <h1 id="heading">Track vitals in real-time</h1>
               <img src={choleschart} id="chart-icon" alt="chart"/>
             </section>
             <section className="feature">
-              <h1 id="heading">Vital descriptors</h1>
+              <h1 id="heading">Show vital descriptors</h1>
               <img src={info} id="info" alt="info"/>
             </section>
           </div>
