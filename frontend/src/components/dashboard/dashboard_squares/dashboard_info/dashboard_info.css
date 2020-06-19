@@ -35,4 +35,10 @@
     margin: 0 1em 0 1em;
     width: 20%;
     background-color: #fdf9f4;
+    transition: .5s transform;
+    cursor: default;
+}
+
+.dataCard:hover {
+    transform: scale(1.5);
 }

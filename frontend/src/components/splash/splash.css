@@ -1,8 +1,10 @@
 .splash-container {
   width: 100vw;
   height: 100vh;
-  background-image: url('/images/vitaldb-bg.png');
-  background-size: cover;
+  /* background-image: url('/images/vitaldb-bg.png'); */
+  background-image: url('/images/splash-bg.png');
+  background-size: 180vh;
+  background-position-y: -57px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -25,7 +27,8 @@
   font-size: 28px;
   width: 100%;
   height: 6%;
-  background-color: rgb(64, 187, 192);
+  /* background-color: rgb(64, 187, 192); */
+  background-color: rgb(54, 149, 251);
   border-radius: 8px 8px 0px 0px;
   padding: 5px 0 5px 0;
 }
@@ -50,7 +53,8 @@
 #heading {
   font-size: 16px;
   color: white;
-  background-color: rgb(64, 187, 192);
+  /* background-color: rgb(64, 187, 192); */
+  background-color: rgb(54, 149, 251);
   border-radius: 4px;
   text-align: center;
   padding: 5px;
@@ -58,6 +62,7 @@
 
 .splash-content {
   position: relative;
+  top: -2%;
   color: black;
   height: 100%;
   display: flex;
@@ -78,23 +83,25 @@
 
 .feature:first-of-type {
   background-image: url('/images/safe.png');
-  background-size: 142px;
+  background-size: 43%;
   background-repeat: no-repeat;
-  background-position-x: 92px;
+  background-position-x: 72px;
   background-position-y: 70px;
 }
 
 .vital-list {
   opacity: .8;
   position: relative;
-  left: 0px;
+  left: 18px;
   top: 14px;
-  background-color: #e8f0f3;
+  width: 86%;
+  /* background-color: #e8f0f3; */
+  background-color: #002c40;
   border-radius: 8px;
   box-sizing: border-box;
-  padding-left: 16px;
+  padding-left: 29px;
   padding-top: 10px;
-  padding-bottom: 60px;
+  padding-bottom: 17px;
 }
 
 .vital {
@@ -104,37 +111,45 @@
 
 .vital h3 {
   font-size: 12px;
+  color: #9f77e6;
+  margin-right: 3px;
+  filter: brightness(1.5)
 }
 
 .vital h4 {
   font-family: Bradley Hand, cursive;
   text-decoration: underline;
-  color: #3682a4;
+  /* color: #3682a4; */
+  color: #02fdfd;
 }
 
 #docchat {
   position: relative;
   top: 14px;
-  vertical-align: middle;
   left: 23%;
   height: 69%;
+  filter: hue-rotate(22deg);
 }
 
-#chart-icon {
+#chart-icon, #info {
+  image-rendering: -webkit-optimize-contrast;
   position: absolute;
-  left: 20%;
-  top: 55px;
-  height: 69%;
+  left: 13%;
+  top: 32%;
+  height: 60%;
+  width: 81%;
+  border-radius: 8px;
 }
 
-#med-remind {
+
+/* #med-remind {
   position: absolute;
   left: 19%;
   top: 27%;
   height: 69%;
   width: 80%;
   filter: hue-rotate(684deg);
-}
+} */
 
 
 @media only screen and (max-width: 950px) {
@@ -150,10 +165,11 @@
     width: 80%;
   }
 
-  #chart-icon {
-    height: 57%;
-    width: 75%;
-    top: 20%;
+  #chart-icon, #info {
+    height: 50%;
+    width: 70%;
+    top: 29%;
+    left: 23%;
   }
 
   #med-remind {
@@ -165,14 +181,21 @@
   .feature:first-of-type {
     background-position-x: center;
     overflow: hidden;
+    background-size: 50%;
   }
 
   .vital-list {
-    height: 80%;
+    height: 60%;
+    width: 82%;
+    overflow: hidden;
+    left: 10%;
   }
 
   .vital {
     flex-direction: column;
+    position: relative;
+    left: -21%;
+    font-size: 10px;
   }
 }
 
@@ -182,6 +205,8 @@
   border-radius: 8px;
   background-color: rgb(64, 187, 192);
   color: white;
+  /* background-color: rgb(0, 44, 64);
+  color: #52f6f8; */
   text-decoration: none;
   text-align: center;
   margin-bottom: 5px;
@@ -197,13 +222,21 @@
   filter: drop-shadow(2px 4px 6px black);
 }
 
+@media only screen and (min-width: 1150px) { 
+  .feature:first-of-type {
+    background-position-x: 148px;
+    background-position-y: 75px;
+    background-size: 31%;
+  }
+}
+
 @media only screen and (max-height: 625px) {
   .feature {
     height: 50%;
     width: 50%;
   }
 
-  #med-remind, #chart-icon {
+  #info, #chart-icon {
     top: 33%;
     height: 40%;
     width: 50%;
@@ -215,7 +248,14 @@
 
 
   .feature:first-of-type {
-    background-size: 30%;
+    background-size: 20%;
+    overflow: hidden;
+  }
+
+  .vital-list {
+    font-size: 10px;
+    width: 53%;
+    height: 47%;
     overflow: hidden;
   }
 } 

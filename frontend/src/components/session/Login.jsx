@@ -104,9 +104,11 @@ export const Login = (props) => {
                     className="login-button">
                     Login
                 </button>
-            </form>
+
+
             <NavLink className="login-nav" to="/register">Signup</NavLink>
             <NavLink className="login-nav" to="/">Home</NavLink>
+            </form>
         </div>
     )
 }

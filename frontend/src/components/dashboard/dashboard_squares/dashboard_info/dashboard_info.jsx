@@ -14,9 +14,9 @@ export default (props) => {
         triglycerides: "A normal level is below 150. Triglycerides are basically fat molecules inside your body. The lower your fat percentage, the lower triglycerides you will have, decreasing your risk of coronary artery disease.",
         systolic: "Normal systolic levels are less than 120. This number tells you how much pressure your blood is pushing against each artery wall each time your heart beats.",
         diastolic: "Normal diastolic levels are less than 80. This number indicates how mmuch pressure your blood is pushing against each artery wall each time your heart is resting between each heartbeat.",
-
+        
     }
-
+    
     const dataKeys = {
         cholesterolLevels: "Cholesterol",
         bloodPressureLevels: "Blood Pressure",
@@ -27,8 +27,8 @@ export default (props) => {
     }
 
     const dataKeyInfo = {
-        cholesterolLevels: "Cholesterol readings are a good indication of your heart health. Healthy cholesterol reduces your chances of heart disease and having a stroke. You should get your cholesterol checked once every 5 years once you past 20 years old.",
-        bloodPressureLevels: "Blood pressure is the force of blood flowing through your veins. High blood pressure can damage your circulatory system which can lead to heart attacks or strokes.",
+        cholesterolLevels: "Cholesterol readings are a good indication of your heart health. Healthy cholesterol reduces your chances of heart disease and having a stroke. You should get your cholesterol checked once every 5 years once you past 20 years old. You want to aim for low LDL and triglycerides, but have a healthy level of HDL. Click on an individual stat to learn more",
+        bloodPressureLevels: "Blood pressure is the force of blood flowing through your veins. High blood pressure can damage your circulatory system which can lead to heart attacks or strokes. Normal systolic levels are less than 120 and diastolic levels less than 80. Click on an individual stat to learn more",
         weights: "Healthy weight levels depend on a lot of factors like height and age. Recommended levels shown will not account for these factors and will only show weight recommended by the health department based on gender.",
         vitaminDLevels: "Vitamin D is critical to the human body, it helps us absorb calcium and is thereby necessary for bone, teeth and muscle strength. It is present in some foods but on average, most of it is produced when the sun's ultraviolet rays hit our skin and force our body to produce it.",
         temperatures: "Body temperature is critical to health. High body temperatures over 100.4°F usually indicate you have a fever cause either by illness or infection. 'Normal' temperatures usually fun everywhere between 97°F and 99°F. Readings that are lower than 95°F can be an indicator of hypothermia.",

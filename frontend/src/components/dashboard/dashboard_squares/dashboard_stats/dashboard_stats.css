@@ -58,6 +58,23 @@
     width: 20vw;
 
     border-radius: 0.8em;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.fa-chevron-circle-down {
+    cursor: pointer;
+    transition: .3s color;
+}
+
+.fa-chevron-circle-down:hover {
+    color: red;
+
 }
 
 .dashboard-stats-list li {
@@ -67,6 +84,8 @@
     cursor: pointer;
     transition: color .3s;
     padding-bottom: 1vh;
+    position: relative;
+    z-index: 10;
 }
 
 .dashboard-stats-list .selected {
@@ -107,7 +126,17 @@
     height: 5vh;
     /* margin-bottom: 1vh; */
     z-index: 0;
+
     margin-top: 12vh;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+        supported by Chrome, Edge, Opera and Firefox */
+
 }
 
 .dashboard-stats-sublist li {
@@ -245,6 +274,13 @@
     font-family: 'Barlow', sans-serif;
     font-size: 1.5vw;
     cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                supported by Chrome, Edge, Opera and Firefox */
 }
 
 .dash__addAVital:hover * {
