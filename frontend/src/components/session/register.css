@@ -70,12 +70,16 @@
 }
 
 .reg-error {
-  color: #082b40;
+  position: relative;
+  left: 5px;
+  color: #ffffff;
   background-color: #d86052;
-  border-radius: 4px;
+  border-radius: 6px;
   box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 5px;
   width: fit-content;
-  height: fit-content;
   opacity: .9;
 }
 
