@@ -90,7 +90,6 @@ class SideNav extends React.Component {
             'I once heard a joke about amnesia, but I forgot how it goes',
             'I don’t find health-related puns funny anymore since I started suffering from an irony deficiency',
             '“The worst time to have a heart attack is during a game of charades',
-
         ];
 
         let randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
