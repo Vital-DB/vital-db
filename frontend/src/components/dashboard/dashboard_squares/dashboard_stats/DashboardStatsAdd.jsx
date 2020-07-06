@@ -10,7 +10,12 @@ class DashboardStatsAdd extends Component {
         this.hideModal = this.hideModal.bind(this);
     }    
 
-    componentDidUpdate(prevProps){
+    componentDidMount(){
+        if (this.props.currentSubVital) alert(this.props.currentSubVital)
+    }
+    
+    componentDidUpdate(prevProps, prevState){
+
     
         const currentVital = this.props.vital;
         // clear modal values if user changes vitals from the dropdown menu, or successfully adds them
@@ -65,8 +70,9 @@ class DashboardStatsAdd extends Component {
 
     handleChange(e){
         e.preventDefault();
-   
-        this.setState({[e.currentTarget.getAttribute('subdatakey')]: e.currentTarget.value})
+        const dataKey = e.currentTarget.getAttribute('subdatakey')
+        const value = e.currentTarget.value;
+        this.setState({[dataKey]: value})
     }
     
     render() {
@@ -87,11 +93,20 @@ class DashboardStatsAdd extends Component {
 
         const input = (
             subVitals.map(sub => {
+                debugger
                 let inputType;
-                if (vital !== 'medicalConditions'){ // text area
-                    inputType = <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />;
+                const editSub = (this.state.current) ? this.state.current[sub] : "";
+                let value;
+                if (this.state[sub]){
+                    value = this.state[sub];
+                } else {
+                    value = "";
+                } 
+
+                if (vital !== 'medicalConditions' && vital !== 'allergies'){ // vital numbers
+                    inputType = <input key={sub} subdatakey={sub} type="number" value={value} placeholder="Please enter a value" onChange={this.handleChange} />;
                 } else { // input[type="text"]
-                    inputType = <textarea key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />
+                    inputType = <textarea key={sub} subdatakey={sub} type="text" value={value} placeholder="Please enter a value" onChange={this.handleChange} />
                 }
                 return <label key={sub}>{sub}{inputType}</label>
             })

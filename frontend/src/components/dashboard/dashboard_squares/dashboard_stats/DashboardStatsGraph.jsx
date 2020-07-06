@@ -2,7 +2,7 @@ import React from 'react'
 import { LineChart, Line, CartesianGrid, YAxis, XAxis, ResponsiveContainer, Tooltip, ReferenceArea, Label } from 'recharts';
 import {merge} from 'lodash';
 
-export default ({chartLines, data}) => {
+export default ({chartLines, data, dashboardStats}) => {
     const colors = ["#FF4E66","#FF5733","#86FF33","#6337D8"];
 
     // use with attribute 'content={<CustomTooltip />' on line, for custom tooltip}
@@ -94,17 +94,17 @@ export default ({chartLines, data}) => {
     }
 
     return (
+        
         <ResponsiveContainer>
             <LineChart data={data} >
                 {referenceLines()}
-
                 {chartLines.map((subVital, idx) => {
                 return (
-                        <Line 
+                        <Line
                             key={idx} 
                             filterNull={true} 
                             connectNulls={true} 
-                            activeDot={{ strokeWidth: 2, r: 10 }} 
+                            activeDot={{ onClick: (e) => dashboardStats.addVital(e, idx), strokeWidth: 2, r: 10 }} 
                             dot={false} 
                             pointstype="monotone" 
                             strokeWidth="5" 

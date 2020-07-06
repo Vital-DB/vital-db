@@ -48,6 +48,8 @@ export default () => {
       
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
+        const input = document.querySelector('.add-vital-outer-container textarea');
+        input.focus();
     }
 
     return (
