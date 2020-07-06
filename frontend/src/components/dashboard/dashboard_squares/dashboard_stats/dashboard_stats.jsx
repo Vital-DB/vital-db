@@ -10,7 +10,9 @@ class DashboardStats extends React.Component {
         super(props);
         this.state = {
             dataKey: 'cholesterolLevels', //default
-            subDataKeys: ["All"], // show all subs by default
+            subDataKeys: ["All"], // show all subs by default,
+            formType: "",
+            currentSubVital: "",
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleClickSub = this.handleClickSub.bind(this);
@@ -35,6 +37,7 @@ class DashboardStats extends React.Component {
         const currentDataKey = this.state.dataKey
         if (this.state.dataKey !== prevState.dataKey){ // when user selects a new vital
             this.setState({subDataKeys: ["All"]}); // reset default subs
+            this.setState({currentSubVital: ""}); 
             let selected = document.querySelectorAll('.dashboard-stats .selected-sub'); // currently selected subvitals, to have styling removed
             for (let i = 0; i < selected.length; i++){ // remove styling from all of the previously selected subs
                 selected[i].classList.remove('selected-sub');
@@ -80,7 +83,6 @@ class DashboardStats extends React.Component {
     }
 
     showModal(e){
-  
         this.setState({opened: true});  
         const listItems = document.querySelectorAll('.dashboard-stats-list li'); // the list items from .dashboard-stats-list
         // const listItems = e.currentTarget.parentNode.children; // the list items from .dashboard-stats-list
@@ -151,10 +153,12 @@ class DashboardStats extends React.Component {
         this.setState({subDataKeys: selectedSubs}) // this sets the subVitals to be displayed on the graph
     }
 
-    addVital(){
-     
+    addVital(e, vitalId){
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
+        // put cursor inside first input/textarea when adding a vital
+        let input = document.querySelector('.add-vital-outer-container input');
+        input.focus();
     }
 
     render(){
@@ -213,6 +217,7 @@ class DashboardStats extends React.Component {
             }
         }
 
+
         return(  
             <div id='my-dashboard-stats' className='dashboard-stats'>
                 <div className="dashboard-stats-list__container">
@@ -246,7 +251,7 @@ class DashboardStats extends React.Component {
                 </ul>
 
                 {/* show a loader while fetching; if user has no stats, show the helper message  */}
-                {(!data.length) ? loadingOrNoVitals : <DashboardStatsGraph data={data} chartLines={chartLines} />}
+                {(!data.length) ? loadingOrNoVitals : <DashboardStatsGraph dashboardStats={this} data={data} chartLines={chartLines} />}
 
                 <div className="dash__addAVital" onClick={() => this.addVital()} >
                     <i className="fas fa-plus-circle"></i>

@@ -13,19 +13,15 @@ export default () => {
 
     useEffect(() => {
         dispatch(fetchMedicalConditions());
-      
     }, []) 
     useEffect(() => {
         // fetch updated conditions after uploading successfully
         dispatch(fetchMedicalConditions());
-        // document.querySelector('.add-vital-outer-container').style.display = "";
-     
     }, [checkupHistory.length]); 
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // dispatch(allergies(user));
     }
 
     const renderErrors = () => {
@@ -57,9 +53,10 @@ export default () => {
     }
 
     const addVital = () => {
-    
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
+        const input = document.querySelector('.add-vital-outer-container textarea');
+        input.focus();
     }
 
     return (

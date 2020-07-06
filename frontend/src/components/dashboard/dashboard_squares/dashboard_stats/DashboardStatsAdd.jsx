@@ -10,19 +10,21 @@ class DashboardStatsAdd extends Component {
         this.hideModal = this.hideModal.bind(this);
     }    
 
-    componentDidUpdate(prevProps){
+    componentDidMount(){
+        if (this.props.currentSubVital) alert(this.props.currentSubVital)
+    }
     
+    componentDidUpdate(prevProps, prevState){
         const currentVital = this.props.vital;
         // clear modal values if user changes vitals from the dropdown menu, or successfully adds them
         if ((prevProps.vital !== currentVital) || this.props.vitals[currentVital].length !== prevProps.vitals[currentVital].length){
+            this.setState({date: ""});
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
             }
             document.querySelector('.add-vital-outer-container').style.display = ""; // hide modal when user inputs data
             this.props.clearVitalsErrors(); 
         }
-
-
     }
 
     hideModal(e){
@@ -31,7 +33,6 @@ class DashboardStatsAdd extends Component {
     }
 
     handleSubmit(e){
-     
         e.preventDefault();
         switch (this.props.vital) {
             case 'cholesterolLevels':
@@ -65,8 +66,9 @@ class DashboardStatsAdd extends Component {
 
     handleChange(e){
         e.preventDefault();
-   
-        this.setState({[e.currentTarget.getAttribute('subdatakey')]: e.currentTarget.value})
+        const dataKey = e.currentTarget.getAttribute('subdatakey')
+        const value = e.currentTarget.value;
+        this.setState({[dataKey]: value})
     }
     
     render() {
@@ -87,11 +89,18 @@ class DashboardStatsAdd extends Component {
 
         const input = (
             subVitals.map(sub => {
+                let value;
                 let inputType;
-                if (vital !== 'medicalConditions'){ // text area
-                    inputType = <input key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />;
+                if (this.state[sub]){
+                    value = this.state[sub];
+                } else {
+                    value = "";
+                } 
+
+                if (vital !== 'medicalConditions' && vital !== 'allergies'){ // vital numbers
+                    inputType = <input key={sub} subdatakey={sub} type="number" value={value} placeholder="Please enter a value" onChange={this.handleChange} />;
                 } else { // input[type="text"]
-                    inputType = <textarea key={sub} subdatakey={sub} type="text" value={this.state[sub] || ""} placeholder="Please enter a value" onChange={this.handleChange} />
+                    inputType = <textarea key={sub} subdatakey={sub} type="text" value={value} placeholder="Please enter a value" onChange={this.handleChange} />
                 }
                 return <label key={sub}>{sub}{inputType}</label>
             })
@@ -104,13 +113,15 @@ class DashboardStatsAdd extends Component {
             const errorPath = (subVital !== 'allergy' && subVital !== 'condition' && errors[subVital]) ? errors[subVital].properties.message : errors[subVital];
             if (errors[subVital]) errorList.push(<li key={subVital}>{`${subVital}: ${errorPath}`}</li>)
         }
- 
+        
         return (
             <div className="add-vital-outer-container">
-                <div onClick={this.hideModal}className="add-vital-modal"></div>
+                <div onClick={this.hideModal} className="add-vital-modal"></div>
                 <div className="add-vital-container">
+                    <i class="far fa-window-close" onClick={this.hideModal}></i>
                     <form className="add-vital-form" onSubmit={this.handleSubmit}>
                         <h1>Add {dataKeys[vital]}</h1>
+                        {(vital === 'medicalConditions') ? <label>Date: <input type="date" subdatakey="date" onChange={this.handleChange} value={this.state['date']} /></label> : ""}
                         {input}
                         <ul className="vitals-error-list">
                             {errorList}
