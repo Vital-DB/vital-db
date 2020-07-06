@@ -1,9 +1,6 @@
 import React from 'react';
 import './splash.css';
 import { NavLink } from 'react-router-dom';
-import chat from './docchat-icon.png';
-// import chart from './chart-icon.png';
-// import remind from './med-remind6.png';
 import caduceus from './caduceus2.png';
 import choleschart from './chol-chart.png';
 import info from './med-info.png';
@@ -19,10 +16,7 @@ import headshot4 from './headshot4.png';
 class Splash extends React.Component {
 
   render() {
-    // const alex = document.getElementById('headshot1');
-    // const cliff = document.getElementById('headshot2');
-    // const doug = document.getElementById('headshot3');
-    // const nahuel = document.getElementById('headshot4');
+
     return (
       <div className="splash-container">
         <div className="splash">
@@ -61,7 +55,6 @@ class Splash extends React.Component {
               <a id="alex" href="https://github.com/tongsalex" target="_blank">
                     <img src={gitlink} id="gitlink"/>
                     Alex Tong -- Backend
-                    {/* <img src={headshot} id="headshot"/> */}
                   </a>
                     </li>
                       
