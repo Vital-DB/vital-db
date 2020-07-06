@@ -15,8 +15,6 @@ class DashboardStatsAdd extends Component {
     }
     
     componentDidUpdate(prevProps, prevState){
-
-    
         const currentVital = this.props.vital;
         // clear modal values if user changes vitals from the dropdown menu, or successfully adds them
         if ((prevProps.vital !== currentVital) || this.props.vitals[currentVital].length !== prevProps.vitals[currentVital].length){
@@ -26,8 +24,6 @@ class DashboardStatsAdd extends Component {
             document.querySelector('.add-vital-outer-container').style.display = ""; // hide modal when user inputs data
             this.props.clearVitalsErrors(); 
         }
-
-
     }
 
     hideModal(e){
@@ -36,7 +32,6 @@ class DashboardStatsAdd extends Component {
     }
 
     handleSubmit(e){
-     
         e.preventDefault();
         switch (this.props.vital) {
             case 'cholesterolLevels':
@@ -122,8 +117,9 @@ class DashboardStatsAdd extends Component {
  
         return (
             <div className="add-vital-outer-container">
-                <div onClick={this.hideModal}className="add-vital-modal"></div>
+                <div onClick={this.hideModal} className="add-vital-modal"></div>
                 <div className="add-vital-container">
+                    <i class="far fa-window-close" onClick={this.hideModal}></i>
                     <form className="add-vital-form" onSubmit={this.handleSubmit}>
                         <h1>Add {dataKeys[vital]}</h1>
                         {input}
