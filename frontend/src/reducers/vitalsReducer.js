@@ -37,7 +37,6 @@ export default (state = _nullState, action) => {
         case RECEIVE_CHOLESTEROL_LEVELS:
             // debugger
             let vitals = action.cholesterolLevels;
-            debugger
             // vitals.map(vital => );
             return merge({}, state, {cholesterolLevels: action.cholesterolLevels} )
         case RECEIVE_CHOLESTEROL_LEVEL:

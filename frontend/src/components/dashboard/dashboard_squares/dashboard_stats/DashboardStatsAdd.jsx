@@ -18,6 +18,7 @@ class DashboardStatsAdd extends Component {
         const currentVital = this.props.vital;
         // clear modal values if user changes vitals from the dropdown menu, or successfully adds them
         if ((prevProps.vital !== currentVital) || this.props.vitals[currentVital].length !== prevProps.vitals[currentVital].length){
+            this.setState({date: ""});
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
             }
@@ -88,10 +89,8 @@ class DashboardStatsAdd extends Component {
 
         const input = (
             subVitals.map(sub => {
-                debugger
-                let inputType;
-                const editSub = (this.state.current) ? this.state.current[sub] : "";
                 let value;
+                let inputType;
                 if (this.state[sub]){
                     value = this.state[sub];
                 } else {
@@ -114,7 +113,7 @@ class DashboardStatsAdd extends Component {
             const errorPath = (subVital !== 'allergy' && subVital !== 'condition' && errors[subVital]) ? errors[subVital].properties.message : errors[subVital];
             if (errors[subVital]) errorList.push(<li key={subVital}>{`${subVital}: ${errorPath}`}</li>)
         }
- 
+        
         return (
             <div className="add-vital-outer-container">
                 <div onClick={this.hideModal} className="add-vital-modal"></div>
@@ -122,6 +121,7 @@ class DashboardStatsAdd extends Component {
                     <i class="far fa-window-close" onClick={this.hideModal}></i>
                     <form className="add-vital-form" onSubmit={this.handleSubmit}>
                         <h1>Add {dataKeys[vital]}</h1>
+                        {(vital === 'medicalConditions') ? <label>Date: <input type="date" subdatakey="date" onChange={this.handleChange} value={this.state['date']} /></label> : ""}
                         {input}
                         <ul className="vitals-error-list">
                             {errorList}

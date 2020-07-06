@@ -156,7 +156,6 @@ class DashboardStats extends React.Component {
     addVital(e, vitalId){
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
-        debugger
         // put cursor inside first input/textarea when adding a vital
         let input = document.querySelector('.add-vital-outer-container input');
         input.focus();
