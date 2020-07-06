@@ -10,13 +10,19 @@ import info from './med-info.png';
 import roboChat from './robochat.png';
 import vitalist from './vitalist.png';
 import gitlink from './github-logo.png';
-// import headshot from './headshot1.png';
+import headshot1 from './headshot1.png';
+import headshot2 from './headshot2.png';
+import headshot3 from './headshot3.png';
+import headshot4 from './headshot4.png';
 
 
 class Splash extends React.Component {
-  
 
   render() {
+    // const alex = document.getElementById('headshot1');
+    // const cliff = document.getElementById('headshot2');
+    // const doug = document.getElementById('headshot3');
+    // const nahuel = document.getElementById('headshot4');
     return (
       <div className="splash-container">
         <div className="splash">
@@ -27,33 +33,6 @@ class Splash extends React.Component {
             <section className="feature">
               <h1 id="heading">Store vitals in one place</h1>
               <img src={vitalist} id="vitalist"/>
-                {/* <ul className="vital-list">                
-                  <li className="vital">
-                    <h3>Name: </h3>
-                    <h4>Demo Nanaan</h4>
-                  </li > 
-                <li className="vital">
-                  <h3>Height: </h3>
-                  <h4>6'0''</h4>
-                </li >
-                <li className="vital">
-                  <h3>Weight: </h3>
-                  <h4>180lbs</h4>
-                </li >         
-                <li className="vital">
-                  <h3>Blood type: </h3>
-                  <h4>O-</h4>
-                  </li >
-                <li className="vital">
-                  <h3>LDL: </h3>
-                  <h4>90 mg/dL</h4>
-                  </li>
-                <li className="vital">
-                  <h3>HDL: </h3>
-                  <h4>60 mg/dL</h4>
-                </li>
-              
-                </ul> */}
             </section>
             <section className="feature">
               <h1 id="heading">Talk vitals with Roboctor</h1>
@@ -75,8 +54,11 @@ class Splash extends React.Component {
           </div>
               <span>
                 <ul className="team">
-                  <li id="member">
-              <a id="alex" href="https://github.com/tongsalex" target="_blank" >
+            <li id="member" 
+              // onMouseOver={() => { document.getElementById('headshot1').style.dislay = "block"; }}
+            // onMouseEnter={document.getElementById('headshot1').style.display = 'block'}
+            >
+              <a id="alex" href="https://github.com/tongsalex" target="_blank">
                     <img src={gitlink} id="gitlink"/>
                     Alex Tong -- Backend
                     {/* <img src={headshot} id="headshot"/> */}
@@ -91,7 +73,7 @@ class Splash extends React.Component {
                   </li>
                       
                 <li id="member">
-              <a id="doug" href="https://github.com/dacrawford89" target="_blank">
+              <a id="doug" href="https://github.com/dacraw" target="_blank">
                   <img src={gitlink} id="gitlink" />
                     Doug Crawford -- Team Lead
                   </a>
@@ -104,7 +86,31 @@ class Splash extends React.Component {
                   </a>
             </li>
                 </ul>
-              </span>
+        </span>
+       
+        <div className="frame">
+            <article id="picture">
+            <a href="https://www.linkedin.com/in/tongsalex/" target="_blank">
+              <img src={headshot1} id="headshot1" />
+            </a>
+            </article>
+            <article id="picture">
+            <a href="https://www.linkedin.com/in/cliffordyan/" target="_blank">
+              <img src={headshot2} id="headshot2" />
+            </a>
+            </article>
+            <article id="picture">
+            <a href="https://www.linkedin.com/in/doug-a-crawford/" target="_blank">
+              <img src={headshot3} id="headshot3" />
+            </a>
+            </article>
+            <article id="picture">
+            <a href="https://www.linkedin.com/in/nahuel-gorosito-a2a41524/" target="_blank">
+              <img src={headshot4} id="headshot4" />
+            </a>
+            </article>
+        </div>
+              
 
         <details id="disclaimer">
           <summary>Disclaimer:</summary> 
