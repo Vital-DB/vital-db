@@ -15,7 +15,7 @@
   position: relative;
   top: 2%;
   height: 70vh;
-  width: 40vw;
+  width: 60vw;
   margin-bottom: 20px;
   background-color: #f7f7f7;
   color: white;
@@ -42,22 +42,25 @@
   top: -70%;
   height: 240%;
   width: 25%;
+  transform: scaleX(1.2);
 }
 
 
 
 #heading {
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
   color: white;
   background-color: rgb(54, 149, 251);
-  border-radius: 4px;
+  border-radius: 8px;
   text-align: center;
-  padding: 5px;
+  padding: 5px 0 5px 0px;
 }
 
 .splash-content {
   position: relative;
-  top: -2%;
+  left: -1%;
+  top: -5%;
   color: black;
   height: 100%;
   display: flex;
@@ -67,9 +70,10 @@
 }
 
 .feature {
+  margin: 0 auto;
   position: relative;
   height: 40%;
-  width: 42%;
+  width: 43%;
   border-radius: 2px;
   box-sizing: border-box;
   padding-top: 21px;
@@ -79,11 +83,12 @@
 #chart-icon, #info, #robochat, #vitalist {
   image-rendering: -webkit-optimize-contrast;
   position: absolute;
-  left: 13%;
-  top: 32%;
-  height: 60%;
-  width: 81%;
-  border-radius: 8px;
+  left: 12%;
+  top: 25%;
+  height: 80%;
+  width: 80%;
+  border-radius: 18px;
+  transform: scale(0.9);
 }
 
 .splash-nav{
@@ -291,6 +296,7 @@
   filter: drop-shadow(2px 4px 6px black) contrast(1.0);
   image-rendering: -webkit-optimize-contrast;
   transform: scale(1.1);
+  border: 2px solid #092140;
 }
 
 #gitlink {
