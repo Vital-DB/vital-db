@@ -130,7 +130,7 @@
 .team {
   position: relative;
   /* top: 35%; */
-  left: 15%;
+  left: 13%;
   font-family: Helvetica, sans-serif;
   color: #ffeaff;
   display: flex;
@@ -155,16 +155,13 @@
 
 #member:hover {
   transform: scale(1.15);
+  white-space: nowrap;
 }
 
-#member:first-of-type {
-  width: 17%;
-  /* background-color: #061d3f; */
-}
-
-#member:nth-of-type(2) {
-  width: 15%;
-  /* background-color: #09254c; */
+#member:hover #gitlink {
+  margin-bottom: 1px;
+  margin-right: 9px;
+  transform: scale(1.5);
 }
 
 #member a {
@@ -293,7 +290,7 @@
 
 #headshot1:hover, #headshot2:hover, #headshot3:hover, #headshot4:hover {
   opacity: 1.0;
-  filter: drop-shadow(2px 4px 6px black) contrast(1.0);
+  filter: drop-shadow(2px 4px 6px black) contrast(1.5);
   image-rendering: -webkit-optimize-contrast;
   transform: scale(1.1);
   border: 2px solid #092140;
@@ -312,6 +309,8 @@
 }
 
 #disclaimer {
+  position: relative;
+  top: 0.5%;
   font-size: 14px;
   color: #ffeaff;
   background-color: #061939;
@@ -324,10 +323,15 @@
 }
 
 #disclaimer p {
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   background-color: #061939;
   border-radius: 8px;
+}
+
+#disclaimer summary, #disclaimer p {
+  position: relative;
+  left: -5%;
 }
 
 @media only screen and (max-width: 950px) {
