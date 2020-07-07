@@ -144,40 +144,53 @@
 
 #member {
   text-align: center;
-  background: rgb(6, 27, 60, 0.5);
-  /* background-color: #092149; */
-  width: 20%;
-  padding: 5px;
+  width: 15%;
   border-radius: 12px;
+  white-space: nowrap;
   animation: colors 5s linear infinite;
-  /* border-right: 1px solid #ffeaff; */
 }
 
 #member:hover {
-  transform: scale(1.15);
+  transform: scale(1.08);
   white-space: nowrap;
 }
 
-#member:hover #gitlink {
-  margin-bottom: 1px;
-  margin-right: 9px;
-  transform: scale(1.5);
-}
-
 #member a {
+  white-space: nowrap;
   text-decoration: none;
+  background: rgb(6, 27, 60, 0.5);
   color: #b39cd2;
   filter: brightness(1.5);
   cursor :pointer;
+  border-radius: 8px;
+  padding: 3px;
+  width: 20%;
   animation: colors 15s linear infinite;
 }
 
 #member a:hover {
-  font-weight: bold;
   white-space: nowrap;
   color: #7bfdfc;
-  filter: contrast(1.5) drop-shadow(2px 4px 6px black);
+  filter: contrast(1.5);
   animation: colors 3s linear infinite;
+}
+
+#member:hover #gitlink {
+  margin-bottom: 3px;
+  margin-right: 9px;
+  transform: scale(1.9);
+}
+
+#gitlink {
+  width: 5%;
+  margin-right:5px;
+  filter: invert(1);
+}
+
+#gitlink:hover {
+  background-color: #40bbc0;
+  border-radius: 8px;
+  filter: contrast(3.5);
 }
 
 /* #headshot {
@@ -273,13 +286,13 @@
 #picture:hover {
   background-image: url('/images/linkedin.png');
   background-repeat: no-repeat;
-  background-position-x: 68px;
+  background-position-x: 56px;
+  background-size: 15px;
 }
 
 #headshot1, #headshot2, #headshot3, #headshot4 {
   cursor: pointer;
-  /* opacity: 0.1; */
-  width: 70%;
+  width: 80%;
   height: 90%;
   margin-top: 8px;
   border-radius: 50%;
@@ -292,30 +305,20 @@
   opacity: 1.0;
   filter: drop-shadow(2px 4px 6px black) contrast(1.5);
   image-rendering: -webkit-optimize-contrast;
-  transform: scale(1.1);
-  border: 2px solid #092140;
+  transform: scale(1.01) translateY(-7px);
+  border: 1px solid #091b3d;
 }
 
-#gitlink {
-  width: 5%;
-  margin-right:5px;
-  filter: invert(1);
-}
 
-#gitlink:hover {
-  background-color: #40bbc0;
-  border-radius: 8px;
-  filter: contrast(3.5);
-}
 
 #disclaimer {
   position: relative;
   top: 0.5%;
   font-size: 14px;
   color: #ffeaff;
-  background-color: #061939;
+  background: rgb(6, 27, 60, 0.5);
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 12px;
 }
 
 #disclaimer:hover {
@@ -323,13 +326,16 @@
 }
 
 #disclaimer p {
-  font-size: 14px;
+  position: relative;
+  left: -5%;
+  font-size: 13px;
   color: white;
-  background-color: #061939;
   border-radius: 8px;
 }
 
-#disclaimer summary, #disclaimer p {
+#disclaimer summary {
+  width: fit-content;
+  background-color: #061939;
   position: relative;
   left: -5%;
 }
