@@ -286,7 +286,8 @@
 #picture:hover {
   background-image: url('/images/linkedin.png');
   background-repeat: no-repeat;
-  background-position-x: 56px;
+  background-position-x: 57px;
+  background-position-y: 5px;
   background-size: 15px;
 }
 
@@ -303,9 +304,9 @@
 
 #headshot1:hover, #headshot2:hover, #headshot3:hover, #headshot4:hover {
   opacity: 1.0;
-  filter: drop-shadow(2px 4px 6px black) contrast(1.5);
+  filter: contrast(1.3);
   image-rendering: -webkit-optimize-contrast;
-  transform: scale(1.01) translateY(-7px);
+  transform: scale(1.01) translateY(-3px);
   border: 1px solid #091b3d;
 }
 
