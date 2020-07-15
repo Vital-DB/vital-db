@@ -6,6 +6,7 @@ import NewPicture from '../pictures/NewPicture';
 import editFormContainer from '../edit_form/editFormContainer';
 import Allergies from '../allergies/Allergies';
 import CheckupHistory from '../checkupHistory/CheckupHistory';
+import About from '../about/About';
 // import danc from './danc.png';
 import './main.css';
 
@@ -29,6 +30,7 @@ class Main extends React.Component {
                 <PrivateRoute path='/main/profile' component={editFormContainer} />
                 <PrivateRoute path='/main/allergies' component={Allergies} />
                 <PrivateRoute path='/main/checkup/history' component={CheckupHistory} />
+                <PrivateRoute path='/main/about' component={About} />
             </div>
         )
     }
