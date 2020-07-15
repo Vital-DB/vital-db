@@ -22,6 +22,12 @@ export const createAllergy = (data) => {
         data,
     )
 };
+export const editAllergy = (data) => {
+    return axios.patch(
+        `/api/allergies/${data.id}`,
+        data
+    )
+}
 export const fetchBloodPressureLevels = () => (
     axios.get(
         `/api/bloodPressures`,

@@ -141,6 +141,10 @@ export const createAllergy = (data) => dispatch => {
             errs => dispatch(receiveVitalsErrors(errs.response.data))
         )
 };
+export const editAllergy = (data) => dispatch => {
+    return VitalsUtil.editAllergy(data)
+        .then(res => dispatch(receiveAllergy(res.data)), errs => dispatch(receiveVitalsErrors(errs.response.data)))
+}
 export const fetchBloodPressureLevels = () => dispatch => {
     dispatch(startLoadingVitals());
     return VitalsUtil.fetchBloodPressureLevels()

@@ -37,9 +37,10 @@ export default () => {
     }
 
     const renderAllergies = () => {
+        debugger
         if(allergies) {
             return allergies.map((allergy, idx) => {
-                return <AllergyComponent key={idx} allergy={allergy.allergy} /> 
+                return <AllergyComponent key={idx} allergy={allergy} /> 
             })
         }
     }

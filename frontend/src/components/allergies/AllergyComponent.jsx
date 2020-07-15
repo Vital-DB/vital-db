@@ -1,8 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
+// import editAllergy from '../../actions/vitals'
 
 export default ({allergy}) => {
-    debugger
+    const [allergyName, setAllergy] = useState(allergy.allergy)
     return (
-        <input type="text" value={allergy} />
+        <input /*onBlur={editAllergy(allergy)}*/ 
+            type="text" 
+            onChange={e => setAllergy(e.target.value)} 
+            value={allergyName} 
+        />
     )
 };
