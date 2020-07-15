@@ -11,10 +11,13 @@ export default ({allergy}) => {
         dispatch(editAllergy(allergy))
     }
     return (
-        <input onBlur={() => submit()} 
-            type="text" 
-            onChange={e => setAllergy(e.target.value)} 
-            value={allergyName} 
-        />
+        <div className="allergy-item">
+            <i class="fas fa-minus-circle"></i>
+            <input onBlur={() => submit()} 
+                type="text" 
+                onChange={e => setAllergy(e.target.value)} 
+                value={allergyName} 
+            />
+        </div>
     )
 };

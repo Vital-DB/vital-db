@@ -1,11 +1,65 @@
+/* ALLERGIES */
 
 .edit-form.allergies {
     display: block;
     text-align: center;
+    font-size: 1em;
+}
+.edit-form.allergies .allergies-list{
+    padding: 10px;
+    box-sizing: border-box;
+    background: lightblue;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.allergy-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fa-minus-circle {
+    padding:.5vw;
+    color: darkslategray;
+    cursor: pointer;
+}
+.fa-minus-circle:hover {
+    color: darkred;
+}
+.allergies-list input[type="text"] {
+    background:none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.allergies-list input[type="text"]:hover, .allergies-list input[type="text"]:focus {
+    color:purple;
+    
 }
 
+.allergic {
+    margin-right: 10px;
+}
+
+.allergies-list{
+    box-shadow: 3px 3px #888888;
+}
+
+/* ALLERGIES / CHECKUPHISTORY ADD VITAL BUTTON */
+
 .dash__addAVital.allergies {
-    color: black;
+    margin: 0 auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    display: flex;
+    width: 27%;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: lightblue;
 }
 
 
