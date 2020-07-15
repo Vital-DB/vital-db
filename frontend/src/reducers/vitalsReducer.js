@@ -13,6 +13,7 @@ import {
     RECEIVE_WEIGHT,
     RECEIVE_ALLERGIES, 
     RECEIVE_ALLERGY,
+    REMOVE_ALLERGY,
     UPDATE_ALLERGY,
     RECEIVE_MEDICAL_CONDITIONS,
     RECEIVE_MEDICAL_CONDITION,
@@ -92,8 +93,11 @@ export default (state = _nullState, action) => {
             // newState = merge({}, state);
             // newState['allergies'].push(newVital);
             // return merge({}, state, newState )  
-        case UPDATE_ALLERGY:
-            
+        case REMOVE_ALLERGY:
+            debugger
+            newState = merge({}, state);
+            delete newState.allergies[action.allergyID]
+            return newState;
         case RECEIVE_MEDICAL_CONDITIONS:
             return merge({}, state, {medicalConditions: action.medicalConditions} )            
         case RECEIVE_MEDICAL_CONDITION:

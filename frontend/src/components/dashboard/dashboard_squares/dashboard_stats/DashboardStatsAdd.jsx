@@ -13,7 +13,6 @@ class DashboardStatsAdd extends Component {
     componentDidUpdate(prevProps, prevState){
         const currentVital = this.props.vital;
         // clear modal values if user changes vitals from the dropdown menu, or successfully adds them
-        debugger
         if ((prevProps.vital !== currentVital) || this.props.vitals[currentVital].length !== prevProps.vitals[currentVital].length){
             this.setState({date: ""});
             for (let i = 0; i < this.props.subVitals.length; i++){

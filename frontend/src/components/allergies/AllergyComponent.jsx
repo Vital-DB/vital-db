@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
-import {editAllergy} from '../../actions/vitals'
+import {editAllergy, deleteAllergy} from '../../actions/vitals'
 
 export default ({allergy}) => {
     const [allergyName, setAllergy] = useState(allergy.allergy)
@@ -12,7 +12,7 @@ export default ({allergy}) => {
     }
     return (
         <div className="allergy-item">
-            <i class="fas fa-minus-circle"></i>
+            <i onClick={() => dispatch(deleteAllergy(allergy._id))} className="fas fa-minus-circle"></i>
             <input onBlur={() => submit()} 
                 type="text" 
                 onChange={e => setAllergy(e.target.value)} 

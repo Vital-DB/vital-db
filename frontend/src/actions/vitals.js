@@ -14,7 +14,7 @@ export const RECEIVE_WEIGHTS = "RECEIVE_WEIGHTS";
 export const RECEIVE_WEIGHT = "RECEIVE_WEIGHT";
 export const RECEIVE_ALLERGIES = "RECEIVE_ALLERGIES";
 export const RECEIVE_ALLERGY = "RECEIVE_ALLERGY";
-export const UPDATE_ALLERGY = "UPDATE_ALLERGY";
+export const REMOVE_ALLERGY = "REMOVE_ALLERGY";
 export const RECEIVE_MEDICAL_CONDITIONS = "RECEIVE_MEDICAL_CONDITIONS";
 export const RECEIVE_MEDICAL_CONDITION = "RECEIVE_MEDICAL_CONDITION";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
@@ -47,9 +47,9 @@ const receiveAllergy = (allergy) => ({
     type: RECEIVE_ALLERGY,
     allergy,
 });
-const updateAllergy = (allergy) => ({
-    type: UPDATE_ALLERGY,
-    allergy
+const removeAllergy = (allergyID) => ({
+    type: REMOVE_ALLERGY,
+    allergyID,
 })
 const receiveBloodPressureLevels = (bloodPressureLevels) => ({
     type: RECEIVE_BLOOD_PRESSURE_LEVELS,
@@ -149,6 +149,10 @@ export const createAllergy = (data) => dispatch => {
 export const editAllergy = (data) => dispatch => {
     return VitalsUtil.editAllergy(data)
         .then(res => dispatch(receiveAllergy(res.data)), errs => dispatch(receiveVitalsErrors(errs.response.data)))
+}
+export const deleteAllergy = (allergyID) => dispatch => {
+    return VitalsUtil.deleteAllergy(allergyID)
+        .then(() => dispatch(removeAllergy(allergyID)), errs => dispatch(receiveVitalsErrors(errs.response.data)))
 }
 export const fetchBloodPressureLevels = () => dispatch => {
     dispatch(startLoadingVitals());

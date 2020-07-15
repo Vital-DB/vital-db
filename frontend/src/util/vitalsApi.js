@@ -22,6 +22,11 @@ export const createAllergy = (data) => {
         data,
     )
 };
+export const deleteAllergy = (allergyID) => {
+    return axios.delete(
+        `/api/allergies/${allergyID}`,
+    )
+};
 export const editAllergy = (data) => {
     return axios.patch(
         `/api/allergies/${data._id}`,
