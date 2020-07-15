@@ -13,6 +13,7 @@ import {
     RECEIVE_WEIGHT,
     RECEIVE_ALLERGIES, 
     RECEIVE_ALLERGY,
+    UPDATE_ALLERGY,
     RECEIVE_MEDICAL_CONDITIONS,
     RECEIVE_MEDICAL_CONDITION,
     CLEAR_VITALS,
@@ -21,7 +22,7 @@ import {merge} from 'lodash'
 
 const _nullState = {
     cholesterolLevels: [],
-    allergies: [],
+    allergies: {},
     bloodPressureLevels: [],
     medicalConditions: [],
     restingHeartRates: [],
@@ -80,12 +81,20 @@ export default (state = _nullState, action) => {
             newState['weights'].push(newVital);
             return merge({}, state, newState )  
         case RECEIVE_ALLERGIES:
-            return merge({}, state, {allergies: action.allergies} )
+            debugger
+            const allergies = {};
+            action.allergies.forEach(allergy => {
+                allergies[allergy._id] = allergy;
+            })
+            return merge({}, state, {allergies: allergies} )
         case RECEIVE_ALLERGY:
-            newVital = action.allergy;
-            newState = merge({}, state);
-            newState['allergies'].push(newVital);
-            return merge({}, state, newState )  
+            return merge({}, state, {allergies: {[action.allergy._id]: action.allergy}})
+            // newVital = action.allergy;
+            // newState = merge({}, state);
+            // newState['allergies'].push(newVital);
+            // return merge({}, state, newState )  
+        case UPDATE_ALLERGY:
+            
         case RECEIVE_MEDICAL_CONDITIONS:
             return merge({}, state, {medicalConditions: action.medicalConditions} )            
         case RECEIVE_MEDICAL_CONDITION:

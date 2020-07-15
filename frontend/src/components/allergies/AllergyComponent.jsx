@@ -7,7 +7,6 @@ export default ({allergy}) => {
     const dispatch = useDispatch();
 
     const submit = () => {
-        debugger
         allergy.allergy = allergyName
         dispatch(editAllergy(allergy))
     }

@@ -11,11 +11,11 @@ export const createCholesterolLevel = (data) => {
         data,
     )
 };
-export const fetchAllergies = () => (
-    axios.get(
+export const fetchAllergies = () => {
+    return axios.get(
         `/api/allergies/`
     )
-);
+};
 export const createAllergy = (data) => {
     return axios.post(
         `/api/allergies`,
