@@ -189,6 +189,16 @@
     margin: 0 auto;
     border-radius: 10px;
 }
+.allergies-list input[type="text"] {
+    background:none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.allergies-list input[type="text"]:hover, .allergies-list input[type="text"]:focus {
+    color:purple;
+    
+}
 
 .allergic {
     margin-right: 10px;
