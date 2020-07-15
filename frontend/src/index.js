@@ -50,6 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
-  console.log('This is a presentational site, and a logger is being used to demonstrate data flow.');
 });
 
