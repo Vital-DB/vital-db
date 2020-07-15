@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import '../edit_form/edit_form.css'
 import DashboardStatsAddContainer from '../dashboard/dashboard_squares/dashboard_stats/DashboardStatsAddContainer'
-
+import AllergyComponent from './AllergyComponent'
 import {fetchAllergies} from '../../actions/vitals';
 
 export default () => {
@@ -39,7 +39,7 @@ export default () => {
     const renderAllergies = () => {
         if(allergies) {
             return allergies.map((allergy, idx) => {
-                return <p key={idx}>{allergy.allergy}</p>
+                return <AllergyComponent key={idx} allergy={allergy.allergy} /> 
             })
         }
     }
