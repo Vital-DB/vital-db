@@ -5,18 +5,18 @@ import React from 'react';
 // custom routes
 // auth route to protect routes between logged in/not logged in users
 const Guest = ({ component: Component, path, loggedIn, exact }) => {
-    // debugger
+    
     return (<Route
         path={path}
         exact={exact}
         render={props =>
-            !loggedIn ? <Component {...props} /> : <Redirect to="/" />
+            !loggedIn ? <Component {...props} /> : <Redirect to="/main/dashboard" />
         }
     />);
 };
 
 const Private = ({ component: Component, path, loggedIn, exact }) => {
-    // debugger
+    
     return (<Route
         path={path}
         exact={exact}

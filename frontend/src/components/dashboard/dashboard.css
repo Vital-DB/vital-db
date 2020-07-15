@@ -1,0 +1,8 @@
+.dashboard {
+    height: 100vh;
+    background-color: #002B40;
+    transition: 0.5s;
+    width: 100%;
+    /* overflow-y: scroll; */
+    overflow: hidden;
+}

@@ -1,0 +1,116 @@
+.register {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('/images/signup-bg.png');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 100%;
+    font-family: Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 1403px) {
+  /* .register {
+    background-repeat: repeat;
+  } */
+}
+
+@media only screen and (max-width: 1000px) {
+  .register-input, .signup-button, .register-nav {
+    filter: drop-shadow(2px 4px 6px black);
+  }
+}
+
+@media only screen and (min-width: 1230px) {
+  .register-input {
+    width: 16vw;
+  }
+}
+
+
+.register__form {
+    display: flex;
+    flex-direction: column; 
+    background-color: #080d2b;
+    padding: 28px;
+    padding-bottom: 42px;
+    border-radius: 26px;  
+}
+
+
+.register-nav {
+  position: relative;
+  top: 7%;
+  border-radius: 8px;
+  /* background-color: rgb(64, 187, 192); */
+  background-color: #315ffe;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 5px 0 5px 0;
+  width: 100%;
+}
+
+
+.signup-button {
+  /* background-color: rgb(64, 187, 192); */
+  background-color: #315ffe;
+  color: white;
+  font-size: 16px;
+  padding: 5px 0 5px 0;
+  margin: 5px 0 5px 0;
+}
+
+.register-nav:hover, .signup-button:hover {
+  /* background-color: #315ffe; */
+    background-color: #f53100;
+}
+
+.register-input {
+  border-radius: 8px;
+  border-color: #315ffe;
+  margin-bottom: 4px;
+}
+
+.register-input, .login-input, .signup-button, .login-button, .register-nav, .login-nav {
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.reg-error {
+  position: relative;
+  left: 5px;
+  color: #ffffff;
+  background-color: #d86052;
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+  width: fit-content;
+  opacity: .9;
+}
+
+/* @media only screen and (max-width: 900px) {
+  .errors-container {
+    right: 20%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .errors-container {
+     width: 30%;
+    font-size: 12px;
+    right: 35%;
+  }
+  .register p {
+    margin-bottom: 47px;
+  }
+}
+
+.register_errors {
+  color: red;
+}  */

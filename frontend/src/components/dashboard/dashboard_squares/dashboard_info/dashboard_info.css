@@ -1,0 +1,45 @@
+.dashboardInfo {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    /* background-color: #42c2ef; */
+    /* background-color: white; */
+    height: 26%;
+    border-radius: 1em;
+}
+
+.dataKey--title {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.3vw;
+    font-weight: 500;
+    color: black;
+    margin: 1vw;
+
+    text-transform: capitalize;
+}
+
+.dataKey__p--description {
+    margin: 1vw;
+    font-family: 'Barlow', sans-serif;
+    color: black;
+    font-size: 1.2vh;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.dataCard {
+    /* background-color: rgba(255, 256, 256, 1); */
+    border-radius: 0.5em;
+    margin: 0 1em 0 1em;
+    width: 20%;
+    background-color: #fdf9f4;
+    transition: .5s transform;
+    cursor: default;
+}
+
+.dataCard:hover {
+    transform: scale(1.5);
+    box-shadow: 0px 0px 5px black;
+}

@@ -1,6 +1,9 @@
+import './reset.css';
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import jwt_decode from 'jwt-decode';
+// import axios from 'axios';
 
 import Root from './components/Root'
 import configureStore from './store/store'
@@ -8,7 +11,13 @@ import configureStore from './store/store'
 import { setAuthToken } from './util/sessionApi';
 import { logout } from './actions/session';
 
+import * as VitalsUtil from './actions/vitals'
+
+
 document.addEventListener('DOMContentLoaded', () => {
+  // axios.defaults.baseURL= "http://localhost:5000";
+  // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+  
   let store;
 
   if(localStorage.jwtToken) {
@@ -33,8 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.VitalsUtil = VitalsUtil;
+  window.logout = logout;
 
-  const root = document.getElementById('root')
+  const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
+  console.log('This is a presentational site, and a logger is being used to demonstrate data flow.');
 });
 

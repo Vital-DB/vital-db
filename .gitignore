@@ -1,8 +1,10 @@
-/config/keys.js
 /node_modules
+package.json
 .env
 .env*
 .DS_Store
 .DS_Store?
 
 /frontend/node_modules
+
+/config/keys_dev.js

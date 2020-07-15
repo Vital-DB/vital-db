@@ -4,7 +4,9 @@ import jwt_decode from 'jwt-decode';
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const LOGIN_USER = "LOGIN_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
+export const RECEIVE_CURRENT_USER_INFO = 'RECEIVE_CURRENT_USER_INFO';
 
 export const receiveErrors = (errors) => {
     return {
@@ -26,6 +28,17 @@ export const receiveCurrentUser = (currentUser) => {
     }
 };
 
+export const loginUser = () => ({
+    type: LOGIN_USER
+})
+
+const receiveCurrentUserInfo = (currentUser) => {
+    return {
+        type: RECEIVE_CURRENT_USER_INFO,
+        currentUser,
+    }
+}
+
 export const logoutCurrentUser = () => {
     return {
         type: LOGOUT_CURRENT_USER,
@@ -39,21 +52,28 @@ export const logout = () => (dispatch) => {
 };
 
 export const login = (user) => (dispatch) => {
-    return APIUtil.login(user).then((user) => {
+    return APIUtil.login(user).then(user => {
         const { token } = user.data;
         localStorage.setItem('jwtToken', token);
         APIUtil.setAuthToken(token);
         const decoded = jwt_decode(token);
-        return dispatch(receiveCurrentUser(decoded));
-    }, (error) => {
-        return dispatch(receiveErrors(error.response.data));
+        dispatch(receiveCurrentUser(decoded));
+    }).catch(error => {
+        
+        dispatch(receiveErrors(error.response.data));
     });
 };
 
-export const signup = (user) => (dispatch) => {
-    return APIUtil.signup(user).then((user) => {
-        return dispatch(receiveCurrentUser(user));
+export const register = (user) => (dispatch) => {
+    return APIUtil.register(user).then(() => {
+        dispatch(login(user));
     }, (error) => {
-        return dispatch(receiveErrors(error.response.data));
+        dispatch(receiveErrors(error.response.data));
     });
 };
+
+export const fetchCurrentUser = () => dispatch => APIUtil.fetchCurrentUser()
+    .then(user => dispatch(receiveCurrentUserInfo(user)));
+
+export const editUser = user => dispatch => APIUtil.editUser(user)
+    .then(user => dispatch(receiveCurrentUserInfo(user)));

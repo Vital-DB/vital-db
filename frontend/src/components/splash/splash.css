@@ -1,0 +1,412 @@
+.splash-container {
+  width: 100vw;
+  height: 100vh;
+  /* background-image: url('/images/vitaldb-bg.png'); */
+  background-image: url('/images/splash-bg.png');
+  background-size: 180vh;
+  background-position-y: -57px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.splash {
+  top: 10%;
+  height: 73vh;
+  width: 50vw;
+  background-color: #f7f7f7;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  border-radius: 8px 8px 20px 20px;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+#title {
+  text-align: center; 
+  font-size: 28px;
+  width: 100%;
+  height: 6%;
+  /* background-color: rgb(64, 187, 192); */
+  background-color: rgb(54, 149, 251);
+  border-radius: 8px 8px 0px 0px;
+  padding: 5px 0 5px 0;
+}
+
+#caduceus {
+  position: absolute;
+  image-rendering: -webkit-optimize-contrast;
+  top: -4%;
+  left: 37%;
+  height: 15%;
+  width: 148px;
+}
+
+
+
+#heading {
+  font-size: 16px;
+  color: white;
+  background-color: rgb(54, 149, 251);
+  border-radius: 4px;
+  text-align: center;
+  padding: 5px;
+}
+
+.splash-content {
+  position: relative;
+  top: -2%;
+  color: black;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.feature {
+  position: relative;
+  height: 40%;
+  width: 42%;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding-top: 21px;
+  padding-left: 15px;
+}
+
+#chart-icon, #info, #robochat, #vitalist {
+  image-rendering: -webkit-optimize-contrast;
+  position: absolute;
+  left: 13%;
+  top: 32%;
+  height: 60%;
+  width: 81%;
+  border-radius: 8px;
+}
+
+.splash-nav{
+  position: relative;
+  margin-left: 10px;
+  border-radius: 8px;
+  background-color: rgb(64, 187, 192);
+  color: white;
+  /* background-color: rgb(0, 44, 64);
+  color: #52f6f8; */
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 5px 0 5px 0;
+}
+
+.splash-navlinks {
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  width: 30%;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+
+.team {
+  position: relative;
+  left: 10%;
+  font-family: Helvetica, sans-serif;
+  color: #ffeaff;
+  display: flex;
+  flex-direction: row;
+  background-color: #061939;
+  padding: 5px 0px 5px 5px;
+  border-radius: 8px;
+  width: 80%;
+}
+
+#member {
+  text-align: center;
+  /* border-right: 1px solid #ffeaff; */
+}
+
+/* #member:last-of-type {
+  border: none;
+} */
+
+#member a {
+  text-decoration: none;
+  color: #b39cd2;
+  filter: brightness(1.5);
+  cursor :pointer;
+}
+#member a:hover {
+  color: #3695fb;
+}
+
+/* #headshot {
+  display: none;
+  height: 5%;
+  width: 5%;
+} */
+
+#alex:hover {
+  cursor: pointer;
+  color: #3695fb;
+  background-image: url(/images/headshot.png);
+  background-size: 16%;
+  padding-right: 39px;
+  background-repeat: no-repeat;
+  background-position-x: 171px;
+  background-position-y: -4px;
+  filter: contrast(1.5);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+#cliff:hover {
+  cursor: pointer;
+  color: #3695fb;
+  background-image: url(/images/headshot2.png);
+  background-size: 19%;
+  padding-right: 39px;
+  background-repeat: no-repeat;
+  background-position-x: 152px;
+  background-position-y: -5px;
+  filter: contrast(1.5);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+#doug:hover {
+  cursor: pointer;
+  color: #3695fb;
+  background-image: url(/images/headshot3.png);
+  background-size: 13%;
+  padding-right: 39px;
+  background-repeat: no-repeat;
+  background-position-x: 226px;
+  background-position-y: -7px;
+  filter: contrast(1.5);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+#nahuel:hover {
+  cursor: pointer;
+  background-image: url(/images/headshot4.png);
+  background-size: 16%;
+  padding-right: 48px;
+  background-repeat: no-repeat;
+  background-position-x: 214px;
+  background-position-y: -6px;
+  filter: contrast(1.5);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* #member a:hover > #headshot {
+  display: block;
+} */
+
+#gitlink {
+  width: 5%;
+  margin-right:5px;
+  filter: invert(1);
+}
+
+#gitlink:hover {
+  background-color: #40bbc0;
+  border-radius: 8px;
+  filter: contrast(3.5);
+}
+
+#disclaimer {
+  font-size: 14px;
+  color: #ffeaff;
+  background-color: #061939;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#disclaimer:hover {
+  color: #40bbc0;
+}
+
+#disclaimer p {
+  font-size: 12px;
+  color: white;
+  background-color: #061939;
+  border-radius: 8px;
+}
+
+/* .feature:first-of-type {
+  background-image: url('/images/safe.png');
+  background-size: 43%;
+  background-repeat: no-repeat;
+  background-position-x: 72px;
+  background-position-y: 70px;
+} */
+
+/* .vital-list {
+  opacity: .8;
+  position: relative;
+  left: 18px;
+  top: 14px;
+  width: 86%;
+  background-color: #002c40;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding-left: 29px;
+  padding-top: 10px;
+  padding-bottom: 17px;
+} */
+
+/* .vital {
+  display: flex;
+  flex-direction: row;
+}
+
+.vital h3 {
+  font-size: 12px;
+  color: #9f77e6;
+  margin-right: 3px;
+  filter: brightness(1.5)
+}
+
+.vital h4 {
+  font-family: Bradley Hand, cursive;
+  text-decoration: underline;
+  color: #02fdfd;
+} */
+
+/* #docchat {
+  position: relative;
+  top: 14px;
+  left: 23%;
+  height: 69%;
+  filter: hue-rotate(22deg);
+} */
+
+
+@media only screen and (max-width: 750px) {
+  #caduceus {
+    left: 18%;
+  }
+}
+
+
+@media only screen and (max-width: 950px) {
+  
+  #heading {
+    font-size: 50%;
+    text-align: start;
+  }
+
+  /* #docchat {
+    left: 13%;
+    height: 69%;
+    width: 80%;
+    height: 68%;
+    width: 92%;
+  } */
+
+  #chart-icon, #info, #robochat, #vitalist {
+    height: 50%;
+    width: 70%;
+    top: 29%;
+    left: 23%;
+  }
+
+  #med-remind {
+    top: 15%;
+    height: 69%;
+    width: 80%;
+  }
+
+  /* .feature:first-of-type {
+    background-position-x: center;
+    overflow: hidden;
+    background-size: 50%;
+  } */
+
+  /* .vital-list {
+    height: 60%;
+    width: 82%;
+    overflow: hidden;
+    left: 10%;
+  }
+
+  .vital {
+    flex-direction: column;
+    position: relative;
+    left: -21%;
+    font-size: 10px;
+  } */
+
+  .team {
+    position:relative;
+    left: 3%;
+   
+  }
+
+  #member a {
+    font-size: 14px;
+  }
+
+}
+
+
+
+@media only screen and (min-width: 1150px) { 
+  .feature:first-of-type {
+    background-position-x: 148px;
+    background-position-y: 75px;
+    background-size: 31%;
+  }
+}
+
+@media only screen and (max-height: 625px) {
+  .feature {
+    height: 50%;
+    width: 50%;
+  }
+
+  #info, #chart-icon, #robochat, #vitalist {
+    top: 33%;
+    height: 40%;
+    width: 50%;
+  }
+
+  .splash-content {
+    left: -1%;
+  }
+
+
+  .feature:first-of-type {
+    background-size: 20%;
+    overflow: hidden;
+  }
+
+  .vital-list {
+    font-size: 10px;
+    width: 53%;
+    height: 47%;
+    overflow: hidden;
+  }
+} 
+
+@media only screen and (max-height: 325px) {
+
+  #caduceus {
+    top: -2%;
+  }
+
+  #info, #chart-icon, #robochat, #vitalist {
+    top: 45%;
+    left: 35%;
+    height: 31%;
+    width: 41%;
+  }
+
+   /* .vital h3, .vital h4 {
+   font-size: 8px;
+ } */
+
+ .splash-content {
+   left: -2%;
+ }
+}
+

@@ -1,0 +1,242 @@
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: aquamarine;
+    background-image: linear-gradient(150deg, rgb(55, 255, 215), #2e95bb);
+    overflow-x: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    justify-content: space-around;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+}
+
+.sidenav-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #00d7bc;
+    border-radius: 10px;
+    width: 80%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    box-shadow: 5px 5px #888888;
+}
+
+.sidenav-link-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidenav-info h1 {
+    margin-top: 15px;
+}
+
+.sidenav-info-last {
+    margin-bottom: 15px;
+}
+
+.sidenav .closebtn {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #494949;
+    cursor: pointer;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 50px;
+}
+
+.closebtn:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-height: 450px){
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.sidenav-open {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    color: #00d7bc;
+    font-size: 42px;
+    font-weight: bolder;
+    margin: 1em;
+}
+
+.sidenav-profile-image {
+    height: 200px;
+    width: 200px;
+    border: 2px solid #818181;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px #888888;
+}
+
+#sidenav-home-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+}
+
+#sidenav-home-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-edit-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+}
+
+#sidenav-edit-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-history-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+}
+
+#sidenav-history-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-prescription-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+}
+
+#sidenav-prescription-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-vaccination-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+}
+
+#sidenav-vaccination-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav-allergy-link.active {
+    color: #dbdbdb;
+    background-color: #ff4e66;
+}
+
+#sidenav-allergy-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidenav-logout{
+    margin-top: 10px;
+    background-color: #00d7bc;
+    width: 100px;
+}
+
+.sidenav-logout:hover{
+    background-color: rgb(126, 246, 206);
+    color: white;
+    transition: 0.5s;
+}
+
+.sidenav-links {
+    background-color: #00d7bc;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.sidenav-links a {
+    height: 40px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.sidenav-links i {
+    margin-right: 10px;
+}
+
+/* @bg: #2d2d37; // Dark blue */
+/* @primary: #fd6b21; // Orange */
+
+/* body { background: @bg;} */
+.fa-sort-up { 
+    color: rgb(255, 255, 255); 
+    text-decoration: none; 
+    height: 10px;
+}
+
+.arrow {
+  margin-top: 8%;
+}
+
+.arrow-text {
+    color: rgb(83, 82, 82);
+    font-size: 18px;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none;
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+.danc {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+

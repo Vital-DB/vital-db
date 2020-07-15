@@ -8,16 +8,30 @@ export const setAuthToken = (token) => {
     }
 }
 
-export const login = (user) => (
-   axios.post(
+export const login = (user) => {
+   return axios.post(
         '/api/users/login',
         user
     )
-);
+};
 
-export const signup = (user) => {
-    axios.post(
-        '/api/users/signup',
+export const register = (user) => {
+    return axios.post(
+        '/api/users/register',
+        user
+    )
+};
+
+export const fetchCurrentUser = () => {
+    return axios.get(
+        '/api/users/current'
+    )
+};
+
+export const editUser = user => {
+    
+    return axios.patch(
+        `/api/users/${user._id}`,
         user
     )
 };

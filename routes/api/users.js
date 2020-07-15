@@ -19,17 +19,9 @@ const passport = require('passport');
 
 // // ROUTES
 // GETS
-// test route, to be deleted
-router.get("/test", (req, res) => {
-    res.json({ msg: "This is the users route" })
-});
 // private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    res.json({
-        id: req.user.id,
-        handle: req.user.handle,
-        email: req.user.email
-    });
+    res.json(req.user);
 })
 
 // POSTS
@@ -43,11 +35,7 @@ router.post('/register', (req, res) => {
         return res.status(400).json(errors);
     }
 
-    const handle = req.body.handle;
-    // const email = req.body.email;
-    // const password = req.body.password;
-
-    User.findOne({handle})
+    User.findOne({handle: req.body.handle })
         .then(user => {
             if(user) {
                 errors.handle = "User already exists"
@@ -56,7 +44,16 @@ router.post('/register', (req, res) => {
                 const newUser = new User({
                     handle: req.body.handle,
                     email: req.body.email,
-                    password: req.body.password
+                    password: req.body.password,
+                    firstName: "",
+                    lastName: "",
+                    birthday: new Date(),
+                    bloodType: "",
+                    height: 0,
+                    weight: 0,
+                    profilePic: "https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png",
+                    sex: "",
+                    organDonor: false
                 })
 
                 bcrypt.genSalt(10, (err, salt) => {
@@ -65,26 +62,14 @@ router.post('/register', (req, res) => {
                         newUser.password = hash;
                         newUser
                             .save()
-                            .then(user => {
-                                const payload = { id: user.id, handle: user.handle };
-                                jwt.sign(
-                                    payload, 
-                                    keys.secretOrKey, 
-                                    {expiresIn: 3600}, 
-                                    (err, token) => {
-                                        res.json({
-                                            success: true,
-                                            token: "Bearer " + token
-                                        })
-                                    }
-                                )
-                            })
+                            .then(user => res.json(user))
                             .catch(err => console.log(err));
                     })
                 })
             }
         })
 })
+
 
 // login
 router.post('/login', (req, res) => {
@@ -97,7 +82,7 @@ router.post('/login', (req, res) => {
     const handle = req.body.handle;
     // const email = req.body.email;
     const password = req.body.password;
-
+    
     User.findOne({handle})
         .then(user => {
             if(!user) {
@@ -113,7 +98,7 @@ router.post('/login', (req, res) => {
                         jwt.sign(
                             payload,
                             keys.secretOrKey,
-                            {expiresIn: 3600}, // this is 1 hour
+                            // {expiresIn: 3600}, // this is 1 hour
                             (err, token) => {
                                 res.json({
                                     success: true, 
@@ -129,5 +114,29 @@ router.post('/login', (req, res) => {
         })
 })
 
+// PATCH
+// update a user
+router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+    User.findById(req.params.id, function(err, user) {
+        if(!user) {
+            return res.status(400).json(err);
+        } else {
+            user.firstName = req.body.firstName || user.firstName;
+            user.lastName = req.body.lastName || user.lastName;
+            user.birthday = req.body.birthday || user.birthday;
+            user.bloodType = req.body.bloodType || user.bloodType;
+            user.height = req.body.height || user.height;
+            user.weight = req.body.weight || user.weight;
+            user.sex = req.body.sex || user.sex;
+            user.organDonor = req.body.organDonor || user.organDonor;
+            user.profilePic = req.body.profilePic || user.profilePic;
+            user.save()
+            .then(user => res.json(user))
+            .catch(err => console.log(err));
+        }
+    })
+
+   
+})
 
 module.exports = router;

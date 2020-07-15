@@ -1,0 +1,114 @@
+.login {
+    width: 100vw;
+    min-height: -webkit-fill-available;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('/images/login-bg4.png'); 
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 1650px) {
+  .login {
+    background-repeat: repeat;
+  }
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    background-color: #082b40;
+    padding: 12px;
+    border-radius: 26px;    
+}
+
+.login-input {
+  border-radius: 8px;
+  border-color: rgb(64, 187, 192);
+  margin-bottom: 4px;
+}
+
+.login-button {
+  margin-bottom: 30px;
+  background-color: rgb(65, 200, 212);
+  color: white;
+  font-size: 16px;
+  padding: 5px 0 5px 0;
+  margin: 12px 0 50px 0;
+}
+
+/* .demo-button {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  background-color: rgb(64, 187, 192);
+  background-image: url('/images/robo.png'); 
+  color: white;
+  font-size: 30px;
+  padding: 7px 14px 7px 14px;
+  margin: 5px 0 5px 0;
+  filter: drop-shadow(2px 4px 6px black);
+} */
+
+.demo-button {
+  color: #082b40;
+  font-family: 'Concert One', cursive;
+  font-size: 16px;
+  position: relative;
+  top: -45px;
+  /* right: -36%; */
+  overflow: hidden;
+  font-size: 32px;
+  border-radius: 80px;
+  padding: 14px 14px 14px 14px;
+  filter: drop-shadow(2px 4px 6px black);
+  filter: saturate(2.5);
+}
+
+button.demo-button::before {
+  content: "";
+  position: absolute;
+  width: 205%;
+  height: 343%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  background: url(/images/robo.png) 0 0 repeat;
+  transform: rotate(-90deg);
+  background-repeat: no-repeat;
+  background-position-x: 208px;
+  background-position-y: -20px;
+  background-size: 29%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .demo-button {
+    right: -1%;
+  }
+}
+
+
+
+.login-nav {
+  position: relative;
+  top: 7%;
+  border-radius: 8px;
+  background-color: rgb(65, 200, 212);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 5px 0 5px 0;
+  width: 100%;
+}
+
+.login-nav:hover, .login-button:hover {
+  background-color: #800283;
+}
+
+.demo-button:hover {
+  filter: invert(1);
+}

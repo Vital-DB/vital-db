@@ -1,0 +1,350 @@
+.dashboard-stats {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    
+    /* justify-content: space-evenly; */
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.outer {
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard-stats-list__container {
+    position: relative;
+    width: 40%;
+}
+
+.dashboard-stats-list__h1 {
+    position: absolute;
+    top: 8vh;
+    left: 3vw;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1vw;
+    color: white;
+    cursor: default;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.fa-chevron-circle-down {
+    position: relative;
+    top: 2vh;
+    align-self: center;
+    font-size: 2vw;
+    color: white;
+    z-index: 25;
+    left: 28vw;
+    cursor: pointer;
+    transition: .3s color;
+}
+
+.fa-chevron-circle-down:hover {
+    color: red;
+}
+
+.dashboard-stats-list {
+    position: absolute;
+    /* top: vh; */
+    left: 7vw;
+    z-index: 10;
+    text-align: center;
+    font-size: 2vw;
+    color: white;
+    background-color: rgba(0, 43, 64, 1);
+    width: 20vw;
+
+    border-radius: 0.8em;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+.dashboard-stats-list li {
+    margin-top: 2vh;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color .3s;
+    padding-bottom: 1vh;
+    position: relative;
+    z-index: 10;
+}
+
+.dashboard-stats-list .selected {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+}
+
+.dashboard-stats-list li:not(.selected) {
+    display: none;
+}
+
+.dashboard-stats-list li:not(.selected):hover {
+    color: red;
+}
+
+.selected:hover {
+    color: red;
+}
+
+.fa-plus-circle {
+    font-size: 1.5vw;
+    color: white;
+}
+
+.no-vitals {
+    color: white;
+    font-size: 2em;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                supported by Chrome, Edge, Opera and Firefox */
+}
+.no-vitals-plus {
+    font-size:3em;
+    font-weight:bold;
+}
+
+.dashboard-stats-sublist {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 5vh;
+    /* margin-bottom: 1vh; */
+    z-index: 0;
+
+    margin-top: 12vh;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+        supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+.dashboard-stats-sublist li {
+    width: 18%;
+    /* background-color: #00D7BC; */
+    background-color: #42c2ef;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1vw;
+    font-weight: 400;
+    color: white;
+    border-radius: 0.7em;
+    cursor: pointer;
+}
+
+.dashboard-stats-sublist .hidden {
+    display: none;
+}
+
+.dashboard-stats-sublist li:hover {
+    color: black;
+}
+
+.dashboard-stats-sublist .selected-sub {
+    /* background: #FF4E66; */
+    background: red;
+}
+
+.add-vital-modal {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0, 0.8);
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.add-vital-outer-container {
+    position: absolute;
+    display: none;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.add-vital-container {
+    z-index: 10;
+    width: 50vw;
+    /* border: 5px solid black; */
+    /* margin: 0 auto; */
+    background: #002B40;
+    box-sizing: border-box;
+    border-radius: 1em;
+    height: 60vh;
+    width: 50vw;
+    position: absolute;
+    left: 23%;
+    margin-left: -50px;
+    top: 26%;
+    margin-top: -50px;
+    padding: 1vw;
+}
+
+.add-vital-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+
+.add-vital-form h1 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 2vw;
+}
+
+.add-vital-form input {
+
+}
+
+.add-vital-form label {
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1vw;
+}
+
+.vitals-error-list {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: red;
+    padding: 10px;
+    /* background: white; */
+    /* border: 1px solid gray; */
+    margin-top: 10px;
+}
+
+.recharts-responsive-container{
+    margin-top: 2vh;
+    font-family: 'Barlow', sans-serif;
+    width: 80% !important;
+    height: 40vh !important;
+    cursor: default;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.recharts-wrapper {
+
+}
+
+.recharts-surface {
+
+}
+
+.recharts-text tspan {
+}
+
+.dash__addAVital {
+    margin-top: 1.5vh;
+    display: flex;
+    width: 12%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5vw;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.dash__addAVital:hover * {
+    color: #FF4E66 ;
+}
+
+.fa-window-close {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    font-size: 3vh;
+    cursor: pointer;
+    transition: .3s;
+}
+.fa-window-close:hover {
+    color: red;
+}
+
+path {
+    /* stroke: #FF4E66; */
+    stroke-width: 2;
+}
+
+circle {
+    /* stroke: #42C2EF;
+    stroke-width: 4; */
+}
+
+line {
+    stroke: white;
+}
+
+tspan {
+    /* color: white !important; */
+    fill: white;
+}
+
+.disclaimer {
+    margin-top: 1vh;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.6vw;
+}
+
+.recharts-xAxis .recharts-cartesian-axis-tick:first-child line {
+    stroke: none; 
+}
+   
+.recharts-xAxis .recharts-cartesian-axis-tick:first-child text {
+    font-size: 0;
+}

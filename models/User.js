@@ -10,13 +10,36 @@ const UserSchema = new Schema({
       type: String,
       required: true
     },
-    type: {
-      type: String,
-      required: true
-    },
     password: {
       type: String,
       required: true
+    },
+    profilePic: {
+      type: String
+    },
+    firstName: {
+      type: String
+    },
+    lastName: {
+      type: String
+    },
+    birthday: {
+      type: Date
+    },
+    bloodType: {
+      type: String
+    },
+    height: {
+      type: Number
+    },
+    weight: {
+      type: Number
+    },
+    sex: {
+      type: String
+    },
+    organDonor: {
+      type: Boolean
     },
     date: {
       type: Date,
