@@ -81,7 +81,6 @@ export default (state = _nullState, action) => {
             newState['weights'].push(newVital);
             return merge({}, state, newState )  
         case RECEIVE_ALLERGIES:
-            debugger
             const allergies = {};
             action.allergies.forEach(allergy => {
                 allergies[allergy._id] = allergy;
