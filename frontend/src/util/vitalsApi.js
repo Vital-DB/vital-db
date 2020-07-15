@@ -24,7 +24,7 @@ export const createAllergy = (data) => {
 };
 export const editAllergy = (data) => {
     return axios.patch(
-        `/api/allergies/${data.id}`,
+        `/api/allergies/${data._id}`,
         data
     )
 }
