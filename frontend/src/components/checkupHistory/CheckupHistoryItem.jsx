@@ -24,20 +24,20 @@ export default ({checkup}) => {
     }
 
     return (
-        <tr>
-            <form onSubmit={submit} className="checkup-history-item">
-                <i onClick={() => dispatch(deleteMedicalCondition(checkup._id))} className="fas fa-minus-circle"></i>
-                <td><input onBlur={submit} 
-                    type="text" 
-                    onChange={e => setDate(e.target.value)} 
-                    value={checkupDate.slice(0,10)} 
-                /></td>
-                <td><input onBlur={submit} 
-                    type="text" 
-                    onChange={e => setCondition(e.target.value)} 
-                    value={checkupCondition} 
-                /></td>
-            </form>
-        </tr>
+        <div className="medical-condition-item">
+            <i onClick={() => dispatch(deleteMedicalCondition(checkup._id))} className="fas fa-minus-circle"></i>
+            <input onBlur={submit} 
+                type="text" 
+                className="medical-condition-date"
+                onChange={e => setDate(e.target.value)} 
+                value={checkupDate.slice(0,10)} 
+            />
+            <textarea onBlur={submit} 
+                type="text" 
+                className="medical-condition-condition"
+                onChange={e => setCondition(e.target.value)} 
+                value={checkupCondition} 
+            />
+        </div>
     )
 };

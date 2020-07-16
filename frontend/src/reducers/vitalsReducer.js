@@ -112,7 +112,8 @@ export default (state = _nullState, action) => {
             // return merge({}, state, newState )   
         case REMOVE_MEDICAL_CONDITION:
             newState = merge({}, state);
-            delete newState.medicalConditions[action.medicalConditionID]                   
+            delete newState.medicalConditions[action.medicalConditionID];
+            return newState;                   
         case CLEAR_VITALS:
             return _nullState;
         default:
