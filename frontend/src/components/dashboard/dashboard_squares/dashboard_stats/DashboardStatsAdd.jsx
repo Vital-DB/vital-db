@@ -9,15 +9,13 @@ class DashboardStatsAdd extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.hideModal = this.hideModal.bind(this);
     }    
-
-    componentDidMount(){
-        if (this.props.currentSubVital) alert(this.props.currentSubVital)
-    }
     
     componentDidUpdate(prevProps, prevState){
         const currentVital = this.props.vital;
+        const vitalsLength = (Array.isArray(this.props.vitals[currentVital])) ? this.props.vitals[currentVital].length : Object.keys(this.props.vitals[currentVital]).length;
+        const prevVitalsLength = (Array.isArray(prevProps.vitals[currentVital])) ? prevProps.vitals[currentVital].length : Object.keys(prevProps.vitals[currentVital]).length;
         // clear modal values if user changes vitals from the dropdown menu, or successfully adds them
-        if ((prevProps.vital !== currentVital) || this.props.vitals[currentVital].length !== prevProps.vitals[currentVital].length){
+        if ((prevProps.vital !== currentVital) || vitalsLength !== prevVitalsLength){
             this.setState({date: ""});
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
@@ -97,10 +95,16 @@ class DashboardStatsAdd extends Component {
                     value = "";
                 } 
 
-                if (vital !== 'medicalConditions' && vital !== 'allergies'){ // vital numbers
-                    inputType = <input key={sub} subdatakey={sub} type="number" value={value} placeholder="Please enter a value" onChange={this.handleChange} />;
-                } else { // input[type="text"]
-                    inputType = <textarea key={sub} subdatakey={sub} type="text" value={value} placeholder="Please enter a value" onChange={this.handleChange} />
+                switch (vital) {
+                    case 'medicalConditions':
+                        inputType = <textarea key={sub} subdatakey={sub} type="text" value={value} placeholder="Please enter a value" onChange={this.handleChange} />
+                        break;
+                    case 'allergies':
+                        inputType = <input key={sub} subdatakey={sub} type="text" value={value} placeholder="Please enter a value" onChange={this.handleChange} />;
+                        break;
+                    default: 
+                        inputType = <input key={sub} subdatakey={sub} type="number" value={value} placeholder="Please enter a value" onChange={this.handleChange} />;
+                        break;
                 }
                 return <label key={sub}>{sub}{inputType}</label>
             })

@@ -174,46 +174,7 @@
     font-size: 18px;
 }
 
-/* ALLERGIES */
 
-.edit-form.allergies {
-    display: block;
-    text-align: center;
-    font-size: 1em;
-}
-.edit-form.allergies .allergies-list{
-    padding: 10px;
-    box-sizing: border-box;
-    background: lightblue;
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-.allergic {
-    margin-right: 10px;
-}
-
-.allergies-list{
-    box-shadow: 3px 3px #888888;
-}
-
-/* ALLERGIES / CHECKUPHISTORY ADD VITAL BUTTON */
-
-.dash__addAVital.allergies {
-    margin: 0 auto;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    display: flex;
-    width: 27%;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    font-family: 'Barlow', sans-serif;
-    font-size: 1.5em;
-    cursor: pointer;
-    background-color: lightblue;
-}
 
 .dash__addAVital.checkup {
     margin: 0 auto;

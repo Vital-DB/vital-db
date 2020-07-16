@@ -22,17 +22,17 @@ export default () => {
             </section>
 
             <section className='about__bio'>
-                <img src="" className='about__profilePic' />
-                    <h1>name</h1>
-                    <h1>role</h1>
+                <img src="https://avatars0.githubusercontent.com/u/59629330?s=400&u=ae2b51f6beab4c89e1d2d6f5d1a6cb9eaf33f9dd&v=4" className='about__profilePic' />
+                    <h1>Douglas Crawford</h1>
+                    <h1>Team Lead</h1>
                     <div className="about__linksContainer">
-                        <a href="http://.com" 
+                        <a href="https://dacraw.github.io/" 
                         target="_blank" 
                         className="about__links">Portfolio</a>
-                        <a href="http://linkedin.com/in/" 
+                        <a href="https://www.linkedin.com/in/doug-a-crawford/" 
                         target="_blank"
                         className="about__links">LinkedIn</a>
-                        <a href="http://github.com/" 
+                        <a href="http://github.com/dacraw" 
                         target="_blank"
                         className="about__links">GitHub</a>
                     </div>

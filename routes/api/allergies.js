@@ -9,15 +9,15 @@ const Allergy = require('../../models/Allergy');
 const validateAllergyInput = require('../../validations/allergies');
 
 // // ROUTES
-// GETS
+// Fetch Allergies
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     Allergy.find({ user: req.user.id })
-        .sort({ date: -1 })
+        // .sort({ date: -1 })
         .then(allergies => res.json(allergies) )
         .catch(err => res.status(404).json({ noAllergiesFound: "No allergies found for that user id" }))
 })
 
-// POSTS
+// Create Allergy
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
@@ -38,8 +38,8 @@ router.post('/',
     }
   );
 
+// Delete Allergy
 router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
-
     Allergy.deleteOne( { _id: req.params.id}, function(err, result) {
        if(err) {
          res.send(err);
@@ -47,6 +47,20 @@ router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res)
          res.send(result);
        }
     })
+})
+
+// Edit Allergy
+router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+  Allergy.findById(req.params.id, function(err, allergy) {
+      if(!allergy) {
+          return res.status(400).json(err);
+      } else {
+          allergy.allergy = req.body.allergy || allergy.allergy;
+          allergy.save()
+          .then(allergy => res.json(allergy))
+          .catch(err => console.log(err));
+      }
+  })
 })
 
 module.exports = router;

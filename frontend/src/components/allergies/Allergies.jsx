@@ -3,8 +3,9 @@ import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import '../edit_form/edit_form.css'
 import DashboardStatsAddContainer from '../dashboard/dashboard_squares/dashboard_stats/DashboardStatsAddContainer'
-
+import AllergyComponent from './AllergyComponent'
 import {fetchAllergies} from '../../actions/vitals';
+import './allergies.css';
 
 export default () => {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export default () => {
 
     useEffect(() => {
         dispatch(fetchAllergies());
-    }, []) // commented out the ,[] that was here (to reduce console warning)
+    }, []) 
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -39,7 +40,7 @@ export default () => {
     const renderAllergies = () => {
         if(allergies) {
             return allergies.map((allergy, idx) => {
-                return <p key={idx}>{allergy.allergy}</p>
+                return <AllergyComponent key={idx} allergy={allergy} /> 
             })
         }
     }
@@ -48,7 +49,7 @@ export default () => {
       
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
-        const input = document.querySelector('.add-vital-outer-container textarea');
+        const input = document.querySelector('.add-vital-outer-container input');
         input.focus();
     }
 
@@ -62,6 +63,7 @@ export default () => {
                             <i className="fas fa-plus-circle"></i>
                             <h1>Add Allergy</h1>
                         </div>
+                        <h5 className="edit-allergies-instructions">You may click on individual allergies to edit them. When you are finished with changes you may save them by clicking/tabbing out of the field, or pressing enter.</h5>
                         <ul className="allergies-list">
                             {renderAllergies()}
                         </ul>
