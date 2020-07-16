@@ -94,7 +94,7 @@ export default (state = _nullState, action) => {
             // newState['allergies'].push(newVital);
             // return merge({}, state, newState )  
         case REMOVE_ALLERGY:
-            debugger
+            // debugger
             newState = merge({}, state);
             delete newState.allergies[action.allergyID]
             return newState;

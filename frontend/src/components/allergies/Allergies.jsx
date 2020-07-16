@@ -16,7 +16,7 @@ export default () => {
 
     useEffect(() => {
         dispatch(fetchAllergies());
-    }, []) // commented out the ,[] that was here (to reduce console warning)
+    }, []) 
 
     const handleSubmit = (event) => {
         event.preventDefault();

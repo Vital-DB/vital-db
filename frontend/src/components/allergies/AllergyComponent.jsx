@@ -1,15 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {editAllergy, deleteAllergy} from '../../actions/vitals'
+import {merge} from 'lodash'
 
 export default ({allergy}) => {
-    const [allergyName, setAllergy] = useState(allergy.allergy)
+    const allergyDupe = merge({}, allergy)
+    const [allergyName, setAllergy] = useState(allergyDupe.allergy)
     const dispatch = useDispatch();
+    useEffect(() => {
+        setAllergy(allergyDupe.allergy)
+    },[allergy.allergy])
 
     const submit = () => {
-        allergy.allergy = allergyName
-        dispatch(editAllergy(allergy))
+        allergyDupe.allergy = allergyName;
+        dispatch(editAllergy(allergyDupe));
     }
+
     return (
         <div className="allergy-item">
             <i onClick={() => dispatch(deleteAllergy(allergy._id))} className="fas fa-minus-circle"></i>
