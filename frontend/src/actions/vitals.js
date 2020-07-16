@@ -17,6 +17,7 @@ export const RECEIVE_ALLERGY = "RECEIVE_ALLERGY";
 export const REMOVE_ALLERGY = "REMOVE_ALLERGY";
 export const RECEIVE_MEDICAL_CONDITIONS = "RECEIVE_MEDICAL_CONDITIONS";
 export const RECEIVE_MEDICAL_CONDITION = "RECEIVE_MEDICAL_CONDITION";
+export const REMOVE_MEDICAL_CONDITION = "REMOVE_MEDICAL_CONDITION";
 export const RECEIVE_VITALS_ERRORS = "RECEIVE_VITALS_ERRORS";
 export const CLEAR_VITALS = "CLEAR_VITALS";
 export const CLEAR_VITALS_ERRORS = "CLEAR_VITALS_ERRORS";
@@ -66,6 +67,10 @@ const receiveMedicalConditions = (medicalConditions) => ({
 const receiveMedicalCondition = (medicalCondition) => ({
     type: RECEIVE_MEDICAL_CONDITION,
     medicalCondition,
+});
+const removeMedicalCondition = (medicalConditionID) => ({
+    type: REMOVE_MEDICAL_CONDITION,
+    medicalConditionID,
 });
 const receiveRestingHeartRates = (restingHeartRates) => ({
     type: RECEIVE_RESTING_HEART_RATES,
@@ -186,6 +191,18 @@ export const createMedicalCondition = (data) => dispatch => {
             errs => dispatch(receiveVitalsErrors(errs.response.data))
         )
 };
+export const deleteMedicalCondition = (medicalConditionID) => dispatch => {
+    dispatch(startLoadingVitals());
+    return VitalsUtil.deleteMedicalCondition(medicalConditionID)
+        .then(
+            () => dispatch(removeMedicalCondition(medicalConditionID)),
+            errs => dispatch(receiveVitalsErrors(errs.response.data))
+        )
+};
+export const editMedicalCondition = (data) => dispatch => {
+    return VitalsUtil.editMedicalCondition(data)
+        .then(res => dispatch(receiveMedicalCondition(res.data)), errs => dispatch(receiveVitalsErrors(errs.response.data)))
+}
 export const fetchRestingHeartRates = () => dispatch => {
     dispatch(startLoadingVitals());
     return VitalsUtil.fetchRestingHeartRates()

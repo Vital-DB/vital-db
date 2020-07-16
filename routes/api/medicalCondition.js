@@ -42,4 +42,28 @@ router.post('/',
     }
   );
 
+router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+  MedicalCondition.deleteOne( { _id: req.params.id}, function(err, result) {
+      if(err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+  })
+}) 
+
+router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+  MedicalCondition.findById(req.params.id, function(err, condition) {
+      if(!condition) {
+          return res.status(400).json(err);
+      } else {
+          condition.date = req.body.date || condition.date;
+          condition.condition = req.body.condition || condition.condition;
+          condition.save()
+          .then(condition => res.json(condition))
+          .catch(err => console.log(err));
+      }
+  })
+})
+
 module.exports = router;

@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import '../edit_form/edit_form.css'
 import DashboardStatsAddContainer from '../dashboard/dashboard_squares/dashboard_stats/DashboardStatsAddContainer'
+import CheckupHistoryItem from './CheckupHistoryItem'
 
 import {fetchMedicalConditions, clearVitalsErrors} from '../../actions/vitals';
 
@@ -41,12 +42,10 @@ export default () => {
     const renderCheckupHistory = () => {
      
         if(checkupHistory) {
-            return checkupHistory.map((history, idx) => {
+            return checkupHistory.map((checkup, idx) => {
                 return (
-                    <tr>
-                        <td>{history.date.slice(0,10)}: </td>
-                        <td>{history.condition}</td>
-                    </tr>
+                    <CheckupHistoryItem checkup={checkup} />
+
                 )
             })
         }
