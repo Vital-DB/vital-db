@@ -12,8 +12,10 @@ class DashboardStatsAdd extends Component {
     
     componentDidUpdate(prevProps, prevState){
         const currentVital = this.props.vital;
+        const vitalsLength = (Array.isArray(this.props.vitals[currentVital])) ? this.props.vitals[currentVital].length : Object.keys(this.props.vitals[currentVital]).length;
+        const prevVitalsLength = (Array.isArray(prevProps.vitals[currentVital])) ? prevProps.vitals[currentVital].length : Object.keys(prevProps.vitals[currentVital]).length;
         // clear modal values if user changes vitals from the dropdown menu, or successfully adds them
-        if ((prevProps.vital !== currentVital) || this.props.vitals[currentVital].length !== prevProps.vitals[currentVital].length){
+        if ((prevProps.vital !== currentVital) || vitalsLength !== prevVitalsLength){
             this.setState({date: ""});
             for (let i = 0; i < this.props.subVitals.length; i++){
                 this.setState({[this.props.subVitals[i]]: ""})
