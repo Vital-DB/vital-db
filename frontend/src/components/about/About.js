@@ -57,16 +57,16 @@ export default () => {
 
             <section className='about__bio'>
                 <img src="" className='about__profilePic' />
-                    <h1>name</h1>
-                    <h1>role</h1>
+                    <h1>Nahuel Gorosito</h1>
+                    <h1>Frontend Lead</h1>
                     <div className="about__linksContainer">
-                        <a href="http://.com" 
+                        <a href="https://devnahueloper.github.io/" 
                         target="_blank" 
                         className="about__links">Portfolio</a>
-                        <a href="http://linkedin.com/in/" 
+                        <a href="https://www.linkedin.com/in/nahuel-gorosito-a2a41524/" 
                         target="_blank"
                         className="about__links">LinkedIn</a>
-                        <a href="http://github.com/" 
+                        <a href="https://github.com/devNahuelOper" 
                         target="_blank"
                         className="about__links">GitHub</a>
                     </div>
