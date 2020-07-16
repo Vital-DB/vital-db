@@ -95,10 +95,16 @@ class DashboardStatsAdd extends Component {
                     value = "";
                 } 
 
-                if (vital !== 'medicalConditions' && vital !== 'allergies'){ // vital numbers
+                switch (vital) {
+                    case 'medicalConditions':
                     inputType = <input key={sub} subdatakey={sub} type="number" value={value} placeholder="Please enter a value" onChange={this.handleChange} />;
-                } else { // input[type="text"]
+                    break;
+                    case 'allergies':
+                    inputType = <input key={sub} subdatakey={sub} type="text" value={value} placeholder="Please enter a value" onChange={this.handleChange} />;
+                    break;
+                default: 
                     inputType = <textarea key={sub} subdatakey={sub} type="text" value={value} placeholder="Please enter a value" onChange={this.handleChange} />
+                    break;
                 }
                 return <label key={sub}>{sub}{inputType}</label>
             })

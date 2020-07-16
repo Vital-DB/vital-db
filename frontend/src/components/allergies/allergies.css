@@ -43,6 +43,10 @@
 
 .allergies-list{
     box-shadow: 3px 3px #888888;
+
+}
+.edit-allergies-instructions{
+    margin: 2vh 0;
 }
 
 /* ALLERGIES / CHECKUPHISTORY ADD VITAL BUTTON */

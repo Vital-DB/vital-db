@@ -49,7 +49,7 @@ export default () => {
       
         let container = document.querySelector('.add-vital-outer-container');
         container.style.display = (container.style.display === '') ? "block" : "";
-        const input = document.querySelector('.add-vital-outer-container textarea');
+        const input = document.querySelector('.add-vital-outer-container input');
         input.focus();
     }
 
@@ -63,7 +63,7 @@ export default () => {
                             <i className="fas fa-plus-circle"></i>
                             <h1>Add Allergy</h1>
                         </div>
-                        <h5>You can click on individual allergies to edit them. When you are finished with changes you may save them by clicking/tabbing out of the field, or pressing enter.</h5>
+                        <h5 className="edit-allergies-instructions">You may click on individual allergies to edit them. When you are finished with changes you may save them by clicking/tabbing out of the field, or pressing enter.</h5>
                         <ul className="allergies-list">
                             {renderAllergies()}
                         </ul>
