@@ -14,9 +14,9 @@ import {
     RECEIVE_ALLERGIES, 
     RECEIVE_ALLERGY,
     REMOVE_ALLERGY,
-    UPDATE_ALLERGY,
     RECEIVE_MEDICAL_CONDITIONS,
     RECEIVE_MEDICAL_CONDITION,
+    REMOVE_MEDICAL_CONDITION,
     CLEAR_VITALS,
 } from '../actions/vitals'
 import {merge} from 'lodash'
@@ -25,7 +25,7 @@ const _nullState = {
     cholesterolLevels: [],
     allergies: {},
     bloodPressureLevels: [],
-    medicalConditions: [],
+    medicalConditions: {},
     restingHeartRates: [],
     temperatures: [],
     vitaminDLevels: [],
@@ -99,12 +99,21 @@ export default (state = _nullState, action) => {
             delete newState.allergies[action.allergyID]
             return newState;
         case RECEIVE_MEDICAL_CONDITIONS:
-            return merge({}, state, {medicalConditions: action.medicalConditions} )            
+            const medicalConditions = {};
+            action.medicalConditions.forEach(condition => {
+                medicalConditions[condition._id] = condition;
+            })
+            return merge({}, state, {medicalConditions: medicalConditions} )            
         case RECEIVE_MEDICAL_CONDITION:
-            newVital = action.medicalCondition;
+            return merge({}, state, {medicalConditions: {[action.medicalCondition._id]: action.medicalCondition}})            
+            // newVital = action.medicalCondition;
+            // newState = merge({}, state);
+            // newState['medicalConditions'].push(newVital);
+            // return merge({}, state, newState )   
+        case REMOVE_MEDICAL_CONDITION:
             newState = merge({}, state);
-            newState['medicalConditions'].push(newVital);
-            return merge({}, state, newState )          
+            delete newState.medicalConditions[action.medicalConditionID];
+            return newState;                   
         case CLEAR_VITALS:
             return _nullState;
         default:

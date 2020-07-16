@@ -55,6 +55,17 @@ export const createMedicalCondition = (data) => (
         data
     )
 );
+export const deleteMedicalCondition = (medicalConditionID) => (
+    axios.delete(
+        `/api/medicalConditions/${medicalConditionID}`,
+    )
+);
+export const editMedicalCondition = (data) => {
+    return axios.patch(
+        `/api/medicalConditions/${data._id}`,
+        data
+    )
+}
 export const fetchRestingHeartRates = () => (
     axios.get(
         `/api/restingHeartRates`,

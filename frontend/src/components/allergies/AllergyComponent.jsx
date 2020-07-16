@@ -15,7 +15,6 @@ export default ({allergy}) => {
         e.preventDefault();
         allergyDupe.allergy = allergyName;
         dispatch(editAllergy(allergyDupe));
-        debugger
         e.currentTarget.querySelectorAll('input[type=text]').forEach(input => input.blur());
     }
 

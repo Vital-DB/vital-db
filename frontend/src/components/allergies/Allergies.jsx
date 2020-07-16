@@ -68,11 +68,6 @@ export default () => {
                             {renderAllergies()}
                         </ul>
                     </div>
-                    <div className='pencil'>
-                        <div className='pencil-eraser'></div>
-                        <div className='pencil-body'></div>
-                        <div className='pencil-tip'></div>
-                    </div>
                 </div>
             </div>
         )

@@ -209,34 +209,6 @@
     margin-right: 10px;
 }
 
-.edit-form.allergies table {
-    background-color: lightblue;
-    border-radius: 10px;
-    padding: 30px;
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 3px 3px #888888;
-}
-
-.edit-form.allergies table tbody tr td:first-child, .edit-form.allergies table tbody tr th:first-child {
-    text-align: right;
-    width: 50%;
-}
-
-.edit-form.allergies table tbody th {
-    padding-bottom: 10px;
-}
-.edit-form.allergies table tbody tr th {
-    font-weight: bold;
-}
-.edit-form.allergies table tbody tr td:last-child, .checkup-description {
-    text-align: left;
-    padding-left: 20px;
-    width: 50%;
-    white-space: pre-wrap;
-}
 
 
 

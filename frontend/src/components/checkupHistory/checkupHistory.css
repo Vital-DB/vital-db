@@ -1,12 +1,64 @@
+.medical-conditions {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.edit-form.allergies {
-    display: block;
+.medical-conditions-headers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.medical-conditions-headers i{
+    visibility: hidden;
+}
+.medical-conditions-headers h5 {
+    padding: 1em;
+    font-size:1em;
+    font-weight:bold;
+}
+
+.checkup-instructions {
     text-align: center;
+    margin: 1vh 0;
 }
 
-.dash__addAVital.allergies {
-    color: black;
+.medical-condition-date {
+    min-width: 31%;
+}
+.medical-condition-condition {
+    min-width: 50%;
 }
 
+.medical-condition-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width:100%;
+}
 
+.medical-condition-item input, .medical-condition-item textarea {
+    background:none;
+    outline: none;
+    border:none;
+    cursor: pointer;
+}
+
+.medical-condition-item input:hover, .medical-condition-item textarea:hover,
+.medical-condition-item input:focus, .medical-condition-item textarea:focus {
+    background-color: #002b40;
+    color: white;
+}
+
+.medical-condition-item input[type="text"] {
+    align-self:baseline;
+}
+
+.medical-condition-item textarea {
+    padding: 1em;
+    font-size: 1em;
+    font-family: "Arial";
+    resize: none;
+}
 

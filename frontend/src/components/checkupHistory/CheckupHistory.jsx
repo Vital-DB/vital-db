@@ -3,20 +3,28 @@ import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import '../edit_form/edit_form.css'
 import DashboardStatsAddContainer from '../dashboard/dashboard_squares/dashboard_stats/DashboardStatsAddContainer'
+import CheckupHistoryItem from './CheckupHistoryItem'
+import './checkupHistory.css'
 
 import {fetchMedicalConditions, clearVitalsErrors} from '../../actions/vitals';
 
 export default () => {
     const dispatch = useDispatch();
     const errors = useSelector(state => state.errors);
-    const checkupHistory = useSelector(state => Object.values(state.entities.vitals.medicalConditions));
+    const checkupHistory = useSelector(state => 
+        Object.values(state.entities.vitals.medicalConditions)
+            .sort((a,b) => {
+                let dateA = new Date(a.date);
+                let dateB = new Date(b.date);
+                return dateB - dateA;
+            }));
 
     useEffect(() => {
         dispatch(fetchMedicalConditions());
     }, []) 
     useEffect(() => {
         // fetch updated conditions after uploading successfully
-        dispatch(fetchMedicalConditions());
+        // dispatch(fetchMedicalConditions());
     }, [checkupHistory.length]); 
 
 
@@ -41,12 +49,9 @@ export default () => {
     const renderCheckupHistory = () => {
      
         if(checkupHistory) {
-            return checkupHistory.map((history, idx) => {
+            return checkupHistory.map((checkup, idx) => {
                 return (
-                    <tr>
-                        <td>{history.date.slice(0,10)}: </td>
-                        <td>{history.condition}</td>
-                    </tr>
+                    <CheckupHistoryItem checkup={checkup} />
                 )
             })
         }
@@ -63,28 +68,21 @@ export default () => {
             <div className='whole-edit-page'>
                 <DashboardStatsAddContainer vital={"medicalConditions"} subVitals={["condition"]} />
                 <div id='my-edit-form' className='edit-board'>
-                    <div className='edit-form allergies'>
+                    <div className='edit-form medical-conditions'>
                         <h1 className="edit-form-header"><i class="fas fa-clipboard-check"></i>Checkup History</h1>
                         <div className="dash__addAVital allergies checkup" onClick={() => addVital()} >
                             <i className="fas fa-plus-circle"></i>
                             <h1>Add Checkup</h1>
                         </div>
-                        <table>
+                        <h5 className="checkup-instructions">You may click on individual fields to edit them. When you are finished with changes you may save them by clicking/tabbing out of the field.</h5>
 
+                        <div className='medical-conditions-headers'>
+                            <i className="fas fa-minus-circle"></i>
+                            <h5 className="medical-condition-date">Date</h5>
+                            <h5 className='medical-condition-condition'>Description</h5>
+                        </div>
+                        {renderCheckupHistory()}
 
-                            <tbody>
-                                <tr className='header-tr'>
-                                    <th>Date</th>
-                                    <th className='checkup-description'>Description</th>
-                                </tr>
-                            {renderCheckupHistory()}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div className='pencil'>
-                        <div className='pencil-eraser'></div>
-                        <div className='pencil-body'></div>
-                        <div className='pencil-tip'></div>
                     </div>
                 </div>
             </div>

@@ -224,6 +224,11 @@
     color: white;
 }
 
+.add-vital-form textarea {
+    padding: 1em;
+    font-size: 1em;
+}
+
 .add-vital-form h1 {
     font-family: 'Barlow', sans-serif;
     font-size: 2vw;
@@ -269,16 +274,6 @@
                 supported by Chrome, Edge, Opera and Firefox */
 }
 
-.recharts-wrapper {
-
-}
-
-.recharts-surface {
-
-}
-
-.recharts-text tspan {
-}
 
 .dash__addAVital {
     margin-top: 1.5vh;
