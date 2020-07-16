@@ -11,19 +11,22 @@ export default ({allergy}) => {
         setAllergy(allergyDupe.allergy)
     },[allergy.allergy])
 
-    const submit = () => {
+    const submit = (e) => {
+        e.preventDefault();
         allergyDupe.allergy = allergyName;
         dispatch(editAllergy(allergyDupe));
+        debugger
+        e.currentTarget.querySelectorAll('input[type=text]').forEach(input => input.blur());
     }
 
     return (
-        <div className="allergy-item">
+        <form onSubmit={submit} className="allergy-item">
             <i onClick={() => dispatch(deleteAllergy(allergy._id))} className="fas fa-minus-circle"></i>
-            <input onBlur={() => submit()} 
+            <input onBlur={submit} 
                 type="text" 
                 onChange={e => setAllergy(e.target.value)} 
                 value={allergyName} 
             />
-        </div>
+        </form>
     )
 };
