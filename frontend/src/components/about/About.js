@@ -56,7 +56,7 @@ export default () => {
             </section>
 
             <section className='about__bio'>
-                <img src="" className='about__profilePic' />
+              <img src="https://avatars1.githubusercontent.com/u/16979527?s=400&u=97a69e78167b0215e15d11fd3916af831bc611a0&v=4" className='about__profilePic' />
                     <h1>Nahuel Gorosito</h1>
                     <h1>Frontend Lead</h1>
                     <div className="about__linksContainer">
