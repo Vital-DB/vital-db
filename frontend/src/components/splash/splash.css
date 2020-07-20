@@ -70,6 +70,8 @@
 }
 
 .feature {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   position: relative;
   height: 40%;
@@ -82,11 +84,12 @@
 
 #chart-icon, #info, #robochat, #vitalist {
   image-rendering: -webkit-optimize-contrast;
-  position: absolute;
+  /* position: absolute;
   left: 12%;
-  top: 25%;
-  height: 80%;
-  width: 80%;
+  top: 25%; */
+  height: 150px;
+  width: 280px;
+  margin: 0 auto;
   border-radius: 18px;
   transform: scale(0.9);
 }
@@ -341,11 +344,10 @@
   left: -5%;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1050px) {
   
   #heading {
     font-size: 50%;
-    text-align: start;
   }
 
   #chart-icon, #info, #robochat, #vitalist {
@@ -378,15 +380,15 @@
 }
 
 @media only screen and (max-height: 625px) {
-  .feature {
+  /* .feature {
     height: 50%;
     width: 50%;
-  }
+  } */
 
   #info, #chart-icon, #robochat, #vitalist {
     top: 33%;
-    height: 40%;
-    width: 50%;
+    height: 50%;
+    width: 60%;
   }
 
   .splash-content {
