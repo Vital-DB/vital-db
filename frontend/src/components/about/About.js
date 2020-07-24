@@ -39,17 +39,17 @@ export default () => {
             </section>
 
             <section className='about__bio'>
-                <img src="" className='about__profilePic' />
-                    <h1>name</h1>
-                    <h1>role</h1>
+                <img src="https://media-exp1.licdn.com/dms/image/C5603AQHjeCAQxd_esQ/profile-displayphoto-shrink_200_200/0?e=1600905600&v=beta&t=tgSOZswo0FxhAZOOqFA__ECrJxajlm8Wz0geXXLadzQ" className='about__profilePic' />
+                    <h1>Clifford Yan</h1>
+                    <h1>Flex</h1>
                     <div className="about__linksContainer">
-                        <a href="http://.com" 
+                        <a href="https://dojobuns.github.io/" 
                         target="_blank" 
                         className="about__links">Portfolio</a>
-                        <a href="http://linkedin.com/in/" 
+                        <a href="https://www.linkedin.com/in/cliffordyan/" 
                         target="_blank"
                         className="about__links">LinkedIn</a>
-                        <a href="http://github.com/" 
+                        <a href="https://github.com/dojobuns" 
                         target="_blank"
                         className="about__links">GitHub</a>
                     </div>
