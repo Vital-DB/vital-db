@@ -1,6 +1,8 @@
 # Vital DB
-
 *The one stop shop for all things vital to your health.*
+
+## Live Link
+[Vital DB](http://vital-db.herokuapp.com)
 
 ## Background
 
